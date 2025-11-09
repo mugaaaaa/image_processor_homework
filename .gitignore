@@ -1,0 +1,20 @@
+# Node.js
+node_modules/
+dist/
+release/
+
+# C++ 构建目录
+cpp/build/
+*.o
+*.obj
+*.exe
+*.lib
+*.a
+*.dylib
+*.so
+.vscode/
+.idea/
+
+# 操作系统生成的垃圾文件
+.DS_Store
+Thumbs.db
