@@ -20,3 +20,13 @@ electron.contextBridge.exposeInMainWorld("ipcRenderer", {
   // You can expose other APTs you need here.
   // ...
 });
+electron.contextBridge.exposeInMainWorld("native", {
+  loadPpm: (filePath) => electron.ipcRenderer.invoke("native:loadPpm", filePath),
+  loadPng: (filePath) => electron.ipcRenderer.invoke("native:loadPng", filePath),
+  savePpm: (filePath, img) => electron.ipcRenderer.invoke("native:savePpm", filePath, img),
+  savePng: (filePath, img) => electron.ipcRenderer.invoke("native:savePng", filePath, img),
+  toGray: (img) => electron.ipcRenderer.invoke("native:toGray", img),
+  resize: (img, newW, newH) => electron.ipcRenderer.invoke("native:resize", img, newW, newH),
+  compressorSave: (filePath, img) => electron.ipcRenderer.invoke("native:compressorSave", filePath, img),
+  compressorLoad: (filePath) => electron.ipcRenderer.invoke("native:compressorLoad", filePath)
+});
