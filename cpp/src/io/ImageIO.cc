@@ -54,17 +54,27 @@ bool ImageIO::savePpm(const std::string& file_path, const cv::Mat& img) {
     return Ppm::saveNatAsPpm(file_path, img);
 }
 
-bool ImageIO::saveTrip(const std::string& file_path, const std::vector<TripletNode>& triplets) {
-    // 为简化，将 header 写为占位（无法得知宽高通道，仅用于单元测试配合 Compressor）
-    // 单元测试中更常用 Compressor::Save/Load；这里仅提供最简写接口
+bool ImageIO::saveTrip(const std::string& file_path,
+                       int width,
+                       int height,
+                       int channels,
+                       const uint8_t bg_color[3],
+                       const std::vector<TripletNode>& triplets) {
+    if (channels != 1 && channels != 3) return false;
+    if (width <= 0 || height <= 0) return false;
     std::ofstream ofs(file_path);
     if (!ofs) return false;
-    ofs << "TRIP 0 0 3 " << triplets.size() << " 0 0 0\n";
+    ofs << "TRIP " << width << ' ' << height << ' ' << channels << ' '
+        << static_cast<unsigned long long>(triplets.size()) << ' '
+        << static_cast<int>(bg_color[0]) << ' '
+        << static_cast<int>(bg_color[1]) << ' '
+        << static_cast<int>(bg_color[2]) << '\n';
     for (const auto& t : triplets) {
-        ofs << t.row_ << ' ' << t.col_ << ' '
-            << static_cast<int>(t.val_[0]) << ' '
-            << static_cast<int>(t.val_[1]) << ' '
-            << static_cast<int>(t.val_[2]) << '\n';
+        ofs << t.row_ << ' ' << t.col_ << ' ' << static_cast<int>(t.val_[0]);
+        if (channels == 3) {
+            ofs << ' ' << static_cast<int>(t.val_[1]) << ' ' << static_cast<int>(t.val_[2]);
+        }
+        ofs << '\n';
     }
     return true;
 }

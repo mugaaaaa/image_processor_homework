@@ -70,3 +70,31 @@ cpp/
     ├── unit_imgproc.cc      # 图像处理单元测试
     └── unit_codec.cc        # 压缩单元测试
 ```
+
+### C++ 模块包装成 node 原生插件
+
+初始化子项目
+```bash
+mkdir native-addon
+cd native-addon
+npm init -y
+# 安装必要的构建工具和头文件
+npm install node-addon-api bindings
+npm install --save-dev node-gyp
+```
+
+目录结构
+```
+native-addon/
+├── package.json
+├── binding.gyp           # 核心构建配置
+├── index.js              # JS 端入口（暴露给主进程用）
+└── src/
+    └── main.cc           # N-API 胶水代码入口
+```
+
+单元测试方法
+```bash
+cd native-addon
+npm install --save-dev mocha
+```

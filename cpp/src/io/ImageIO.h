@@ -69,6 +69,30 @@ public:
      */
     static bool saveTrip(const std::string& file_path, const std::vector<TripletNode>& triplets);
 
+    /**
+     * @brief 写入完整头部信息的.trip 保存接口。
+     * 
+     * 头部格式：TRIP width height channels count bgB bgG bgR
+     * - channels 仅支持 1（灰度）或 3（彩色）；
+     * - bg_color 为 BGR 顺序（灰度仅用 bg_color[0]）。
+     * 随后每行写入一个三元组：row col v0 [v1 v2]
+     * 
+     * @param file_path 输出 .trip 文件路径
+     * @param width 图像宽度
+     * @param height 图像高度
+     * @param channels 通道数（1 或 3）
+     * @param bg_color 背景色（BGR，灰度仅用第一个分量）
+     * @param triplets 要写入的三元组数据
+     * @return true 成功保存
+     * @return false 失败（参数非法或文件不可写）
+     */
+    static bool saveTrip(const std::string& file_path,
+                         int width,
+                         int height,
+                         int channels,
+                         const uint8_t bg_color[3],
+                         const std::vector<TripletNode>& triplets);
+
 
     // =========================================================
     // Node.js 互操作预留接口 (Buffer I/O)

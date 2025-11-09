@@ -2,6 +2,8 @@
 #include <iostream>
 // 创建输出目录
 #include <filesystem>
+// 使用 std::string 组合测试数据路径
+#include <string>
 // 为了集成测试：从 PNG/PPM 读取 -> 灰度 -> 缩放 -> 压缩 -> 解压 -> 保存结果
 #include "../src/io/ImageIO.h"
 #include "../src/imgproc/ImageProcessor.h"
@@ -14,7 +16,7 @@ int test_imgproc();
 static int test_integration() {
     int failed = 0;
     // 读取 PPM 彩色
-    cv::Mat color = ImageIO::loadPpm("../../data/color-block.ppm");
+    cv::Mat color = ImageIO::loadPpm(std::string(DATA_DIR) + "/color-block.ppm");
     if (color.empty()) { std::cerr << "[IT] load color failed" << std::endl; return ++failed; }
     // 转灰度
     cv::Mat gray = Processor::ToGray(color);
