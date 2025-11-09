@@ -1,0 +1,215 @@
+\doxysection{Image\+IO类 参考}
+\hypertarget{classImageIO}{}\label{classImageIO}\index{ImageIO@{ImageIO}}
+
+
+图像 I/O 接口类  
+
+
+
+
+{\ttfamily \#include $<$Image\+IO.\+h$>$}
+
+
+
+Image\+IO 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classImageIO__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static cv\+::\+Mat \mbox{\hyperlink{classImageIO_a43051767591c0c1ef7bfb6a6f3204d9d}{load\+Png}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em 从文件加载图像 \end{DoxyCompactList}\item 
+static cv\+::\+Mat \mbox{\hyperlink{classImageIO_a0701627acfc98b979d08892fa6cdcaed}{load\+Ppm}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em 从文件加载三元组压缩图像 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 \doxylink{classPpm_a5f02004c53c6f31071323b2105296f0c}{Ppm\+::load\+Ppm\+As\+Mat} \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \mbox{\hyperlink{classImageIO_af6a859c2abb205eecdea9b8bbaf6515b}{load\+Trip}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em 从文件加载三元组压缩图像 \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classImageIO_aac0ed18f1dd6bb9e6298d39af2148858}{save\+Png}} (const std\+::string \&file\+\_\+path, const cv\+::\+Mat \&img)
+\begin{DoxyCompactList}\small\item\em 将图像保存到文件 \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classImageIO_a59adbeaa8f2a15acd710a29aab005777}{save\+Ppm}} (const std\+::string \&file\+\_\+path, const cv\+::\+Mat \&img)
+\begin{DoxyCompactList}\small\item\em 将图像保存到文件 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 \doxylink{classPpm_a9f9f3bb15d5e1874850393e575be1d13}{Ppm\+::save\+Nat\+As\+Ppm} \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classImageIO_a599d6b98c20fa03684d3fe89c4de3616}{save\+Trip}} (const std\+::string \&file\+\_\+path, const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets)
+\begin{DoxyCompactList}\small\item\em 将图像保存到文件 \end{DoxyCompactList}\item 
+static cv\+::\+Mat \mbox{\hyperlink{classImageIO_a0a737c8220d5a6cb85f3343ee7b89add}{Decode\+From\+Buffer}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em \mbox{[}预留\mbox{]} 从内存缓冲区解码图像 (供 Node.\+js 调用)。 \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classImageIO_a474b2a18c015c6f575360b09eab19e25}{Encode\+To\+Buffer}} (const cv\+::\+Mat \&img, const std\+::string \&format, std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}buffer)
+\begin{DoxyCompactList}\small\item\em \mbox{[}预留\mbox{]} 将图像编码到内存缓冲区 (供 Node.\+js 调用)。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+图像 I/O 接口类 
+
+提供了加载和保存 .png、.\+ppm 和 .trip（自定义的压缩类型）图像的静态方法。 
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classImageIO_a0a737c8220d5a6cb85f3343ee7b89add}\label{classImageIO_a0a737c8220d5a6cb85f3343ee7b89add} 
+\index{ImageIO@{ImageIO}!DecodeFromBuffer@{DecodeFromBuffer}}
+\index{DecodeFromBuffer@{DecodeFromBuffer}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{DecodeFromBuffer()}{DecodeFromBuffer()}}
+{\footnotesize\ttfamily static cv\+::\+Mat Image\+IO\+::\+Decode\+From\+Buffer (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{[}预留\mbox{]} 从内存缓冲区解码图像 (供 Node.\+js 调用)。 
+
+
+\begin{DoxyParams}{参数}
+{\em data} & 指向 buffer 数据的指针。 \\
+\hline
+{\em size} & buffer 数据长度。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+cv\+::\+Mat 解码后的图像。 
+\end{DoxyReturn}
+\Hypertarget{classImageIO_a474b2a18c015c6f575360b09eab19e25}\label{classImageIO_a474b2a18c015c6f575360b09eab19e25} 
+\index{ImageIO@{ImageIO}!EncodeToBuffer@{EncodeToBuffer}}
+\index{EncodeToBuffer@{EncodeToBuffer}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{EncodeToBuffer()}{EncodeToBuffer()}}
+{\footnotesize\ttfamily static bool Image\+IO\+::\+Encode\+To\+Buffer (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{const std\+::string \&}]{format,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{[}预留\mbox{]} 将图像编码到内存缓冲区 (供 Node.\+js 调用)。 
+
+
+\begin{DoxyParams}[1]{参数}
+ & {\em img} & 输入图像。 \\
+\hline
+ & {\em format} & 编码格式 \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffer} & 输出的二进制数据。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+true 成功，false 失败。 
+\end{DoxyReturn}
+\Hypertarget{classImageIO_a43051767591c0c1ef7bfb6a6f3204d9d}\label{classImageIO_a43051767591c0c1ef7bfb6a6f3204d9d} 
+\index{ImageIO@{ImageIO}!loadPng@{loadPng}}
+\index{loadPng@{loadPng}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{loadPng()}{loadPng()}}
+{\footnotesize\ttfamily static cv\+::\+Mat Image\+IO\+::load\+Png (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+从文件加载图像 
+
+
+\begin{DoxyParams}{参数}
+{\em file\+\_\+path} & .png 文件路径 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+cv\+::\+Mat 加载的图像 
+\end{DoxyReturn}
+\Hypertarget{classImageIO_a0701627acfc98b979d08892fa6cdcaed}\label{classImageIO_a0701627acfc98b979d08892fa6cdcaed} 
+\index{ImageIO@{ImageIO}!loadPpm@{loadPpm}}
+\index{loadPpm@{loadPpm}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{loadPpm()}{loadPpm()}}
+{\footnotesize\ttfamily static cv\+::\+Mat Image\+IO\+::load\+Ppm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+从文件加载三元组压缩图像 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 \doxylink{classPpm_a5f02004c53c6f31071323b2105296f0c}{Ppm\+::load\+Ppm\+As\+Mat} 
+
+
+\begin{DoxyParams}{参数}
+{\em file\+\_\+path} & .ppm 文件路径 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+cv\+::\+Mat 加载的图像 
+\end{DoxyReturn}
+\Hypertarget{classImageIO_af6a859c2abb205eecdea9b8bbaf6515b}\label{classImageIO_af6a859c2abb205eecdea9b8bbaf6515b} 
+\index{ImageIO@{ImageIO}!loadTrip@{loadTrip}}
+\index{loadTrip@{loadTrip}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{loadTrip()}{loadTrip()}}
+{\footnotesize\ttfamily static std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ Image\+IO\+::load\+Trip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+从文件加载三元组压缩图像 
+
+
+\begin{DoxyParams}{参数}
+{\em file\+\_\+path} & .trip 文件路径 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+std\+::vector$<$\+Triplet\+Node$>$ 加载的三元组 
+\end{DoxyReturn}
+\Hypertarget{classImageIO_aac0ed18f1dd6bb9e6298d39af2148858}\label{classImageIO_aac0ed18f1dd6bb9e6298d39af2148858} 
+\index{ImageIO@{ImageIO}!savePng@{savePng}}
+\index{savePng@{savePng}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{savePng()}{savePng()}}
+{\footnotesize\ttfamily static bool Image\+IO\+::save\+Png (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+将图像保存到文件 
+
+
+\begin{DoxyParams}{参数}
+{\em file\+\_\+path} & .png 文件路径 \\
+\hline
+{\em img} & 要保存的图像 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+true 保存成功 
+
+false 保存失败 
+\end{DoxyReturn}
+\Hypertarget{classImageIO_a59adbeaa8f2a15acd710a29aab005777}\label{classImageIO_a59adbeaa8f2a15acd710a29aab005777} 
+\index{ImageIO@{ImageIO}!savePpm@{savePpm}}
+\index{savePpm@{savePpm}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{savePpm()}{savePpm()}}
+{\footnotesize\ttfamily static bool Image\+IO\+::save\+Ppm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+将图像保存到文件 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 \doxylink{classPpm_a9f9f3bb15d5e1874850393e575be1d13}{Ppm\+::save\+Nat\+As\+Ppm} 
+
+
+\begin{DoxyParams}{参数}
+{\em file\+\_\+path} & .ppm 文件路径 \\
+\hline
+{\em img} & 要保存的图像 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+true 保存成功 
+
+false 保存失败 
+\end{DoxyReturn}
+\Hypertarget{classImageIO_a599d6b98c20fa03684d3fe89c4de3616}\label{classImageIO_a599d6b98c20fa03684d3fe89c4de3616} 
+\index{ImageIO@{ImageIO}!saveTrip@{saveTrip}}
+\index{saveTrip@{saveTrip}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{saveTrip()}{saveTrip()}}
+{\footnotesize\ttfamily static bool Image\+IO\+::save\+Trip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+将图像保存到文件 
+
+
+\begin{DoxyParams}{参数}
+{\em file\+\_\+path} & .trip 文件路径 \\
+\hline
+{\em triplets} & 要保存的三元组 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+true 保存成功 
+
+false 保存失败 
+\end{DoxyReturn}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+src/io/\mbox{\hyperlink{ImageIO_8h}{Image\+IO.\+h}}\end{DoxyCompactItemize}

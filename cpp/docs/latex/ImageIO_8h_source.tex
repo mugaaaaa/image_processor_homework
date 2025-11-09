@@ -1,0 +1,37 @@
+\doxysection{Image\+IO.\+h}
+\hypertarget{ImageIO_8h_source}{}\label{ImageIO_8h_source}\index{src/io/ImageIO.h@{src/io/ImageIO.h}}
+\mbox{\hyperlink{ImageIO_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <opencv2/core/mat.hpp>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classImageIO}{ImageIO}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ cv::Mat\ \mbox{\hyperlink{classImageIO_a43051767591c0c1ef7bfb6a6f3204d9d}{loadPng}}(\textcolor{keyword}{const}\ std::string\&\ file\_path);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ cv::Mat\ \mbox{\hyperlink{classImageIO_a0701627acfc98b979d08892fa6cdcaed}{loadPpm}}(\textcolor{keyword}{const}\ std::string\&\ file\_path);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<TripletNode>\ \mbox{\hyperlink{classImageIO_af6a859c2abb205eecdea9b8bbaf6515b}{loadTrip}}(\textcolor{keyword}{const}\ std::string\&\ file\_path);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classImageIO_aac0ed18f1dd6bb9e6298d39af2148858}{savePng}}(\textcolor{keyword}{const}\ std::string\&\ file\_path,\ \textcolor{keyword}{const}\ cv::Mat\&\ img);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classImageIO_a59adbeaa8f2a15acd710a29aab005777}{savePpm}}(\textcolor{keyword}{const}\ std::string\&\ file\_path,\ \textcolor{keyword}{const}\ cv::Mat\&\ img);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classImageIO_a599d6b98c20fa03684d3fe89c4de3616}{saveTrip}}(\textcolor{keyword}{const}\ std::string\&\ file\_path,\ \textcolor{keyword}{const}\ std::vector<TripletNode>\&\ triplets);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Node.js\ 互操作预留接口\ (Buffer\ I/O)}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ =========================================================}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{static}\ cv::Mat\ \mbox{\hyperlink{classImageIO_a0a737c8220d5a6cb85f3343ee7b89add}{DecodeFromBuffer}}(\textcolor{keyword}{const}\ uint8\_t*\ data,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classImageIO_a474b2a18c015c6f575360b09eab19e25}{EncodeToBuffer}}(\textcolor{keyword}{const}\ cv::Mat\&\ img,\ \textcolor{keyword}{const}\ std::string\&\ format,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<uint8\_t>*\ buffer);}
+\DoxyCodeLine{00093\ \};}
+
+\end{DoxyCode}

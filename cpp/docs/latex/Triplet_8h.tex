@@ -1,0 +1,169 @@
+\doxysection{src/data\+\_\+structure/\+Triplet.h 文件参考}
+\hypertarget{Triplet_8h}{}\label{Triplet_8h}\index{src/data\_structure/Triplet.h@{src/data\_structure/Triplet.h}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$opencv2/core/mat.\+hpp$>$}\newline
+Triplet.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{Triplet_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{Triplet_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structTripletNode}{Triplet\+Node}}
+\begin{DoxyCompactList}\small\item\em 三元组节点结构体，表示图像中非背景色的像素信息 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}}
+\begin{DoxyCompactList}\small\item\em 压缩文件头结构体，存储图像的基本信息 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} \mbox{\hyperlink{Triplet_8h_ab01d84ebade69f93dbbdcb07d14a2607}{find\+Background\+Color}} (const cv\+::\+Mat \&img, uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Triplet 相关工具类，包含背景色统计、\+Mat 与三元组的转换等功能 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{Triplet_8h_a01fac376a7f708e7d899545a7d01e23d}{mat\+To\+Triplets}} (const cv\+::\+Mat \&img, const uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]}, std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets)
+\begin{DoxyCompactList}\small\item\em 将 cv\+::\+Mat 图像转换为三元组表示 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{Triplet_8h_aa8b4422b8be45cc5a41ee77a1a8bc11d}{triplets\+To\+Mat}} (const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets, int width, int height, int channels, const uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]}, cv\+::\+Mat \&img)
+\begin{DoxyCompactList}\small\item\em 将三元组表示转换回 cv\+::\+Mat 图像 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{Triplet_8h_ab1dc3a9dcfcc45e028efb2fe94522dc9}{magic\+\_\+}} \mbox{[}4\mbox{]} = \{\textquotesingle{}T\textquotesingle{}, \textquotesingle{}R\textquotesingle{}, \textquotesingle{}I\textquotesingle{}, \textquotesingle{}P\textquotesingle{}\}
+\item 
+int32\+\_\+t \mbox{\hyperlink{Triplet_8h_a3682f3c38715c7bec9b9af94a983f86f}{width\+\_\+}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{Triplet_8h_addb9979495fc708dd66427dca4580567}{height\+\_\+}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{Triplet_8h_afa2e07384816983d41ba90b7f994eeb9}{channels\+\_\+}}
+\begin{DoxyCompactList}\small\item\em 通道数，1表示灰度图，3表示彩色图 \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{Triplet_8h_a9386eec49bbc5080db41441e86463d9b}{count\+\_\+}}
+\begin{DoxyCompactList}\small\item\em 三元组数量 \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{Triplet_8h_a09adad21c5ed5300c30e3deb2f232f99}{bg\+\_\+color\+\_\+}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em 背景色，彩色图时存储\+BGR ，灰度图时仅用bg\+\_\+color\+\_\+\mbox{[}0\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\Hypertarget{Triplet_8h_ab01d84ebade69f93dbbdcb07d14a2607}\label{Triplet_8h_ab01d84ebade69f93dbbdcb07d14a2607} 
+\index{Triplet.h@{Triplet.h}!findBackgroundColor@{findBackgroundColor}}
+\index{findBackgroundColor@{findBackgroundColor}!Triplet.h@{Triplet.h}}
+\doxysubsubsection{\texorpdfstring{findBackgroundColor()}{findBackgroundColor()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} find\+Background\+Color (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Triplet 相关工具类，包含背景色统计、\+Mat 与三元组的转换等功能 
+
+统计图像中出现频率最高的颜色作为背景色
+
+
+\begin{DoxyParams}{参数}
+{\em img\mbox{[}in\mbox{]}} & 输入图像 \\
+\hline
+{\em bg\+\_\+color\mbox{[}out\mbox{]}} & 接受背景色的数组，彩色图时为3个元素，灰度图时仅用第一个元素 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Triplet_8h_a01fac376a7f708e7d899545a7d01e23d}\label{Triplet_8h_a01fac376a7f708e7d899545a7d01e23d} 
+\index{Triplet.h@{Triplet.h}!matToTriplets@{matToTriplets}}
+\index{matToTriplets@{matToTriplets}!Triplet.h@{Triplet.h}}
+\doxysubsubsection{\texorpdfstring{matToTriplets()}{matToTriplets()}}
+{\footnotesize\ttfamily static void mat\+To\+Triplets (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{const uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]},  }\item[{std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+将 cv\+::\+Mat 图像转换为三元组表示 
+
+
+\begin{DoxyParams}{参数}
+{\em img\mbox{[}in\mbox{]}} & 输入图形 \\
+\hline
+{\em bg\+\_\+color\mbox{[}in\mbox{]}} & 背景颜色 \\
+\hline
+{\em triplets\mbox{[}out\mbox{]}} & 接受三元组结果的向量 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Triplet_8h_aa8b4422b8be45cc5a41ee77a1a8bc11d}\label{Triplet_8h_aa8b4422b8be45cc5a41ee77a1a8bc11d} 
+\index{Triplet.h@{Triplet.h}!tripletsToMat@{tripletsToMat}}
+\index{tripletsToMat@{tripletsToMat}!Triplet.h@{Triplet.h}}
+\doxysubsubsection{\texorpdfstring{tripletsToMat()}{tripletsToMat()}}
+{\footnotesize\ttfamily static void triplets\+To\+Mat (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{channels,  }\item[{const uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]},  }\item[{cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+将三元组表示转换回 cv\+::\+Mat 图像 
+
+
+\begin{DoxyParams}{参数}
+{\em triplets\mbox{[}in\mbox{]}} & 输入的三元组 \\
+\hline
+{\em width\mbox{[}in\mbox{]}} & 图像宽度 \\
+\hline
+{\em height\mbox{[}in\mbox{]}} & 图像高度 \\
+\hline
+{\em channels\mbox{[}in\mbox{]}} & 通道数量 \\
+\hline
+{\em bg\+\_\+color\mbox{[}in\mbox{]}} & 背景颜色 \\
+\hline
+{\em img\mbox{[}out\mbox{]}} & 接受转换后图像的 cv\+::\+Mat 对象 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{变量说明}
+\Hypertarget{Triplet_8h_a09adad21c5ed5300c30e3deb2f232f99}\label{Triplet_8h_a09adad21c5ed5300c30e3deb2f232f99} 
+\index{Triplet.h@{Triplet.h}!bg\_color\_@{bg\_color\_}}
+\index{bg\_color\_@{bg\_color\_}!Triplet.h@{Triplet.h}}
+\doxysubsubsection{\texorpdfstring{bg\_color\_}{bg\_color\_}}
+{\footnotesize\ttfamily uint8\+\_\+t bg\+\_\+color\+\_\+\mbox{[}3\mbox{]}}
+
+
+
+背景色，彩色图时存储\+BGR ，灰度图时仅用bg\+\_\+color\+\_\+\mbox{[}0\mbox{]} 
+
+\Hypertarget{Triplet_8h_afa2e07384816983d41ba90b7f994eeb9}\label{Triplet_8h_afa2e07384816983d41ba90b7f994eeb9} 
+\index{Triplet.h@{Triplet.h}!channels\_@{channels\_}}
+\index{channels\_@{channels\_}!Triplet.h@{Triplet.h}}
+\doxysubsubsection{\texorpdfstring{channels\_}{channels\_}}
+{\footnotesize\ttfamily int32\+\_\+t channels\+\_\+}
+
+
+
+通道数，1表示灰度图，3表示彩色图 
+
+\Hypertarget{Triplet_8h_a9386eec49bbc5080db41441e86463d9b}\label{Triplet_8h_a9386eec49bbc5080db41441e86463d9b} 
+\index{Triplet.h@{Triplet.h}!count\_@{count\_}}
+\index{count\_@{count\_}!Triplet.h@{Triplet.h}}
+\doxysubsubsection{\texorpdfstring{count\_}{count\_}}
+{\footnotesize\ttfamily uint64\+\_\+t count\+\_\+}
+
+
+
+三元组数量 
+
+\Hypertarget{Triplet_8h_addb9979495fc708dd66427dca4580567}\label{Triplet_8h_addb9979495fc708dd66427dca4580567} 
+\index{Triplet.h@{Triplet.h}!height\_@{height\_}}
+\index{height\_@{height\_}!Triplet.h@{Triplet.h}}
+\doxysubsubsection{\texorpdfstring{height\_}{height\_}}
+{\footnotesize\ttfamily int32\+\_\+t height\+\_\+}
+
+\Hypertarget{Triplet_8h_ab1dc3a9dcfcc45e028efb2fe94522dc9}\label{Triplet_8h_ab1dc3a9dcfcc45e028efb2fe94522dc9} 
+\index{Triplet.h@{Triplet.h}!magic\_@{magic\_}}
+\index{magic\_@{magic\_}!Triplet.h@{Triplet.h}}
+\doxysubsubsection{\texorpdfstring{magic\_}{magic\_}}
+{\footnotesize\ttfamily char magic\+\_\+\mbox{[}4\mbox{]} = \{\textquotesingle{}T\textquotesingle{}, \textquotesingle{}R\textquotesingle{}, \textquotesingle{}I\textquotesingle{}, \textquotesingle{}P\textquotesingle{}\}}
+
+\Hypertarget{Triplet_8h_a3682f3c38715c7bec9b9af94a983f86f}\label{Triplet_8h_a3682f3c38715c7bec9b9af94a983f86f} 
+\index{Triplet.h@{Triplet.h}!width\_@{width\_}}
+\index{width\_@{width\_}!Triplet.h@{Triplet.h}}
+\doxysubsubsection{\texorpdfstring{width\_}{width\_}}
+{\footnotesize\ttfamily int32\+\_\+t width\+\_\+}
+

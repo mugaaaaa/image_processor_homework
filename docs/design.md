@@ -11,9 +11,9 @@ cpp核心计算模块分成这几个部分：
 cpp/
 ├── CMakeLists.txt           # 主构建文件
 ├── src/
-│   ├── data_structure/                  # 三元组数据结构
-│   │   ├── Triplet.h        # 三元组定义及基础转换工具
-│   │   └── Triplet.cc       # 实现背景色统计、Mat转三元组等
+│   ├── data_structure/      # 三元组数据结构
+│   │   ├── Triplet.h        # 三元组定义及背景色统计、Mat 和三元组互转等
+│   │   └── Triplet.cc
 │   ├── io/                  # I/O 模块
 │   │   ├── ImageIO.h        # 统一图像读写接口 (含 Node Buffer 预留)
 │   │   ├── ImageIO.cc
@@ -22,13 +22,13 @@ cpp/
 │   ├── codec/               # 压缩/解压模块
 │   │   ├── Compressor.h     # .trip 文件编解码
 │   │   └── Compressor.cc
-│   └── imgproc/             # 图像处理算法模块
+│   └── imgproc/             # 图像处理模块
 │       ├── Processor.h      # 灰度化、缩放
 │       └── Processor.cc
 └── test/                    # 测试模块
     ├── CMakeLists.txt
     ├── test_main.cc         # 集成测试入口
     ├── unit_io.cc           # I/O 单元测试
-    ├── unit_imgproc.cc         # 算法单元测试
+    ├── unit_imgproc.cc      # 图像处理单元测试
     └── unit_codec.cc        # 压缩单元测试
 ```

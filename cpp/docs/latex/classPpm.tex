@@ -1,0 +1,74 @@
+\doxysection{Ppm类 参考}
+\hypertarget{classPpm}{}\label{classPpm}\index{Ppm@{Ppm}}
+
+
+{\ttfamily \#include $<$Ppm.\+h$>$}
+
+
+
+Ppm 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classPpm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{静态 Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static cv\+::\+Mat \mbox{\hyperlink{classPpm_a5f02004c53c6f31071323b2105296f0c}{load\+Ppm\+As\+Mat}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em 手动读取 PPM 文件(P2 或 P3 格式)。 \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPpm_a9f9f3bb15d5e1874850393e575be1d13}{save\+Nat\+As\+Ppm}} (const std\+::string \&file\+\_\+path, const cv\+::\+Mat \&img)
+\begin{DoxyCompactList}\small\item\em 手动保存为 PPM 格式。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classPpm_a5f02004c53c6f31071323b2105296f0c}\label{classPpm_a5f02004c53c6f31071323b2105296f0c} 
+\index{Ppm@{Ppm}!loadPpmAsMat@{loadPpmAsMat}}
+\index{loadPpmAsMat@{loadPpmAsMat}!Ppm@{Ppm}}
+\doxysubsubsection{\texorpdfstring{loadPpmAsMat()}{loadPpmAsMat()}}
+{\footnotesize\ttfamily static cv\+::\+Mat Ppm\+::load\+Ppm\+As\+Mat (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+手动读取 PPM 文件(P2 或 P3 格式)。 
+
+
+\begin{DoxyItemize}
+\item 并在读取数据时将 RGB 转换为 Open\+CV 默认的 BGR 顺序。 
+\begin{DoxyParams}{参数}
+{\em file\+\_\+path} & PPM 文件路径。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+cv\+::\+Mat 读取的图像 (CV\+\_\+8\+UC1 或 CV\+\_\+8\+UC3)。 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{classPpm_a9f9f3bb15d5e1874850393e575be1d13}\label{classPpm_a9f9f3bb15d5e1874850393e575be1d13} 
+\index{Ppm@{Ppm}!saveNatAsPpm@{saveNatAsPpm}}
+\index{saveNatAsPpm@{saveNatAsPpm}!Ppm@{Ppm}}
+\doxysubsubsection{\texorpdfstring{saveNatAsPpm()}{saveNatAsPpm()}}
+{\footnotesize\ttfamily static bool Ppm\+::save\+Nat\+As\+Ppm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+手动保存为 PPM 格式。 
+
+
+\begin{DoxyParams}{参数}
+{\em file\+\_\+path} & 目标路径。 \\
+\hline
+{\em img} & 输入图像 (CV\+\_\+8\+UC1 或 CV\+\_\+8\+UC3, 分别用 P2 或 P3 格式保存)。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+true 保存成功 
+
+false 保存失败 
+\end{DoxyReturn}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+src/io/\mbox{\hyperlink{Ppm_8h}{Ppm.\+h}}\end{DoxyCompactItemize}

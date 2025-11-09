@@ -1,0 +1,35 @@
+\doxysection{Triplet.\+h}
+\hypertarget{Triplet_8h_source}{}\label{Triplet_8h_source}\index{src/data\_structure/Triplet.h@{src/data\_structure/Triplet.h}}
+\mbox{\hyperlink{Triplet_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <opencv2/core/mat.hpp>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTripletNode}{TripletNode}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structTripletNode_ac9a4de9eb60afbc4dba2ed1619ea4839}{row\_}};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structTripletNode_a7248218fd56b58b2e55ebbd3b94e19c6}{col\_}};}
+\DoxyCodeLine{00012\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structTripletNode_a544721c4e0321517ffbbdc3732146a73}{val\_}}[3];\ }
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCompressedHeader}{CompressedHeader}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structCompressedHeader_a9e19a0e62dc04134064ebcaa1fe995fc}{magic\_}}[4]\ =\ \{\textcolor{charliteral}{'T'},\ \textcolor{charliteral}{'R'},\ \textcolor{charliteral}{'I'},\ \textcolor{charliteral}{'P'}\};\ \textcolor{comment}{//\ 魔法数字，作为文件标识}}
+\DoxyCodeLine{00021\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structCompressedHeader_ad041d9d9ca908d3986524e47e41b174f}{width\_}};}
+\DoxyCodeLine{00022\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structCompressedHeader_afc9f41b1d1233f1bf6cc58709d05fbfa}{height\_}};}
+\DoxyCodeLine{00023\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structCompressedHeader_ad19184952066ea533a53711b3a299100}{channels\_}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structCompressedHeader_a1c2214c052c15661a5f42c6a10bacb43}{count\_}};\ }
+\DoxyCodeLine{00025\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structCompressedHeader_a817875b99aad3f578ec888c518798f54}{bg\_color\_}}[3];\ }
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }TripletUtils\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Triplet_8h_ab01d84ebade69f93dbbdcb07d14a2607}{findBackgroundColor}}(\textcolor{keyword}{const}\ cv::Mat\&\ img,\ uint8\_t\ bg\_color[3]);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Triplet_8h_a01fac376a7f708e7d899545a7d01e23d}{matToTriplets}}(\textcolor{keyword}{const}\ cv::Mat\&\ img,\ \textcolor{keyword}{const}\ uint8\_t\ bg\_color[3],\ std::vector<TripletNode>\&\ triplets);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Triplet_8h_aa8b4422b8be45cc5a41ee77a1a8bc11d}{tripletsToMat}}(\textcolor{keyword}{const}\ std::vector<TripletNode>\&\ triplets,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ channels,\ \textcolor{keyword}{const}\ uint8\_t\ bg\_color[3],\ cv::Mat\&\ img);}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}
