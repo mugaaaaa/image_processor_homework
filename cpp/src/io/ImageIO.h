@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdint>
 #include <opencv2/core/mat.hpp>
+#include "../data_structure/Triplet.h"
 
 /**
  * @brief 图像 I/O 接口类
