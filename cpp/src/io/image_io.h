@@ -15,7 +15,7 @@
 #include <vector>
 #include <cstdint>
 #include <opencv2/core/mat.hpp>
-#include "../data_structure/Triplet.h"
+#include "../data_structure/triplet.h"
 
 /**
  * @brief 图像 I/O 接口类
@@ -31,7 +31,7 @@ public:
      * @param file_path .png 文件路径
      * @return cv::Mat 加载的图像
      */
-    static cv::Mat loadPng(const std::string& file_path);
+    static cv::Mat LoadPng(const std::string& file_path);
 
     /**
      * @brief 从文件加载三元组压缩图像
@@ -40,7 +40,7 @@ public:
      * @param file_path .ppm 文件路径
      * @return cv::Mat 加载的图像
      */
-    static cv::Mat loadPpm(const std::string& file_path);
+    static cv::Mat LoadPpm(const std::string& file_path);
 
     /**
      * @brief 从文件加载三元组压缩图像
@@ -48,7 +48,7 @@ public:
      * @param file_path .trip 文件路径
      * @return std::vector<TripletNode> 加载的三元组
      */
-    static std::vector<TripletNode> loadTrip(const std::string& file_path);
+    static std::vector<TripletNode> LoadTrip(const std::string& file_path);
 
     /**
      * @brief 将图像保存到文件
@@ -58,7 +58,7 @@ public:
      * @return true 保存成功
      * @return false 保存失败
      */
-    static bool savePng(const std::string& file_path, const cv::Mat& img);
+    static bool SavePng(const std::string& file_path, const cv::Mat& img);
 
     /**
      * @brief 将图像保存到文件
@@ -69,7 +69,7 @@ public:
      * @return true 保存成功
      * @return false 保存失败
      */
-    static bool savePpm(const std::string& file_path, const cv::Mat& img);
+    static bool SavePpm(const std::string& file_path, const cv::Mat& img);
 
     /**
      * @brief 将图像保存到文件
@@ -79,7 +79,7 @@ public:
      * @return true 保存成功
      * @return false 保存失败
      */
-    static bool saveTrip(const std::string& file_path, const std::vector<TripletNode>& triplets);
+    static bool SaveTrip(const std::string& file_path, const std::vector<TripletNode>& triplets);
 
     /**
      * @brief 写入完整头部信息的.trip 保存接口。
@@ -98,7 +98,7 @@ public:
      * @return true 成功保存
      * @return false 失败（参数非法或文件不可写）
      */
-    static bool saveTrip(const std::string& file_path,
+    static bool SaveTrip(const std::string& file_path,
                          int width,
                          int height,
                          int channels,

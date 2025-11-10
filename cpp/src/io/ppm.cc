@@ -42,7 +42,7 @@ static bool readToken(std::istream& is, std::string& tok) {
 }
 
 // 读取 PPM 文件(P2 或 P3 格式) 为 cv::Mat
-cv::Mat Ppm::loadPpmAsMat(const std::string& file_path) {
+cv::Mat Ppm::LoadPpmAsMat(const std::string& file_path) {
     // 打开文件流，若打开失败则返回空 cv::Mat
     std::ifstream ifs(file_path);
     if (!ifs) return cv::Mat();
@@ -111,7 +111,7 @@ cv::Mat Ppm::loadPpmAsMat(const std::string& file_path) {
 }
 
 // 保存 cv::Mat 为 PPM 格式
-bool Ppm::saveNatAsPpm(const std::string& file_path, const cv::Mat& img) {
+bool Ppm::SaveNatAsPpm(const std::string& file_path, const cv::Mat& img) {
     // 打开文件流，若打开失败则返回 false
     std::ofstream ofs(file_path);
     if (!ofs) return false;

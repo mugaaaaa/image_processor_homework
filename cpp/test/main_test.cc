@@ -5,9 +5,9 @@
 // 使用 std::string 组合测试数据路径
 #include <string>
 // 为了集成测试：从 PNG/PPM 读取 -> 灰度 -> 缩放 -> 压缩 -> 解压 -> 保存结果
-#include "../src/io/ImageIO.h"
-#include "../src/imgproc/ImageProcessor.h"
-#include "../src/codec/Compressor.h"
+#include "../src/io/image_io.h"
+#include "../src/imgproc/image_processor.h"
+#include "../src/codec/compressor.h"
 
 int test_io();
 int test_codec();
@@ -16,7 +16,7 @@ int test_imgproc();
 static int test_integration() {
     int failed = 0;
     // 读取 PPM 彩色
-    cv::Mat color = ImageIO::loadPpm(std::string(DATA_DIR) + "/color-block.ppm");
+    cv::Mat color = ImageIO::LoadPpm(std::string(DATA_DIR) + "/color-block.ppm");
     if (color.empty()) { std::cerr << "[IT] load color failed" << std::endl; return ++failed; }
     // 转灰度
     cv::Mat gray = Processor::ToGray(color);
@@ -30,7 +30,7 @@ static int test_integration() {
     cv::Mat recon = Compressor::Load(trip_path);
     if (recon.empty() || recon.size() != resized.size() || recon.type() != resized.type()) { std::cerr << "[IT] Load trip mismatch" << std::endl; ++failed; }
     // 保存 PNG 输出
-    if (!ImageIO::savePng("/tmp/it_output.png", recon)) { std::cerr << "[IT] save png failed" << std::endl; ++failed; }
+    if (!ImageIO::SavePng("/tmp/it_output.png", recon)) { std::cerr << "[IT] save png failed" << std::endl; ++failed; }
     return failed;
 }
 

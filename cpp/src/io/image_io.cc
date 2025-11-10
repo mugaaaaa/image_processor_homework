@@ -9,21 +9,21 @@
  * 
  */
 
-#include "ImageIO.h"
+#include "image_io.h"
 #include <opencv2/imgcodecs.hpp>
-#include "Ppm.h"
+#include "ppm.h"
 #include <fstream>
 
-cv::Mat ImageIO::loadPng(const std::string& file_path) {
+cv::Mat ImageIO::LoadPng(const std::string& file_path) {
     return cv::imread(file_path, cv::IMREAD_UNCHANGED);
 }
 
-cv::Mat ImageIO::loadPpm(const std::string& file_path) {
-    return Ppm::loadPpmAsMat(file_path);
+cv::Mat ImageIO::LoadPpm(const std::string& file_path) {
+    return Ppm::LoadPpmAsMat(file_path);
 }
 
 // 读取文件头：TRIP width height channels count bgB bgG bgR
-static bool parseHeader(std::istream& is, CompressedHeader& hdr) {
+static bool ParseHeader(std::istream& is, CompressedHeader& hdr) {
     std::string magic; is >> magic;
     if (magic != "TRIP") return false;
     is >> hdr.width_ >> hdr.height_ >> hdr.channels_ >> hdr.count_;
@@ -34,11 +34,11 @@ static bool parseHeader(std::istream& is, CompressedHeader& hdr) {
     return !is.fail();
 }
 
-std::vector<TripletNode> ImageIO::loadTrip(const std::string& file_path) {
+std::vector<TripletNode> ImageIO::LoadTrip(const std::string& file_path) {
     std::ifstream ifs(file_path);
     if (!ifs) return {};
     CompressedHeader hdr{};
-    if (!parseHeader(ifs, hdr)) return {};
+    if (!ParseHeader(ifs, hdr)) return {};
     std::vector<TripletNode> triplets;
     triplets.reserve(static_cast<size_t>(hdr.count_));
     int row, col, v0, v1, v2;
@@ -56,15 +56,15 @@ std::vector<TripletNode> ImageIO::loadTrip(const std::string& file_path) {
     return triplets;
 }
 
-bool ImageIO::savePng(const std::string& file_path, const cv::Mat& img) {
+bool ImageIO::SavePng(const std::string& file_path, const cv::Mat& img) {
     return cv::imwrite(file_path, img);
 }
 
-bool ImageIO::savePpm(const std::string& file_path, const cv::Mat& img) {
-    return Ppm::saveNatAsPpm(file_path, img);
+bool ImageIO::SavePpm(const std::string& file_path, const cv::Mat& img) {
+    return Ppm::SaveNatAsPpm(file_path, img);
 }
 
-bool ImageIO::saveTrip(const std::string& file_path,
+bool ImageIO::SaveTrip(const std::string& file_path,
                        int width,
                        int height,
                        int channels,

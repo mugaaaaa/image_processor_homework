@@ -18,7 +18,7 @@
 #include <fstream>
 
 // 写入 .trip 文件头
-static bool writeHeader(std::ostream& os, const CompressedHeader& hdr) {
+static bool WriteHeader(std::ostream& os, const CompressedHeader& hdr) {
     // 写入魔法数字，宽，高，通道数，三元组数量，背景色等信息
     os << "TRIP " << hdr.width_ << ' ' << hdr.height_ << ' ' << hdr.channels_ << ' '
        << hdr.count_ << ' ' << static_cast<int>(hdr.bg_color_[0]) << ' '
@@ -28,7 +28,7 @@ static bool writeHeader(std::ostream& os, const CompressedHeader& hdr) {
 }
 
 // 读取 .trip 文件头
-static bool readHeader(std::istream& is, CompressedHeader& hdr) {
+static bool ReadHeader(std::istream& is, CompressedHeader& hdr) {
     // 读取魔法数字，如果不是 ”TRIP“ 则返回 false
     std::string magic; is >> magic;
     if (magic != "TRIP") return false;
@@ -49,11 +49,11 @@ bool Compressor::Save(const std::string& file_path, const cv::Mat& img) {
 
     // 创建 bg 并接受 findBackgroundColor 的结果作为背景色
     uint8_t bg[3] = {0,0,0};
-    TripletUtils::findBackgroundColor(img, bg);
+    TripletUtils::FindBackgroundColor(img, bg);
 
     // 接收 matToTriplets 的结果作为三元组表示
     std::vector<TripletNode> triplets;
-    TripletUtils::matToTriplets(img, bg, triplets);
+    TripletUtils::MatToTriplets(img, bg, triplets);
 
     // 初始化并填充文件头部信息
     CompressedHeader hdr{};
@@ -66,7 +66,7 @@ bool Compressor::Save(const std::string& file_path, const cv::Mat& img) {
     if (!ofs) return false;
 
     // 写入文件头
-    if (!writeHeader(ofs, hdr)) return false;
+    if (!WriteHeader(ofs, hdr)) return false;
 
     // 写入三元组，后续可能可以继续优化
     for (const auto& t : triplets) {
@@ -88,7 +88,7 @@ cv::Mat Compressor::Load(const std::string& file_path) {
 
     // 读取文件头信息，如果读取失败就返回空 cv::Mat
     CompressedHeader hdr{};
-    if (!readHeader(ifs, hdr)) return cv::Mat();
+    if (!ReadHeader(ifs, hdr)) return cv::Mat();
 
     // 预分配空间，避免后续 resize 导致的性能问题
     std::vector<TripletNode> triplets;
@@ -110,7 +110,7 @@ cv::Mat Compressor::Load(const std::string& file_path) {
 
     // 调用三元组工具类的 tripletsToMat 方法吧上一步的 std::vector<TripletNode> 转为 cv::Mat
     cv::Mat img;
-    TripletUtils::tripletsToMat(triplets, hdr.width_, hdr.height_, hdr.channels_, hdr.bg_color_, img);
+    TripletUtils::TripletsToMat(triplets, hdr.width_, hdr.height_, hdr.channels_, hdr.bg_color_, img);
     
     return img;
 }

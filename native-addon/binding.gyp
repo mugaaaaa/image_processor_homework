@@ -10,11 +10,11 @@
         "src/main.cc",
         # 这里需要显式列出你 C++ 核心模块的所有源文件。
         # node-gyp 对跨目录通配符的支持有限，建议手动列出，虽然繁琐但最稳妥。
-        "../cpp/src/data_structure/Triplet.cc",
-        "../cpp/src/io/ImageIO.cc",
-        "../cpp/src/io/Ppm.cc",
-        "../cpp/src/codec/Compressor.cc",
-        "../cpp/src/imgproc/ImageProcessor.cc"
+        "../cpp/src/data_structure/triplet.cc",
+        "../cpp/src/io/image_io.cc",
+        "../cpp/src/io/ppm.cc",
+        "../cpp/src/codec/compressor.cc",
+        "../cpp/src/imgproc/image_processor.cc"
       ],
       
       "include_dirs": [

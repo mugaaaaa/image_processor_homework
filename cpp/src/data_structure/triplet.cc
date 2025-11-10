@@ -14,7 +14,7 @@
 #include <array>
 
 // 统计所有颜色出现频次，选出频次最高的为背景色
-void TripletUtils::findBackgroundColor(const cv::Mat& img, uint8_t bg_color[3]) {
+void TripletUtils::FindBackgroundColor(const cv::Mat& img, uint8_t bg_color[3]) {
     int channels = img.channels();
     
     if (channels == 1) {
@@ -69,7 +69,7 @@ void TripletUtils::findBackgroundColor(const cv::Mat& img, uint8_t bg_color[3]) 
 }
 
 // 将图像转换为三元组表示
-void TripletUtils::matToTriplets(const cv::Mat& img, const uint8_t bg_color[3], std::vector<TripletNode>& triplets) {
+void TripletUtils::MatToTriplets(const cv::Mat& img, const uint8_t bg_color[3], std::vector<TripletNode>& triplets) {
     // 清空输出向量防止，有脏数据
     triplets.clear();
 
@@ -100,7 +100,7 @@ void TripletUtils::matToTriplets(const cv::Mat& img, const uint8_t bg_color[3], 
     }
 }
 
-void TripletUtils::tripletsToMat(const std::vector<TripletNode>& triplets, int width, int height, int channels, const uint8_t bg_color[3], cv::Mat& img) {
+void TripletUtils::TripletsToMat(const std::vector<TripletNode>& triplets, int width, int height, int channels, const uint8_t bg_color[3], cv::Mat& img) {
     if (channels == 1) {
         img = cv::Mat(height, width, CV_8UC1, cv::Scalar(bg_color[0]));
         for (const auto& node : triplets) {

@@ -1,8 +1,8 @@
 // 压缩/解压模块单元测试：Triplet 文本格式 Save/Load 循环一致
 #include <iostream>
 #include <opencv2/opencv.hpp>
-#include "../src/codec/Compressor.h"
-#include "../src/io/ImageIO.h"
+#include "../src/codec/compressor.h"
+#include "../src/io/image_io.h"
 #include <cstring>
 
 static bool compareMat(const cv::Mat& a, const cv::Mat& b) {
@@ -13,7 +13,7 @@ static bool compareMat(const cv::Mat& a, const cv::Mat& b) {
 int test_codec() {
     int failed = 0;
     // 使用彩色块图测试，便于出现非均匀背景
-    cv::Mat color = ImageIO::loadPpm(std::string(DATA_DIR) + "/color-block.ppm");
+    cv::Mat color = ImageIO::LoadPpm(std::string(DATA_DIR) + "/color-block.ppm");
     if (color.empty()) { std::cerr << "[Codec] load color failed" << std::endl; return ++failed; }
 
     const std::string trip_path = std::string(OUTPUT_DIR) + "/out_color.trip";
@@ -29,7 +29,7 @@ int test_codec() {
     }
     
     // 灰度图也测试一次
-    cv::Mat gray = ImageIO::loadPpm(std::string(DATA_DIR) + "/lena-128-gray.ppm");
+    cv::Mat gray = ImageIO::LoadPpm(std::string(DATA_DIR) + "/lena-128-gray.ppm");
     if (gray.empty()) { std::cerr << "[Codec] load gray failed" << std::endl; return ++failed; }
     const std::string trip_path2 = std::string(OUTPUT_DIR) + "/out_lena128.trip";
     if (!Compressor::Save(trip_path2, gray)) { std::cerr << "[Codec] Save gray trip failed" << std::endl; ++failed; }

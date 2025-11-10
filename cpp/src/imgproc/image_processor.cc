@@ -9,11 +9,11 @@
  * 
  */
 
-#include "ImageProcessor.h"
+#include "image_processor.h"
 #include <cmath>
 
 // 辅助函数：将像素值 clamp 到 [0, 255] 范围
-static inline uint8_t clamp255(int v) { 
+static inline uint8_t Clamp255(int v) { 
     return static_cast<uint8_t>(v < 0 ? 0 : (v > 255 ? 255 : v)); 
 }
 
@@ -32,7 +32,7 @@ cv::Mat Processor::ToGray(const cv::Mat& input) {
             const cv::Vec3b& bgr = inrow[c];    // 通过行指针 inrow 和列偏移 c 访问到当前的 cv::Vec3b 像素
             // Gray = 0.299*R + 0.587*G + 0.114*B，按 BGR 顺序填充之后 clamp
             int g = static_cast<int>(0.299 * bgr[2] + 0.587 * bgr[1] + 0.114 * bgr[0]);
-            outrow[c] = clamp255(g);
+            outrow[c] = Clamp255(g);
         }
     }
 
@@ -93,7 +93,7 @@ cv::Mat Processor::Resize(const cv::Mat& input, int new_width, int new_height) {
 
                 // 计算插值结果并写入输出图像
                 double v = (1 - wx) * (1 - wy) * Q00 + wx * (1 - wy) * Q10 + (1 - wx) * wy * Q01 + wx * wy * Q11;
-                out.at<uint8_t>(y, x) = clamp255(static_cast<int>(std::round(v)));
+                out.at<uint8_t>(y, x) = Clamp255(static_cast<int>(std::round(v)));
             } else {    // 三通道时使用 cv::Vec3b 类型
                 const cv::Vec3b Q00 = input.at<cv::Vec3b>(y0, x0);
                 const cv::Vec3b Q10 = input.at<cv::Vec3b>(y0, x1);

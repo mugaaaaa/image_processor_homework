@@ -1,12 +1,12 @@
 // 图像处理模块单元测试：灰度转换与双线性缩放
 #include <iostream>
 #include <opencv2/opencv.hpp>
-#include "../src/imgproc/ImageProcessor.h"
-#include "../src/io/ImageIO.h"
+#include "../src/imgproc/image_processor.h"
+#include "../src/io/image_io.h"
 
 int test_imgproc() {
     int failed = 0;
-    cv::Mat color = ImageIO::loadPpm(std::string(DATA_DIR) + "/color-block.ppm");
+    cv::Mat color = ImageIO::LoadPpm(std::string(DATA_DIR) + "/color-block.ppm");
     if (color.empty()) { std::cerr << "[ImgProc] load color failed" << std::endl; return ++failed; }
 
     // ToGray

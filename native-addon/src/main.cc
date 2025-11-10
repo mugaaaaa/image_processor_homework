@@ -2,9 +2,9 @@
 #include <napi.h>
 #include <opencv2/opencv.hpp>
 #include <cstring>
-#include "../../cpp/src/io/ImageIO.h"
-#include "../../cpp/src/codec/Compressor.h"
-#include "../../cpp/src/imgproc/ImageProcessor.h"
+#include "../../cpp/src/io/image_io.h"
+#include "../../cpp/src/codec/compressor.h"
+#include "../../cpp/src/imgproc/image_processor.h"
 
 // Utility: create Napi::Error on failure
 static inline Napi::Error MakeError(Napi::Env env, const std::string& msg) {
@@ -19,7 +19,7 @@ static Napi::Value LoadPngWrapped(const Napi::CallbackInfo& info) {
     throw MakeError(env, "loadPng(filePath) expects a string path");
   }
   std::string path = info[0].As<Napi::String>().Utf8Value();
-  cv::Mat img = ImageIO::loadPng(path);
+  cv::Mat img = ImageIO::LoadPng(path);
   if (img.empty()) {
     throw MakeError(env, "Failed to load PNG: " + path);
   }
@@ -41,7 +41,7 @@ static Napi::Value LoadPpmWrapped(const Napi::CallbackInfo& info) {
     throw MakeError(env, "loadPpm(filePath) expects a string path");
   }
   std::string path = info[0].As<Napi::String>().Utf8Value();
-  cv::Mat img = ImageIO::loadPpm(path);
+  cv::Mat img = ImageIO::LoadPpm(path);
   if (img.empty()) {
     throw MakeError(env, "Failed to load PPM: " + path);
   }
@@ -74,7 +74,7 @@ static Napi::Value SavePngWrapped(const Napi::CallbackInfo& info) {
     throw MakeError(env, "dataBuffer length is insufficient");
   }
   std::memcpy(img.data, buf.Data(), needed);
-  bool ok = ImageIO::savePng(path, img);
+  bool ok = ImageIO::SavePng(path, img);
   return Napi::Boolean::New(env, ok);
 }
 
@@ -95,7 +95,7 @@ static Napi::Value SavePpmWrapped(const Napi::CallbackInfo& info) {
     throw MakeError(env, "dataBuffer length is insufficient");
   }
   std::memcpy(img.data, buf.Data(), needed);
-  bool ok = ImageIO::savePpm(path, img);
+  bool ok = ImageIO::SavePpm(path, img);
   return Napi::Boolean::New(env, ok);
 }
 
@@ -225,7 +225,7 @@ static Napi::Value SaveTripWrapped(const Napi::CallbackInfo& info) {
     t.val_[2] = static_cast<uint8_t>(val.Get((uint32_t)2).As<Napi::Number>().Int32Value());
     triplets.push_back(t);
   }
-  bool ok = ImageIO::saveTrip(path, width, height, channels, bg, triplets);
+  bool ok = ImageIO::SaveTrip(path, width, height, channels, bg, triplets);
   return Napi::Boolean::New(env, ok);
 }
 
