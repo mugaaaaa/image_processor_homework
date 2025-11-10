@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from "electron";
+import { app, BrowserWindow, ipcMain, dialog, Menu } from "electron";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -12,6 +12,14 @@ process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, 
 let win;
 function createWindow() {
   win = new BrowserWindow({
+    width: 1024,
+    height: 612,
+    // // 去掉窗口原生边框/工具栏（frame: false），并隐藏菜单栏（autoHideMenuBar: true）
+    // // 注意：去掉 frame 后，窗口将没有系统标题栏，需要在渲染层添加可拖拽区域（-webkit-app-region: drag）
+    // frame: false,
+    // autoHideMenuBar: true,
+    // // macOS 专用：隐藏原生标题栏，配合 frameless 使用可以得到更自然的外观
+    // titleBarStyle: 'hidden',
     icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
     webPreferences: {
       preload: path.join(__dirname$1, "preload.mjs"),
@@ -22,6 +30,12 @@ function createWindow() {
   win.webContents.on("did-finish-load", () => {
     win == null ? void 0 : win.webContents.send("main-process-message", (/* @__PURE__ */ new Date()).toLocaleString());
   });
+  try {
+    Menu.setApplicationMenu(null);
+    win.setMenuBarVisibility(false);
+  } catch (e) {
+    console.error("Failed to remove application menu", e);
+  }
   if (VITE_DEV_SERVER_URL) {
     win.loadURL(VITE_DEV_SERVER_URL);
   } else {
@@ -78,6 +92,57 @@ ipcMain.handle("native:compressorSave", async (_event, filePath, img) => {
 ipcMain.handle("native:compressorLoad", async (_event, filePath) => {
   if (!native) throw new Error("native addon not loaded");
   return native.compressorLoad(filePath);
+});
+ipcMain.handle("dialog:openImage", async () => {
+  const result = await dialog.showOpenDialog(win, {
+    properties: ["openFile"],
+    filters: [
+      { name: "Images", extensions: ["png", "ppm"] },
+      { name: "All Files", extensions: ["*"] }
+    ]
+  });
+  return result.canceled ? null : result.filePaths[0];
+});
+ipcMain.handle("dialog:savePng", async () => {
+  const result = await dialog.showSaveDialog(win, {
+    filters: [{ name: "PNG Image", extensions: ["png"] }],
+    defaultPath: "image.png"
+  });
+  return result.canceled ? null : result.filePath;
+});
+ipcMain.handle("dialog:savePpm", async () => {
+  const result = await dialog.showSaveDialog(win, {
+    filters: [{ name: "PPM Image", extensions: ["ppm"] }],
+    defaultPath: "image.ppm"
+  });
+  return result.canceled ? null : result.filePath;
+});
+ipcMain.handle("dialog:openTrip", async () => {
+  const result = await dialog.showOpenDialog(win, {
+    properties: ["openFile"],
+    filters: [
+      { name: "Trip Files", extensions: ["trip"] },
+      { name: "All Files", extensions: ["*"] }
+    ]
+  });
+  return result.canceled ? null : result.filePaths[0];
+});
+ipcMain.handle("dialog:saveTrip", async () => {
+  const result = await dialog.showSaveDialog(win, {
+    filters: [{ name: "Trip Files", extensions: ["trip"] }],
+    defaultPath: "image.trip"
+  });
+  return result.canceled ? null : result.filePath;
+});
+ipcMain.handle("dialog:saveImage", async () => {
+  const result = await dialog.showSaveDialog(win, {
+    filters: [
+      { name: "PNG Image", extensions: ["png"] },
+      { name: "PPM Image", extensions: ["ppm"] }
+    ],
+    defaultPath: "image.png"
+  });
+  return result.canceled ? null : result.filePath;
 });
 export {
   MAIN_DIST,

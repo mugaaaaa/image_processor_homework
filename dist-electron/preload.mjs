@@ -28,5 +28,12 @@ electron.contextBridge.exposeInMainWorld("native", {
   toGray: (img) => electron.ipcRenderer.invoke("native:toGray", img),
   resize: (img, newW, newH) => electron.ipcRenderer.invoke("native:resize", img, newW, newH),
   compressorSave: (filePath, img) => electron.ipcRenderer.invoke("native:compressorSave", filePath, img),
-  compressorLoad: (filePath) => electron.ipcRenderer.invoke("native:compressorLoad", filePath)
+  compressorLoad: (filePath) => electron.ipcRenderer.invoke("native:compressorLoad", filePath),
+  // File dialogs
+  openImageDialog: () => electron.ipcRenderer.invoke("dialog:openImage"),
+  savePngDialog: () => electron.ipcRenderer.invoke("dialog:savePng"),
+  savePpmDialog: () => electron.ipcRenderer.invoke("dialog:savePpm"),
+  openTripDialog: () => electron.ipcRenderer.invoke("dialog:openTrip"),
+  saveTripDialog: () => electron.ipcRenderer.invoke("dialog:saveTrip"),
+  saveImageDialog: () => electron.ipcRenderer.invoke("dialog:saveImage")
 });

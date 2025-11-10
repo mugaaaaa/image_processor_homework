@@ -33,4 +33,12 @@ contextBridge.exposeInMainWorld('native', {
   resize: (img: { width: number, height: number, channels: number, data: Uint8Array }, newW: number, newH: number) => ipcRenderer.invoke('native:resize', img, newW, newH),
   compressorSave: (filePath: string, img: { width: number, height: number, channels: number, data: Uint8Array }) => ipcRenderer.invoke('native:compressorSave', filePath, img),
   compressorLoad: (filePath: string) => ipcRenderer.invoke('native:compressorLoad', filePath),
+
+  // File dialogs
+  openImageDialog: () => ipcRenderer.invoke('dialog:openImage'),
+  savePngDialog: () => ipcRenderer.invoke('dialog:savePng'),
+  savePpmDialog: () => ipcRenderer.invoke('dialog:savePpm'),
+  openTripDialog: () => ipcRenderer.invoke('dialog:openTrip'),
+  saveTripDialog: () => ipcRenderer.invoke('dialog:saveTrip'),
+  saveImageDialog: () => ipcRenderer.invoke('dialog:saveImage'),
 })

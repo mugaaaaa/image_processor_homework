@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain, dialog, Menu } from 'electron'
 import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
@@ -28,6 +28,14 @@ let win: BrowserWindow | null
 
 function createWindow() {
   win = new BrowserWindow({
+    width: 1024,
+    height: 612,
+    // // 去掉窗口原生边框/工具栏（frame: false），并隐藏菜单栏（autoHideMenuBar: true）
+    // // 注意：去掉 frame 后，窗口将没有系统标题栏，需要在渲染层添加可拖拽区域（-webkit-app-region: drag）
+    // frame: false,
+    // autoHideMenuBar: true,
+    // // macOS 专用：隐藏原生标题栏，配合 frameless 使用可以得到更自然的外观
+    // titleBarStyle: 'hidden',
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
@@ -40,6 +48,15 @@ function createWindow() {
   win.webContents.on('did-finish-load', () => {
     win?.webContents.send('main-process-message', (new Date).toLocaleString())
   })
+
+  // 移除应用菜单（使窗口上方不显示菜单栏）。在某些平台上还可以用 win.setMenuBarVisibility(false)
+  try {
+    Menu.setApplicationMenu(null)
+    win.setMenuBarVisibility(false)
+  } catch (e) {
+    // ignore if Menu API not available for some reason
+    console.error('Failed to remove application menu', e)
+  }
 
   if (VITE_DEV_SERVER_URL) {
     win.loadURL(VITE_DEV_SERVER_URL)
@@ -73,6 +90,8 @@ app.whenReady().then(createWindow)
 // Native addon wiring via IPC
 // -------------------------------------------------------
 // Resolve native addon from project root
+// Allow `any` here because native addon exports are dynamic
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let native: any
 try {
   native = require(path.join(process.env.APP_ROOT, 'native-addon'))
@@ -121,4 +140,65 @@ ipcMain.handle('native:compressorSave', async (_event, filePath: string, img: { 
 ipcMain.handle('native:compressorLoad', async (_event, filePath: string) => {
   if (!native) throw new Error('native addon not loaded')
   return native.compressorLoad(filePath)
+})
+
+// -------------------------------------------------------
+// File dialogs (open/save) for images and .trip
+// -------------------------------------------------------
+ipcMain.handle('dialog:openImage', async () => {
+  const result = await dialog.showOpenDialog(win!, {
+    properties: ['openFile'],
+    filters: [
+      { name: 'Images', extensions: ['png', 'ppm'] },
+      { name: 'All Files', extensions: ['*'] }
+    ]
+  })
+  return result.canceled ? null : result.filePaths[0]
+})
+
+ipcMain.handle('dialog:savePng', async () => {
+  const result = await dialog.showSaveDialog(win!, {
+    filters: [{ name: 'PNG Image', extensions: ['png'] }],
+    defaultPath: 'image.png'
+  })
+  return result.canceled ? null : result.filePath
+})
+
+ipcMain.handle('dialog:savePpm', async () => {
+  const result = await dialog.showSaveDialog(win!, {
+    filters: [{ name: 'PPM Image', extensions: ['ppm'] }],
+    defaultPath: 'image.ppm'
+  })
+  return result.canceled ? null : result.filePath
+})
+
+ipcMain.handle('dialog:openTrip', async () => {
+  const result = await dialog.showOpenDialog(win!, {
+    properties: ['openFile'],
+    filters: [
+      { name: 'Trip Files', extensions: ['trip'] },
+      { name: 'All Files', extensions: ['*'] }
+    ]
+  })
+  return result.canceled ? null : result.filePaths[0]
+})
+
+ipcMain.handle('dialog:saveTrip', async () => {
+  const result = await dialog.showSaveDialog(win!, {
+    filters: [{ name: 'Trip Files', extensions: ['trip'] }],
+    defaultPath: 'image.trip'
+  })
+  return result.canceled ? null : result.filePath
+})
+
+// Unified save dialog for images (PNG or PPM)
+ipcMain.handle('dialog:saveImage', async () => {
+  const result = await dialog.showSaveDialog(win!, {
+    filters: [
+      { name: 'PNG Image', extensions: ['png'] },
+      { name: 'PPM Image', extensions: ['ppm'] },
+    ],
+    defaultPath: 'image.png'
+  })
+  return result.canceled ? null : result.filePath
 })

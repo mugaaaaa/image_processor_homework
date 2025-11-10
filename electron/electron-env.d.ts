@@ -33,5 +33,13 @@ interface Window {
     resize: (img: { width: number; height: number; channels: number; data: Uint8Array }, newW: number, newH: number) => Promise<{ width: number; height: number; channels: number; data: Uint8Array }>
     compressorSave: (filePath: string, img: { width: number; height: number; channels: number; data: Uint8Array }) => Promise<boolean>
     compressorLoad: (filePath: string) => Promise<{ width: number; height: number; channels: number; data: Uint8Array }>
+
+    // File dialog APIs
+    openImageDialog: () => Promise<string | null>
+    savePngDialog: () => Promise<string | null>
+    savePpmDialog: () => Promise<string | null>
+    openTripDialog: () => Promise<string | null>
+    saveTripDialog: () => Promise<string | null>
+    saveImageDialog: () => Promise<string | null>
   }
 }

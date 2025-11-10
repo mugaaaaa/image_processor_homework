@@ -1,13 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { Box, Card, CardContent, CardHeader, Button, TextField, Typography, Divider } from '@mui/material'
-import Grid from '@mui/material/Grid'
+import { Box, Card, CardContent, CardHeader, Button, Typography, Divider, TextField } from '@mui/material'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 
 type ImageDataObj = { width: number; height: number; channels: number; data: Uint8Array }
 
-function CanvasImage({ image }: { image?: ImageDataObj }) {
+function CanvasImage({ image, fixedWidth, fixedHeight }: { image?: ImageDataObj, fixedWidth: number, fixedHeight: number }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   useEffect(() => {
     const canvas = canvasRef.current
@@ -32,28 +31,27 @@ function CanvasImage({ image }: { image?: ImageDataObj }) {
     }
     ctx.putImageData(imgData, 0, 0)
   }, [image])
-  return <canvas ref={canvasRef} style={{ width: '100%', height: 'auto', background: '#222' }} />
+  return <canvas ref={canvasRef} style={{ width: fixedWidth, height: fixedHeight, background: '#222' }} />
 }
 
 function App() {
   const theme = useMemo(() => createTheme({ palette: { mode: 'light' } }), [])
 
   const [current, setCurrent] = useState<ImageDataObj | undefined>(undefined)
-  const [uploadPath, setUploadPath] = useState('')
-  const [savePathPng, setSavePathPng] = useState('')
-  const [savePathPpm, setSavePathPpm] = useState('')
+  // fixed layout sizes
+  const LEFT_WIDTH = 540
+  const LEFT_HEIGHT = 540
 
-  const [tripSavePath, setTripSavePath] = useState('')
-  const [tripLoadPath, setTripLoadPath] = useState('')
-
-  const [resizeW, setResizeW] = useState('256')
-  const [resizeH, setResizeH] = useState('256')
+  // 不使用默认值，初始为空字符串，让用户显式输入
+  const [resizeW, setResizeW] = useState('')
+  const [resizeH, setResizeH] = useState('')
 
   const handleUpload = async () => {
     try {
-      if (!uploadPath) return
-      const isPpm = uploadPath.endsWith('.ppm')
-      const img = isPpm ? await window.native.loadPpm(uploadPath) : await window.native.loadPng(uploadPath)
+      const chosen = await window.native.openImageDialog()
+      if (!chosen) return
+      const isPpm = chosen.endsWith('.ppm')
+      const img = isPpm ? await window.native.loadPpm(chosen) : await window.native.loadPng(chosen)
       setCurrent(img)
     } catch (e) {
       console.error(e)
@@ -63,32 +61,39 @@ function App() {
 
   const handleSavePng = async () => {
     try {
-      if (!current || !savePathPng) return
-      const ok = await window.native.savePng(savePathPng, current)
+      if (!current) return
+      const target = await window.native.savePngDialog()
+      if (!target) return
+      const ok = await window.native.savePng(target, current)
       alert(ok ? '保存 PNG 成功' : '保存 PNG 失败')
     } catch (e) { alert('保存 PNG 出错: ' + (e as any).message) }
   }
 
   const handleSavePpm = async () => {
     try {
-      if (!current || !savePathPpm) return
-      const ok = await window.native.savePpm(savePathPpm, current)
+      if (!current) return
+      const target = await window.native.savePpmDialog()
+      if (!target) return
+      const ok = await window.native.savePpm(target, current)
       alert(ok ? '保存 PPM 成功' : '保存 PPM 失败')
     } catch (e) { alert('保存 PPM 出错: ' + (e as any).message) }
   }
 
   const handleCompressSave = async () => {
     try {
-      if (!current || !tripSavePath) return
-      const ok = await window.native.compressorSave(tripSavePath, current)
+      if (!current) return
+      const target = await window.native.saveTripDialog()
+      if (!target) return
+      const ok = await window.native.compressorSave(target, current)
       alert(ok ? '保存 .trip 成功' : '保存 .trip 失败')
     } catch (e) { alert('保存 .trip 出错: ' + (e as any).message) }
   }
 
   const handleLoadTrip = async () => {
     try {
-      if (!tripLoadPath) return
-      const img = await window.native.compressorLoad(tripLoadPath)
+      const chosen = await window.native.openTripDialog()
+      if (!chosen) return
+      const img = await window.native.compressorLoad(chosen)
       setCurrent(img)
     } catch (e) { alert('读入 .trip 出错: ' + (e as any).message) }
   }
@@ -116,62 +121,65 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box sx={{ height: '100vh', display: 'flex' }}>
         {/* 左侧图片显示区域 */}
-        <Box sx={{ flex: 1, p: 2 }}>
-          <Typography variant="h6" gutterBottom>图像预览</Typography>
+        <Box sx={{ width: LEFT_WIDTH, p: 2, display: 'flex', flexDirection: 'column' }}>
+          <Typography variant="h6" gutterBottom>
+            图像预览{current ? `（${current.width}×${current.height}）` : ''}
+          </Typography>
           <Divider sx={{ mb: 2 }} />
-          <CanvasImage image={current} />
+          <Box sx={{ flex: 1, width: LEFT_WIDTH, height: LEFT_HEIGHT, border: '1px solid #eee', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+            {/* 固定显示区域，不随图片大小变化；通过 CSS 控制画布尺寸 */}
+            <CanvasImage image={current} fixedWidth={LEFT_WIDTH} fixedHeight={LEFT_HEIGHT} />
+          </Box>
         </Box>
 
-        {/* 右侧操作区域 */}
-        <Box sx={{ width: 420, p: 2, borderLeft: '1px solid #eee', overflow: 'auto' }}>
-          <Grid container spacing={2}>
-            {/* Card 1: 上传/保存 */}
-            <Grid item xs={12}>
-              <Card>
-                <CardHeader title="上传图片与保存图片" />
-                <CardContent>
-                  <TextField fullWidth label="图片路径 (.png/.ppm)" value={uploadPath} onChange={e => setUploadPath(e.target.value)} sx={{ mb: 1 }} />
-                  <Button variant="contained" onClick={handleUpload}>加载图片</Button>
-                  <Divider sx={{ my: 2 }} />
-                  <TextField fullWidth label="保存 PNG 路径" value={savePathPng} onChange={e => setSavePathPng(e.target.value)} sx={{ mb: 1 }} />
-                  <Button variant="outlined" onClick={handleSavePng} disabled={!current}>保存 PNG</Button>
-                  <Divider sx={{ my: 2 }} />
-                  <TextField fullWidth label="保存 PPM 路径" value={savePathPpm} onChange={e => setSavePathPpm(e.target.value)} sx={{ mb: 1 }} />
-                  <Button variant="outlined" onClick={handleSavePpm} disabled={!current}>保存 PPM</Button>
-                </CardContent>
-              </Card>
-            </Grid>
+        {/* 右侧操作区域（三卡布局） */}
+        <Box sx={{ flex: 1, p: 2, borderLeft: '1px solid #eee', overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: 2, height: LEFT_HEIGHT }}>
+          {/* Card 1: 图片读写 */}
+          <Card sx={{ flex: 1 }}>
+            <CardHeader title="图片读写" titleTypographyProps={{ sx: { fontSize: '1rem' } }} />
+            <CardContent sx={{
+              '& .MuiButton-root': { fontSize: '0.85rem', textTransform: 'none' },
+              '& .MuiTypography-root': { fontSize: '0.9rem' },
+              '& .MuiInputBase-input': { fontSize: '0.85rem' },
+              '& .MuiInputLabel-root': { fontSize: '0.8rem' }
+            }}>
+              <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+                <Button variant="contained" onClick={handleUpload}>读入图片</Button>
+                <Button variant="outlined" onClick={handleSavePng} disabled={!current}>保存为 .png</Button>
+                <Button variant="outlined" onClick={handleSavePpm} disabled={!current}>保存为 .ppm</Button>
+              </Box>
+            </CardContent>
+          </Card>
 
-            {/* Card 2: 压缩/解压 .trip */}
-            <Grid item xs={12}>
-              <Card>
-                <CardHeader title="压缩成三元组并保存 / 读入解码" />
-                <CardContent>
-                  <TextField fullWidth label="保存 .trip 路径" value={tripSavePath} onChange={e => setTripSavePath(e.target.value)} sx={{ mb: 1 }} />
-                  <Button variant="contained" onClick={handleCompressSave} disabled={!current}>保存 .trip</Button>
-                  <Divider sx={{ my: 2 }} />
-                  <TextField fullWidth label="读取 .trip 路径" value={tripLoadPath} onChange={e => setTripLoadPath(e.target.value)} sx={{ mb: 1 }} />
-                  <Button variant="outlined" onClick={handleLoadTrip}>读取并解码</Button>
-                </CardContent>
-              </Card>
-            </Grid>
+          {/* Card 2: 图片压缩 */}
+          <Card sx={{ flex: '0 0 160px' }}>
+            <CardHeader title="图片压缩" titleTypographyProps={{ sx: { fontSize: '1rem' } }} />
+            <CardContent sx={{ '& .MuiButton-root': { fontSize: '0.85rem', textTransform: 'none' } }}>
+              <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+                <Button variant="contained" onClick={handleLoadTrip}>读取.trip并解压</Button>
+                <Button variant="outlined" onClick={handleCompressSave} disabled={!current}>压缩并保存为.trip</Button>
+              </Box>
+            </CardContent>
+          </Card>
 
-            {/* Card 3: 彩色转灰度 + 缩放 */}
-            <Grid item xs={12}>
-              <Card>
-                <CardHeader title="彩色转灰度 / 图片缩放" />
-                <CardContent>
-                  <Button variant="contained" onClick={handleToGray} disabled={!current}>彩色转灰度</Button>
-                  <Divider sx={{ my: 2 }} />
-                  <Box sx={{ display: 'flex', gap: 1 }}>
-                    <TextField label="宽" value={resizeW} onChange={e => setResizeW(e.target.value)} sx={{ flex: 1 }} />
-                    <TextField label="高" value={resizeH} onChange={e => setResizeH(e.target.value)} sx={{ flex: 1 }} />
-                  </Box>
-                  <Button sx={{ mt: 1 }} variant="outlined" onClick={handleResize} disabled={!current}>缩放</Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+          {/* Card 3: 图片处理 */}
+          <Card sx={{ height: 200 }}>
+            <CardHeader title="图片处理" titleTypographyProps={{ sx: { fontSize: '1rem' } }} />
+            <CardContent sx={{
+              '& .MuiButton-root': { fontSize: '0.85rem', textTransform: 'none' },
+              '& .MuiInputBase-input': { fontSize: '0.85rem' },
+              '& .MuiInputLabel-root': { fontSize: '0.8rem' }
+            }}>
+              <Box sx={{ display: 'flex', gap: 1 }}>
+                <TextField label="宽度" value={resizeW} onChange={e => setResizeW(e.target.value)} sx={{ flex: 1 }} />
+                <TextField label="高度" value={resizeH} onChange={e => setResizeH(e.target.value)} sx={{ flex: 1 }} />
+              </Box>
+              <Box sx={{ display: 'flex', gap: 1, mt: 2 }}>
+                <Button variant="contained" onClick={handleResize} disabled={!current}>缩放</Button>
+                <Button variant="contained" onClick={handleToGray} disabled={!current}>灰度化</Button>
+              </Box>
+            </CardContent>
+          </Card>
         </Box>
       </Box>
     </ThemeProvider>
