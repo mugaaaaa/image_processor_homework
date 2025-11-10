@@ -83,19 +83,22 @@ $(document).ready(function() { init_codefold(0); });
 </div><!--header-->
 <div class="contents">
 <a href="Compressor_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../data_structure/Triplet.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>        </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classCompressor.html">    5</a></span><span class="keyword">class </span><a class="code hl_class" href="classCompressor.html">Compressor</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classCompressor.html#a91024a200dfeea832948d4560f40486e">   13</a></span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classCompressor.html#a91024a200dfeea832948d4560f40486e">Save</a>(<span class="keyword">const</span> std::string&amp; file_path, <span class="keyword">const</span> cv::Mat&amp; img);</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;opencv2/core/mat.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../data_structure/Triplet.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classCompressor.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="classCompressor.html">Compressor</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1">Save</a>(<span class="keyword">const</span> std::string&amp; file_path, <span class="keyword">const</span> cv::Mat&amp; img);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classCompressor.html#aa399f847e1147add0bc018a72e0b0663">   21</a></span>    <span class="keyword">static</span> cv::Mat <a class="code hl_function" href="classCompressor.html#aa399f847e1147add0bc018a72e0b0663">Load</a>(<span class="keyword">const</span> std::string&amp; file_path);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">static</span> cv::Mat <a class="code hl_function" href="classCompressor.html#afc47156bc86131009b0b814f2c11015a">Load</a>(<span class="keyword">const</span> std::string&amp; file_path);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
 </div>
-<div class="ttc" id="aclassCompressor_html"><div class="ttname"><a href="classCompressor.html">Compressor</a></div><div class="ttdef"><b>Definition</b> Compressor.h:5</div></div>
-<div class="ttc" id="aclassCompressor_html_a91024a200dfeea832948d4560f40486e"><div class="ttname"><a href="classCompressor.html#a91024a200dfeea832948d4560f40486e">Compressor::Save</a></div><div class="ttdeci">static bool Save(const std::string &amp;file_path, const cv::Mat &amp;img)</div><div class="ttdoc">将图像压缩并保存为 .trip 文件。</div></div>
-<div class="ttc" id="aclassCompressor_html_aa399f847e1147add0bc018a72e0b0663"><div class="ttname"><a href="classCompressor.html#aa399f847e1147add0bc018a72e0b0663">Compressor::Load</a></div><div class="ttdeci">static cv::Mat Load(const std::string &amp;file_path)</div><div class="ttdoc">加载 .trip 文件并重建图像。</div></div>
+<div class="ttc" id="aclassCompressor_html"><div class="ttname"><a href="classCompressor.html">Compressor</a></div><div class="ttdef"><b>Definition</b> Compressor.h:7</div></div>
+<div class="ttc" id="aclassCompressor_html_aa04164c2ad51f4d0990e73e8f7227da1"><div class="ttname"><a href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1">Compressor::Save</a></div><div class="ttdeci">static bool Save(const std::string &amp;file_path, const cv::Mat &amp;img)</div><div class="ttdoc">将图像压缩并保存为 .trip 文件。 流程：统计背景色 -&gt; 转换为三元组 -&gt; 写入文件头 -&gt; 写入数据。</div><div class="ttdef"><b>Definition</b> Compressor.cc:26</div></div>
+<div class="ttc" id="aclassCompressor_html_afc47156bc86131009b0b814f2c11015a"><div class="ttname"><a href="classCompressor.html#afc47156bc86131009b0b814f2c11015a">Compressor::Load</a></div><div class="ttdeci">static cv::Mat Load(const std::string &amp;file_path)</div><div class="ttdoc">加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 -&gt; 创建背景画布 -&gt; 覆盖三元组像素。</div><div class="ttdef"><b>Definition</b> Compressor.cc:49</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

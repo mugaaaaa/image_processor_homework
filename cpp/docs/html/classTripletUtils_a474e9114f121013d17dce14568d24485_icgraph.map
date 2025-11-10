@@ -1,0 +1,5 @@
+<map id="TripletUtils::matToTriplets" name="TripletUtils::matToTriplets">
+<area shape="rect" id="Node000001" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="193,5,380,31"/>
+<area shape="rect" id="Node000002" href="$classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="5,5,145,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,21,146,21,146,15,180,15"/>
+</map>

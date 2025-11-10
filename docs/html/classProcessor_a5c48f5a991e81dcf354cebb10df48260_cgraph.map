@@ -1,0 +1,5 @@
+<map id="Processor::ToGray" name="Processor::ToGray">
+<area shape="rect" id="Node000001" title="将彩色图像转换为灰度图像。" alt="" coords="5,5,144,31"/>
+<area shape="rect" id="Node000002" href="$ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a" title=" " alt="" coords="192,5,279,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,15,178,15,178,21,144,21"/>
+</map>

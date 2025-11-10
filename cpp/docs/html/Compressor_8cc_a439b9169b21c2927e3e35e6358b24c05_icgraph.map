@@ -1,0 +1,5 @@
+<map id="readHeader" name="readHeader">
+<area shape="rect" id="Node000001" title=" " alt="" coords="192,5,291,31"/>
+<area shape="rect" id="Node000002" href="$classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="5,5,144,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,21,144,21,144,15,178,15"/>
+</map>

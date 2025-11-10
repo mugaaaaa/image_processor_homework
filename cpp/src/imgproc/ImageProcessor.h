@@ -1,3 +1,14 @@
+/**
+ * @file ImageProcessor.h
+ * @author Runhui Mo (github.com/mugaaaaa)
+ * @brief 
+ * @version 0.1
+ * @date 2025-11-07
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #pragma once
 
 #include <opencv2/opencv.hpp>

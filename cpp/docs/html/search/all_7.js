@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['load_0',['Load',['../classCompressor.html#aa399f847e1147add0bc018a72e0b0663',1,'Compressor']]],
-  ['loadpng_1',['loadPng',['../classImageIO.html#a43051767591c0c1ef7bfb6a6f3204d9d',1,'ImageIO']]],
-  ['loadppm_2',['loadPpm',['../classImageIO.html#a0701627acfc98b979d08892fa6cdcaed',1,'ImageIO']]],
-  ['loadppmasmat_3',['loadPpmAsMat',['../classPpm.html#a5f02004c53c6f31071323b2105296f0c',1,'Ppm']]],
-  ['loadtrip_4',['loadTrip',['../classImageIO.html#af6a859c2abb205eecdea9b8bbaf6515b',1,'ImageIO']]]
+  ['load_0',['Load',['../classCompressor.html#afc47156bc86131009b0b814f2c11015a',1,'Compressor']]],
+  ['loadpng_1',['loadPng',['../classImageIO.html#a19370c25df64ca9a0969a30d93969fc5',1,'ImageIO']]],
+  ['loadppm_2',['loadPpm',['../classImageIO.html#ad3457dfc34f78f2314cc5b989584ca86',1,'ImageIO']]],
+  ['loadppmasmat_3',['loadPpmAsMat',['../classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129',1,'Ppm']]],
+  ['loadtrip_4',['loadTrip',['../classImageIO.html#a6b3fe67ea25f31293364dc9174c418ef',1,'ImageIO']]]
 ];

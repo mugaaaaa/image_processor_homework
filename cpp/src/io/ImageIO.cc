@@ -1,3 +1,14 @@
+/**
+ * @file ImageIO.cc
+ * @author Runhui Mo (github.com/mugaaaaa)
+ * @brief ImageIO 类静态方法实现
+ * @version 0.1
+ * @date 2025-11-07
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "ImageIO.h"
 #include <opencv2/imgcodecs.hpp>
 #include "Ppm.h"
@@ -11,8 +22,7 @@ cv::Mat ImageIO::loadPpm(const std::string& file_path) {
     return Ppm::loadPpmAsMat(file_path);
 }
 
-// 简易 .trip 读取：按文本格式读取，利于测试（header + triplets 行）
-// 头：TRIP width height channels count bgB bgG bgR
+// 读取文件头：TRIP width height channels count bgB bgG bgR
 static bool parseHeader(std::istream& is, CompressedHeader& hdr) {
     std::string magic; is >> magic;
     if (magic != "TRIP") return false;

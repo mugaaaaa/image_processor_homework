@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageProcessorCore: cpp/src/imgproc/ImageProcessor.cc 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageProcessorCore<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">C++ core of ImageProcessor</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a class="el" href="dir_7e72c7cf48e3493f8206cd364e6bc9f6.html">src</a></li><li class="navelem"><a class="el" href="dir_fcb5afeeaaf102c64e1e6aa586fd6bfb.html">imgproc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">ImageProcessor.cc 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="ImageProcessor_8h_source.html">ImageProcessor.h</a>&quot;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ImageProcessor.cc 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ImageProcessor_8cc__incl.png" border="0" usemap="#acpp_2src_2imgproc_2ImageProcessor_8cc" alt=""/></div>
+<map name="acpp_2src_2imgproc_2ImageProcessor_8cc" id="acpp_2src_2imgproc_2ImageProcessor_8cc">
+<area shape="rect" title=" " alt="" coords="19,5,269,31"/>
+<area shape="rect" href="ImageProcessor_8h.html" title=" " alt="" coords="14,79,151,104"/>
+<area shape="poly" title=" " alt="" coords="136,33,104,70,100,66,132,29"/>
+<area shape="rect" title=" " alt="" coords="175,79,238,104"/>
+<area shape="poly" title=" " alt="" coords="156,29,189,66,185,70,152,33"/>
+<area shape="rect" title=" " alt="" coords="5,152,160,177"/>
+<area shape="poly" title=" " alt="" coords="85,104,85,138,80,138,80,104"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a9110affa25a196d5eca48dc9006b8c3a" id="r_a9110affa25a196d5eca48dc9006b8c3a"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a">clamp255</a> (int v)</td></tr>
+<tr class="separator:a9110affa25a196d5eca48dc9006b8c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a9110affa25a196d5eca48dc9006b8c3a" name="a9110affa25a196d5eca48dc9006b8c3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9110affa25a196d5eca48dc9006b8c3a">&#9670;&#160;</a></span>clamp255()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t clamp255 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ImageProcessor_8cc_a9110affa25a196d5eca48dc9006b8c3a_icgraph.png" border="0" usemap="#aImageProcessor_8cc_a9110affa25a196d5eca48dc9006b8c3a_icgraph" alt=""/></div>
+<map name="aImageProcessor_8cc_a9110affa25a196d5eca48dc9006b8c3a_icgraph" id="aImageProcessor_8cc_a9110affa25a196d5eca48dc9006b8c3a_icgraph">
+<area shape="rect" title=" " alt="" coords="456,31,543,56"/>
+<area shape="rect" href="classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0" title="使用双线性插值调整图像尺寸。" alt="" coords="271,5,407,31"/>
+<area shape="poly" title=" " alt="" coords="442,37,406,31,407,26,443,32"/>
+<area shape="rect" href="classProcessor.html#a5c48f5a991e81dcf354cebb10df48260" title="将彩色图像转换为灰度图像。" alt="" coords="269,55,408,80"/>
+<area shape="poly" title=" " alt="" coords="443,54,408,60,408,54,442,49"/>
+<area shape="rect" href="main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title=" " alt="" coords="97,5,220,31"/>
+<area shape="poly" title=" " alt="" coords="257,21,220,21,220,15,257,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,31,48,56"/>
+<area shape="poly" title=" " alt="" coords="84,35,49,42,48,37,83,30"/>
+<area shape="rect" href="main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title=" " alt="" coords="96,55,221,80"/>
+<area shape="poly" title=" " alt="" coords="256,70,222,70,222,65,256,65"/>
+<area shape="poly" title=" " alt="" coords="82,56,48,50,49,44,83,51"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

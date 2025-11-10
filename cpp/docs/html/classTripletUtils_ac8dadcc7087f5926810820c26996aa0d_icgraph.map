@@ -1,0 +1,5 @@
+<map id="TripletUtils::findBackgroundColor" name="TripletUtils::findBackgroundColor">
+<area shape="rect" id="Node000001" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="193,5,395,45"/>
+<area shape="rect" id="Node000002" href="$classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="5,13,145,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,28,146,28,146,23,179,23"/>
+</map>

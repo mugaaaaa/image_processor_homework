@@ -1,0 +1,7 @@
+<map id="SaveTripWrapped" name="SaveTripWrapped">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,140,56"/>
+<area shape="rect" id="Node000002" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="213,5,301,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,31,199,23,200,28,141,37"/>
+<area shape="rect" id="Node000003" href="$classImageIO.html#a599d6b98c20fa03684d3fe89c4de3616" title="将图像保存到文件" alt="" coords="188,55,327,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,49,175,54,174,59,140,55"/>
+</map>

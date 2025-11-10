@@ -1,0 +1,63 @@
+\doxysection{Triplet\+Node结构体 参考}
+\hypertarget{structTripletNode}{}\label{structTripletNode}\index{TripletNode@{TripletNode}}
+
+
+三元组节点结构体，表示图像中非背景色的像素信息  
+
+
+
+
+{\ttfamily \#include $<$Triplet.\+h$>$}
+
+
+
+Triplet\+Node 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{structTripletNode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structTripletNode_ac9a4de9eb60afbc4dba2ed1619ea4839}{row\+\_\+}}
+\item 
+int \mbox{\hyperlink{structTripletNode_a7248218fd56b58b2e55ebbd3b94e19c6}{col\+\_\+}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structTripletNode_a544721c4e0321517ffbbdc3732146a73}{val\+\_\+}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em 彩色图时 val\+\_\+\mbox{[}0\mbox{]}\+: B, val\+\_\+\mbox{[}1\mbox{]}\+: G, val\+\_\+\mbox{[}2\mbox{]}\+: R（与 Open\+CV 的 BGR 顺序对齐），灰度图时仅用 val\+\_\+\mbox{[}0\mbox{]} 表示灰度 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+三元组节点结构体，表示图像中非背景色的像素信息 
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{structTripletNode_a7248218fd56b58b2e55ebbd3b94e19c6}\label{structTripletNode_a7248218fd56b58b2e55ebbd3b94e19c6} 
+\index{TripletNode@{TripletNode}!col\_@{col\_}}
+\index{col\_@{col\_}!TripletNode@{TripletNode}}
+\doxysubsubsection{\texorpdfstring{col\_}{col\_}}
+{\footnotesize\ttfamily int Triplet\+Node\+::col\+\_\+}
+
+\Hypertarget{structTripletNode_ac9a4de9eb60afbc4dba2ed1619ea4839}\label{structTripletNode_ac9a4de9eb60afbc4dba2ed1619ea4839} 
+\index{TripletNode@{TripletNode}!row\_@{row\_}}
+\index{row\_@{row\_}!TripletNode@{TripletNode}}
+\doxysubsubsection{\texorpdfstring{row\_}{row\_}}
+{\footnotesize\ttfamily int Triplet\+Node\+::row\+\_\+}
+
+\Hypertarget{structTripletNode_a544721c4e0321517ffbbdc3732146a73}\label{structTripletNode_a544721c4e0321517ffbbdc3732146a73} 
+\index{TripletNode@{TripletNode}!val\_@{val\_}}
+\index{val\_@{val\_}!TripletNode@{TripletNode}}
+\doxysubsubsection{\texorpdfstring{val\_}{val\_}}
+{\footnotesize\ttfamily uint8\+\_\+t Triplet\+Node\+::val\+\_\+\mbox{[}3\mbox{]}}
+
+
+
+彩色图时 val\+\_\+\mbox{[}0\mbox{]}\+: B, val\+\_\+\mbox{[}1\mbox{]}\+: G, val\+\_\+\mbox{[}2\mbox{]}\+: R（与 Open\+CV 的 BGR 顺序对齐），灰度图时仅用 val\+\_\+\mbox{[}0\mbox{]} 表示灰度 
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+cpp/src/data\+\_\+structure/\mbox{\hyperlink{Triplet_8h}{Triplet.\+h}}\end{DoxyCompactItemize}

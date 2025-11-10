@@ -1,0 +1,270 @@
+\doxysection{native-\/addon/src/main.cc 文件参考}
+\hypertarget{main_8cc}{}\label{main_8cc}\index{native-\/addon/src/main.cc@{native-\/addon/src/main.cc}}
+{\ttfamily \#include $<$napi.\+h$>$}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include "{}../../cpp/src/io/\+Image\+IO.\+h"{}}\newline
+{\ttfamily \#include "{}../../cpp/src/codec/\+Compressor.\+h"{}}\newline
+{\ttfamily \#include "{}../../cpp/src/imgproc/\+Image\+Processor.\+h"{}}\newline
+main.\+cc 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static Napi\+::\+Error \mbox{\hyperlink{main_8cc_ac9cbbfd7dad326e56048ccb57b26eb8e}{Make\+Error}} (Napi\+::\+Env env, const std\+::string \&msg)
+\item 
+static Napi\+::\+Value \mbox{\hyperlink{main_8cc_a551814596313b7968e083c15f5639a17}{Load\+Png\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
+\item 
+static Napi\+::\+Value \mbox{\hyperlink{main_8cc_ab6d72c366ef977c8c5a3391a60bf5527}{Load\+Ppm\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
+\item 
+static Napi\+::\+Value \mbox{\hyperlink{main_8cc_a2a1ef82449861b9914b1aa98f161a3f1}{Save\+Png\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
+\item 
+static Napi\+::\+Value \mbox{\hyperlink{main_8cc_a97fb226d121951383b419bf7a123da5a}{Save\+Ppm\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
+\item 
+static Napi\+::\+Value \mbox{\hyperlink{main_8cc_ae63aa61833e4b395ce9277b1f4281a7f}{To\+Gray\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
+\item 
+static Napi\+::\+Value \mbox{\hyperlink{main_8cc_aa546425105ae7e3f2de3c424082e8345}{Resize\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
+\item 
+static Napi\+::\+Value \mbox{\hyperlink{main_8cc_a6bc5c80ee4ae3793367d9830bbe0df68}{Compressor\+Save\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
+\item 
+static Napi\+::\+Value \mbox{\hyperlink{main_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c}{Compressor\+Load\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
+\item 
+static Napi\+::\+Value \mbox{\hyperlink{main_8cc_acfa99fd99fcf645857f77aa98ee1e011}{Save\+Trip\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
+\item 
+static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468902}{Init}} (Napi\+::\+Env env, Napi\+::\+Object exports)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函数说明}
+\Hypertarget{main_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c}\label{main_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c} 
+\index{main.cc@{main.cc}!CompressorLoadWrapped@{CompressorLoadWrapped}}
+\index{CompressorLoadWrapped@{CompressorLoadWrapped}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{CompressorLoadWrapped()}{CompressorLoadWrapped()}}
+{\footnotesize\ttfamily static Napi\+::\+Value Compressor\+Load\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{main_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_a6bc5c80ee4ae3793367d9830bbe0df68}\label{main_8cc_a6bc5c80ee4ae3793367d9830bbe0df68} 
+\index{main.cc@{main.cc}!CompressorSaveWrapped@{CompressorSaveWrapped}}
+\index{CompressorSaveWrapped@{CompressorSaveWrapped}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{CompressorSaveWrapped()}{CompressorSaveWrapped()}}
+{\footnotesize\ttfamily static Napi\+::\+Value Compressor\+Save\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{main_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_a41e547364abf29640f7cee8e9a468902}\label{main_8cc_a41e547364abf29640f7cee8e9a468902} 
+\index{main.cc@{main.cc}!Init@{Init}}
+\index{Init@{Init}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily static Napi\+::\+Object Init (\begin{DoxyParamCaption}\item[{Napi\+::\+Env}]{env,  }\item[{Napi\+::\+Object}]{exports }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc_a41e547364abf29640f7cee8e9a468902_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_a551814596313b7968e083c15f5639a17}\label{main_8cc_a551814596313b7968e083c15f5639a17} 
+\index{main.cc@{main.cc}!LoadPngWrapped@{LoadPngWrapped}}
+\index{LoadPngWrapped@{LoadPngWrapped}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{LoadPngWrapped()}{LoadPngWrapped()}}
+{\footnotesize\ttfamily static Napi\+::\+Value Load\+Png\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{main_8cc_a551814596313b7968e083c15f5639a17_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{main_8cc_a551814596313b7968e083c15f5639a17_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_ab6d72c366ef977c8c5a3391a60bf5527}\label{main_8cc_ab6d72c366ef977c8c5a3391a60bf5527} 
+\index{main.cc@{main.cc}!LoadPpmWrapped@{LoadPpmWrapped}}
+\index{LoadPpmWrapped@{LoadPpmWrapped}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{LoadPpmWrapped()}{LoadPpmWrapped()}}
+{\footnotesize\ttfamily static Napi\+::\+Value Load\+Ppm\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc_ab6d72c366ef977c8c5a3391a60bf5527_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{main_8cc_ab6d72c366ef977c8c5a3391a60bf5527_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_ac9cbbfd7dad326e56048ccb57b26eb8e}\label{main_8cc_ac9cbbfd7dad326e56048ccb57b26eb8e} 
+\index{main.cc@{main.cc}!MakeError@{MakeError}}
+\index{MakeError@{MakeError}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{MakeError()}{MakeError()}}
+{\footnotesize\ttfamily static Napi\+::\+Error Make\+Error (\begin{DoxyParamCaption}\item[{Napi\+::\+Env}]{env,  }\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc_ac9cbbfd7dad326e56048ccb57b26eb8e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_aa546425105ae7e3f2de3c424082e8345}\label{main_8cc_aa546425105ae7e3f2de3c424082e8345} 
+\index{main.cc@{main.cc}!ResizeWrapped@{ResizeWrapped}}
+\index{ResizeWrapped@{ResizeWrapped}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{ResizeWrapped()}{ResizeWrapped()}}
+{\footnotesize\ttfamily static Napi\+::\+Value Resize\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc_aa546425105ae7e3f2de3c424082e8345_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{main_8cc_aa546425105ae7e3f2de3c424082e8345_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_a2a1ef82449861b9914b1aa98f161a3f1}\label{main_8cc_a2a1ef82449861b9914b1aa98f161a3f1} 
+\index{main.cc@{main.cc}!SavePngWrapped@{SavePngWrapped}}
+\index{SavePngWrapped@{SavePngWrapped}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{SavePngWrapped()}{SavePngWrapped()}}
+{\footnotesize\ttfamily static Napi\+::\+Value Save\+Png\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{main_8cc_a2a1ef82449861b9914b1aa98f161a3f1_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{main_8cc_a2a1ef82449861b9914b1aa98f161a3f1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_a97fb226d121951383b419bf7a123da5a}\label{main_8cc_a97fb226d121951383b419bf7a123da5a} 
+\index{main.cc@{main.cc}!SavePpmWrapped@{SavePpmWrapped}}
+\index{SavePpmWrapped@{SavePpmWrapped}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{SavePpmWrapped()}{SavePpmWrapped()}}
+{\footnotesize\ttfamily static Napi\+::\+Value Save\+Ppm\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc_a97fb226d121951383b419bf7a123da5a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{main_8cc_a97fb226d121951383b419bf7a123da5a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_acfa99fd99fcf645857f77aa98ee1e011}\label{main_8cc_acfa99fd99fcf645857f77aa98ee1e011} 
+\index{main.cc@{main.cc}!SaveTripWrapped@{SaveTripWrapped}}
+\index{SaveTripWrapped@{SaveTripWrapped}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{SaveTripWrapped()}{SaveTripWrapped()}}
+{\footnotesize\ttfamily static Napi\+::\+Value Save\+Trip\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{main_8cc_acfa99fd99fcf645857f77aa98ee1e011_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{main_8cc_acfa99fd99fcf645857f77aa98ee1e011_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cc_ae63aa61833e4b395ce9277b1f4281a7f}\label{main_8cc_ae63aa61833e4b395ce9277b1f4281a7f} 
+\index{main.cc@{main.cc}!ToGrayWrapped@{ToGrayWrapped}}
+\index{ToGrayWrapped@{ToGrayWrapped}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{ToGrayWrapped()}{ToGrayWrapped()}}
+{\footnotesize\ttfamily static Napi\+::\+Value To\+Gray\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cc_ae63aa61833e4b395ce9277b1f4281a7f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{main_8cc_ae63aa61833e4b395ce9277b1f4281a7f_icgraph}
+\end{center}
+\end{figure}

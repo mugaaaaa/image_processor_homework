@@ -75,9 +75,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">类</a> &#124;
-<a href="#func-members">函数</a> &#124;
-<a href="#var-members">变量</a>  </div>
+<a href="#nested-classes">类</a>  </div>
   <div class="headertitle"><div class="title">Triplet.h 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -103,9 +101,17 @@ Triplet.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="Triplet_8h__dep__incl.png" border="0" usemap="#asrc_2data__structure_2Triplet_8hdep" alt=""/></div>
 <map name="asrc_2data__structure_2Triplet_8hdep" id="asrc_2data__structure_2Triplet_8hdep">
-<area shape="rect" title=" " alt="" coords="24,5,163,45"/>
-<area shape="rect" href="Compressor_8h.html" title=" " alt="" coords="5,93,181,119"/>
-<area shape="poly" title=" " alt="" coords="96,59,96,93,91,93,91,59"/>
+<area shape="rect" title=" " alt="" coords="209,5,347,45"/>
+<area shape="rect" href="Compressor_8h.html" title=" " alt="" coords="9,101,185,126"/>
+<area shape="poly" title=" " alt="" coords="227,54,122,103,120,98,225,49"/>
+<area shape="rect" href="Triplet_8cc.html" title=" " alt="" coords="209,93,347,133"/>
+<area shape="poly" title=" " alt="" coords="281,59,281,93,275,93,275,59"/>
+<area shape="rect" href="ImageIO_8h.html" title=" " alt="" coords="371,101,499,126"/>
+<area shape="poly" title=" " alt="" coords="326,49,416,98,413,103,323,54"/>
+<area shape="rect" href="Compressor_8cc.html" title=" " alt="" coords="5,181,188,207"/>
+<area shape="poly" title=" " alt="" coords="99,140,99,181,94,181,94,140"/>
+<area shape="rect" href="ImageIO_8cc.html" title=" " alt="" coords="368,181,503,207"/>
+<area shape="poly" title=" " alt="" coords="438,140,438,181,433,181,433,140"/>
 </map>
 </div>
 </div>
@@ -117,294 +123,12 @@ Triplet.h 的引用(Include)关系图:</div>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">三元组节点结构体，表示图像中非背景色的像素信息  <a href="structTripletNode.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCompressedHeader.html">CompressedHeader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">压缩文件头结构体，存储图像的基本信息  <a href="structCompressedHeader.html#details">更多...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">压缩文件头结构体，存储图像的基本信息 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。  <a href="structCompressedHeader.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-函数</h2></td></tr>
-<tr class="memitem:ab01d84ebade69f93dbbdcb07d14a2607" id="r_ab01d84ebade69f93dbbdcb07d14a2607"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structCompressedHeader.html">CompressedHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Triplet_8h.html#ab01d84ebade69f93dbbdcb07d14a2607">findBackgroundColor</a> (const cv::Mat &amp;img, uint8_t bg_color[3])</td></tr>
-<tr class="memdesc:ab01d84ebade69f93dbbdcb07d14a2607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triplet 相关工具类，包含背景色统计、Mat 与三元组的转换等功能  <br /></td></tr>
-<tr class="separator:ab01d84ebade69f93dbbdcb07d14a2607"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01fac376a7f708e7d899545a7d01e23d" id="r_a01fac376a7f708e7d899545a7d01e23d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Triplet_8h.html#a01fac376a7f708e7d899545a7d01e23d">matToTriplets</a> (const cv::Mat &amp;img, const uint8_t bg_color[3], std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;triplets)</td></tr>
-<tr class="memdesc:a01fac376a7f708e7d899545a7d01e23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 cv::Mat 图像转换为三元组表示  <br /></td></tr>
-<tr class="separator:a01fac376a7f708e7d899545a7d01e23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8b4422b8be45cc5a41ee77a1a8bc11d" id="r_aa8b4422b8be45cc5a41ee77a1a8bc11d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Triplet_8h.html#aa8b4422b8be45cc5a41ee77a1a8bc11d">tripletsToMat</a> (const std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;triplets, int width, int height, int channels, const uint8_t bg_color[3], cv::Mat &amp;img)</td></tr>
-<tr class="memdesc:aa8b4422b8be45cc5a41ee77a1a8bc11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将三元组表示转换回 cv::Mat 图像  <br /></td></tr>
-<tr class="separator:aa8b4422b8be45cc5a41ee77a1a8bc11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-变量</h2></td></tr>
-<tr class="memitem:ab1dc3a9dcfcc45e028efb2fe94522dc9" id="r_ab1dc3a9dcfcc45e028efb2fe94522dc9"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Triplet_8h.html#ab1dc3a9dcfcc45e028efb2fe94522dc9">magic_</a> [4] = {'T', 'R', 'I', 'P'}</td></tr>
-<tr class="separator:ab1dc3a9dcfcc45e028efb2fe94522dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3682f3c38715c7bec9b9af94a983f86f" id="r_a3682f3c38715c7bec9b9af94a983f86f"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Triplet_8h.html#a3682f3c38715c7bec9b9af94a983f86f">width_</a></td></tr>
-<tr class="separator:a3682f3c38715c7bec9b9af94a983f86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addb9979495fc708dd66427dca4580567" id="r_addb9979495fc708dd66427dca4580567"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Triplet_8h.html#addb9979495fc708dd66427dca4580567">height_</a></td></tr>
-<tr class="separator:addb9979495fc708dd66427dca4580567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa2e07384816983d41ba90b7f994eeb9" id="r_afa2e07384816983d41ba90b7f994eeb9"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Triplet_8h.html#afa2e07384816983d41ba90b7f994eeb9">channels_</a></td></tr>
-<tr class="memdesc:afa2e07384816983d41ba90b7f994eeb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">通道数，1表示灰度图，3表示彩色图  <br /></td></tr>
-<tr class="separator:afa2e07384816983d41ba90b7f994eeb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9386eec49bbc5080db41441e86463d9b" id="r_a9386eec49bbc5080db41441e86463d9b"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Triplet_8h.html#a9386eec49bbc5080db41441e86463d9b">count_</a></td></tr>
-<tr class="memdesc:a9386eec49bbc5080db41441e86463d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">三元组数量  <br /></td></tr>
-<tr class="separator:a9386eec49bbc5080db41441e86463d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09adad21c5ed5300c30e3deb2f232f99" id="r_a09adad21c5ed5300c30e3deb2f232f99"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Triplet_8h.html#a09adad21c5ed5300c30e3deb2f232f99">bg_color_</a> [3]</td></tr>
-<tr class="memdesc:a09adad21c5ed5300c30e3deb2f232f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">背景色，彩色图时存储BGR ，灰度图时仅用bg_color_[0]  <br /></td></tr>
-<tr class="separator:a09adad21c5ed5300c30e3deb2f232f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTripletUtils.html">TripletUtils</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triplet 相关工具类，包含背景色统计、Mat 与三元组的转换等功能  <a href="classTripletUtils.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">函数说明</h2>
-<a id="ab01d84ebade69f93dbbdcb07d14a2607" name="ab01d84ebade69f93dbbdcb07d14a2607"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab01d84ebade69f93dbbdcb07d14a2607">&#9670;&#160;</a></span>findBackgroundColor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structCompressedHeader.html">CompressedHeader</a> findBackgroundColor </td>
-          <td>(</td>
-          <td class="paramtype">const cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>img</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>bg_color</em>[3]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Triplet 相关工具类，包含背景色统计、Mat 与三元组的转换等功能 </p>
-<p>统计图像中出现频率最高的颜色作为背景色</p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">img[in]</td><td>输入图像 </td></tr>
-    <tr><td class="paramname">bg_color[out]</td><td>接受背景色的数组，彩色图时为3个元素，灰度图时仅用第一个元素 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a01fac376a7f708e7d899545a7d01e23d" name="a01fac376a7f708e7d899545a7d01e23d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01fac376a7f708e7d899545a7d01e23d">&#9670;&#160;</a></span>matToTriplets()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void matToTriplets </td>
-          <td>(</td>
-          <td class="paramtype">const cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>img</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>bg_color</em>[3], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>triplets</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>将 cv::Mat 图像转换为三元组表示 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">img[in]</td><td>输入图形 </td></tr>
-    <tr><td class="paramname">bg_color[in]</td><td>背景颜色 </td></tr>
-    <tr><td class="paramname">triplets[out]</td><td>接受三元组结果的向量 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa8b4422b8be45cc5a41ee77a1a8bc11d" name="aa8b4422b8be45cc5a41ee77a1a8bc11d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8b4422b8be45cc5a41ee77a1a8bc11d">&#9670;&#160;</a></span>tripletsToMat()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void tripletsToMat </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>triplets</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>channels</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>bg_color</em>[3], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>img</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>将三元组表示转换回 cv::Mat 图像 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">triplets[in]</td><td>输入的三元组 </td></tr>
-    <tr><td class="paramname">width[in]</td><td>图像宽度 </td></tr>
-    <tr><td class="paramname">height[in]</td><td>图像高度 </td></tr>
-    <tr><td class="paramname">channels[in]</td><td>通道数量 </td></tr>
-    <tr><td class="paramname">bg_color[in]</td><td>背景颜色 </td></tr>
-    <tr><td class="paramname">img[out]</td><td>接受转换后图像的 cv::Mat 对象 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">变量说明</h2>
-<a id="a09adad21c5ed5300c30e3deb2f232f99" name="a09adad21c5ed5300c30e3deb2f232f99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09adad21c5ed5300c30e3deb2f232f99">&#9670;&#160;</a></span>bg_color_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t bg_color_[3]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>背景色，彩色图时存储BGR ，灰度图时仅用bg_color_[0] </p>
-
-</div>
-</div>
-<a id="afa2e07384816983d41ba90b7f994eeb9" name="afa2e07384816983d41ba90b7f994eeb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa2e07384816983d41ba90b7f994eeb9">&#9670;&#160;</a></span>channels_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int32_t channels_</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>通道数，1表示灰度图，3表示彩色图 </p>
-
-</div>
-</div>
-<a id="a9386eec49bbc5080db41441e86463d9b" name="a9386eec49bbc5080db41441e86463d9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9386eec49bbc5080db41441e86463d9b">&#9670;&#160;</a></span>count_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t count_</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>三元组数量 </p>
-
-</div>
-</div>
-<a id="addb9979495fc708dd66427dca4580567" name="addb9979495fc708dd66427dca4580567"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addb9979495fc708dd66427dca4580567">&#9670;&#160;</a></span>height_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int32_t height_</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab1dc3a9dcfcc45e028efb2fe94522dc9" name="ab1dc3a9dcfcc45e028efb2fe94522dc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1dc3a9dcfcc45e028efb2fe94522dc9">&#9670;&#160;</a></span>magic_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char magic_[4] = {'T', 'R', 'I', 'P'}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3682f3c38715c7bec9b9af94a983f86f" name="a3682f3c38715c7bec9b9af94a983f86f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3682f3c38715c7bec9b9af94a983f86f">&#9670;&#160;</a></span>width_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int32_t width_</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

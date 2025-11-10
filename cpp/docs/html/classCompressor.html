@@ -71,7 +71,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="classCompressor-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">Compressor类 参考</div></div>
 </div><!--header-->
@@ -87,18 +87,18 @@ Compressor 的协作图:</div>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
-静态 Private 成员函数</h2></td></tr>
-<tr class="memitem:a91024a200dfeea832948d4560f40486e" id="r_a91024a200dfeea832948d4560f40486e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCompressor.html#a91024a200dfeea832948d4560f40486e">Save</a> (const std::string &amp;file_path, const cv::Mat &amp;img)</td></tr>
-<tr class="memdesc:a91024a200dfeea832948d4560f40486e"><td class="mdescLeft">&#160;</td><td class="mdescRight">将图像压缩并保存为 .trip 文件。  <br /></td></tr>
-<tr class="separator:a91024a200dfeea832948d4560f40486e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa399f847e1147add0bc018a72e0b0663" id="r_aa399f847e1147add0bc018a72e0b0663"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCompressor.html#aa399f847e1147add0bc018a72e0b0663">Load</a> (const std::string &amp;file_path)</td></tr>
-<tr class="memdesc:aa399f847e1147add0bc018a72e0b0663"><td class="mdescLeft">&#160;</td><td class="mdescRight">加载 .trip 文件并重建图像。  <br /></td></tr>
-<tr class="separator:aa399f847e1147add0bc018a72e0b0663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:aa04164c2ad51f4d0990e73e8f7227da1" id="r_aa04164c2ad51f4d0990e73e8f7227da1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1">Save</a> (const std::string &amp;file_path, const cv::Mat &amp;img)</td></tr>
+<tr class="memdesc:aa04164c2ad51f4d0990e73e8f7227da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">将图像压缩并保存为 .trip 文件。 流程：统计背景色 -&gt; 转换为三元组 -&gt; 写入文件头 -&gt; 写入数据。  <br /></td></tr>
+<tr class="separator:aa04164c2ad51f4d0990e73e8f7227da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc47156bc86131009b0b814f2c11015a" id="r_afc47156bc86131009b0b814f2c11015a"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCompressor.html#afc47156bc86131009b0b814f2c11015a">Load</a> (const std::string &amp;file_path)</td></tr>
+<tr class="memdesc:afc47156bc86131009b0b814f2c11015a"><td class="mdescLeft">&#160;</td><td class="mdescRight">加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 -&gt; 创建背景画布 -&gt; 覆盖三元组像素。  <br /></td></tr>
+<tr class="separator:afc47156bc86131009b0b814f2c11015a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="aa399f847e1147add0bc018a72e0b0663" name="aa399f847e1147add0bc018a72e0b0663"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa399f847e1147add0bc018a72e0b0663">&#9670;&#160;</a></span>Load()</h2>
+<a id="afc47156bc86131009b0b814f2c11015a" name="afc47156bc86131009b0b814f2c11015a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc47156bc86131009b0b814f2c11015a">&#9670;&#160;</a></span>Load()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -107,7 +107,7 @@ Compressor 的协作图:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static cv::Mat Compressor::Load </td>
+          <td class="memname">cv::Mat Compressor::Load </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em></td><td>)</td>
@@ -116,27 +116,29 @@ Compressor 的协作图:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>加载 .trip 文件并重建图像。 </p>
-<ul>
-<li>流程：读取文件头校验魔数 -&gt; 创建背景画布 -&gt; 覆盖三元组像素。 <dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file_path</td><td>源 .trip 文件路径。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>返回</dt><dd>cv::Mat 重建的图像。 </dd></dl>
-</li>
-</ul>
+<p>加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 -&gt; 创建背景画布 -&gt; 覆盖三元组像素。 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCompressor_afc47156bc86131009b0b814f2c11015a_cgraph.png" border="0" usemap="#aclassCompressor_afc47156bc86131009b0b814f2c11015a_cgraph" alt=""/></div>
+<map name="aclassCompressor_afc47156bc86131009b0b814f2c11015a_cgraph" id="aclassCompressor_afc47156bc86131009b0b814f2c11015a_cgraph">
+<area shape="rect" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="5,31,144,56"/>
+<area shape="rect" href="Compressor_8cc.html#a439b9169b21c2927e3e35e6358b24c05" title=" " alt="" coords="235,5,334,31"/>
+<area shape="poly" title=" " alt="" coords="144,32,221,23,222,28,145,38"/>
+<area shape="rect" href="classTripletUtils.html#a1d7e2b7f1e589821bfec87d10599cf49" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="192,55,377,80"/>
+<area shape="poly" title=" " alt="" coords="145,49,179,53,178,58,144,54"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a91024a200dfeea832948d4560f40486e" name="a91024a200dfeea832948d4560f40486e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91024a200dfeea832948d4560f40486e">&#9670;&#160;</a></span>Save()</h2>
+<a id="aa04164c2ad51f4d0990e73e8f7227da1" name="aa04164c2ad51f4d0990e73e8f7227da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04164c2ad51f4d0990e73e8f7227da1">&#9670;&#160;</a></span>Save()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +147,7 @@ Compressor 的协作图:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool Compressor::Save </td>
+          <td class="memname">bool Compressor::Save </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em>, </td>
@@ -164,28 +166,32 @@ Compressor 的协作图:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>将图像压缩并保存为 .trip 文件。 </p>
-<ul>
-<li>流程：统计背景色 -&gt; 转换为三元组 -&gt; 写入文件头 -&gt; 写入数据。 <dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file_path</td><td>目标 .trip 文件路径。 </td></tr>
-    <tr><td class="paramname">img</td><td>输入图像。 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>返回</dt><dd>true 成功，false 失败。 </dd></dl>
-</li>
-</ul>
+<p>将图像压缩并保存为 .trip 文件。 流程：统计背景色 -&gt; 转换为三元组 -&gt; 写入文件头 -&gt; 写入数据。 </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCompressor_aa04164c2ad51f4d0990e73e8f7227da1_cgraph.png" border="0" usemap="#aclassCompressor_aa04164c2ad51f4d0990e73e8f7227da1_cgraph" alt=""/></div>
+<map name="aclassCompressor_aa04164c2ad51f4d0990e73e8f7227da1_cgraph" id="aclassCompressor_aa04164c2ad51f4d0990e73e8f7227da1_cgraph">
+<area shape="rect" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="5,70,145,95"/>
+<area shape="rect" href="classTripletUtils.html#ac8dadcc7087f5926810820c26996aa0d" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="193,5,395,45"/>
+<area shape="poly" title=" " alt="" coords="124,67,203,46,205,51,125,73"/>
+<area shape="rect" href="classTripletUtils.html#a474e9114f121013d17dce14568d24485" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="201,70,387,95"/>
+<area shape="poly" title=" " alt="" coords="146,80,187,80,187,85,146,85"/>
+<area shape="rect" href="Compressor_8cc.html#a40a397f9f192a857e7766eaf692d0f58" title=" " alt="" coords="243,119,345,145"/>
+<area shape="poly" title=" " alt="" coords="133,93,230,115,229,120,132,98"/>
+</map>
+</div>
 
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>src/codec/<a class="el" href="Compressor_8h_source.html">Compressor.h</a></li>
+<li>src/codec/<a class="el" href="Compressor_8cc.html">Compressor.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

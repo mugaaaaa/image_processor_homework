@@ -1,0 +1,95 @@
+\doxysection{Compressed\+Header结构体 参考}
+\hypertarget{structCompressedHeader}{}\label{structCompressedHeader}\index{CompressedHeader@{CompressedHeader}}
+
+
+压缩文件头结构体，存储图像的基本信息 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。  
+
+
+
+
+{\ttfamily \#include $<$Triplet.\+h$>$}
+
+
+
+Compressed\+Header 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{structCompressedHeader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{structCompressedHeader_a9e19a0e62dc04134064ebcaa1fe995fc}{magic\+\_\+}} \mbox{[}4\mbox{]} = \{\textquotesingle{}T\textquotesingle{}, \textquotesingle{}R\textquotesingle{}, \textquotesingle{}I\textquotesingle{}, \textquotesingle{}P\textquotesingle{}\}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structCompressedHeader_ad041d9d9ca908d3986524e47e41b174f}{width\+\_\+}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structCompressedHeader_afc9f41b1d1233f1bf6cc58709d05fbfa}{height\+\_\+}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structCompressedHeader_ad19184952066ea533a53711b3a299100}{channels\+\_\+}}
+\begin{DoxyCompactList}\small\item\em 通道数，1 表示灰度图，3 表示彩色图 \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{structCompressedHeader_a1c2214c052c15661a5f42c6a10bacb43}{count\+\_\+}}
+\begin{DoxyCompactList}\small\item\em 三元组数量 \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structCompressedHeader_a817875b99aad3f578ec888c518798f54}{bg\+\_\+color\+\_\+}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em 背景色（\+BGR），灰度图时仅用 bg\+\_\+color\+\_\+\mbox{[}0\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+压缩文件头结构体，存储图像的基本信息 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。 
+
+\doxysubsection{类成员变量说明}
+\Hypertarget{structCompressedHeader_a817875b99aad3f578ec888c518798f54}\label{structCompressedHeader_a817875b99aad3f578ec888c518798f54} 
+\index{CompressedHeader@{CompressedHeader}!bg\_color\_@{bg\_color\_}}
+\index{bg\_color\_@{bg\_color\_}!CompressedHeader@{CompressedHeader}}
+\doxysubsubsection{\texorpdfstring{bg\_color\_}{bg\_color\_}}
+{\footnotesize\ttfamily uint8\+\_\+t Compressed\+Header\+::bg\+\_\+color\+\_\+\mbox{[}3\mbox{]}}
+
+
+
+背景色（\+BGR），灰度图时仅用 bg\+\_\+color\+\_\+\mbox{[}0\mbox{]} 
+
+\Hypertarget{structCompressedHeader_ad19184952066ea533a53711b3a299100}\label{structCompressedHeader_ad19184952066ea533a53711b3a299100} 
+\index{CompressedHeader@{CompressedHeader}!channels\_@{channels\_}}
+\index{channels\_@{channels\_}!CompressedHeader@{CompressedHeader}}
+\doxysubsubsection{\texorpdfstring{channels\_}{channels\_}}
+{\footnotesize\ttfamily int32\+\_\+t Compressed\+Header\+::channels\+\_\+}
+
+
+
+通道数，1 表示灰度图，3 表示彩色图 
+
+\Hypertarget{structCompressedHeader_a1c2214c052c15661a5f42c6a10bacb43}\label{structCompressedHeader_a1c2214c052c15661a5f42c6a10bacb43} 
+\index{CompressedHeader@{CompressedHeader}!count\_@{count\_}}
+\index{count\_@{count\_}!CompressedHeader@{CompressedHeader}}
+\doxysubsubsection{\texorpdfstring{count\_}{count\_}}
+{\footnotesize\ttfamily uint64\+\_\+t Compressed\+Header\+::count\+\_\+}
+
+
+
+三元组数量 
+
+\Hypertarget{structCompressedHeader_afc9f41b1d1233f1bf6cc58709d05fbfa}\label{structCompressedHeader_afc9f41b1d1233f1bf6cc58709d05fbfa} 
+\index{CompressedHeader@{CompressedHeader}!height\_@{height\_}}
+\index{height\_@{height\_}!CompressedHeader@{CompressedHeader}}
+\doxysubsubsection{\texorpdfstring{height\_}{height\_}}
+{\footnotesize\ttfamily int32\+\_\+t Compressed\+Header\+::height\+\_\+}
+
+\Hypertarget{structCompressedHeader_a9e19a0e62dc04134064ebcaa1fe995fc}\label{structCompressedHeader_a9e19a0e62dc04134064ebcaa1fe995fc} 
+\index{CompressedHeader@{CompressedHeader}!magic\_@{magic\_}}
+\index{magic\_@{magic\_}!CompressedHeader@{CompressedHeader}}
+\doxysubsubsection{\texorpdfstring{magic\_}{magic\_}}
+{\footnotesize\ttfamily char Compressed\+Header\+::magic\+\_\+\mbox{[}4\mbox{]} = \{\textquotesingle{}T\textquotesingle{}, \textquotesingle{}R\textquotesingle{}, \textquotesingle{}I\textquotesingle{}, \textquotesingle{}P\textquotesingle{}\}}
+
+\Hypertarget{structCompressedHeader_ad041d9d9ca908d3986524e47e41b174f}\label{structCompressedHeader_ad041d9d9ca908d3986524e47e41b174f} 
+\index{CompressedHeader@{CompressedHeader}!width\_@{width\_}}
+\index{width\_@{width\_}!CompressedHeader@{CompressedHeader}}
+\doxysubsubsection{\texorpdfstring{width\_}{width\_}}
+{\footnotesize\ttfamily int32\+\_\+t Compressed\+Header\+::width\+\_\+}
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+cpp/src/data\+\_\+structure/\mbox{\hyperlink{Triplet_8h}{Triplet.\+h}}\end{DoxyCompactItemize}

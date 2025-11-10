@@ -74,9 +74,89 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
   <div class="headertitle"><div class="title">Ppm.cc 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Ppm_8h_source.html">Ppm.h</a>&quot;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Ppm.cc 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="Ppm_8cc__incl.png" border="0" usemap="#asrc_2io_2Ppm_8cc" alt=""/></div>
+<map name="asrc_2io_2Ppm_8cc" id="asrc_2io_2Ppm_8cc">
+<area shape="rect" title=" " alt="" coords="95,5,203,31"/>
+<area shape="rect" href="Ppm_8h.html" title=" " alt="" coords="73,79,135,104"/>
+<area shape="poly" title=" " alt="" coords="144,32,121,69,116,66,140,30"/>
+<area shape="rect" title=" " alt="" coords="5,152,64,177"/>
+<area shape="poly" title=" " alt="" coords="124,33,92,52,62,80,48,109,40,139,35,138,43,107,58,77,88,48,122,28"/>
+<area shape="rect" title=" " alt="" coords="159,79,233,104"/>
+<area shape="poly" title=" " alt="" coords="159,30,183,66,179,69,155,32"/>
+<area shape="rect" title=" " alt="" coords="257,79,332,104"/>
+<area shape="poly" title=" " alt="" coords="174,28,260,70,258,75,172,33"/>
+<area shape="poly" title=" " alt="" coords="94,106,57,144,53,140,91,102"/>
+<area shape="rect" title=" " alt="" coords="88,152,243,177"/>
+<area shape="poly" title=" " alt="" coords="116,103,148,140,144,143,112,106"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ac7b87a81313fd97a2fac93e28df9b8ef" id="r_ac7b87a81313fd97a2fac93e28df9b8ef"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef">readToken</a> (std::istream &amp;is, std::string &amp;tok)</td></tr>
+<tr class="separator:ac7b87a81313fd97a2fac93e28df9b8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="ac7b87a81313fd97a2fac93e28df9b8ef" name="ac7b87a81313fd97a2fac93e28df9b8ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b87a81313fd97a2fac93e28df9b8ef">&#9670;&#160;</a></span>readToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool readToken </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>tok</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="Ppm_8cc_ac7b87a81313fd97a2fac93e28df9b8ef_icgraph.png" border="0" usemap="#aPpm_8cc_ac7b87a81313fd97a2fac93e28df9b8ef_icgraph" alt=""/></div>
+<map name="aPpm_8cc_ac7b87a81313fd97a2fac93e28df9b8ef_icgraph" id="aPpm_8cc_ac7b87a81313fd97a2fac93e28df9b8ef_icgraph">
+<area shape="rect" title=" " alt="" coords="401,5,489,31"/>
+<area shape="rect" href="classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="196,5,353,31"/>
+<area shape="poly" title=" " alt="" coords="388,21,353,21,353,15,388,15"/>
+<area shape="rect" href="classImageIO.html#ad3457dfc34f78f2314cc5b989584ca86" title="从文件加载三元组压缩图像 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat" alt="" coords="5,5,148,31"/>
+<area shape="poly" title=" " alt="" coords="182,21,149,21,149,15,182,15"/>
+</map>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

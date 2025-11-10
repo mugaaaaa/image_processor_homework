@@ -1,0 +1,9 @@
+<map id="TripletUtils::tripletsToMat" name="TripletUtils::tripletsToMat">
+<area shape="rect" id="Node000001" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="520,5,705,31"/>
+<area shape="rect" id="Node000002" href="$classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="333,5,472,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="506,21,472,21,472,15,506,15"/>
+<area shape="rect" id="Node000003" href="$main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title=" " alt="" coords="96,5,285,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="319,21,285,21,285,15,319,15"/>
+<area shape="rect" id="Node000004" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="83,21,48,21,48,15,83,15"/>
+</map>

@@ -1,3 +1,14 @@
+/**
+ * @file Triplet.h
+ * @author Runhui Mo (github.com/mugaaaaa)
+ * @brief 三元组数据结构及相关工具类声明
+ * @version 0.1
+ * @date 2025-11-07
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #pragma once
 #include <cstdint>
 #include <vector>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['encodetobuffer_0',['EncodeToBuffer',['../classImageIO.html#a474b2a18c015c6f575360b09eab19e25',1,'ImageIO']]]
+  ['decodefrombuffer_0',['DecodeFromBuffer',['../classImageIO.html#a526599dead8abdc1845d34e0329c4ac9',1,'ImageIO']]]
 ];

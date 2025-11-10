@@ -2,7 +2,7 @@
 \hypertarget{structCompressedHeader}{}\label{structCompressedHeader}\index{CompressedHeader@{CompressedHeader}}
 
 
-压缩文件头结构体，存储图像的基本信息  
+压缩文件头结构体，存储图像的基本信息 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。  
 
 
 
@@ -29,15 +29,15 @@ int32\+\_\+t \mbox{\hyperlink{structCompressedHeader_ad041d9d9ca908d3986524e47e4
 int32\+\_\+t \mbox{\hyperlink{structCompressedHeader_afc9f41b1d1233f1bf6cc58709d05fbfa}{height\+\_\+}}
 \item 
 int32\+\_\+t \mbox{\hyperlink{structCompressedHeader_ad19184952066ea533a53711b3a299100}{channels\+\_\+}}
-\begin{DoxyCompactList}\small\item\em 通道数，1表示灰度图，3表示彩色图 \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 通道数，1 表示灰度图，3 表示彩色图 \end{DoxyCompactList}\item 
 uint64\+\_\+t \mbox{\hyperlink{structCompressedHeader_a1c2214c052c15661a5f42c6a10bacb43}{count\+\_\+}}
 \begin{DoxyCompactList}\small\item\em 三元组数量 \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{structCompressedHeader_a817875b99aad3f578ec888c518798f54}{bg\+\_\+color\+\_\+}} \mbox{[}3\mbox{]}
-\begin{DoxyCompactList}\small\item\em 背景色，彩色图时存储\+BGR ，灰度图时仅用bg\+\_\+color\+\_\+\mbox{[}0\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 背景色（\+BGR），灰度图时仅用 bg\+\_\+color\+\_\+\mbox{[}0\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{详细描述}
-压缩文件头结构体，存储图像的基本信息 
+压缩文件头结构体，存储图像的基本信息 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。 
 
 \doxysubsection{类成员变量说明}
 \Hypertarget{structCompressedHeader_a817875b99aad3f578ec888c518798f54}\label{structCompressedHeader_a817875b99aad3f578ec888c518798f54} 
@@ -48,7 +48,7 @@ uint8\+\_\+t \mbox{\hyperlink{structCompressedHeader_a817875b99aad3f578ec888c518
 
 
 
-背景色，彩色图时存储\+BGR ，灰度图时仅用bg\+\_\+color\+\_\+\mbox{[}0\mbox{]} 
+背景色（\+BGR），灰度图时仅用 bg\+\_\+color\+\_\+\mbox{[}0\mbox{]} 
 
 \Hypertarget{structCompressedHeader_ad19184952066ea533a53711b3a299100}\label{structCompressedHeader_ad19184952066ea533a53711b3a299100} 
 \index{CompressedHeader@{CompressedHeader}!channels\_@{channels\_}}
@@ -58,7 +58,7 @@ uint8\+\_\+t \mbox{\hyperlink{structCompressedHeader_a817875b99aad3f578ec888c518
 
 
 
-通道数，1表示灰度图，3表示彩色图 
+通道数，1 表示灰度图，3 表示彩色图 
 
 \Hypertarget{structCompressedHeader_a1c2214c052c15661a5f42c6a10bacb43}\label{structCompressedHeader_a1c2214c052c15661a5f42c6a10bacb43} 
 \index{CompressedHeader@{CompressedHeader}!count\_@{count\_}}

@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>压缩文件头结构体，存储图像的基本信息  
+<p>压缩文件头结构体，存储图像的基本信息 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。  
  <a href="structCompressedHeader.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Triplet_8h_source.html">Triplet.h</a>&gt;</code></p>
@@ -86,7 +86,7 @@ CompressedHeader 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="structCompressedHeader__coll__graph.png" border="0" usemap="#aCompressedHeader_coll__map" alt="Collaboration graph"/></div>
 <map name="aCompressedHeader_coll__map" id="aCompressedHeader_coll__map">
-<area shape="rect" title="压缩文件头结构体，存储图像的基本信息" alt="" coords="5,5,148,171"/>
+<area shape="rect" title="压缩文件头结构体，存储图像的基本信息 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。" alt="" coords="5,5,148,171"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -99,17 +99,17 @@ Public 属性</h2></td></tr>
 <tr class="memitem:afc9f41b1d1233f1bf6cc58709d05fbfa" id="r_afc9f41b1d1233f1bf6cc58709d05fbfa"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCompressedHeader.html#afc9f41b1d1233f1bf6cc58709d05fbfa">height_</a></td></tr>
 <tr class="separator:afc9f41b1d1233f1bf6cc58709d05fbfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad19184952066ea533a53711b3a299100" id="r_ad19184952066ea533a53711b3a299100"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCompressedHeader.html#ad19184952066ea533a53711b3a299100">channels_</a></td></tr>
-<tr class="memdesc:ad19184952066ea533a53711b3a299100"><td class="mdescLeft">&#160;</td><td class="mdescRight">通道数，1表示灰度图，3表示彩色图  <br /></td></tr>
+<tr class="memdesc:ad19184952066ea533a53711b3a299100"><td class="mdescLeft">&#160;</td><td class="mdescRight">通道数，1 表示灰度图，3 表示彩色图  <br /></td></tr>
 <tr class="separator:ad19184952066ea533a53711b3a299100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c2214c052c15661a5f42c6a10bacb43" id="r_a1c2214c052c15661a5f42c6a10bacb43"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCompressedHeader.html#a1c2214c052c15661a5f42c6a10bacb43">count_</a></td></tr>
 <tr class="memdesc:a1c2214c052c15661a5f42c6a10bacb43"><td class="mdescLeft">&#160;</td><td class="mdescRight">三元组数量  <br /></td></tr>
 <tr class="separator:a1c2214c052c15661a5f42c6a10bacb43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a817875b99aad3f578ec888c518798f54" id="r_a817875b99aad3f578ec888c518798f54"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCompressedHeader.html#a817875b99aad3f578ec888c518798f54">bg_color_</a> [3]</td></tr>
-<tr class="memdesc:a817875b99aad3f578ec888c518798f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">背景色，彩色图时存储BGR ，灰度图时仅用bg_color_[0]  <br /></td></tr>
+<tr class="memdesc:a817875b99aad3f578ec888c518798f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">背景色（BGR），灰度图时仅用 bg_color_[0]  <br /></td></tr>
 <tr class="separator:a817875b99aad3f578ec888c518798f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>压缩文件头结构体，存储图像的基本信息 </p>
+<div class="textblock"><p>压缩文件头结构体，存储图像的基本信息 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。 </p>
 </div><h2 class="groupheader">类成员变量说明</h2>
 <a id="a817875b99aad3f578ec888c518798f54" name="a817875b99aad3f578ec888c518798f54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a817875b99aad3f578ec888c518798f54">&#9670;&#160;</a></span>bg_color_</h2>
@@ -123,7 +123,7 @@ Public 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>背景色，彩色图时存储BGR ，灰度图时仅用bg_color_[0] </p>
+<p>背景色（BGR），灰度图时仅用 bg_color_[0] </p>
 
 </div>
 </div>
@@ -139,7 +139,7 @@ Public 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>通道数，1表示灰度图，3表示彩色图 </p>
+<p>通道数，1 表示灰度图，3 表示彩色图 </p>
 
 </div>
 </div>

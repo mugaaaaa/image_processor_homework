@@ -1,3 +1,14 @@
+/**
+ * @file ImageIO.h
+ * @author Runhui Mo (github.com/mugaaaaa)
+ * @brief 声明图像 I/O 接口类 ImageIO
+ * @version 0.1
+ * @date 2025-11-07
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #pragma once
 
 #include <string>
@@ -9,7 +20,8 @@
 /**
  * @brief 图像 I/O 接口类
  * 
- * 提供了加载和保存 .png、.ppm 和 .trip（自定义的压缩类型）图像的静态方法。
+ * @details 提供了加载和保存 .png、.ppm 和 .trip（自定义的压缩类型）图像的静态方法
+ * - 和与 Node.js 互操作的接口。
  */
 class ImageIO {
 public:
@@ -23,7 +35,7 @@ public:
 
     /**
      * @brief 从文件加载三元组压缩图像
-     * 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat
+     * - 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat
      * 
      * @param file_path .ppm 文件路径
      * @return cv::Mat 加载的图像
@@ -72,10 +84,10 @@ public:
     /**
      * @brief 写入完整头部信息的.trip 保存接口。
      * 
-     * 头部格式：TRIP width height channels count bgB bgG bgR
+     * @details 头部格式：TRIP width height channels count bgB bgG bgR
      * - channels 仅支持 1（灰度）或 3（彩色）；
      * - bg_color 为 BGR 顺序（灰度仅用 bg_color[0]）。
-     * 随后每行写入一个三元组：row col v0 [v1 v2]
+     * - 随后每行写入一个三元组：row col v0 [v1 v2]
      * 
      * @param file_path 输出 .trip 文件路径
      * @param width 图像宽度
@@ -95,11 +107,11 @@ public:
 
 
     // =========================================================
-    // Node.js 互操作预留接口 (Buffer I/O)
+    // Node.js 互操作接口 (Buffer I/O)
     // =========================================================
 
     /**
-    * @brief [预留] 从内存缓冲区解码图像 (供 Node.js 调用)。
+    * @brief 从内存缓冲区解码图像 (供 Node.js 调用)。
     * @param data 指向 buffer 数据的指针。
     * @param size buffer 数据长度。
     * @return cv::Mat 解码后的图像。
@@ -107,7 +119,7 @@ public:
     static cv::Mat DecodeFromBuffer(const uint8_t* data, size_t size);
 
     /**
-    * @brief [预留] 将图像编码到内存缓冲区 (供 Node.js 调用)。
+    * @brief 将图像编码到内存缓冲区 (供 Node.js 调用)。
     * @param img 输入图像。
     * @param format 编码格式
     * @param[out] buffer 输出的二进制数据。

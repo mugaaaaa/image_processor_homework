@@ -1,0 +1,74 @@
+\doxysection{cpp/src/codec/\+Compressor.cc 文件参考}
+\hypertarget{Compressor_8cc}{}\label{Compressor_8cc}\index{cpp/src/codec/Compressor.cc@{cpp/src/codec/Compressor.cc}}
+
+
+\doxylink{classCompressor}{Compressor} 类静态方法实现  
+
+
+{\ttfamily \#include "{}Compressor.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+Compressor.\+cc 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Compressor_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{Compressor_8cc_a40a397f9f192a857e7766eaf692d0f58}{write\+Header}} (std\+::ostream \&os, const \mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} \&hdr)
+\item 
+static bool \mbox{\hyperlink{Compressor_8cc_a439b9169b21c2927e3e35e6358b24c05}{read\+Header}} (std\+::istream \&is, \mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} \&hdr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\doxylink{classCompressor}{Compressor} 类静态方法实现 
+
+\begin{DoxyAuthor}{作者}
+Mo Runhui(\+Mugaaaaa) 
+\end{DoxyAuthor}
+三元组存储格式： 文件头：\+TRIP width height channels count bgB bgG bgR~\newline
+后续每行一个三元组：row col v0 \mbox{[}v1 v2\mbox{]}~\newline
+ \begin{DoxyVersion}{版本}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{日期}
+2025-\/11-\/09
+\end{DoxyDate}
+\begin{DoxyCopyright}{版权所有}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{函数说明}
+\Hypertarget{Compressor_8cc_a439b9169b21c2927e3e35e6358b24c05}\label{Compressor_8cc_a439b9169b21c2927e3e35e6358b24c05} 
+\index{Compressor.cc@{Compressor.cc}!readHeader@{readHeader}}
+\index{readHeader@{readHeader}!Compressor.cc@{Compressor.cc}}
+\doxysubsubsection{\texorpdfstring{readHeader()}{readHeader()}}
+{\footnotesize\ttfamily static bool read\+Header (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} \&}]{hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Compressor_8cc_a439b9169b21c2927e3e35e6358b24c05_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{Compressor_8cc_a40a397f9f192a857e7766eaf692d0f58}\label{Compressor_8cc_a40a397f9f192a857e7766eaf692d0f58} 
+\index{Compressor.cc@{Compressor.cc}!writeHeader@{writeHeader}}
+\index{writeHeader@{writeHeader}!Compressor.cc@{Compressor.cc}}
+\doxysubsubsection{\texorpdfstring{writeHeader()}{writeHeader()}}
+{\footnotesize\ttfamily static bool write\+Header (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} \&}]{hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Compressor_8cc_a40a397f9f192a857e7766eaf692d0f58_icgraph}
+\end{center}
+\end{figure}

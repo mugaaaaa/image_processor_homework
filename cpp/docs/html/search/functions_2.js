@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['findbackgroundcolor_0',['findBackgroundColor',['../Triplet_8h.html#ab01d84ebade69f93dbbdcb07d14a2607',1,'Triplet.h']]]
+  ['encodetobuffer_0',['EncodeToBuffer',['../classImageIO.html#a15415944fc6c74e4ff5ed28ae2fb3aa9',1,'ImageIO']]]
 ];

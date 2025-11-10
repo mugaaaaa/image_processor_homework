@@ -1,0 +1,123 @@
+\doxysection{Processor类 参考}
+\hypertarget{classProcessor}{}\label{classProcessor}\index{Processor@{Processor}}
+
+
+图像处理算法集合类。  
+
+
+
+
+{\ttfamily \#include $<$Image\+Processor.\+h$>$}
+
+
+
+Processor 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classProcessor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static cv\+::\+Mat \mbox{\hyperlink{classProcessor_a5c48f5a991e81dcf354cebb10df48260}{To\+Gray}} (const cv\+::\+Mat \&input)
+\begin{DoxyCompactList}\small\item\em 将彩色图像转换为灰度图像。 \end{DoxyCompactList}\item 
+static cv\+::\+Mat \mbox{\hyperlink{classProcessor_af43377f1cfa191f7521d8eb60e5374a0}{Resize}} (const cv\+::\+Mat \&input, int new\+\_\+width, int new\+\_\+height)
+\begin{DoxyCompactList}\small\item\em 使用双线性插值调整图像尺寸。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+图像处理算法集合类。 
+
+
+\begin{DoxyItemize}
+\item 包含手动实现的经典图像处理算法。 
+\end{DoxyItemize}
+
+\doxysubsection{成员函数说明}
+\Hypertarget{classProcessor_af43377f1cfa191f7521d8eb60e5374a0}\label{classProcessor_af43377f1cfa191f7521d8eb60e5374a0} 
+\index{Processor@{Processor}!Resize@{Resize}}
+\index{Resize@{Resize}!Processor@{Processor}}
+\doxysubsubsection{\texorpdfstring{Resize()}{Resize()}}
+{\footnotesize\ttfamily cv\+::\+Mat Processor\+::\+Resize (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{input,  }\item[{int}]{new\+\_\+width,  }\item[{int}]{new\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+使用双线性插值调整图像尺寸。 
+
+
+\begin{DoxyItemize}
+\item 支持单通道(灰度)和三通道(彩色)图像。 
+\begin{DoxyParams}{参数}
+{\em input} & 输入图像。 \\
+\hline
+{\em new\+\_\+width} & 目标宽度。 \\
+\hline
+{\em new\+\_\+height} & 目标高度。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+cv\+::\+Mat 调整尺寸后的图像。 
+\end{DoxyReturn}
+
+\end{DoxyItemize}函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{classProcessor_af43377f1cfa191f7521d8eb60e5374a0_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProcessor_af43377f1cfa191f7521d8eb60e5374a0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classProcessor_a5c48f5a991e81dcf354cebb10df48260}\label{classProcessor_a5c48f5a991e81dcf354cebb10df48260} 
+\index{Processor@{Processor}!ToGray@{ToGray}}
+\index{ToGray@{ToGray}!Processor@{Processor}}
+\doxysubsubsection{\texorpdfstring{ToGray()}{ToGray()}}
+{\footnotesize\ttfamily cv\+::\+Mat Processor\+::\+To\+Gray (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+将彩色图像转换为灰度图像。 
+
+
+\begin{DoxyItemize}
+\item 经验公式：\+Gray = 0.\+299\texorpdfstring{$\ast$}{*}R + 0.\+587\texorpdfstring{$\ast$}{*}G + 0.\+114\texorpdfstring{$\ast$}{*}B 
+\begin{DoxyParams}{参数}
+{\em input} & 输入图像 (CV\+\_\+8\+UC3)。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+cv\+::\+Mat 灰度图像 (CV\+\_\+8\+UC1)。 
+\end{DoxyReturn}
+
+\end{DoxyItemize}函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{classProcessor_a5c48f5a991e81dcf354cebb10df48260_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProcessor_a5c48f5a991e81dcf354cebb10df48260_icgraph}
+\end{center}
+\end{figure}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+cpp/src/imgproc/\mbox{\hyperlink{ImageProcessor_8h}{Image\+Processor.\+h}}\item 
+cpp/src/imgproc/\mbox{\hyperlink{ImageProcessor_8cc}{Image\+Processor.\+cc}}\end{DoxyCompactItemize}

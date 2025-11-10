@@ -1,0 +1,11 @@
+<map id="CompressorLoadWrapped" name="CompressorLoadWrapped">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,195,80"/>
+<area shape="rect" id="Node000002" href="$classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="243,29,381,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,53,229,49,229,55,195,59"/>
+<area shape="rect" id="Node000005" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="268,79,356,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="195,75,255,82,254,88,195,81"/>
+<area shape="rect" id="Node000003" href="$Compressor_8cc.html#a439b9169b21c2927e3e35e6358b24c05" title=" " alt="" coords="473,5,571,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,31,459,22,459,28,382,37"/>
+<area shape="rect" id="Node000004" href="$classTripletUtils.html#a1d7e2b7f1e589821bfec87d10599cf49" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="429,55,615,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="382,48,416,52,415,57,381,53"/>
+</map>

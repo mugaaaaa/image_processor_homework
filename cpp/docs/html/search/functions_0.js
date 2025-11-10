@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['decodefrombuffer_0',['DecodeFromBuffer',['../classImageIO.html#a0a737c8220d5a6cb85f3343ee7b89add',1,'ImageIO']]]
+  ['clamp255_0',['clamp255',['../ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a',1,'ImageProcessor.cc']]]
 ];

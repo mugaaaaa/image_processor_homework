@@ -1,28 +1,51 @@
+/**
+ * @file Triplet.cc
+ * @author Runhui Mo (github.com/mugaaaaa)
+ * @brief 三元组相关工具类实现
+ * @version 0.1
+ * @date 2025-11-07
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "Triplet.h"
 #include <unordered_map>
 #include <array>
 
+// 统计所有颜色出现频次，选出频次最高的为背景色
 void TripletUtils::findBackgroundColor(const cv::Mat& img, uint8_t bg_color[3]) {
     int channels = img.channels();
+    
     if (channels == 1) {
-        std::array<size_t, 256> hist{};
+        // 单通道图像，直接用 array 统计
+        std::array<size_t, 256> hist{}; // hist : histogram
+
+        // 遍历图像统计频次
         for (int r = 0; r < img.rows; ++r) {
             const uint8_t* rowp = img.ptr<uint8_t>(r);
             for (int c = 0; c < img.cols; ++c) {
                 ++hist[rowp[c]];
             }
         }
+
+        // 找出频次最高的灰度值
         size_t maxcnt = 0; int maxval = 0;
         for (int v = 0; v < 256; ++v) {
             if (hist[v] > maxcnt) { maxcnt = hist[v]; maxval = v; }
         }
+
+        // 写入背景色，灰度图只用第一个通道
         bg_color[0] = static_cast<uint8_t>(maxval);
         bg_color[1] = 0; bg_color[2] = 0;
     } else if (channels == 3) {
+        // 多通道情况，用哈希表统计颜色出现频次。预留空间减少扩容开销
         std::unordered_map<uint32_t, size_t> hist;
         hist.reserve(static_cast<size_t>(img.rows) * img.cols / 8 + 256);
+        
+        // 遍历图像统计频次
         for (int r = 0; r < img.rows; ++r) {
-            const cv::Vec3b* rowp = img.ptr<cv::Vec3b>(r);
+            const cv::Vec3b* rowp = img.ptr<cv::Vec3b>(r);  // 获取行指针
             for (int c = 0; c < img.cols; ++c) {
                 const cv::Vec3b& pix = rowp[c]; // B,G,R
                 uint32_t key = (static_cast<uint32_t>(pix[0]) << 16) |
@@ -35,6 +58,7 @@ void TripletUtils::findBackgroundColor(const cv::Mat& img, uint8_t bg_color[3]) 
         for (const auto& kv : hist) {
             if (kv.second > best_cnt) { best_cnt = kv.second; best_key = kv.first; }
         }
+        // 按照 BGR 通道顺序提取背景色
         bg_color[0] = static_cast<uint8_t>((best_key >> 16) & 0xFF);
         bg_color[1] = static_cast<uint8_t>((best_key >> 8) & 0xFF);
         bg_color[2] = static_cast<uint8_t>(best_key & 0xFF);
@@ -44,8 +68,12 @@ void TripletUtils::findBackgroundColor(const cv::Mat& img, uint8_t bg_color[3]) 
     }
 }
 
+// 将图像转换为三元组表示
 void TripletUtils::matToTriplets(const cv::Mat& img, const uint8_t bg_color[3], std::vector<TripletNode>& triplets) {
+    // 清空输出向量防止，有脏数据
     triplets.clear();
+
+    
     int channels = img.channels();
     if (channels == 1) {
         for (int r = 0; r < img.rows; ++r) {

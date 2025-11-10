@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageProcessorCore: TripletUtils类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageProcessorCore<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">C++ core of ImageProcessor</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="classTripletUtils-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">TripletUtils类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Triplet 相关工具类，包含背景色统计、Mat 与三元组的转换等功能  
+ <a href="classTripletUtils.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Triplet_8h_source.html">Triplet.h</a>&gt;</code></p>
+<div class="dynheader">
+TripletUtils 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTripletUtils__coll__graph.png" border="0" usemap="#aTripletUtils_coll__map" alt="Collaboration graph"/></div>
+<map name="aTripletUtils_coll__map" id="aTripletUtils_coll__map">
+<area shape="rect" title="Triplet 相关工具类，包含背景色统计、Mat 与三元组的转换等功能" alt="" coords="5,5,179,111"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:ac8dadcc7087f5926810820c26996aa0d" id="r_ac8dadcc7087f5926810820c26996aa0d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTripletUtils.html#ac8dadcc7087f5926810820c26996aa0d">findBackgroundColor</a> (const cv::Mat &amp;img, uint8_t bg_color[3])</td></tr>
+<tr class="memdesc:ac8dadcc7087f5926810820c26996aa0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">统计图像中出现频率最高的颜色作为背景色  <br /></td></tr>
+<tr class="separator:ac8dadcc7087f5926810820c26996aa0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474e9114f121013d17dce14568d24485" id="r_a474e9114f121013d17dce14568d24485"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTripletUtils.html#a474e9114f121013d17dce14568d24485">matToTriplets</a> (const cv::Mat &amp;img, const uint8_t bg_color[3], std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;triplets)</td></tr>
+<tr class="memdesc:a474e9114f121013d17dce14568d24485"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 cv::Mat 图像转换为三元组表示  <br /></td></tr>
+<tr class="separator:a474e9114f121013d17dce14568d24485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7e2b7f1e589821bfec87d10599cf49" id="r_a1d7e2b7f1e589821bfec87d10599cf49"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTripletUtils.html#a1d7e2b7f1e589821bfec87d10599cf49">tripletsToMat</a> (const std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;triplets, int width, int height, int channels, const uint8_t bg_color[3], cv::Mat &amp;img)</td></tr>
+<tr class="memdesc:a1d7e2b7f1e589821bfec87d10599cf49"><td class="mdescLeft">&#160;</td><td class="mdescRight">将三元组表示转换回 cv::Mat 图像  <br /></td></tr>
+<tr class="separator:a1d7e2b7f1e589821bfec87d10599cf49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Triplet 相关工具类，包含背景色统计、Mat 与三元组的转换等功能 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="ac8dadcc7087f5926810820c26996aa0d" name="ac8dadcc7087f5926810820c26996aa0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8dadcc7087f5926810820c26996aa0d">&#9670;&#160;</a></span>findBackgroundColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TripletUtils::findBackgroundColor </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>bg_color</em>[3]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>统计图像中出现频率最高的颜色作为背景色 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img[in]</td><td>输入图像 </td></tr>
+    <tr><td class="paramname">bg_color[out]</td><td>接受背景色的数组，彩色图时为 3 个元素，灰度图时仅用第一个元素 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTripletUtils_ac8dadcc7087f5926810820c26996aa0d_icgraph.png" border="0" usemap="#aclassTripletUtils_ac8dadcc7087f5926810820c26996aa0d_icgraph" alt=""/></div>
+<map name="aclassTripletUtils_ac8dadcc7087f5926810820c26996aa0d_icgraph" id="aclassTripletUtils_ac8dadcc7087f5926810820c26996aa0d_icgraph">
+<area shape="rect" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="523,5,724,45"/>
+<area shape="rect" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="335,13,475,38"/>
+<area shape="poly" title=" " alt="" coords="509,28,475,28,475,23,509,23"/>
+<area shape="rect" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title=" " alt="" coords="96,13,287,38"/>
+<area shape="poly" title=" " alt="" coords="321,28,287,28,287,23,321,23"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,13,48,38"/>
+<area shape="poly" title=" " alt="" coords="82,28,49,28,49,23,82,23"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a474e9114f121013d17dce14568d24485" name="a474e9114f121013d17dce14568d24485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474e9114f121013d17dce14568d24485">&#9670;&#160;</a></span>matToTriplets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TripletUtils::matToTriplets </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>bg_color</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>triplets</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将 cv::Mat 图像转换为三元组表示 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img[in]</td><td>输入图像 </td></tr>
+    <tr><td class="paramname">bg_color[in]</td><td>背景颜色（BGR 或灰度） </td></tr>
+    <tr><td class="paramname">triplets[out]</td><td>接受三元组结果的向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTripletUtils_a474e9114f121013d17dce14568d24485_icgraph.png" border="0" usemap="#aclassTripletUtils_a474e9114f121013d17dce14568d24485_icgraph" alt=""/></div>
+<map name="aclassTripletUtils_a474e9114f121013d17dce14568d24485_icgraph" id="aclassTripletUtils_a474e9114f121013d17dce14568d24485_icgraph">
+<area shape="rect" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="523,5,709,31"/>
+<area shape="rect" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="335,5,475,31"/>
+<area shape="poly" title=" " alt="" coords="509,21,475,21,475,15,509,15"/>
+<area shape="rect" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title=" " alt="" coords="96,5,287,31"/>
+<area shape="poly" title=" " alt="" coords="321,21,287,21,287,15,321,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="poly" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1d7e2b7f1e589821bfec87d10599cf49" name="a1d7e2b7f1e589821bfec87d10599cf49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d7e2b7f1e589821bfec87d10599cf49">&#9670;&#160;</a></span>tripletsToMat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TripletUtils::tripletsToMat </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>triplets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>bg_color</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>img</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将三元组表示转换回 cv::Mat 图像 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">triplets[in]</td><td>输入的三元组 </td></tr>
+    <tr><td class="paramname">width[in]</td><td>图像宽度 </td></tr>
+    <tr><td class="paramname">height[in]</td><td>图像高度 </td></tr>
+    <tr><td class="paramname">channels[in]</td><td>通道数量 </td></tr>
+    <tr><td class="paramname">bg_color[in]</td><td>背景颜色 </td></tr>
+    <tr><td class="paramname">img[out]</td><td>接受转换后图像的 cv::Mat 对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTripletUtils_a1d7e2b7f1e589821bfec87d10599cf49_icgraph.png" border="0" usemap="#aclassTripletUtils_a1d7e2b7f1e589821bfec87d10599cf49_icgraph" alt=""/></div>
+<map name="aclassTripletUtils_a1d7e2b7f1e589821bfec87d10599cf49_icgraph" id="aclassTripletUtils_a1d7e2b7f1e589821bfec87d10599cf49_icgraph">
+<area shape="rect" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="520,5,705,31"/>
+<area shape="rect" href="classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="333,5,472,31"/>
+<area shape="poly" title=" " alt="" coords="506,21,472,21,472,15,506,15"/>
+<area shape="rect" href="main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title=" " alt="" coords="96,5,285,31"/>
+<area shape="poly" title=" " alt="" coords="319,21,285,21,285,15,319,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="poly" title=" " alt="" coords="83,21,48,21,48,15,83,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>cpp/src/data_structure/<a class="el" href="Triplet_8h_source.html">Triplet.h</a></li>
+<li>cpp/src/data_structure/<a class="el" href="Triplet_8cc.html">Triplet.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
