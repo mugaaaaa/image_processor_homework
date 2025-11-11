@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ImageProcessorCore: Compressor类 参考</title>
+<title>ImageProcessor: Compressor类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ImageProcessorCore<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">ImageProcessor<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">C++ core of ImageProcessor</div>
+   <div id="projectbrief">a ImageProcessor with C++ core and Electron UI</div>
   </td>
  </tr>
  </tbody>
@@ -80,7 +80,7 @@ $(function() {
 <p>压缩与解压类，调用 Triplet 相关函数实现图像的三元组压缩存储与重建。  
  <a href="classCompressor.html#details">更多...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Compressor_8h_source.html">Compressor.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="compressor_8h_source.html">compressor.h</a>&gt;</code></p>
 <div class="dynheader">
 Compressor 的协作图:</div>
 <div class="dyncontent">
@@ -133,10 +133,10 @@ Compressor 的协作图:</div>
 <div class="center"><img src="classCompressor_afc47156bc86131009b0b814f2c11015a_cgraph.png" border="0" usemap="#aclassCompressor_afc47156bc86131009b0b814f2c11015a_cgraph" alt=""/></div>
 <map name="aclassCompressor_afc47156bc86131009b0b814f2c11015a_cgraph" id="aclassCompressor_afc47156bc86131009b0b814f2c11015a_cgraph">
 <area shape="rect" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="5,31,144,56"/>
-<area shape="rect" href="Compressor_8cc.html#a439b9169b21c2927e3e35e6358b24c05" title=" " alt="" coords="235,5,334,31"/>
-<area shape="poly" title=" " alt="" coords="144,32,221,23,222,28,145,38"/>
-<area shape="rect" href="classTripletUtils.html#a1d7e2b7f1e589821bfec87d10599cf49" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="192,55,377,80"/>
-<area shape="poly" title=" " alt="" coords="145,49,179,53,178,58,144,54"/>
+<area shape="rect" href="compressor_8cc.html#a393bbe21a99a76d202ac90bab190280c" title=" " alt="" coords="234,5,337,31"/>
+<area shape="poly" title=" " alt="" coords="144,32,220,23,221,28,144,38"/>
+<area shape="rect" href="classTripletUtils.html#aa4b876bb7f2f0c358f31ea0e1f04df79" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="192,55,379,80"/>
+<area shape="poly" title=" " alt="" coords="144,49,179,52,178,58,144,54"/>
 </map>
 </div>
 <div class="dynheader">
@@ -145,9 +145,9 @@ Compressor 的协作图:</div>
 <div class="center"><img src="classCompressor_afc47156bc86131009b0b814f2c11015a_icgraph.png" border="0" usemap="#aclassCompressor_afc47156bc86131009b0b814f2c11015a_icgraph" alt=""/></div>
 <map name="aclassCompressor_afc47156bc86131009b0b814f2c11015a_icgraph" id="aclassCompressor_afc47156bc86131009b0b814f2c11015a_icgraph">
 <area shape="rect" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="333,5,472,31"/>
-<area shape="rect" href="main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title=" " alt="" coords="96,5,285,31"/>
+<area shape="rect" href="main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title="把 Compressor::Load 包装为 Node&#45;API 函数" alt="" coords="96,5,285,31"/>
 <area shape="poly" title=" " alt="" coords="319,21,285,21,285,15,319,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="83,21,48,21,48,15,83,15"/>
 </map>
 </div>
@@ -195,11 +195,11 @@ Compressor 的协作图:</div>
 <div class="center"><img src="classCompressor_aa04164c2ad51f4d0990e73e8f7227da1_cgraph.png" border="0" usemap="#aclassCompressor_aa04164c2ad51f4d0990e73e8f7227da1_cgraph" alt=""/></div>
 <map name="aclassCompressor_aa04164c2ad51f4d0990e73e8f7227da1_cgraph" id="aclassCompressor_aa04164c2ad51f4d0990e73e8f7227da1_cgraph">
 <area shape="rect" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="5,70,145,95"/>
-<area shape="rect" href="classTripletUtils.html#ac8dadcc7087f5926810820c26996aa0d" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="193,5,395,45"/>
-<area shape="poly" title=" " alt="" coords="124,67,203,46,205,51,125,73"/>
-<area shape="rect" href="classTripletUtils.html#a474e9114f121013d17dce14568d24485" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="201,70,387,95"/>
-<area shape="poly" title=" " alt="" coords="146,80,187,80,187,85,146,85"/>
-<area shape="rect" href="Compressor_8cc.html#a40a397f9f192a857e7766eaf692d0f58" title=" " alt="" coords="243,119,345,145"/>
+<area shape="rect" href="classTripletUtils.html#aa5ae7f8d7277d320791b1784487ffb99" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="193,5,397,45"/>
+<area shape="poly" title=" " alt="" coords="124,67,205,46,206,51,126,73"/>
+<area shape="rect" href="classTripletUtils.html#a5b02a3d75026807faf99bbadf4c5c8a9" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="202,70,389,95"/>
+<area shape="poly" title=" " alt="" coords="145,80,188,80,188,85,145,85"/>
+<area shape="rect" href="compressor_8cc.html#ab29ab99e4914dddfeba2690429a09a9e" title=" " alt="" coords="243,119,347,145"/>
 <area shape="poly" title=" " alt="" coords="133,93,230,115,229,120,132,98"/>
 </map>
 </div>
@@ -209,9 +209,9 @@ Compressor 的协作图:</div>
 <div class="center"><img src="classCompressor_aa04164c2ad51f4d0990e73e8f7227da1_icgraph.png" border="0" usemap="#aclassCompressor_aa04164c2ad51f4d0990e73e8f7227da1_icgraph" alt=""/></div>
 <map name="aclassCompressor_aa04164c2ad51f4d0990e73e8f7227da1_icgraph" id="aclassCompressor_aa04164c2ad51f4d0990e73e8f7227da1_icgraph">
 <area shape="rect" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="335,5,475,31"/>
-<area shape="rect" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title=" " alt="" coords="96,5,287,31"/>
+<area shape="rect" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="96,5,287,31"/>
 <area shape="poly" title=" " alt="" coords="321,21,287,21,287,15,321,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
 </map>
 </div>
@@ -219,8 +219,8 @@ Compressor 的协作图:</div>
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>cpp/src/codec/<a class="el" href="Compressor_8h_source.html">Compressor.h</a></li>
-<li>cpp/src/codec/<a class="el" href="Compressor_8cc.html">Compressor.cc</a></li>
+<li>cpp/src/codec/<a class="el" href="compressor_8h_source.html">compressor.h</a></li>
+<li>cpp/src/codec/<a class="el" href="compressor_8cc.html">compressor.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

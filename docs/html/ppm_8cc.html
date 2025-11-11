@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageProcessor: cpp/src/io/ppm.cc 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageProcessor<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">a ImageProcessor with C++ core and Electron UI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a class="el" href="dir_7e72c7cf48e3493f8206cd364e6bc9f6.html">src</a></li><li class="navelem"><a class="el" href="dir_e61832429bcbe0078305742b0bf68057.html">io</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">ppm.cc 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>ppm 读写类实现  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="ppm_8h_source.html">ppm.h</a>&quot;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ppm.cc 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ppm_8cc__incl.png" border="0" usemap="#acpp_2src_2io_2ppm_8cc" alt=""/></div>
+<map name="acpp_2src_2io_2ppm_8cc" id="acpp_2src_2io_2ppm_8cc">
+<area shape="rect" title="ppm 读写类实现" alt="" coords="82,5,217,31"/>
+<area shape="rect" href="ppm_8h.html" title="ppm 读写类声明，主要是 pmm 和 cv::Mat 之间的转换" alt="" coords="73,79,135,104"/>
+<area shape="poly" title=" " alt="" coords="144,32,121,69,116,66,140,30"/>
+<area shape="rect" title=" " alt="" coords="5,152,64,177"/>
+<area shape="poly" title=" " alt="" coords="124,33,92,52,62,80,48,109,40,139,35,138,43,107,58,77,88,48,122,28"/>
+<area shape="rect" title=" " alt="" coords="159,79,233,104"/>
+<area shape="poly" title=" " alt="" coords="159,30,183,66,179,69,155,32"/>
+<area shape="rect" title=" " alt="" coords="257,79,332,104"/>
+<area shape="poly" title=" " alt="" coords="174,28,260,70,258,75,172,33"/>
+<area shape="poly" title=" " alt="" coords="94,106,57,144,53,140,91,102"/>
+<area shape="rect" title=" " alt="" coords="88,152,243,177"/>
+<area shape="poly" title=" " alt="" coords="116,103,148,140,144,143,112,106"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ac7b87a81313fd97a2fac93e28df9b8ef" id="r_ac7b87a81313fd97a2fac93e28df9b8ef"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef">readToken</a> (std::istream &amp;is, std::string &amp;tok)</td></tr>
+<tr class="separator:ac7b87a81313fd97a2fac93e28df9b8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>ppm 读写类实现 </p>
+<dl class="section author"><dt>作者</dt><dd>Runhui Mo (github.com/mugaaaaa) </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-11-07</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="ac7b87a81313fd97a2fac93e28df9b8ef" name="ac7b87a81313fd97a2fac93e28df9b8ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b87a81313fd97a2fac93e28df9b8ef">&#9670;&#160;</a></span>readToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool readToken </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>tok</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="ppm_8cc_ac7b87a81313fd97a2fac93e28df9b8ef_icgraph.png" border="0" usemap="#appm_8cc_ac7b87a81313fd97a2fac93e28df9b8ef_icgraph" alt=""/></div>
+<map name="appm_8cc_ac7b87a81313fd97a2fac93e28df9b8ef_icgraph" id="appm_8cc_ac7b87a81313fd97a2fac93e28df9b8ef_icgraph">
+<area shape="rect" title=" " alt="" coords="685,5,773,31"/>
+<area shape="rect" href="classPpm.html#a20cd3e30e1b93ec9d9f62ac1b02745b8" title="读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat" alt="" coords="477,5,637,31"/>
+<area shape="poly" title=" " alt="" coords="672,21,638,21,638,15,672,15"/>
+<area shape="rect" href="classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f" title="从文件加载三元组压缩图像" alt="" coords="284,5,429,31"/>
+<area shape="poly" title=" " alt="" coords="464,21,429,21,429,15,464,15"/>
+<area shape="rect" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="96,5,236,31"/>
+<area shape="poly" title=" " alt="" coords="270,21,236,21,236,15,270,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
+<area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

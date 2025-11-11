@@ -1,3 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * @file main.ts
+ * @author Runhui Mo (github.com/mugaaaaa)
+ * @brief Electron 主渲染进程入口文件
+ * 
+ * @version 0.1
+ * @date 2025-11-10
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'

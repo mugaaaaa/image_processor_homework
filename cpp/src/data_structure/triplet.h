@@ -1,5 +1,5 @@
 /**
- * @file Triplet.h
+ * @file triplet.h
  * @author Runhui Mo (github.com/mugaaaaa)
  * @brief 三元组数据结构及相关工具类声明
  * @version 0.1
@@ -18,22 +18,21 @@
  * @brief 三元组节点结构体，表示图像中非背景色的像素信息 
  */
 struct TripletNode {
-    int row_;
-    int col_;
-    uint8_t val_[3]; ///< 彩色图时 val_[0]: B, val_[1]: G, val_[2]: R（与 OpenCV 的 BGR 顺序对齐），灰度图时仅用 val_[0] 表示灰度
+    int row_;           ///< 像素行索引
+    int col_;           ///< 像素列索引
+    uint8_t val_[3];    ///< 彩色图时 val_[0]: B, val_[1]: G, val_[2]: R（与 OpenCV 的 BGR 顺序对齐），灰度图时仅用 val_[0] 表示灰度
 };
 
 /**
  * @brief 压缩文件头结构体，存储图像的基本信息
- * 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。
  */
 struct CompressedHeader {
-    char magic_[4] = {'T', 'R', 'I', 'P'}; // 魔法数字，作为文件标识
-    int32_t width_;
-    int32_t height_;
-    int32_t channels_; ///< 通道数，1 表示灰度图，3 表示彩色图
-    uint64_t count_;   ///< 三元组数量
-    uint8_t bg_color_[3]; ///< 背景色（BGR），灰度图时仅用 bg_color_[0]
+    char magic_[4] = {'T', 'R', 'I', 'P'};  ///< 魔术数字，作为文件标识
+    int32_t width_;                         ///< 图像宽度
+    int32_t height_;                        ///< 图像高度
+    int32_t channels_;                      ///< 通道数，1 表示灰度图，3 表示彩色图
+    uint64_t count_;                        ///< 三元组数量
+    uint8_t bg_color_[3];                   ///< 背景色（BGR），灰度图时仅用 bg_color_[0]
 };
 
 /**

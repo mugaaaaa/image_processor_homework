@@ -7,12 +7,11 @@
 
 
 
-{\ttfamily \#include $<$Image\+IO.\+h$>$}
+{\ttfamily \#include $<$image\+\_\+io.\+h$>$}
 
 
 
-Image\+IO 的协作图\+:
-\nopagebreak
+Image\+IO 的协作图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,30 +21,33 @@ Image\+IO 的协作图\+:
 \doxysubsubsection*{静态 Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
-static cv\+::\+Mat \mbox{\hyperlink{classImageIO_a19370c25df64ca9a0969a30d93969fc5}{load\+Png}} (const std\+::string \&file\+\_\+path)
+static cv\+::\+Mat \mbox{\hyperlink{classImageIO_a4cceda8c66d879194ee633920e335a1f}{Load\+Png}} (const std\+::string \&file\+\_\+path)
 \begin{DoxyCompactList}\small\item\em 从文件加载图像 \end{DoxyCompactList}\item 
-static cv\+::\+Mat \mbox{\hyperlink{classImageIO_ad3457dfc34f78f2314cc5b989584ca86}{load\+Ppm}} (const std\+::string \&file\+\_\+path)
-\begin{DoxyCompactList}\small\item\em 从文件加载三元组压缩图像 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 \doxylink{classPpm_a071ed3ce298c2d6e25b2f4afffff7129}{Ppm\+::load\+Ppm\+As\+Mat} \end{DoxyCompactList}\item 
-static std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \mbox{\hyperlink{classImageIO_a6b3fe67ea25f31293364dc9174c418ef}{load\+Trip}} (const std\+::string \&file\+\_\+path)
+static cv\+::\+Mat \mbox{\hyperlink{classImageIO_a6a1d8545edd4262a9f67a146275bda2f}{Load\+Ppm}} (const std\+::string \&file\+\_\+path)
 \begin{DoxyCompactList}\small\item\em 从文件加载三元组压缩图像 \end{DoxyCompactList}\item 
-static bool \mbox{\hyperlink{classImageIO_aa5d7f0832777c47224aa2cfcb04d6a5a}{save\+Png}} (const std\+::string \&file\+\_\+path, const cv\+::\+Mat \&img)
+static std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \mbox{\hyperlink{classImageIO_a9f694ae7ac22767162b7d2b63e751d99}{Load\+Trip}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em 从文件加载三元组压缩图像 \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classImageIO_a6203067e2826b9ccc07c6b87002ede4d}{Save\+Png}} (const std\+::string \&file\+\_\+path, const cv\+::\+Mat \&img)
 \begin{DoxyCompactList}\small\item\em 将图像保存到文件 \end{DoxyCompactList}\item 
-static bool \mbox{\hyperlink{classImageIO_a01f7e14387f94afb475890806dfe167d}{save\+Ppm}} (const std\+::string \&file\+\_\+path, const cv\+::\+Mat \&img)
-\begin{DoxyCompactList}\small\item\em 将图像保存到文件 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 \doxylink{classPpm_a92a5a73a161b186cd6b18f42c278e437}{Ppm\+::save\+Nat\+As\+Ppm} \end{DoxyCompactList}\item 
-static bool \mbox{\hyperlink{classImageIO_a599d6b98c20fa03684d3fe89c4de3616}{save\+Trip}} (const std\+::string \&file\+\_\+path, const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets)
+static bool \mbox{\hyperlink{classImageIO_a47551184bb8da28cfbcf198765dc7f8a}{Save\+Ppm}} (const std\+::string \&file\+\_\+path, const cv\+::\+Mat \&img)
+\begin{DoxyCompactList}\small\item\em 将图像保存到文件 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 Ppm\+::save\+Nat\+As\+Ppm \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classImageIO_a2a2448cc3160e6f250047517c2ab7c65}{Save\+Trip}} (const std\+::string \&file\+\_\+path, const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets)
 \begin{DoxyCompactList}\small\item\em 将图像保存到文件 \end{DoxyCompactList}\item 
-static bool \mbox{\hyperlink{classImageIO_adf0107fa1471877fd5684f857c95cb49}{save\+Trip}} (const std\+::string \&file\+\_\+path, int width, int height, int channels, const uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]}, const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets)
+static bool \mbox{\hyperlink{classImageIO_a719f8fbb1712bea334337ef7f140c05a}{Save\+Trip}} (const std\+::string \&file\+\_\+path, int width, int height, int channels, const uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]}, const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets)
 \begin{DoxyCompactList}\small\item\em 写入完整头部信息的.\+trip 保存接口。 \end{DoxyCompactList}\item 
 static cv\+::\+Mat \mbox{\hyperlink{classImageIO_a526599dead8abdc1845d34e0329c4ac9}{Decode\+From\+Buffer}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, size\+\_\+t size)
-\begin{DoxyCompactList}\small\item\em \mbox{[}预留\mbox{]} 从内存缓冲区解码图像 (供 Node.\+js 调用)。 \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 从内存缓冲区解码图像 (供 Node.\+js 调用)。 \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{classImageIO_a15415944fc6c74e4ff5ed28ae2fb3aa9}{Encode\+To\+Buffer}} (const cv\+::\+Mat \&img, const std\+::string \&format, std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}buffer)
-\begin{DoxyCompactList}\small\item\em \mbox{[}预留\mbox{]} 将图像编码到内存缓冲区 (供 Node.\+js 调用)。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 将图像编码到内存缓冲区 (供 Node.\+js 调用)。 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{详细描述}
 图像 I/O 接口类 
 
-提供了加载和保存 .png、.\+ppm 和 .trip（自定义的压缩类型）图像的静态方法。 
+提供了加载和保存 .png、.\+ppm 和 .trip（自定义的压缩类型）图像的静态方法
+\begin{DoxyItemize}
+\item 和与 Node.\+js 互操作的接口。 
+\end{DoxyItemize}
 
 \doxysubsection{成员函数说明}
 \Hypertarget{classImageIO_a526599dead8abdc1845d34e0329c4ac9}\label{classImageIO_a526599dead8abdc1845d34e0329c4ac9} 
@@ -56,7 +58,7 @@ static bool \mbox{\hyperlink{classImageIO_a15415944fc6c74e4ff5ed28ae2fb3aa9}{Enc
 
 
 
-\mbox{[}预留\mbox{]} 从内存缓冲区解码图像 (供 Node.\+js 调用)。 
+从内存缓冲区解码图像 (供 Node.\+js 调用)。 
 
 
 \begin{DoxyParams}{参数}
@@ -76,7 +78,7 @@ cv\+::\+Mat 解码后的图像。
 
 
 
-\mbox{[}预留\mbox{]} 将图像编码到内存缓冲区 (供 Node.\+js 调用)。 
+将图像编码到内存缓冲区 (供 Node.\+js 调用)。 
 
 
 \begin{DoxyParams}[1]{参数}
@@ -90,11 +92,11 @@ cv\+::\+Mat 解码后的图像。
 \begin{DoxyReturn}{返回}
 true 成功，false 失败。 
 \end{DoxyReturn}
-\Hypertarget{classImageIO_a19370c25df64ca9a0969a30d93969fc5}\label{classImageIO_a19370c25df64ca9a0969a30d93969fc5} 
-\index{ImageIO@{ImageIO}!loadPng@{loadPng}}
-\index{loadPng@{loadPng}!ImageIO@{ImageIO}}
-\doxysubsubsection{\texorpdfstring{loadPng()}{loadPng()}}
-{\footnotesize\ttfamily cv\+::\+Mat Image\+IO\+::load\+Png (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classImageIO_a4cceda8c66d879194ee633920e335a1f}\label{classImageIO_a4cceda8c66d879194ee633920e335a1f} 
+\index{ImageIO@{ImageIO}!LoadPng@{LoadPng}}
+\index{LoadPng@{LoadPng}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{LoadPng()}{LoadPng()}}
+{\footnotesize\ttfamily cv\+::\+Mat Image\+IO\+::\+Load\+Png (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -108,23 +110,27 @@ true 成功，false 失败。
 \begin{DoxyReturn}{返回}
 cv\+::\+Mat 加载的图像 
 \end{DoxyReturn}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classImageIO_a19370c25df64ca9a0969a30d93969fc5_icgraph}
+\includegraphics[width=350pt]{classImageIO_a4cceda8c66d879194ee633920e335a1f_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classImageIO_ad3457dfc34f78f2314cc5b989584ca86}\label{classImageIO_ad3457dfc34f78f2314cc5b989584ca86} 
-\index{ImageIO@{ImageIO}!loadPpm@{loadPpm}}
-\index{loadPpm@{loadPpm}!ImageIO@{ImageIO}}
-\doxysubsubsection{\texorpdfstring{loadPpm()}{loadPpm()}}
-{\footnotesize\ttfamily cv\+::\+Mat Image\+IO\+::load\+Ppm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classImageIO_a6a1d8545edd4262a9f67a146275bda2f}\label{classImageIO_a6a1d8545edd4262a9f67a146275bda2f} 
+\index{ImageIO@{ImageIO}!LoadPpm@{LoadPpm}}
+\index{LoadPpm@{LoadPpm}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{LoadPpm()}{LoadPpm()}}
+{\footnotesize\ttfamily cv\+::\+Mat Image\+IO\+::\+Load\+Ppm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-从文件加载三元组压缩图像 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 \doxylink{classPpm_a071ed3ce298c2d6e25b2f4afffff7129}{Ppm\+::load\+Ppm\+As\+Mat} 
+从文件加载三元组压缩图像 
+
+
+\begin{DoxyItemize}
+\item 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 Ppm\+::load\+Ppm\+As\+Mat
+\end{DoxyItemize}
 
 
 \begin{DoxyParams}{参数}
@@ -134,27 +140,25 @@ cv\+::\+Mat 加载的图像
 \begin{DoxyReturn}{返回}
 cv\+::\+Mat 加载的图像 
 \end{DoxyReturn}
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classImageIO_ad3457dfc34f78f2314cc5b989584ca86_cgraph}
+\includegraphics[width=350pt]{classImageIO_a6a1d8545edd4262a9f67a146275bda2f_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classImageIO_ad3457dfc34f78f2314cc5b989584ca86_icgraph}
+\includegraphics[width=350pt]{classImageIO_a6a1d8545edd4262a9f67a146275bda2f_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classImageIO_a6b3fe67ea25f31293364dc9174c418ef}\label{classImageIO_a6b3fe67ea25f31293364dc9174c418ef} 
-\index{ImageIO@{ImageIO}!loadTrip@{loadTrip}}
-\index{loadTrip@{loadTrip}!ImageIO@{ImageIO}}
-\doxysubsubsection{\texorpdfstring{loadTrip()}{loadTrip()}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ Image\+IO\+::load\+Trip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classImageIO_a9f694ae7ac22767162b7d2b63e751d99}\label{classImageIO_a9f694ae7ac22767162b7d2b63e751d99} 
+\index{ImageIO@{ImageIO}!LoadTrip@{LoadTrip}}
+\index{LoadTrip@{LoadTrip}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{LoadTrip()}{LoadTrip()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ Image\+IO\+::\+Load\+Trip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -168,19 +172,18 @@ cv\+::\+Mat 加载的图像
 \begin{DoxyReturn}{返回}
 std\+::vector$<$\+Triplet\+Node$>$ 加载的三元组 
 \end{DoxyReturn}
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=297pt]{classImageIO_a6b3fe67ea25f31293364dc9174c418ef_cgraph}
+\includegraphics[width=298pt]{classImageIO_a9f694ae7ac22767162b7d2b63e751d99_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classImageIO_aa5d7f0832777c47224aa2cfcb04d6a5a}\label{classImageIO_aa5d7f0832777c47224aa2cfcb04d6a5a} 
-\index{ImageIO@{ImageIO}!savePng@{savePng}}
-\index{savePng@{savePng}!ImageIO@{ImageIO}}
-\doxysubsubsection{\texorpdfstring{savePng()}{savePng()}}
-{\footnotesize\ttfamily bool Image\+IO\+::save\+Png (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classImageIO_a6203067e2826b9ccc07c6b87002ede4d}\label{classImageIO_a6203067e2826b9ccc07c6b87002ede4d} 
+\index{ImageIO@{ImageIO}!SavePng@{SavePng}}
+\index{SavePng@{SavePng}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{SavePng()}{SavePng()}}
+{\footnotesize\ttfamily bool Image\+IO\+::\+Save\+Png (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -198,23 +201,22 @@ true 保存成功
 
 false 保存失败 
 \end{DoxyReturn}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classImageIO_aa5d7f0832777c47224aa2cfcb04d6a5a_icgraph}
+\includegraphics[width=350pt]{classImageIO_a6203067e2826b9ccc07c6b87002ede4d_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classImageIO_a01f7e14387f94afb475890806dfe167d}\label{classImageIO_a01f7e14387f94afb475890806dfe167d} 
-\index{ImageIO@{ImageIO}!savePpm@{savePpm}}
-\index{savePpm@{savePpm}!ImageIO@{ImageIO}}
-\doxysubsubsection{\texorpdfstring{savePpm()}{savePpm()}}
-{\footnotesize\ttfamily bool Image\+IO\+::save\+Ppm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classImageIO_a47551184bb8da28cfbcf198765dc7f8a}\label{classImageIO_a47551184bb8da28cfbcf198765dc7f8a} 
+\index{ImageIO@{ImageIO}!SavePpm@{SavePpm}}
+\index{SavePpm@{SavePpm}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{SavePpm()}{SavePpm()}}
+{\footnotesize\ttfamily bool Image\+IO\+::\+Save\+Ppm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-将图像保存到文件 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 \doxylink{classPpm_a92a5a73a161b186cd6b18f42c278e437}{Ppm\+::save\+Nat\+As\+Ppm} 
+将图像保存到文件 具体实现在 \doxylink{classPpm}{Ppm} 部分，这里仅调用 Ppm\+::save\+Nat\+As\+Ppm 
 
 
 \begin{DoxyParams}{参数}
@@ -228,27 +230,25 @@ true 保存成功
 
 false 保存失败 
 \end{DoxyReturn}
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=344pt]{classImageIO_a01f7e14387f94afb475890806dfe167d_cgraph}
+\includegraphics[width=345pt]{classImageIO_a47551184bb8da28cfbcf198765dc7f8a_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classImageIO_a01f7e14387f94afb475890806dfe167d_icgraph}
+\includegraphics[width=350pt]{classImageIO_a47551184bb8da28cfbcf198765dc7f8a_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classImageIO_a599d6b98c20fa03684d3fe89c4de3616}\label{classImageIO_a599d6b98c20fa03684d3fe89c4de3616} 
-\index{ImageIO@{ImageIO}!saveTrip@{saveTrip}}
-\index{saveTrip@{saveTrip}!ImageIO@{ImageIO}}
-\doxysubsubsection{\texorpdfstring{saveTrip()}{saveTrip()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static bool Image\+IO\+::save\+Trip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classImageIO_a2a2448cc3160e6f250047517c2ab7c65}\label{classImageIO_a2a2448cc3160e6f250047517c2ab7c65} 
+\index{ImageIO@{ImageIO}!SaveTrip@{SaveTrip}}
+\index{SaveTrip@{SaveTrip}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{SaveTrip()}{SaveTrip()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Image\+IO\+::\+Save\+Trip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -266,28 +266,29 @@ true 保存成功
 
 false 保存失败 
 \end{DoxyReturn}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classImageIO_a599d6b98c20fa03684d3fe89c4de3616_icgraph}
+\includegraphics[width=350pt]{classImageIO_a2a2448cc3160e6f250047517c2ab7c65_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classImageIO_adf0107fa1471877fd5684f857c95cb49}\label{classImageIO_adf0107fa1471877fd5684f857c95cb49} 
-\index{ImageIO@{ImageIO}!saveTrip@{saveTrip}}
-\index{saveTrip@{saveTrip}!ImageIO@{ImageIO}}
-\doxysubsubsection{\texorpdfstring{saveTrip()}{saveTrip()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool Image\+IO\+::save\+Trip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{channels,  }\item[{const uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]},  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classImageIO_a719f8fbb1712bea334337ef7f140c05a}\label{classImageIO_a719f8fbb1712bea334337ef7f140c05a} 
+\index{ImageIO@{ImageIO}!SaveTrip@{SaveTrip}}
+\index{SaveTrip@{SaveTrip}!ImageIO@{ImageIO}}
+\doxysubsubsection{\texorpdfstring{SaveTrip()}{SaveTrip()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Image\+IO\+::\+Save\+Trip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{channels,  }\item[{const uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]},  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 写入完整头部信息的.\+trip 保存接口。 
 
-头部格式：\+TRIP width height channels count bgB bgG bgR
+头部（文本）格式：\+TRIP width height channels count bgB bgG bgR~\newline
+
 \begin{DoxyItemize}
 \item channels 仅支持 1（灰度）或 3（彩色）；
-\item bg\+\_\+color 为 BGR 顺序（灰度仅用 bg\+\_\+color\mbox{[}0\mbox{]}）。 随后每行写入一个三元组：row col v0 \mbox{[}v1 v2\mbox{]}
+\item bg\+\_\+color 为 BGR 顺序（灰度仅用 bg\+\_\+color\mbox{[}0\mbox{]}）。
+\item 随后为二进制数据段，按节点顺序写入，共 count 个节点： 每个节点依次写入 int32 row, int32 col, uint8 v0\mbox{[}, uint8 v1, uint8 v2\mbox{]}
 \end{DoxyItemize}
 
 
@@ -314,5 +315,5 @@ false 失败（参数非法或文件不可写）
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-cpp/src/io/\mbox{\hyperlink{ImageIO_8h}{Image\+IO.\+h}}\item 
-cpp/src/io/\mbox{\hyperlink{ImageIO_8cc}{Image\+IO.\+cc}}\end{DoxyCompactItemize}
+cpp/src/io/\mbox{\hyperlink{image__io_8h}{image\+\_\+io.\+h}}\item 
+cpp/src/io/\mbox{\hyperlink{image__io_8cc}{image\+\_\+io.\+cc}}\end{DoxyCompactItemize}

@@ -29,7 +29,7 @@ electron.contextBridge.exposeInMainWorld("native", {
   resize: (img, newW, newH) => electron.ipcRenderer.invoke("native:resize", img, newW, newH),
   compressorSave: (filePath, img) => electron.ipcRenderer.invoke("native:compressorSave", filePath, img),
   compressorLoad: (filePath) => electron.ipcRenderer.invoke("native:compressorLoad", filePath),
-  // File dialogs
+  // 文件对话框相关函数
   openImageDialog: () => electron.ipcRenderer.invoke("dialog:openImage"),
   savePngDialog: () => electron.ipcRenderer.invoke("dialog:savePng"),
   savePpmDialog: () => electron.ipcRenderer.invoke("dialog:savePpm"),

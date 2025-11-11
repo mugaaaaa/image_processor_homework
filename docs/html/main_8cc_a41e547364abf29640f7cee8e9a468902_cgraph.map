@@ -1,68 +1,68 @@
 <map id="Init" name="Init">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,343,48,368"/>
-<area shape="rect" id="Node000002" href="$main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title=" " alt="" coords="97,145,286,171"/>
+<area shape="rect" id="Node000001" title="初始化 Node&#45;API 模块" alt="" coords="5,343,48,368"/>
+<area shape="rect" id="Node000002" href="$main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title="把 Compressor::Load 包装为 Node&#45;API 函数" alt="" coords="97,145,286,171"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="26,342,31,310,43,266,63,220,77,199,94,180,100,175,103,180,98,184,81,202,67,222,48,268,37,311,32,343"/>
-<area shape="rect" id="Node000007" href="$main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title=" " alt="" coords="96,195,287,220"/>
+<area shape="rect" id="Node000007" href="$main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="96,195,287,220"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="29,342,50,287,69,256,94,229,102,224,105,228,98,233,73,259,55,290,34,344"/>
-<area shape="rect" id="Node000012" href="$main_8cc.html#a551814596313b7968e083c15f5639a17" title=" " alt="" coords="124,244,259,269"/>
+<area shape="rect" id="Node000012" href="$main_8cc.html#a551814596313b7968e083c15f5639a17" title="把 ImageIO::LoadPng 包装为 Node&#45;API 函数" alt="" coords="124,244,259,269"/>
 <area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="34,340,59,309,95,278,110,271,112,275,97,283,63,313,39,344"/>
-<area shape="rect" id="Node000014" href="$main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title=" " alt="" coords="121,293,261,319"/>
+<area shape="rect" id="Node000014" href="$main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="121,293,261,319"/>
 <area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="47,345,95,327,122,320,124,325,97,333,49,350"/>
-<area shape="rect" id="Node000018" href="$main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title=" " alt="" coords="130,343,253,368"/>
+<area shape="rect" id="Node000018" href="$main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title="把 Processor::Resize 包装为 Node&#45;API 函数" alt="" coords="130,343,253,368"/>
 <area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="49,353,116,353,116,358,49,358"/>
-<area shape="rect" id="Node000021" href="$main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title=" " alt="" coords="123,441,259,467"/>
+<area shape="rect" id="Node000021" href="$main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title="把 ImageIO::SavePng 包装为 Node&#45;API 函数" alt="" coords="123,441,259,467"/>
 <area shape="poly" id="edge24_Node000001_Node000021" title=" " alt="" coords="39,367,63,397,97,426,112,434,110,439,95,431,59,401,34,370"/>
-<area shape="rect" id="Node000023" href="$main_8cc.html#a97fb226d121951383b419bf7a123da5a" title=" " alt="" coords="121,491,262,516"/>
+<area shape="rect" id="Node000023" href="$main_8cc.html#a97fb226d121951383b419bf7a123da5a" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="121,491,262,516"/>
 <area shape="poly" id="edge27_Node000001_Node000023" title=" " alt="" coords="34,367,55,420,73,450,98,476,109,484,106,488,94,480,69,454,50,423,29,369"/>
-<area shape="rect" id="Node000026" href="$main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title=" " alt="" coords="124,540,259,565"/>
+<area shape="rect" id="Node000026" href="$main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title="把 ImageIO::SaveTrip 包装为 Node&#45;API 函数" alt="" coords="124,540,259,565"/>
 <area shape="poly" id="edge31_Node000001_Node000026" title=" " alt="" coords="32,368,37,400,48,443,68,487,81,508,98,525,113,536,110,540,94,529,77,511,63,490,43,444,32,401,27,369"/>
-<area shape="rect" id="Node000028" href="$main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title=" " alt="" coords="129,392,254,417"/>
+<area shape="rect" id="Node000028" href="$main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title="把 Processor::ToGray 包装为 Node&#45;API 函数" alt="" coords="129,392,254,417"/>
 <area shape="poly" id="edge34_Node000001_Node000028" title=" " alt="" coords="49,360,97,377,128,386,126,391,95,382,47,365"/>
-<area shape="rect" id="Node000003" href="$classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="338,55,477,80"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="222,143,362,83,364,88,224,148"/>
-<area shape="rect" id="Node000006" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="363,317,451,343"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="271,168,288,180,302,195,309,211,314,242,318,273,325,288,336,303,352,314,349,318,333,307,320,291,313,274,309,243,304,213,297,198,285,184,268,173"/>
-<area shape="rect" id="Node000004" href="$Compressor_8cc.html#a439b9169b21c2927e3e35e6358b24c05" title=" " alt="" coords="579,5,678,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="464,52,565,29,566,34,466,57"/>
-<area shape="rect" id="Node000005" href="$classTripletUtils.html#a1d7e2b7f1e589821bfec87d10599cf49" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="536,55,721,80"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="477,65,522,65,522,70,477,70"/>
-<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="267,218,288,229,305,248,314,266,321,285,336,303,352,312,349,317,333,307,316,288,309,268,301,250,285,233,265,223"/>
-<area shape="rect" id="Node000008" href="$classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="337,169,477,195"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="287,193,324,189,324,194,287,199"/>
-<area shape="rect" id="Node000009" href="$classTripletUtils.html#ac8dadcc7087f5926810820c26996aa0d" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="528,105,729,145"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="457,167,537,145,539,151,458,172"/>
-<area shape="rect" id="Node000010" href="$classTripletUtils.html#a474e9114f121013d17dce14568d24485" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="535,169,722,195"/>
-<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="478,179,521,179,521,185,478,185"/>
-<area shape="rect" id="Node000011" href="$Compressor_8cc.html#a40a397f9f192a857e7766eaf692d0f58" title=" " alt="" coords="577,219,680,244"/>
-<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="466,192,565,214,564,220,464,197"/>
+<area shape="rect" id="Node000003" href="$classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="339,55,477,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="222,143,363,83,365,88,224,148"/>
+<area shape="rect" id="Node000006" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="364,317,452,343"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="271,168,288,180,302,195,309,211,314,242,318,273,325,288,336,303,353,314,350,318,333,307,320,291,313,275,309,243,304,213,297,198,285,184,268,173"/>
+<area shape="rect" id="Node000004" href="$compressor_8cc.html#a393bbe21a99a76d202ac90bab190280c" title=" " alt="" coords="580,5,683,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="466,52,566,30,567,35,467,57"/>
+<area shape="rect" id="Node000005" href="$classTripletUtils.html#aa4b876bb7f2f0c358f31ea0e1f04df79" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="538,55,725,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="477,65,524,65,524,70,477,70"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="267,218,288,229,305,248,314,266,321,285,336,303,353,313,350,317,333,307,316,288,309,269,301,250,285,233,265,223"/>
+<area shape="rect" id="Node000008" href="$classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="338,169,478,195"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="287,193,324,189,325,194,287,199"/>
+<area shape="rect" id="Node000009" href="$classTripletUtils.html#aa5ae7f8d7277d320791b1784487ffb99" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="529,105,733,145"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="458,167,539,145,541,151,459,172"/>
+<area shape="rect" id="Node000010" href="$classTripletUtils.html#a5b02a3d75026807faf99bbadf4c5c8a9" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="538,169,725,195"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="479,179,524,179,524,185,479,185"/>
+<area shape="rect" id="Node000011" href="$compressor_8cc.html#ab29ab99e4914dddfeba2690429a09a9e" title=" " alt="" coords="579,219,683,244"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="467,192,566,214,565,220,466,197"/>
 <area shape="poly" id="edge14_Node000012_Node000006" title=" " alt="" coords="251,267,288,278,336,302,356,310,354,315,334,307,286,283,250,272"/>
-<area shape="rect" id="Node000013" href="$classImageIO.html#a19370c25df64ca9a0969a30d93969fc5" title="从文件加载图像" alt="" coords="339,219,476,244"/>
-<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="259,246,325,238,326,244,259,251"/>
-<area shape="poly" id="edge19_Node000014_Node000006" title=" " alt="" coords="262,311,350,321,349,326,261,316"/>
-<area shape="rect" id="Node000015" href="$classImageIO.html#ad3457dfc34f78f2314cc5b989584ca86" title="从文件加载三元组压缩图像 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat" alt="" coords="336,268,479,293"/>
-<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="261,295,322,288,323,293,262,300"/>
-<area shape="rect" id="Node000016" href="$classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="550,268,707,293"/>
-<area shape="poly" id="edge17_Node000015_Node000016" title=" " alt="" coords="479,278,536,278,536,283,479,283"/>
-<area shape="rect" id="Node000017" href="$Ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="777,268,865,293"/>
-<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="708,278,763,278,763,283,708,283"/>
-<area shape="poly" id="edge21_Node000018_Node000006" title=" " alt="" coords="253,345,349,334,350,339,254,351"/>
-<area shape="rect" id="Node000019" href="$classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0" title="使用双线性插值调整图像尺寸。" alt="" coords="339,367,475,392"/>
-<area shape="poly" id="edge22_Node000018_Node000019" title=" " alt="" coords="254,359,326,368,325,373,253,365"/>
-<area shape="rect" id="Node000020" href="$ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a" title=" " alt="" coords="585,392,672,417"/>
-<area shape="poly" id="edge23_Node000019_Node000020" title=" " alt="" coords="476,384,572,396,571,401,475,390"/>
-<area shape="poly" id="edge25_Node000021_Node000006" title=" " alt="" coords="258,440,285,427,301,409,308,391,316,371,333,352,349,342,352,347,336,356,321,374,313,393,305,412,288,431,261,445"/>
-<area shape="rect" id="Node000022" href="$classImageIO.html#aa5d7f0832777c47224aa2cfcb04d6a5a" title="将图像保存到文件" alt="" coords="337,465,477,491"/>
+<area shape="rect" id="Node000013" href="$classImageIO.html#a4cceda8c66d879194ee633920e335a1f" title="从文件加载图像" alt="" coords="338,219,478,244"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="259,246,324,238,325,244,260,251"/>
+<area shape="poly" id="edge19_Node000014_Node000006" title=" " alt="" coords="262,311,350,321,350,326,261,316"/>
+<area shape="rect" id="Node000015" href="$classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f" title="从文件加载三元组压缩图像" alt="" coords="335,268,481,293"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="261,295,321,288,322,293,262,300"/>
+<area shape="rect" id="Node000016" href="$classPpm.html#a20cd3e30e1b93ec9d9f62ac1b02745b8" title="读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat" alt="" coords="551,268,711,293"/>
+<area shape="poly" id="edge17_Node000015_Node000016" title=" " alt="" coords="481,278,537,278,537,283,481,283"/>
+<area shape="rect" id="Node000017" href="$ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="781,268,869,293"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="712,278,767,278,767,283,712,283"/>
+<area shape="poly" id="edge21_Node000018_Node000006" title=" " alt="" coords="253,346,350,334,351,339,253,351"/>
+<area shape="rect" id="Node000019" href="$classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0" title="使用双线性插值调整图像尺寸。" alt="" coords="340,367,476,392"/>
+<area shape="poly" id="edge22_Node000018_Node000019" title=" " alt="" coords="253,359,327,368,326,373,253,365"/>
+<area shape="rect" id="Node000020" href="$image__processor_8cc.html#a34730b2ac8555f0ae72e7e1e802fa675" title=" " alt="" coords="587,392,675,417"/>
+<area shape="poly" id="edge23_Node000019_Node000020" title=" " alt="" coords="476,384,574,396,573,401,476,390"/>
+<area shape="poly" id="edge25_Node000021_Node000006" title=" " alt="" coords="258,440,285,427,301,409,308,391,316,371,333,352,350,342,353,346,336,356,321,374,313,393,305,412,288,431,261,445"/>
+<area shape="rect" id="Node000022" href="$classImageIO.html#a6203067e2826b9ccc07c6b87002ede4d" title="将图像保存到文件" alt="" coords="337,465,479,491"/>
 <area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="260,459,324,466,323,471,259,464"/>
-<area shape="poly" id="edge28_Node000023_Node000006" title=" " alt="" coords="261,490,285,476,297,462,304,447,308,416,313,384,320,368,333,352,349,341,352,345,336,356,324,371,318,386,314,417,309,448,302,464,288,480,264,495"/>
-<area shape="rect" id="Node000024" href="$classImageIO.html#a01f7e14387f94afb475890806dfe167d" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="335,515,480,540"/>
-<area shape="poly" id="edge29_Node000023_Node000024" title=" " alt="" coords="263,509,322,515,321,520,262,514"/>
-<area shape="rect" id="Node000025" href="$classPpm.html#a92a5a73a161b186cd6b18f42c278e437" title="手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。" alt="" coords="549,515,708,540"/>
-<area shape="poly" id="edge30_Node000024_Node000025" title=" " alt="" coords="480,525,536,525,536,530,480,530"/>
-<area shape="poly" id="edge32_Node000026_Node000006" title=" " alt="" coords="258,542,285,525,300,505,308,484,309,441,309,397,317,375,333,352,349,340,352,344,337,356,322,377,315,398,314,441,313,485,305,507,288,529,260,546"/>
-<area shape="rect" id="Node000027" href="$classImageIO.html#a599d6b98c20fa03684d3fe89c4de3616" title="将图像保存到文件" alt="" coords="338,564,477,589"/>
-<area shape="poly" id="edge33_Node000026_Node000027" title=" " alt="" coords="259,557,325,565,324,570,259,563"/>
+<area shape="poly" id="edge28_Node000023_Node000006" title=" " alt="" coords="261,490,285,476,297,462,304,447,308,416,313,384,320,368,333,352,350,341,353,345,336,356,324,371,318,386,314,417,309,448,302,464,288,480,264,495"/>
+<area shape="rect" id="Node000024" href="$classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="335,515,481,540"/>
+<area shape="poly" id="edge29_Node000023_Node000024" title=" " alt="" coords="262,508,322,515,321,520,262,514"/>
+<area shape="rect" id="Node000025" href="$classPpm.html#ad018fb080daad5dca782603a44e8e59b" title="手动保存为 .ppm 格式" alt="" coords="552,515,711,540"/>
+<area shape="poly" id="edge30_Node000024_Node000025" title=" " alt="" coords="482,525,538,525,538,530,482,530"/>
+<area shape="poly" id="edge32_Node000026_Node000006" title=" " alt="" coords="258,542,285,525,300,505,308,484,309,441,309,397,317,375,333,352,350,340,353,344,337,356,322,377,315,398,314,441,313,485,305,507,288,529,260,546"/>
+<area shape="rect" id="Node000027" href="$classImageIO.html#a2a2448cc3160e6f250047517c2ab7c65" title="将图像保存到文件" alt="" coords="338,564,478,589"/>
+<area shape="poly" id="edge33_Node000026_Node000027" title=" " alt="" coords="260,557,325,565,324,570,259,563"/>
 <area shape="poly" id="edge35_Node000028_Node000006" title=" " alt="" coords="247,389,286,377,310,365,334,352,351,345,353,350,336,356,312,369,288,382,249,394"/>
-<area shape="rect" id="Node000029" href="$classProcessor.html#a5c48f5a991e81dcf354cebb10df48260" title="将彩色图像转换为灰度图像。" alt="" coords="338,416,477,441"/>
-<area shape="poly" id="edge36_Node000028_Node000029" title=" " alt="" coords="255,409,325,417,324,422,254,414"/>
-<area shape="poly" id="edge37_Node000029_Node000020" title=" " alt="" coords="477,418,571,408,572,413,478,424"/>
+<area shape="rect" id="Node000029" href="$classProcessor.html#a5c48f5a991e81dcf354cebb10df48260" title="将彩色图像转换为灰度图像。" alt="" coords="339,416,477,441"/>
+<area shape="poly" id="edge36_Node000028_Node000029" title=" " alt="" coords="255,409,325,417,325,422,254,414"/>
+<area shape="poly" id="edge37_Node000029_Node000020" title=" " alt="" coords="477,419,573,408,574,413,478,424"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['val_5f_0',['val_',['../structTripletNode.html#a544721c4e0321517ffbbdc3732146a73',1,'TripletNode']]]
+  ['row_5f_0',['row_',['../structTripletNode.html#ac9a4de9eb60afbc4dba2ed1619ea4839',1,'TripletNode']]]
 ];

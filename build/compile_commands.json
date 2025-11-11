@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/mugaaaaa/DataStructureProject2/build",
+  "command": "/usr/bin/c++  -I/home/mugaaaaa/DataStructureProject2/cpp/src -isystem /usr/include/opencv4 -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/core_lib.dir/src/codec/compressor.cc.o -c /home/mugaaaaa/DataStructureProject2/cpp/src/codec/compressor.cc",
+  "file": "/home/mugaaaaa/DataStructureProject2/cpp/src/codec/compressor.cc",
+  "output": "CMakeFiles/core_lib.dir/src/codec/compressor.cc.o"
+},
+{
+  "directory": "/home/mugaaaaa/DataStructureProject2/build",
+  "command": "/usr/bin/c++  -I/home/mugaaaaa/DataStructureProject2/cpp/src -isystem /usr/include/opencv4 -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/core_lib.dir/src/data_structure/triplet.cc.o -c /home/mugaaaaa/DataStructureProject2/cpp/src/data_structure/triplet.cc",
+  "file": "/home/mugaaaaa/DataStructureProject2/cpp/src/data_structure/triplet.cc",
+  "output": "CMakeFiles/core_lib.dir/src/data_structure/triplet.cc.o"
+},
+{
+  "directory": "/home/mugaaaaa/DataStructureProject2/build",
+  "command": "/usr/bin/c++  -I/home/mugaaaaa/DataStructureProject2/cpp/src -isystem /usr/include/opencv4 -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/core_lib.dir/src/imgproc/image_processor.cc.o -c /home/mugaaaaa/DataStructureProject2/cpp/src/imgproc/image_processor.cc",
+  "file": "/home/mugaaaaa/DataStructureProject2/cpp/src/imgproc/image_processor.cc",
+  "output": "CMakeFiles/core_lib.dir/src/imgproc/image_processor.cc.o"
+},
+{
+  "directory": "/home/mugaaaaa/DataStructureProject2/build",
+  "command": "/usr/bin/c++  -I/home/mugaaaaa/DataStructureProject2/cpp/src -isystem /usr/include/opencv4 -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/core_lib.dir/src/io/image_io.cc.o -c /home/mugaaaaa/DataStructureProject2/cpp/src/io/image_io.cc",
+  "file": "/home/mugaaaaa/DataStructureProject2/cpp/src/io/image_io.cc",
+  "output": "CMakeFiles/core_lib.dir/src/io/image_io.cc.o"
+},
+{
+  "directory": "/home/mugaaaaa/DataStructureProject2/build",
+  "command": "/usr/bin/c++  -I/home/mugaaaaa/DataStructureProject2/cpp/src -isystem /usr/include/opencv4 -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/core_lib.dir/src/io/ppm.cc.o -c /home/mugaaaaa/DataStructureProject2/cpp/src/io/ppm.cc",
+  "file": "/home/mugaaaaa/DataStructureProject2/cpp/src/io/ppm.cc",
+  "output": "CMakeFiles/core_lib.dir/src/io/ppm.cc.o"
+},
+{
+  "directory": "/home/mugaaaaa/DataStructureProject2/build/test",
+  "command": "/usr/bin/c++ -DDATA_DIR=\\\"/home/mugaaaaa/DataStructureProject2/cpp/../data\\\" -DOUTPUT_DIR=\\\"/home/mugaaaaa/DataStructureProject2/build/test_outputs\\\" -I/home/mugaaaaa/DataStructureProject2/cpp/src -isystem /usr/include/opencv4 -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/run_tests.dir/main_test.cc.o -c /home/mugaaaaa/DataStructureProject2/cpp/test/main_test.cc",
+  "file": "/home/mugaaaaa/DataStructureProject2/cpp/test/main_test.cc",
+  "output": "test/CMakeFiles/run_tests.dir/main_test.cc.o"
+},
+{
+  "directory": "/home/mugaaaaa/DataStructureProject2/build/test",
+  "command": "/usr/bin/c++ -DDATA_DIR=\\\"/home/mugaaaaa/DataStructureProject2/cpp/../data\\\" -DOUTPUT_DIR=\\\"/home/mugaaaaa/DataStructureProject2/build/test_outputs\\\" -I/home/mugaaaaa/DataStructureProject2/cpp/src -isystem /usr/include/opencv4 -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/run_tests.dir/unit_io.cc.o -c /home/mugaaaaa/DataStructureProject2/cpp/test/unit_io.cc",
+  "file": "/home/mugaaaaa/DataStructureProject2/cpp/test/unit_io.cc",
+  "output": "test/CMakeFiles/run_tests.dir/unit_io.cc.o"
+},
+{
+  "directory": "/home/mugaaaaa/DataStructureProject2/build/test",
+  "command": "/usr/bin/c++ -DDATA_DIR=\\\"/home/mugaaaaa/DataStructureProject2/cpp/../data\\\" -DOUTPUT_DIR=\\\"/home/mugaaaaa/DataStructureProject2/build/test_outputs\\\" -I/home/mugaaaaa/DataStructureProject2/cpp/src -isystem /usr/include/opencv4 -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/run_tests.dir/unit_codec.cc.o -c /home/mugaaaaa/DataStructureProject2/cpp/test/unit_codec.cc",
+  "file": "/home/mugaaaaa/DataStructureProject2/cpp/test/unit_codec.cc",
+  "output": "test/CMakeFiles/run_tests.dir/unit_codec.cc.o"
+},
+{
+  "directory": "/home/mugaaaaa/DataStructureProject2/build/test",
+  "command": "/usr/bin/c++ -DDATA_DIR=\\\"/home/mugaaaaa/DataStructureProject2/cpp/../data\\\" -DOUTPUT_DIR=\\\"/home/mugaaaaa/DataStructureProject2/build/test_outputs\\\" -I/home/mugaaaaa/DataStructureProject2/cpp/src -isystem /usr/include/opencv4 -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/run_tests.dir/unit_imgproc.cc.o -c /home/mugaaaaa/DataStructureProject2/cpp/test/unit_imgproc.cc",
+  "file": "/home/mugaaaaa/DataStructureProject2/cpp/test/unit_imgproc.cc",
+  "output": "test/CMakeFiles/run_tests.dir/unit_imgproc.cc.o"
+}
+]

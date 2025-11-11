@@ -1,5 +1,5 @@
 /**
- * @file Ppm.h
+ * @file ppm.h
  * @author Runhui Mo (github.com/mugaaaaa)
  * @brief ppm 读写类声明，主要是 pmm 和 cv::Mat 之间的转换
  * @version 0.1
@@ -14,16 +14,21 @@
 #include <string>
 #include <opencv2/opencv.hpp>
 
+
+/**
+ * @brief .ppm 读写类, 提供 .ppm 文件与 cv::Mat 之间的转换接口
+ * 
+ */
 class Ppm {
 public:
     /**
-     * @brief 读取 PPM 文件(P2 或 P3 格式) 为 cv::Mat
+     * @brief 读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat
      * - 在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序
      */
     static cv::Mat LoadPpmAsMat(const std::string& file_path);
 
     /**
-     * @brief 手动保存为 PPM 格式
+     * @brief 手动保存为 .ppm 格式
      * - 输入 cv::Mat 格式图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)
      */
     static bool SaveNatAsPpm(const std::string& file_path, const cv::Mat& img);

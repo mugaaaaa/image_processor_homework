@@ -102,11 +102,11 @@ INCS_Release := \
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/main.o \
-	$(obj).target/$(TARGET)/../cpp/src/data_structure/Triplet.o \
-	$(obj).target/$(TARGET)/../cpp/src/io/ImageIO.o \
-	$(obj).target/$(TARGET)/../cpp/src/io/Ppm.o \
-	$(obj).target/$(TARGET)/../cpp/src/codec/Compressor.o \
-	$(obj).target/$(TARGET)/../cpp/src/imgproc/ImageProcessor.o
+	$(obj).target/$(TARGET)/../cpp/src/data_structure/triplet.o \
+	$(obj).target/$(TARGET)/../cpp/src/io/image_io.o \
+	$(obj).target/$(TARGET)/../cpp/src/io/ppm.o \
+	$(obj).target/$(TARGET)/../cpp/src/codec/compressor.o \
+	$(obj).target/$(TARGET)/../cpp/src/imgproc/image_processor.o
 
 # Add to the list of files we specially track dependencies for.
 all_deps += $(OBJS)

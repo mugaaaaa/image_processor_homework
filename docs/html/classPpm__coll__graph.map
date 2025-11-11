@@ -1,3 +1,3 @@
 <map id="Ppm" name="Ppm">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,143,91"/>
+<area shape="rect" id="Node000001" title=".ppm 读写类, 提供 .ppm 文件与 cv::Mat 之间的转换接口" alt="" coords="5,5,145,91"/>
 </map>

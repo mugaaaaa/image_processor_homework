@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ImageProcessorCore: Processor类 参考</title>
+<title>ImageProcessor: Processor类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ImageProcessorCore<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">ImageProcessor<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">C++ core of ImageProcessor</div>
+   <div id="projectbrief">a ImageProcessor with C++ core and Electron UI</div>
   </td>
  </tr>
  </tbody>
@@ -77,16 +77,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>图像处理算法集合类。  
+<p>图像处理器类  
  <a href="classProcessor.html#details">更多...</a></p>
 
-<p><code>#include &lt;<a class="el" href="ImageProcessor_8h_source.html">ImageProcessor.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="image__processor_8h_source.html">image_processor.h</a>&gt;</code></p>
 <div class="dynheader">
 Processor 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="classProcessor__coll__graph.png" border="0" usemap="#aProcessor_coll__map" alt="Collaboration graph"/></div>
 <map name="aProcessor_coll__map" id="aProcessor_coll__map">
-<area shape="rect" title="图像处理算法集合类。" alt="" coords="5,5,89,91"/>
+<area shape="rect" title="图像处理器类" alt="" coords="5,5,89,91"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -100,9 +100,9 @@ Processor 的协作图:</div>
 <tr class="separator:af43377f1cfa191f7521d8eb60e5374a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>图像处理算法集合类。 </p>
+<div class="textblock"><p>图像处理器类 </p>
 <ul>
-<li>包含手动实现的经典图像处理算法。 </li>
+<li>包含灰度化和双线性插值缩放算法 </li>
 </ul>
 </div><h2 class="groupheader">成员函数说明</h2>
 <a id="af43377f1cfa191f7521d8eb60e5374a0" name="af43377f1cfa191f7521d8eb60e5374a0"></a>
@@ -164,8 +164,8 @@ Processor 的协作图:</div>
 <div class="center"><img src="classProcessor_af43377f1cfa191f7521d8eb60e5374a0_cgraph.png" border="0" usemap="#aclassProcessor_af43377f1cfa191f7521d8eb60e5374a0_cgraph" alt=""/></div>
 <map name="aclassProcessor_af43377f1cfa191f7521d8eb60e5374a0_cgraph" id="aclassProcessor_af43377f1cfa191f7521d8eb60e5374a0_cgraph">
 <area shape="rect" title="使用双线性插值调整图像尺寸。" alt="" coords="5,5,141,31"/>
-<area shape="rect" href="ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a" title=" " alt="" coords="189,5,276,31"/>
-<area shape="poly" title=" " alt="" coords="142,15,176,15,176,21,142,21"/>
+<area shape="rect" href="image__processor_8cc.html#a34730b2ac8555f0ae72e7e1e802fa675" title=" " alt="" coords="189,5,277,31"/>
+<area shape="poly" title=" " alt="" coords="141,15,175,15,175,21,141,21"/>
 </map>
 </div>
 <div class="dynheader">
@@ -174,9 +174,9 @@ Processor 的协作图:</div>
 <div class="center"><img src="classProcessor_af43377f1cfa191f7521d8eb60e5374a0_icgraph.png" border="0" usemap="#aclassProcessor_af43377f1cfa191f7521d8eb60e5374a0_icgraph" alt=""/></div>
 <map name="aclassProcessor_af43377f1cfa191f7521d8eb60e5374a0_icgraph" id="aclassProcessor_af43377f1cfa191f7521d8eb60e5374a0_icgraph">
 <area shape="rect" title="使用双线性插值调整图像尺寸。" alt="" coords="267,5,403,31"/>
-<area shape="rect" href="main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title=" " alt="" coords="96,5,219,31"/>
+<area shape="rect" href="main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title="把 Processor::Resize 包装为 Node&#45;API 函数" alt="" coords="96,5,219,31"/>
 <area shape="poly" title=" " alt="" coords="253,21,219,21,219,15,253,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
@@ -224,7 +224,7 @@ Processor 的协作图:</div>
 <div class="center"><img src="classProcessor_a5c48f5a991e81dcf354cebb10df48260_cgraph.png" border="0" usemap="#aclassProcessor_a5c48f5a991e81dcf354cebb10df48260_cgraph" alt=""/></div>
 <map name="aclassProcessor_a5c48f5a991e81dcf354cebb10df48260_cgraph" id="aclassProcessor_a5c48f5a991e81dcf354cebb10df48260_cgraph">
 <area shape="rect" title="将彩色图像转换为灰度图像。" alt="" coords="5,5,144,31"/>
-<area shape="rect" href="ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a" title=" " alt="" coords="192,5,279,31"/>
+<area shape="rect" href="image__processor_8cc.html#a34730b2ac8555f0ae72e7e1e802fa675" title=" " alt="" coords="192,5,280,31"/>
 <area shape="poly" title=" " alt="" coords="144,15,178,15,178,21,144,21"/>
 </map>
 </div>
@@ -234,9 +234,9 @@ Processor 的协作图:</div>
 <div class="center"><img src="classProcessor_a5c48f5a991e81dcf354cebb10df48260_icgraph.png" border="0" usemap="#aclassProcessor_a5c48f5a991e81dcf354cebb10df48260_icgraph" alt=""/></div>
 <map name="aclassProcessor_a5c48f5a991e81dcf354cebb10df48260_icgraph" id="aclassProcessor_a5c48f5a991e81dcf354cebb10df48260_icgraph">
 <area shape="rect" title="将彩色图像转换为灰度图像。" alt="" coords="269,5,408,31"/>
-<area shape="rect" href="main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title=" " alt="" coords="96,5,221,31"/>
+<area shape="rect" href="main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title="把 Processor::ToGray 包装为 Node&#45;API 函数" alt="" coords="96,5,221,31"/>
 <area shape="poly" title=" " alt="" coords="256,21,222,21,222,15,256,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
@@ -244,8 +244,8 @@ Processor 的协作图:</div>
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>cpp/src/imgproc/<a class="el" href="ImageProcessor_8h_source.html">ImageProcessor.h</a></li>
-<li>cpp/src/imgproc/<a class="el" href="ImageProcessor_8cc.html">ImageProcessor.cc</a></li>
+<li>cpp/src/imgproc/<a class="el" href="image__processor_8h_source.html">image_processor.h</a></li>
+<li>cpp/src/imgproc/<a class="el" href="image__processor_8cc.html">image_processor.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

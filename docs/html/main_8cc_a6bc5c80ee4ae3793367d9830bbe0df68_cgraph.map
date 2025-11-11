@@ -1,13 +1,13 @@
 <map id="CompressorSaveWrapped" name="CompressorSaveWrapped">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,46,196,71"/>
-<area shape="rect" id="Node000002" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="270,21,358,46"/>
+<area shape="rect" id="Node000001" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="5,46,196,71"/>
+<area shape="rect" id="Node000002" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="270,21,358,46"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,45,256,37,256,43,197,50"/>
 <area shape="rect" id="Node000003" href="$classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="244,70,384,95"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,67,231,71,230,76,196,72"/>
-<area shape="rect" id="Node000004" href="$classTripletUtils.html#ac8dadcc7087f5926810820c26996aa0d" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="432,5,633,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="363,67,442,46,443,51,364,73"/>
-<area shape="rect" id="Node000005" href="$classTripletUtils.html#a474e9114f121013d17dce14568d24485" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="439,70,626,95"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="384,80,426,80,426,85,384,85"/>
-<area shape="rect" id="Node000006" href="$Compressor_8cc.html#a40a397f9f192a857e7766eaf692d0f58" title=" " alt="" coords="481,119,584,145"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="372,93,468,115,467,120,370,98"/>
+<area shape="rect" id="Node000004" href="$classTripletUtils.html#aa5ae7f8d7277d320791b1784487ffb99" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="432,5,636,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="363,67,443,46,445,51,364,73"/>
+<area shape="rect" id="Node000005" href="$classTripletUtils.html#a5b02a3d75026807faf99bbadf4c5c8a9" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="441,70,627,95"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="384,80,427,80,427,85,384,85"/>
+<area shape="rect" id="Node000006" href="$compressor_8cc.html#ab29ab99e4914dddfeba2690429a09a9e" title=" " alt="" coords="482,119,586,145"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="372,93,469,115,468,120,371,98"/>
 </map>

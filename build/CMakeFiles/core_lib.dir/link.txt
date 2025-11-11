@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore_lib.a CMakeFiles/core_lib.dir/src/codec/compressor.cc.o CMakeFiles/core_lib.dir/src/data_structure/triplet.cc.o CMakeFiles/core_lib.dir/src/imgproc/image_processor.cc.o CMakeFiles/core_lib.dir/src/io/image_io.cc.o CMakeFiles/core_lib.dir/src/io/ppm.cc.o
+/usr/bin/ranlib libcore_lib.a

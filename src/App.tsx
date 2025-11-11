@@ -1,3 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * @file App.tsx
+ * @author Runhui Mo (github.com/mugaaaaa)
+ * @brief React 主应用组件
+ * 
+ * @version 0.1
+ * @date 2025-11-10
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { Box, Card, CardContent, CardHeader, Button, Typography, Divider, TextField } from '@mui/material'
@@ -23,7 +36,7 @@ function CanvasImage({ image, fixedWidth, fixedHeight }: { image?: ImageDataObj,
         dst[j] = g; dst[j+1] = g; dst[j+2] = g; dst[j+3] = 255
       }
     } else {
-      // src is BGR; convert to RGBA
+      // 将 BGR 转为 RGBA
       for (let i = 0, j = 0; i < src.length; i += 3, j += 4) {
         const b = src[i], g = src[i+1], r = src[i+2]
         dst[j] = r; dst[j+1] = g; dst[j+2] = b; dst[j+3] = 255
@@ -38,11 +51,10 @@ function App() {
   const theme = useMemo(() => createTheme({ palette: { mode: 'light' } }), [])
 
   const [current, setCurrent] = useState<ImageDataObj | undefined>(undefined)
-  // fixed layout sizes
+
   const LEFT_WIDTH = 540
   const LEFT_HEIGHT = 540
 
-  // 不使用默认值，初始为空字符串，让用户显式输入
   const [resizeW, setResizeW] = useState('')
   const [resizeH, setResizeH] = useState('')
 

@@ -1,5 +1,5 @@
 /**
- * @file Triplet.cc
+ * @file triplet.cc
  * @author Runhui Mo (github.com/mugaaaaa)
  * @brief 三元组相关工具类实现
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "Triplet.h"
+#include "triplet.h"
 #include <unordered_map>
 #include <array>
 
@@ -73,14 +73,17 @@ void TripletUtils::MatToTriplets(const cv::Mat& img, const uint8_t bg_color[3], 
     // 清空输出向量防止，有脏数据
     triplets.clear();
 
-    
+    // 遍历图像，将非背景色的像素转换为三元组
     int channels = img.channels();
     if (channels == 1) {
         for (int r = 0; r < img.rows; ++r) {
-            const uint8_t* rowp = img.ptr<uint8_t>(r);
+            const uint8_t* rowp = img.ptr<uint8_t>(r);  // 获取行指针
             for (int c = 0; c < img.cols; ++c) {
-                uint8_t v = rowp[c];
-                if (v == bg_color[0]) continue;
+                // 获取当前像素值
+                uint8_t v = rowp[c]; 
+
+                // 生成三元组，跳过背景色
+                if (v == bg_color[0]) continue; 
                 TripletNode node; node.row_ = r; node.col_ = c;
                 node.val_[0] = v; node.val_[1] = 0; node.val_[2] = 0;
                 triplets.push_back(node);
@@ -88,9 +91,12 @@ void TripletUtils::MatToTriplets(const cv::Mat& img, const uint8_t bg_color[3], 
         }
     } else if (channels == 3) {
         for (int r = 0; r < img.rows; ++r) {
-            const cv::Vec3b* rowp = img.ptr<cv::Vec3b>(r);
+            const cv::Vec3b* rowp = img.ptr<cv::Vec3b>(r);  // 获取行指针
             for (int c = 0; c < img.cols; ++c) {
+                // 获取当前像素值
                 const cv::Vec3b& pix = rowp[c];
+
+                // 生成三元组，跳过背景色
                 if (pix[0] == bg_color[0] && pix[1] == bg_color[1] && pix[2] == bg_color[2]) continue;
                 TripletNode node; node.row_ = r; node.col_ = c;
                 node.val_[0] = pix[0]; node.val_[1] = pix[1]; node.val_[2] = pix[2];
@@ -100,16 +106,23 @@ void TripletUtils::MatToTriplets(const cv::Mat& img, const uint8_t bg_color[3], 
     }
 }
 
+// 将三元组表示转换为图像
 void TripletUtils::TripletsToMat(const std::vector<TripletNode>& triplets, int width, int height, int channels, const uint8_t bg_color[3], cv::Mat& img) {
     if (channels == 1) {
+        // 创建单通道图像，初始化为背景色
         img = cv::Mat(height, width, CV_8UC1, cv::Scalar(bg_color[0]));
+
+        // 填充非背景色像素
         for (const auto& node : triplets) {
             if (node.row_ >= 0 && node.row_ < height && node.col_ >= 0 && node.col_ < width) {
                 img.at<uint8_t>(node.row_, node.col_) = node.val_[0];
             }
         }
     } else if (channels == 3) {
+        // 创建三通道图像，初始化为背景色
         img = cv::Mat(height, width, CV_8UC3, cv::Scalar(bg_color[0], bg_color[1], bg_color[2]));
+        
+        // 填充非背景色像素
         for (const auto& node : triplets) {
             if (node.row_ >= 0 && node.row_ < height && node.col_ >= 0 && node.col_ < width) {
                 img.at<cv::Vec3b>(node.row_, node.col_) = cv::Vec3b(node.val_[0], node.val_[1], node.val_[2]);

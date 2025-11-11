@@ -14,12 +14,6 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1024,
     height: 612,
-    // // 去掉窗口原生边框/工具栏（frame: false），并隐藏菜单栏（autoHideMenuBar: true）
-    // // 注意：去掉 frame 后，窗口将没有系统标题栏，需要在渲染层添加可拖拽区域（-webkit-app-region: drag）
-    // frame: false,
-    // autoHideMenuBar: true,
-    // // macOS 专用：隐藏原生标题栏，配合 frameless 使用可以得到更自然的外观
-    // titleBarStyle: 'hidden',
     icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
     webPreferences: {
       preload: path.join(__dirname$1, "preload.mjs"),
@@ -131,16 +125,6 @@ ipcMain.handle("dialog:saveTrip", async () => {
   const result = await dialog.showSaveDialog(win, {
     filters: [{ name: "Trip Files", extensions: ["trip"] }],
     defaultPath: "image.trip"
-  });
-  return result.canceled ? null : result.filePath;
-});
-ipcMain.handle("dialog:saveImage", async () => {
-  const result = await dialog.showSaveDialog(win, {
-    filters: [
-      { name: "PNG Image", extensions: ["png"] },
-      { name: "PPM Image", extensions: ["ppm"] }
-    ],
-    defaultPath: "image.png"
   });
   return result.canceled ? null : result.filePath;
 });

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ImageProcessorCore: 成员列表</title>
+<title>ImageProcessor: 成员列表</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ImageProcessorCore<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">ImageProcessor<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">C++ core of ImageProcessor</div>
+   <div id="projectbrief">a ImageProcessor with C++ core and Electron UI</div>
   </td>
  </tr>
  </tbody>
@@ -78,13 +78,13 @@ $(function() {
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classImageIO.html#a526599dead8abdc1845d34e0329c4ac9">DecodeFromBuffer</a>(const uint8_t *data, size_t size)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classImageIO.html#a15415944fc6c74e4ff5ed28ae2fb3aa9">EncodeToBuffer</a>(const cv::Mat &amp;img, const std::string &amp;format, std::vector&lt; uint8_t &gt; *buffer)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classImageIO.html#a19370c25df64ca9a0969a30d93969fc5">loadPng</a>(const std::string &amp;file_path)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classImageIO.html#ad3457dfc34f78f2314cc5b989584ca86">loadPpm</a>(const std::string &amp;file_path)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classImageIO.html#a6b3fe67ea25f31293364dc9174c418ef">loadTrip</a>(const std::string &amp;file_path)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classImageIO.html#aa5d7f0832777c47224aa2cfcb04d6a5a">savePng</a>(const std::string &amp;file_path, const cv::Mat &amp;img)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classImageIO.html#a01f7e14387f94afb475890806dfe167d">savePpm</a>(const std::string &amp;file_path, const cv::Mat &amp;img)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classImageIO.html#a599d6b98c20fa03684d3fe89c4de3616">saveTrip</a>(const std::string &amp;file_path, const std::vector&lt; TripletNode &gt; &amp;triplets)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classImageIO.html#adf0107fa1471877fd5684f857c95cb49">saveTrip</a>(const std::string &amp;file_path, int width, int height, int channels, const uint8_t bg_color[3], const std::vector&lt; TripletNode &gt; &amp;triplets)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classImageIO.html#a4cceda8c66d879194ee633920e335a1f">LoadPng</a>(const std::string &amp;file_path)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f">LoadPpm</a>(const std::string &amp;file_path)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classImageIO.html#a9f694ae7ac22767162b7d2b63e751d99">LoadTrip</a>(const std::string &amp;file_path)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classImageIO.html#a6203067e2826b9ccc07c6b87002ede4d">SavePng</a>(const std::string &amp;file_path, const cv::Mat &amp;img)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a">SavePpm</a>(const std::string &amp;file_path, const cv::Mat &amp;img)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classImageIO.html#a2a2448cc3160e6f250047517c2ab7c65">SaveTrip</a>(const std::string &amp;file_path, const std::vector&lt; TripletNode &gt; &amp;triplets)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classImageIO.html#a719f8fbb1712bea334337ef7f140c05a">SaveTrip</a>(const std::string &amp;file_path, int width, int height, int channels, const uint8_t bg_color[3], const std::vector&lt; TripletNode &gt; &amp;triplets)</td><td class="entry"><a class="el" href="classImageIO.html">ImageIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

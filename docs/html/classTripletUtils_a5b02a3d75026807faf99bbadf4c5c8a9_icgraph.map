@@ -1,0 +1,9 @@
+<map id="TripletUtils::MatToTriplets" name="TripletUtils::MatToTriplets">
+<area shape="rect" id="Node000001" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="523,5,709,31"/>
+<area shape="rect" id="Node000002" href="$classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="335,5,475,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="509,21,475,21,475,15,509,15"/>
+<area shape="rect" id="Node000003" href="$main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="96,5,287,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="321,21,287,21,287,15,321,15"/>
+<area shape="rect" id="Node000004" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
+</map>

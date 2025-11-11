@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ImageProcessor: cpp/src/codec/compressor.cc 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ImageProcessor<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">a ImageProcessor with C++ core and Electron UI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_df511e5bd85cec96854b39d5e1c27aa8.html">cpp</a></li><li class="navelem"><a class="el" href="dir_7e72c7cf48e3493f8206cd364e6bc9f6.html">src</a></li><li class="navelem"><a class="el" href="dir_5df87b1cd68117536b56e72db972880b.html">codec</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">compressor.cc 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="classCompressor.html" title="压缩与解压类，调用 Triplet 相关函数实现图像的三元组压缩存储与重建。">Compressor</a> 类静态方法实现  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="compressor_8h_source.html">compressor.h</a>&quot;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+compressor.cc 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="compressor_8cc__incl.png" border="0" usemap="#acpp_2src_2codec_2compressor_8cc" alt=""/></div>
+<map name="acpp_2src_2codec_2compressor_8cc" id="acpp_2src_2codec_2compressor_8cc">
+<area shape="rect" title="Compressor 类静态方法实现" alt="" coords="311,5,518,31"/>
+<area shape="rect" href="compressor_8h.html" title="Compressor 压缩与解压类类声明" alt="" coords="64,79,173,104"/>
+<area shape="poly" title=" " alt="" coords="367,33,180,78,179,73,366,28"/>
+<area shape="rect" title=" " alt="" coords="329,225,396,251"/>
+<area shape="poly" title=" " alt="" coords="414,32,371,212,366,211,409,30"/>
+<area shape="rect" title=" " alt="" coords="415,79,488,104"/>
+<area shape="poly" title=" " alt="" coords="423,30,442,65,437,68,418,32"/>
+<area shape="rect" title=" " alt="" coords="513,79,572,104"/>
+<area shape="poly" title=" " alt="" coords="436,28,511,69,508,74,434,33"/>
+<area shape="rect" title=" " alt="" coords="22,152,81,177"/>
+<area shape="poly" title=" " alt="" coords="109,106,74,144,70,140,105,103"/>
+<area shape="rect" title=" " alt="" coords="10,225,72,251"/>
+<area shape="poly" title=" " alt="" coords="78,106,41,125,25,137,13,153,8,168,10,183,25,213,20,215,5,185,3,167,8,151,21,134,38,120,75,102"/>
+<area shape="rect" title=" " alt="" coords="124,225,291,251"/>
+<area shape="poly" title=" " alt="" coords="123,104,130,138,146,176,163,197,182,215,178,219,159,201,141,179,125,139,117,105"/>
+<area shape="rect" href="triplet_8h.html" title="三元组数据结构及相关工具类声明" alt="" coords="156,152,339,177"/>
+<area shape="poly" title=" " alt="" coords="140,102,216,143,213,147,138,106"/>
+<area shape="poly" title=" " alt="" coords="215,180,86,224,85,219,214,175"/>
+<area shape="poly" title=" " alt="" coords="243,179,223,215,219,212,239,176"/>
+<area shape="poly" title=" " alt="" coords="268,175,334,216,331,220,265,180"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ab29ab99e4914dddfeba2690429a09a9e" id="r_ab29ab99e4914dddfeba2690429a09a9e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compressor_8cc.html#ab29ab99e4914dddfeba2690429a09a9e">WriteHeader</a> (std::ostream &amp;os, const <a class="el" href="structCompressedHeader.html">CompressedHeader</a> &amp;hdr)</td></tr>
+<tr class="separator:ab29ab99e4914dddfeba2690429a09a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a393bbe21a99a76d202ac90bab190280c" id="r_a393bbe21a99a76d202ac90bab190280c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compressor_8cc.html#a393bbe21a99a76d202ac90bab190280c">ReadHeader</a> (std::istream &amp;is, <a class="el" href="structCompressedHeader.html">CompressedHeader</a> &amp;hdr)</td></tr>
+<tr class="separator:a393bbe21a99a76d202ac90bab190280c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="classCompressor.html" title="压缩与解压类，调用 Triplet 相关函数实现图像的三元组压缩存储与重建。">Compressor</a> 类静态方法实现 </p>
+<dl class="section author"><dt>作者</dt><dd>Runhui Mo (github.com/mugaaaaa) </dd></dl>
+<p>三元组存储格式： 文件头（文本）：TRIP width height channels count bgB bgG bgR<br  />
+数据段（二进制）：按顺序写入 count 个节点，每个节点包含 int32 row, int32 col, uint8 v0[, uint8 v1, uint8 v2]</p>
+<dl class="section version"><dt>版本</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-11-07</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="a393bbe21a99a76d202ac90bab190280c" name="a393bbe21a99a76d202ac90bab190280c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a393bbe21a99a76d202ac90bab190280c">&#9670;&#160;</a></span>ReadHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ReadHeader </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCompressedHeader.html">CompressedHeader</a> &amp;&#160;</td>
+          <td class="paramname"><em>hdr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="compressor_8cc_a393bbe21a99a76d202ac90bab190280c_icgraph.png" border="0" usemap="#acompressor_8cc_a393bbe21a99a76d202ac90bab190280c_icgraph" alt=""/></div>
+<map name="acompressor_8cc_a393bbe21a99a76d202ac90bab190280c_icgraph" id="acompressor_8cc_a393bbe21a99a76d202ac90bab190280c_icgraph">
+<area shape="rect" title=" " alt="" coords="520,5,623,31"/>
+<area shape="rect" href="classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="333,5,472,31"/>
+<area shape="poly" title=" " alt="" coords="506,21,472,21,472,15,506,15"/>
+<area shape="rect" href="main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title="把 Compressor::Load 包装为 Node&#45;API 函数" alt="" coords="96,5,285,31"/>
+<area shape="poly" title=" " alt="" coords="319,21,285,21,285,15,319,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
+<area shape="poly" title=" " alt="" coords="83,21,48,21,48,15,83,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab29ab99e4914dddfeba2690429a09a9e" name="ab29ab99e4914dddfeba2690429a09a9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab29ab99e4914dddfeba2690429a09a9e">&#9670;&#160;</a></span>WriteHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool WriteHeader </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structCompressedHeader.html">CompressedHeader</a> &amp;&#160;</td>
+          <td class="paramname"><em>hdr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="compressor_8cc_ab29ab99e4914dddfeba2690429a09a9e_icgraph.png" border="0" usemap="#acompressor_8cc_ab29ab99e4914dddfeba2690429a09a9e_icgraph" alt=""/></div>
+<map name="acompressor_8cc_ab29ab99e4914dddfeba2690429a09a9e_icgraph" id="acompressor_8cc_ab29ab99e4914dddfeba2690429a09a9e_icgraph">
+<area shape="rect" title=" " alt="" coords="523,5,627,31"/>
+<area shape="rect" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="335,5,475,31"/>
+<area shape="poly" title=" " alt="" coords="509,21,475,21,475,15,509,15"/>
+<area shape="rect" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="96,5,287,31"/>
+<area shape="poly" title=" " alt="" coords="321,21,287,21,287,15,321,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
+<area shape="poly" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

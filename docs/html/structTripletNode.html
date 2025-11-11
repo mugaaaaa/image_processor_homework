@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ImageProcessorCore: TripletNode结构体 参考</title>
+<title>ImageProcessor: TripletNode结构体 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ImageProcessorCore<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">ImageProcessor<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">C++ core of ImageProcessor</div>
+   <div id="projectbrief">a ImageProcessor with C++ core and Electron UI</div>
   </td>
  </tr>
  </tbody>
@@ -80,7 +80,7 @@ $(function() {
 <p>三元组节点结构体，表示图像中非背景色的像素信息  
  <a href="structTripletNode.html#details">更多...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Triplet_8h_source.html">Triplet.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="triplet_8h_source.html">triplet.h</a>&gt;</code></p>
 <div class="dynheader">
 TripletNode 的协作图:</div>
 <div class="dyncontent">
@@ -93,8 +93,10 @@ TripletNode 的协作图:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
 <tr class="memitem:ac9a4de9eb60afbc4dba2ed1619ea4839" id="r_ac9a4de9eb60afbc4dba2ed1619ea4839"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTripletNode.html#ac9a4de9eb60afbc4dba2ed1619ea4839">row_</a></td></tr>
+<tr class="memdesc:ac9a4de9eb60afbc4dba2ed1619ea4839"><td class="mdescLeft">&#160;</td><td class="mdescRight">像素行索引  <br /></td></tr>
 <tr class="separator:ac9a4de9eb60afbc4dba2ed1619ea4839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7248218fd56b58b2e55ebbd3b94e19c6" id="r_a7248218fd56b58b2e55ebbd3b94e19c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTripletNode.html#a7248218fd56b58b2e55ebbd3b94e19c6">col_</a></td></tr>
+<tr class="memdesc:a7248218fd56b58b2e55ebbd3b94e19c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">像素列索引  <br /></td></tr>
 <tr class="separator:a7248218fd56b58b2e55ebbd3b94e19c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a544721c4e0321517ffbbdc3732146a73" id="r_a544721c4e0321517ffbbdc3732146a73"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTripletNode.html#a544721c4e0321517ffbbdc3732146a73">val_</a> [3]</td></tr>
 <tr class="memdesc:a544721c4e0321517ffbbdc3732146a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">彩色图时 val_[0]: B, val_[1]: G, val_[2]: R（与 OpenCV 的 BGR 顺序对齐），灰度图时仅用 val_[0] 表示灰度  <br /></td></tr>
@@ -115,6 +117,8 @@ Public 属性</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>像素列索引 </p>
+
 </div>
 </div>
 <a id="ac9a4de9eb60afbc4dba2ed1619ea4839" name="ac9a4de9eb60afbc4dba2ed1619ea4839"></a>
@@ -128,6 +132,8 @@ Public 属性</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>像素行索引 </p>
 
 </div>
 </div>
@@ -148,7 +154,7 @@ Public 属性</h2></td></tr>
 </div>
 </div>
 <hr/>该结构体的文档由以下文件生成:<ul>
-<li>cpp/src/data_structure/<a class="el" href="Triplet_8h_source.html">Triplet.h</a></li>
+<li>cpp/src/data_structure/<a class="el" href="triplet_8h_source.html">triplet.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

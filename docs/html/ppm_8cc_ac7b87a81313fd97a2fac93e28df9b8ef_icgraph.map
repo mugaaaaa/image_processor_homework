@@ -1,0 +1,11 @@
+<map id="readToken" name="readToken">
+<area shape="rect" id="Node000001" title=" " alt="" coords="685,5,773,31"/>
+<area shape="rect" id="Node000002" href="$classPpm.html#a20cd3e30e1b93ec9d9f62ac1b02745b8" title="读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat" alt="" coords="477,5,637,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="672,21,638,21,638,15,672,15"/>
+<area shape="rect" id="Node000003" href="$classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f" title="从文件加载三元组压缩图像" alt="" coords="284,5,429,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,21,429,21,429,15,464,15"/>
+<area shape="rect" id="Node000004" href="$main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="96,5,236,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="270,21,236,21,236,15,270,15"/>
+<area shape="rect" id="Node000005" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
+</map>

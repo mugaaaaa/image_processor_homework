@@ -1,7 +1,7 @@
 /**
- * @file ImageProcessor.cc
+ * @file image_processor.cc
  * @author Runhui Mo (github.com/mugaaaaa)
- * @brief 
+ * @brief 图像处理器类实现
  * @version 0.1
  * @date 2025-11-07
  * 

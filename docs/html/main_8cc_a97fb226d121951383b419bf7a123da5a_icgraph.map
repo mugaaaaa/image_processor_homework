@@ -1,5 +1,5 @@
 <map id="SavePpmWrapped" name="SavePpmWrapped">
-<area shape="rect" id="Node000001" title=" " alt="" coords="96,5,237,31"/>
-<area shape="rect" id="Node000002" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" id="Node000001" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="96,5,237,31"/>
+<area shape="rect" id="Node000002" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
 </map>

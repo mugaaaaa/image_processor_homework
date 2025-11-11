@@ -1,11 +1,12 @@
 /**
- * @file Compressor.cc
+ * @file compressor.cc
  * @author Runhui Mo (github.com/mugaaaaa)
  * @brief Compressor 类静态方法实现
  *
  * @details 三元组存储格式：
- * 文件头：TRIP width height channels count bgB bgG bgR\n
- * 后续每行一个三元组：row col v0 [v1 v2]\n
+ * 文件头（文本）：TRIP width height channels count bgB bgG bgR\n
+ * 数据段（二进制）：按顺序写入 count 个节点，每个节点包含
+ *   int32 row, int32 col, uint8 v0[, uint8 v1, uint8 v2]
  *
  * @version 0.1
  * @date 2025-11-07
@@ -14,14 +15,17 @@
  * 
  */
 
-#include "Compressor.h"
+#include "compressor.h"
 #include <fstream>
+#include <cstdint>
+#include <limits>
+
 
 // 写入 .trip 文件头
 static bool WriteHeader(std::ostream& os, const CompressedHeader& hdr) {
     // 写入魔法数字，宽，高，通道数，三元组数量，背景色等信息
     os << "TRIP " << hdr.width_ << ' ' << hdr.height_ << ' ' << hdr.channels_ << ' '
-       << hdr.count_ << ' ' << static_cast<int>(hdr.bg_color_[0]) << ' '
+       << static_cast<unsigned long long>(hdr.count_) << ' ' << static_cast<int>(hdr.bg_color_[0]) << ' '
        << static_cast<int>(hdr.bg_color_[1]) << ' ' << static_cast<int>(hdr.bg_color_[2]) << '\n';
     
     return !os.fail();
@@ -40,6 +44,8 @@ static bool ReadHeader(std::istream& is, CompressedHeader& hdr) {
     hdr.bg_color_[1] = static_cast<uint8_t>(g);
     hdr.bg_color_[2] = static_cast<uint8_t>(r);
     
+    // 丢弃到行尾，确保后续二进制读取从正确位置开始
+    is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     return !is.fail();
 }
 
@@ -61,20 +67,28 @@ bool Compressor::Save(const std::string& file_path, const cv::Mat& img) {
     hdr.count_ = triplets.size();
     hdr.bg_color_[0] = bg[0]; hdr.bg_color_[1] = bg[1]; hdr.bg_color_[2] = bg[2];
     
-    // 打开文件流
-    std::ofstream ofs(file_path);
+    // 打开文件流（二进制），头部以文本写入，数据段以二进制写入
+    std::ofstream ofs(file_path, std::ios::binary);
     if (!ofs) return false;
 
     // 写入文件头
     if (!WriteHeader(ofs, hdr)) return false;
 
-    // 写入三元组，后续可能可以继续优化
+    // 写入三元组数据段（二进制）：int32 row, int32 col, uint8 v0[, v1, v2]
     for (const auto& t : triplets) {
-        ofs << t.row_ << ' ' << t.col_ << ' ' << static_cast<int>(t.val_[0]);
+        int32_t row = static_cast<int32_t>(t.row_);
+        int32_t col = static_cast<int32_t>(t.col_);
+        uint8_t v0 = t.val_[0];
+        ofs.write(reinterpret_cast<const char*>(&row), sizeof(row));
+        ofs.write(reinterpret_cast<const char*>(&col), sizeof(col));
+        ofs.write(reinterpret_cast<const char*>(&v0), sizeof(v0));
         if (hdr.channels_ == 3) {
-            ofs << ' ' << static_cast<int>(t.val_[1]) << ' ' << static_cast<int>(t.val_[2]);
+            uint8_t v1 = t.val_[1];
+            uint8_t v2 = t.val_[2];
+            ofs.write(reinterpret_cast<const char*>(&v1), sizeof(v1));
+            ofs.write(reinterpret_cast<const char*>(&v2), sizeof(v2));
         }
-        ofs << '\n';
+        if (!ofs) return false;
     }
     
     return true;
@@ -82,8 +96,8 @@ bool Compressor::Save(const std::string& file_path, const cv::Mat& img) {
 
 // 加载 .trip 文件并重建图像
 cv::Mat Compressor::Load(const std::string& file_path) {
-    // 打开文件流，如果打开失败就返回空 cv::Mat
-    std::ifstream ifs(file_path);
+    // 打开文件流（二进制），如果打开失败就返回空 cv::Mat
+    std::ifstream ifs(file_path, std::ios::binary);
     if (!ifs) return cv::Mat();
 
     // 读取文件头信息，如果读取失败就返回空 cv::Mat
@@ -94,14 +108,19 @@ cv::Mat Compressor::Load(const std::string& file_path) {
     std::vector<TripletNode> triplets;
     triplets.reserve(static_cast<size_t>(hdr.count_));
 
-    // 读入三元组为 std::vector<TripletNode>
-    int row, col, v0, v1, v2;
-    for (size_t i = 0; i < hdr.count_ && (ifs >> row >> col >> v0); ++i) {
-        TripletNode node{}; node.row_ = row; node.col_ = col; node.val_[0] = static_cast<uint8_t>(v0);
+    // 读入三元组为 std::vector<TripletNode>（二进制读取）
+    for (uint64_t i = 0; i < hdr.count_; ++i) {
+        int32_t row = 0, col = 0; uint8_t v0 = 0, v1 = 0, v2 = 0;
+        ifs.read(reinterpret_cast<char*>(&row), sizeof(row));
+        ifs.read(reinterpret_cast<char*>(&col), sizeof(col));
+        ifs.read(reinterpret_cast<char*>(&v0), sizeof(v0));
+        if (!ifs) break;
+        TripletNode node{}; node.row_ = row; node.col_ = col; node.val_[0] = v0;
         if (hdr.channels_ == 3) {
-            if (!(ifs >> v1 >> v2)) break;
-            node.val_[1] = static_cast<uint8_t>(v1);
-            node.val_[2] = static_cast<uint8_t>(v2);
+            ifs.read(reinterpret_cast<char*>(&v1), sizeof(v1));
+            ifs.read(reinterpret_cast<char*>(&v2), sizeof(v2));
+            if (!ifs) break;
+            node.val_[1] = v1; node.val_[2] = v2;
         } else {
             node.val_[1] = node.val_[2] = 0;
         }

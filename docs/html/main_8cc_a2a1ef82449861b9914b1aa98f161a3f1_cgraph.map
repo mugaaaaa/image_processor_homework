@@ -1,7 +1,7 @@
 <map id="SavePngWrapped" name="SavePngWrapped">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,141,56"/>
-<area shape="rect" id="Node000002" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="215,5,303,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,31,201,23,202,28,142,37"/>
-<area shape="rect" id="Node000003" href="$classImageIO.html#aa5d7f0832777c47224aa2cfcb04d6a5a" title="将图像保存到文件" alt="" coords="189,55,329,80"/>
+<area shape="rect" id="Node000001" title="把 ImageIO::SavePng 包装为 Node&#45;API 函数" alt="" coords="5,31,141,56"/>
+<area shape="rect" id="Node000002" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="216,5,304,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,31,202,23,202,28,142,37"/>
+<area shape="rect" id="Node000003" href="$classImageIO.html#a6203067e2826b9ccc07c6b87002ede4d" title="将图像保存到文件" alt="" coords="189,55,331,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,49,176,54,175,59,141,55"/>
 </map>

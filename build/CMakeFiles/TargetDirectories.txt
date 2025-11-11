@@ -1,0 +1,6 @@
+/home/mugaaaaa/DataStructureProject2/build/CMakeFiles/core_lib.dir
+/home/mugaaaaa/DataStructureProject2/build/CMakeFiles/edit_cache.dir
+/home/mugaaaaa/DataStructureProject2/build/CMakeFiles/rebuild_cache.dir
+/home/mugaaaaa/DataStructureProject2/build/test/CMakeFiles/run_tests.dir
+/home/mugaaaaa/DataStructureProject2/build/test/CMakeFiles/edit_cache.dir
+/home/mugaaaaa/DataStructureProject2/build/test/CMakeFiles/rebuild_cache.dir

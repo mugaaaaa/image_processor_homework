@@ -1,9 +1,9 @@
 <map id="SavePpmWrapped" name="SavePpmWrapped">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,147,56"/>
-<area shape="rect" id="Node000002" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="223,5,311,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,31,209,23,209,28,147,37"/>
-<area shape="rect" id="Node000003" href="$classImageIO.html#a01f7e14387f94afb475890806dfe167d" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="195,55,340,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,50,181,54,180,59,147,55"/>
-<area shape="rect" id="Node000004" href="$classPpm.html#a92a5a73a161b186cd6b18f42c278e437" title="手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。" alt="" coords="388,55,547,80"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="340,65,375,65,375,70,340,70"/>
+<area shape="rect" id="Node000001" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="5,31,147,56"/>
+<area shape="rect" id="Node000002" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="224,5,312,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,31,210,23,211,28,147,37"/>
+<area shape="rect" id="Node000003" href="$classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="195,55,341,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,49,181,54,180,59,146,55"/>
+<area shape="rect" id="Node000004" href="$classPpm.html#ad018fb080daad5dca782603a44e8e59b" title="手动保存为 .ppm 格式" alt="" coords="389,55,548,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="341,65,376,65,376,70,341,70"/>
 </map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ImageProcessorCore: Ppm类 参考</title>
+<title>ImageProcessor: Ppm类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ImageProcessorCore<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">ImageProcessor<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">C++ core of ImageProcessor</div>
+   <div id="projectbrief">a ImageProcessor with C++ core and Electron UI</div>
   </td>
  </tr>
  </tbody>
@@ -77,28 +77,33 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="Ppm_8h_source.html">Ppm.h</a>&gt;</code></p>
+<p>.ppm 读写类, 提供 .ppm 文件与 cv::Mat 之间的转换接口  
+ <a href="classPpm.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ppm_8h_source.html">ppm.h</a>&gt;</code></p>
 <div class="dynheader">
 Ppm 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPpm__coll__graph.png" border="0" usemap="#aPpm_coll__map" alt="Collaboration graph"/></div>
 <map name="aPpm_coll__map" id="aPpm_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,143,91"/>
+<area shape="rect" title=".ppm 读写类, 提供 .ppm 文件与 cv::Mat 之间的转换接口" alt="" coords="5,5,145,91"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:a071ed3ce298c2d6e25b2f4afffff7129" id="r_a071ed3ce298c2d6e25b2f4afffff7129"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129">loadPpmAsMat</a> (const std::string &amp;file_path)</td></tr>
-<tr class="memdesc:a071ed3ce298c2d6e25b2f4afffff7129"><td class="mdescLeft">&#160;</td><td class="mdescRight">手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。  <br /></td></tr>
-<tr class="separator:a071ed3ce298c2d6e25b2f4afffff7129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92a5a73a161b186cd6b18f42c278e437" id="r_a92a5a73a161b186cd6b18f42c278e437"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPpm.html#a92a5a73a161b186cd6b18f42c278e437">saveNatAsPpm</a> (const std::string &amp;file_path, const cv::Mat &amp;img)</td></tr>
-<tr class="memdesc:a92a5a73a161b186cd6b18f42c278e437"><td class="mdescLeft">&#160;</td><td class="mdescRight">手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。  <br /></td></tr>
-<tr class="separator:a92a5a73a161b186cd6b18f42c278e437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20cd3e30e1b93ec9d9f62ac1b02745b8" id="r_a20cd3e30e1b93ec9d9f62ac1b02745b8"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPpm.html#a20cd3e30e1b93ec9d9f62ac1b02745b8">LoadPpmAsMat</a> (const std::string &amp;file_path)</td></tr>
+<tr class="memdesc:a20cd3e30e1b93ec9d9f62ac1b02745b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat  <br /></td></tr>
+<tr class="separator:a20cd3e30e1b93ec9d9f62ac1b02745b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad018fb080daad5dca782603a44e8e59b" id="r_ad018fb080daad5dca782603a44e8e59b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPpm.html#ad018fb080daad5dca782603a44e8e59b">SaveNatAsPpm</a> (const std::string &amp;file_path, const cv::Mat &amp;img)</td></tr>
+<tr class="memdesc:ad018fb080daad5dca782603a44e8e59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">手动保存为 .ppm 格式  <br /></td></tr>
+<tr class="separator:ad018fb080daad5dca782603a44e8e59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">成员函数说明</h2>
-<a id="a071ed3ce298c2d6e25b2f4afffff7129" name="a071ed3ce298c2d6e25b2f4afffff7129"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a071ed3ce298c2d6e25b2f4afffff7129">&#9670;&#160;</a></span>loadPpmAsMat()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>.ppm 读写类, 提供 .ppm 文件与 cv::Mat 之间的转换接口 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a20cd3e30e1b93ec9d9f62ac1b02745b8" name="a20cd3e30e1b93ec9d9f62ac1b02745b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20cd3e30e1b93ec9d9f62ac1b02745b8">&#9670;&#160;</a></span>LoadPpmAsMat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -107,7 +112,7 @@ Ppm 的协作图:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">cv::Mat Ppm::loadPpmAsMat </td>
+          <td class="memname">cv::Mat Ppm::LoadPpmAsMat </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em></td><td>)</td>
@@ -121,36 +126,39 @@ Ppm 的协作图:</div>
 </table>
 </div><div class="memdoc">
 
-<p>手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。 </p>
+<p>读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat </p>
+<ul>
+<li>在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序 </li>
+</ul>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classPpm_a071ed3ce298c2d6e25b2f4afffff7129_cgraph.png" border="0" usemap="#aclassPpm_a071ed3ce298c2d6e25b2f4afffff7129_cgraph" alt=""/></div>
-<map name="aclassPpm_a071ed3ce298c2d6e25b2f4afffff7129_cgraph" id="aclassPpm_a071ed3ce298c2d6e25b2f4afffff7129_cgraph">
-<area shape="rect" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="5,5,163,31"/>
-<area shape="rect" href="Ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="211,5,299,31"/>
-<area shape="poly" title=" " alt="" coords="163,15,197,15,197,21,163,21"/>
+<div class="center"><img src="classPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_cgraph.png" border="0" usemap="#aclassPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_cgraph" alt=""/></div>
+<map name="aclassPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_cgraph" id="aclassPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_cgraph">
+<area shape="rect" title="读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat" alt="" coords="5,5,165,31"/>
+<area shape="rect" href="ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="213,5,301,31"/>
+<area shape="poly" title=" " alt="" coords="165,15,200,15,200,21,165,21"/>
 </map>
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classPpm_a071ed3ce298c2d6e25b2f4afffff7129_icgraph.png" border="0" usemap="#aclassPpm_a071ed3ce298c2d6e25b2f4afffff7129_icgraph" alt=""/></div>
-<map name="aclassPpm_a071ed3ce298c2d6e25b2f4afffff7129_icgraph" id="aclassPpm_a071ed3ce298c2d6e25b2f4afffff7129_icgraph">
-<area shape="rect" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="475,5,632,31"/>
-<area shape="rect" href="classImageIO.html#ad3457dfc34f78f2314cc5b989584ca86" title="从文件加载三元组压缩图像 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat" alt="" coords="284,5,427,31"/>
-<area shape="poly" title=" " alt="" coords="461,21,427,21,427,15,461,15"/>
-<area shape="rect" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title=" " alt="" coords="96,5,236,31"/>
-<area shape="poly" title=" " alt="" coords="270,21,237,21,237,15,270,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<div class="center"><img src="classPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_icgraph.png" border="0" usemap="#aclassPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_icgraph" alt=""/></div>
+<map name="aclassPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_icgraph" id="aclassPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_icgraph">
+<area shape="rect" title="读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat" alt="" coords="477,5,637,31"/>
+<area shape="rect" href="classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f" title="从文件加载三元组压缩图像" alt="" coords="284,5,429,31"/>
+<area shape="poly" title=" " alt="" coords="464,21,429,21,429,15,464,15"/>
+<area shape="rect" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="96,5,236,31"/>
+<area shape="poly" title=" " alt="" coords="270,21,236,21,236,15,270,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a92a5a73a161b186cd6b18f42c278e437" name="a92a5a73a161b186cd6b18f42c278e437"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92a5a73a161b186cd6b18f42c278e437">&#9670;&#160;</a></span>saveNatAsPpm()</h2>
+<a id="ad018fb080daad5dca782603a44e8e59b" name="ad018fb080daad5dca782603a44e8e59b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad018fb080daad5dca782603a44e8e59b">&#9670;&#160;</a></span>SaveNatAsPpm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,7 +167,7 @@ Ppm 的协作图:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Ppm::saveNatAsPpm </td>
+          <td class="memname">bool Ppm::SaveNatAsPpm </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em>, </td>
@@ -183,18 +191,21 @@ Ppm 的协作图:</div>
 </table>
 </div><div class="memdoc">
 
-<p>手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。 </p>
+<p>手动保存为 .ppm 格式 </p>
+<ul>
+<li>输入 cv::Mat 格式图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存) </li>
+</ul>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classPpm_a92a5a73a161b186cd6b18f42c278e437_icgraph.png" border="0" usemap="#aclassPpm_a92a5a73a161b186cd6b18f42c278e437_icgraph" alt=""/></div>
-<map name="aclassPpm_a92a5a73a161b186cd6b18f42c278e437_icgraph" id="aclassPpm_a92a5a73a161b186cd6b18f42c278e437_icgraph">
-<area shape="rect" title="手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。" alt="" coords="479,5,637,31"/>
-<area shape="rect" href="classImageIO.html#a01f7e14387f94afb475890806dfe167d" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="285,5,431,31"/>
-<area shape="poly" title=" " alt="" coords="465,21,431,21,431,15,465,15"/>
-<area shape="rect" href="main_8cc.html#a97fb226d121951383b419bf7a123da5a" title=" " alt="" coords="96,5,237,31"/>
-<area shape="poly" title=" " alt="" coords="271,21,238,21,238,15,271,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<div class="center"><img src="classPpm_ad018fb080daad5dca782603a44e8e59b_icgraph.png" border="0" usemap="#aclassPpm_ad018fb080daad5dca782603a44e8e59b_icgraph" alt=""/></div>
+<map name="aclassPpm_ad018fb080daad5dca782603a44e8e59b_icgraph" id="aclassPpm_ad018fb080daad5dca782603a44e8e59b_icgraph">
+<area shape="rect" title="手动保存为 .ppm 格式" alt="" coords="480,5,639,31"/>
+<area shape="rect" href="classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="285,5,432,31"/>
+<area shape="poly" title=" " alt="" coords="466,21,433,21,433,15,466,15"/>
+<area shape="rect" href="main_8cc.html#a97fb226d121951383b419bf7a123da5a" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="96,5,237,31"/>
+<area shape="poly" title=" " alt="" coords="272,21,237,21,237,15,272,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
 </map>
 </div>
@@ -202,8 +213,8 @@ Ppm 的协作图:</div>
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>cpp/src/io/<a class="el" href="Ppm_8h_source.html">Ppm.h</a></li>
-<li>cpp/src/io/<a class="el" href="Ppm_8cc.html">Ppm.cc</a></li>
+<li>cpp/src/io/<a class="el" href="ppm_8h_source.html">ppm.h</a></li>
+<li>cpp/src/io/<a class="el" href="ppm_8cc.html">ppm.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

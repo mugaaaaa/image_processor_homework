@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['save_0',['Save',['../classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1',1,'Compressor']]],
-  ['savenatasppm_1',['saveNatAsPpm',['../classPpm.html#a92a5a73a161b186cd6b18f42c278e437',1,'Ppm']]],
-  ['savepng_2',['savePng',['../classImageIO.html#aa5d7f0832777c47224aa2cfcb04d6a5a',1,'ImageIO']]],
-  ['savepngwrapped_3',['SavePngWrapped',['../main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1',1,'main.cc']]],
-  ['saveppm_4',['savePpm',['../classImageIO.html#a01f7e14387f94afb475890806dfe167d',1,'ImageIO']]],
-  ['saveppmwrapped_5',['SavePpmWrapped',['../main_8cc.html#a97fb226d121951383b419bf7a123da5a',1,'main.cc']]],
-  ['savetrip_6',['savetrip',['../classImageIO.html#a599d6b98c20fa03684d3fe89c4de3616',1,'ImageIO::saveTrip(const std::string &amp;file_path, const std::vector&lt; TripletNode &gt; &amp;triplets)'],['../classImageIO.html#adf0107fa1471877fd5684f857c95cb49',1,'ImageIO::saveTrip(const std::string &amp;file_path, int width, int height, int channels, const uint8_t bg_color[3], const std::vector&lt; TripletNode &gt; &amp;triplets)']]],
-  ['savetripwrapped_7',['SaveTripWrapped',['../main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011',1,'main.cc']]]
+  ['readheader_0',['ReadHeader',['../compressor_8cc.html#a393bbe21a99a76d202ac90bab190280c',1,'compressor.cc']]],
+  ['readtoken_1',['readToken',['../ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef',1,'ppm.cc']]],
+  ['resize_2',['Resize',['../classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0',1,'Processor']]],
+  ['resizewrapped_3',['ResizeWrapped',['../main_8cc.html#aa546425105ae7e3f2de3c424082e8345',1,'main.cc']]],
+  ['row_5f_4',['row_',['../structTripletNode.html#ac9a4de9eb60afbc4dba2ed1619ea4839',1,'TripletNode']]]
 ];

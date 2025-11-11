@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writeheader_0',['writeHeader',['../Compressor_8cc.html#a40a397f9f192a857e7766eaf692d0f58',1,'Compressor.cc']]]
+  ['writeheader_0',['WriteHeader',['../compressor_8cc.html#ab29ab99e4914dddfeba2690429a09a9e',1,'compressor.cc']]]
 ];

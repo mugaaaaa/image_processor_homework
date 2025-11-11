@@ -1,5 +1,5 @@
 /**
- * @file ImageIO.h
+ * @file image_io.h
  * @author Runhui Mo (github.com/mugaaaaa)
  * @brief 声明图像 I/O 接口类 ImageIO
  * @version 0.1
@@ -84,10 +84,11 @@ public:
     /**
      * @brief 写入完整头部信息的.trip 保存接口。
      * 
-     * @details 头部格式：TRIP width height channels count bgB bgG bgR
+     * @details 头部（文本）格式：TRIP width height channels count bgB bgG bgR\n
      * - channels 仅支持 1（灰度）或 3（彩色）；
      * - bg_color 为 BGR 顺序（灰度仅用 bg_color[0]）。
-     * - 随后每行写入一个三元组：row col v0 [v1 v2]
+     * - 随后为二进制数据段，按节点顺序写入，共 count 个节点：
+     *   每个节点依次写入 int32 row, int32 col, uint8 v0[, uint8 v1, uint8 v2]
      * 
      * @param file_path 输出 .trip 文件路径
      * @param width 图像宽度

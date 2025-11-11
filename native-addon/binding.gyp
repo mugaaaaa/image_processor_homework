@@ -8,7 +8,7 @@
       
       "sources": [
         "src/main.cc",
-        # 这里需要显式列出你 C++ 核心模块的所有源文件。
+        # 显式列出 C++ 核心模块的所有源文件。
         # node-gyp 对跨目录通配符的支持有限，建议手动列出，虽然繁琐但最稳妥。
         "../cpp/src/data_structure/triplet.cc",
         "../cpp/src/io/image_io.cc",
@@ -20,7 +20,7 @@
       "include_dirs": [
         # 引入 Node-API 头文件
         "<!@(node -p \"require('node-addon-api').include\")",
-        # 引入你自己的 C++ 核心头文件目录
+        # 引入 C++ 核心头文件目录
         "../cpp/src"
       ],
 

@@ -123,10 +123,10 @@ Release/obj.target/project2_addon/src/main.o: ../src/main.cc \
  /usr/include/opencv4/opencv2/video.hpp \
  /usr/include/opencv4/opencv2/video/tracking.hpp \
  /usr/include/opencv4/opencv2/video/background_segm.hpp \
- ../src/../../cpp/src/io/ImageIO.h \
- ../src/../../cpp/src/io/../data_structure/Triplet.h \
- ../src/../../cpp/src/codec/Compressor.h \
- ../src/../../cpp/src/imgproc/ImageProcessor.h
+ ../src/../../cpp/src/io/image_io.h \
+ ../src/../../cpp/src/io/../data_structure/triplet.h \
+ ../src/../../cpp/src/codec/compressor.h \
+ ../src/../../cpp/src/imgproc/image_processor.h
 ../src/main.cc:
 /home/mugaaaaa/DataStructureProject2/native-addon/node_modules/node-addon-api/napi.h:
 /home/mugaaaaa/.cache/node-gyp/24.11.0/include/node/node_api.h:
@@ -251,7 +251,7 @@ Release/obj.target/project2_addon/src/main.o: ../src/main.cc \
 /usr/include/opencv4/opencv2/video.hpp:
 /usr/include/opencv4/opencv2/video/tracking.hpp:
 /usr/include/opencv4/opencv2/video/background_segm.hpp:
-../src/../../cpp/src/io/ImageIO.h:
-../src/../../cpp/src/io/../data_structure/Triplet.h:
-../src/../../cpp/src/codec/Compressor.h:
-../src/../../cpp/src/imgproc/ImageProcessor.h:
+../src/../../cpp/src/io/image_io.h:
+../src/../../cpp/src/io/../data_structure/triplet.h:
+../src/../../cpp/src/codec/compressor.h:
+../src/../../cpp/src/imgproc/image_processor.h:

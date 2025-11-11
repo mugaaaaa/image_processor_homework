@@ -74,26 +74,27 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">类</a>  </div>
   <div class="headertitle"><div class="title">Triplet.h 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;opencv2/core/mat.hpp&gt;</code><br />
+
+<p>三元组数据结构及相关工具类声明  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="triplet_8h_source.html">triplet.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Triplet.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="Triplet_8h__incl.png" border="0" usemap="#acpp_2src_2data__structure_2Triplet_8h" alt=""/></div>
 <map name="acpp_2src_2data__structure_2Triplet_8h" id="acpp_2src_2data__structure_2Triplet_8h">
-<area shape="rect" title=" " alt="" coords="45,5,211,45"/>
-<area shape="rect" title=" " alt="" coords="5,93,72,119"/>
-<area shape="poly" title=" " alt="" coords="108,48,64,86,60,82,105,44"/>
-<area shape="rect" title=" " alt="" coords="97,93,159,119"/>
+<area shape="rect" title="三元组数据结构及相关工具类声明" alt="" coords="45,5,211,45"/>
+<area shape="rect" href="triplet_8h.html" title=" " alt="" coords="91,93,165,119"/>
 <area shape="poly" title=" " alt="" coords="131,46,131,79,125,79,125,46"/>
-<area shape="rect" title=" " alt="" coords="183,93,350,119"/>
-<area shape="poly" title=" " alt="" coords="163,43,235,84,233,89,160,48"/>
+<area shape="rect" title=" " alt="" coords="5,167,72,192"/>
+<area shape="poly" title=" " alt="" coords="115,121,66,160,62,156,112,117"/>
+<area shape="rect" title=" " alt="" coords="97,167,159,192"/>
+<area shape="poly" title=" " alt="" coords="131,119,131,153,125,153,125,119"/>
+<area shape="rect" title=" " alt="" coords="183,167,350,192"/>
+<area shape="poly" title=" " alt="" coords="151,116,233,158,231,163,149,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -101,38 +102,28 @@ Triplet.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="Triplet_8h__dep__incl.png" border="0" usemap="#acpp_2src_2data__structure_2Triplet_8hdep" alt=""/></div>
 <map name="acpp_2src_2data__structure_2Triplet_8hdep" id="acpp_2src_2data__structure_2Triplet_8hdep">
-<area shape="rect" title=" " alt="" coords="249,5,416,45"/>
-<area shape="rect" href="Compressor_8h.html" title=" " alt="" coords="22,101,225,126"/>
-<area shape="poly" title=" " alt="" coords="275,53,152,103,150,98,273,48"/>
-<area shape="rect" href="Triplet_8cc.html" title=" " alt="" coords="249,93,416,133"/>
-<area shape="poly" title=" " alt="" coords="335,59,335,93,330,93,330,59"/>
-<area shape="rect" href="ImageIO_8h.html" title=" " alt="" coords="441,101,595,126"/>
-<area shape="poly" title=" " alt="" coords="387,49,494,98,492,103,385,54"/>
-<area shape="rect" href="Compressor_8cc.html" title="Compressor 类静态方法实现" alt="" coords="5,181,215,207"/>
-<area shape="poly" title=" " alt="" coords="122,140,115,182,109,181,116,139"/>
-<area shape="rect" href="main_8cc.html" title=" " alt="" coords="239,181,426,207"/>
-<area shape="poly" title=" " alt="" coords="168,128,303,179,301,184,166,133"/>
-<area shape="poly" title=" " alt="" coords="480,134,361,184,359,179,478,129"/>
-<area shape="rect" href="ImageIO_8cc.html" title=" " alt="" coords="451,181,612,207"/>
-<area shape="poly" title=" " alt="" coords="525,139,532,181,527,182,520,140"/>
+<area shape="rect" title="三元组数据结构及相关工具类声明" alt="" coords="239,5,405,45"/>
+<area shape="rect" href="compressor_8h.html" title=" " alt="" coords="117,101,319,126"/>
+<area shape="poly" title=" " alt="" coords="290,56,234,102,231,98,287,52"/>
+<area shape="rect" href="triplet_8cc.html" title=" " alt="" coords="343,93,509,133"/>
+<area shape="poly" title=" " alt="" coords="357,52,405,91,401,95,354,56"/>
+<area shape="rect" href="Compressor_8h.html" title="Compressor 压缩与解压类类声明" alt="" coords="7,181,210,207"/>
+<area shape="poly" title=" " alt="" coords="192,136,126,183,123,179,189,132"/>
+<area shape="rect" href="main_8cc.html" title=" " alt="" coords="234,181,421,207"/>
+<area shape="poly" title=" " alt="" coords="247,132,313,179,310,183,244,136"/>
+<area shape="rect" href="compressor_8cc.html" title=" " alt="" coords="5,255,212,280"/>
+<area shape="poly" title=" " alt="" coords="111,220,111,255,106,255,106,220"/>
 </map>
 </div>
 </div>
 <p><a href="Triplet_8h_source.html">浏览源代码.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTripletNode.html">TripletNode</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">三元组节点结构体，表示图像中非背景色的像素信息  <a href="structTripletNode.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCompressedHeader.html">CompressedHeader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">压缩文件头结构体，存储图像的基本信息 注意：该结构仅用于表达含义，实际读写时分字段写入，避免结构体填充带来的跨平台不一致。  <a href="structCompressedHeader.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTripletUtils.html">TripletUtils</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triplet 相关工具类，包含背景色统计、Mat 与三元组的转换等功能  <a href="classTripletUtils.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>三元组数据结构及相关工具类声明 </p>
+<dl class="section author"><dt>作者</dt><dd>Runhui Mo (github.com/mugaaaaa) </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-11-07</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

@@ -1,0 +1,9 @@
+<map id="Ppm::SaveNatAsPpm" name="Ppm::SaveNatAsPpm">
+<area shape="rect" id="Node000001" title="手动保存为 .ppm 格式" alt="" coords="480,5,639,31"/>
+<area shape="rect" id="Node000002" href="$classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="285,5,432,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,21,433,21,433,15,466,15"/>
+<area shape="rect" id="Node000003" href="$main_8cc.html#a97fb226d121951383b419bf7a123da5a" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="96,5,237,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="272,21,237,21,237,15,272,15"/>
+<area shape="rect" id="Node000004" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
+</map>

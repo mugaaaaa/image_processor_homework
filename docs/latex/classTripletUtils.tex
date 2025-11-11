@@ -7,26 +7,25 @@ Triplet 相关工具类，包含背景色统计、\+Mat 与三元组的转换等
 
 
 
-{\ttfamily \#include $<$Triplet.\+h$>$}
+{\ttfamily \#include $<$triplet.\+h$>$}
 
 
 
-Triplet\+Utils 的协作图\+:
-\nopagebreak
+Triplet\+Utils 的协作图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=210pt]{classTripletUtils__coll__graph}
+\includegraphics[width=213pt]{classTripletUtils__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{静态 Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{classTripletUtils_ac8dadcc7087f5926810820c26996aa0d}{find\+Background\+Color}} (const cv\+::\+Mat \&img, uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]})
+static void \mbox{\hyperlink{classTripletUtils_aa5ae7f8d7277d320791b1784487ffb99}{Find\+Background\+Color}} (const cv\+::\+Mat \&img, uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]})
 \begin{DoxyCompactList}\small\item\em 统计图像中出现频率最高的颜色作为背景色 \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{classTripletUtils_a474e9114f121013d17dce14568d24485}{mat\+To\+Triplets}} (const cv\+::\+Mat \&img, const uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]}, std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets)
+static void \mbox{\hyperlink{classTripletUtils_a5b02a3d75026807faf99bbadf4c5c8a9}{Mat\+To\+Triplets}} (const cv\+::\+Mat \&img, const uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]}, std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets)
 \begin{DoxyCompactList}\small\item\em 将 cv\+::\+Mat 图像转换为三元组表示 \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{classTripletUtils_a1d7e2b7f1e589821bfec87d10599cf49}{triplets\+To\+Mat}} (const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets, int width, int height, int channels, const uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]}, cv\+::\+Mat \&img)
+static void \mbox{\hyperlink{classTripletUtils_aa4b876bb7f2f0c358f31ea0e1f04df79}{Triplets\+To\+Mat}} (const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&triplets, int width, int height, int channels, const uint8\+\_\+t bg\+\_\+color\mbox{[}3\mbox{]}, cv\+::\+Mat \&img)
 \begin{DoxyCompactList}\small\item\em 将三元组表示转换回 cv\+::\+Mat 图像 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -34,11 +33,11 @@ static void \mbox{\hyperlink{classTripletUtils_a1d7e2b7f1e589821bfec87d10599cf49
 Triplet 相关工具类，包含背景色统计、\+Mat 与三元组的转换等功能 
 
 \doxysubsection{成员函数说明}
-\Hypertarget{classTripletUtils_ac8dadcc7087f5926810820c26996aa0d}\label{classTripletUtils_ac8dadcc7087f5926810820c26996aa0d} 
-\index{TripletUtils@{TripletUtils}!findBackgroundColor@{findBackgroundColor}}
-\index{findBackgroundColor@{findBackgroundColor}!TripletUtils@{TripletUtils}}
-\doxysubsubsection{\texorpdfstring{findBackgroundColor()}{findBackgroundColor()}}
-{\footnotesize\ttfamily void Triplet\+Utils\+::find\+Background\+Color (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classTripletUtils_aa5ae7f8d7277d320791b1784487ffb99}\label{classTripletUtils_aa5ae7f8d7277d320791b1784487ffb99} 
+\index{TripletUtils@{TripletUtils}!FindBackgroundColor@{FindBackgroundColor}}
+\index{FindBackgroundColor@{FindBackgroundColor}!TripletUtils@{TripletUtils}}
+\doxysubsubsection{\texorpdfstring{FindBackgroundColor()}{FindBackgroundColor()}}
+{\footnotesize\ttfamily void Triplet\+Utils\+::\+Find\+Background\+Color (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -51,19 +50,18 @@ Triplet 相关工具类，包含背景色统计、\+Mat 与三元组的转换等
 {\em bg\+\_\+color\mbox{[}out\mbox{]}} & 接受背景色的数组，彩色图时为 3 个元素，灰度图时仅用第一个元素 \\
 \hline
 \end{DoxyParams}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classTripletUtils_ac8dadcc7087f5926810820c26996aa0d_icgraph}
+\includegraphics[width=350pt]{classTripletUtils_aa5ae7f8d7277d320791b1784487ffb99_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classTripletUtils_a474e9114f121013d17dce14568d24485}\label{classTripletUtils_a474e9114f121013d17dce14568d24485} 
-\index{TripletUtils@{TripletUtils}!matToTriplets@{matToTriplets}}
-\index{matToTriplets@{matToTriplets}!TripletUtils@{TripletUtils}}
-\doxysubsubsection{\texorpdfstring{matToTriplets()}{matToTriplets()}}
-{\footnotesize\ttfamily void Triplet\+Utils\+::mat\+To\+Triplets (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{const uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]},  }\item[{std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classTripletUtils_a5b02a3d75026807faf99bbadf4c5c8a9}\label{classTripletUtils_a5b02a3d75026807faf99bbadf4c5c8a9} 
+\index{TripletUtils@{TripletUtils}!MatToTriplets@{MatToTriplets}}
+\index{MatToTriplets@{MatToTriplets}!TripletUtils@{TripletUtils}}
+\doxysubsubsection{\texorpdfstring{MatToTriplets()}{MatToTriplets()}}
+{\footnotesize\ttfamily void Triplet\+Utils\+::\+Mat\+To\+Triplets (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{const uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]},  }\item[{std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -78,19 +76,18 @@ Triplet 相关工具类，包含背景色统计、\+Mat 与三元组的转换等
 {\em triplets\mbox{[}out\mbox{]}} & 接受三元组结果的向量 \\
 \hline
 \end{DoxyParams}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classTripletUtils_a474e9114f121013d17dce14568d24485_icgraph}
+\includegraphics[width=350pt]{classTripletUtils_a5b02a3d75026807faf99bbadf4c5c8a9_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classTripletUtils_a1d7e2b7f1e589821bfec87d10599cf49}\label{classTripletUtils_a1d7e2b7f1e589821bfec87d10599cf49} 
-\index{TripletUtils@{TripletUtils}!tripletsToMat@{tripletsToMat}}
-\index{tripletsToMat@{tripletsToMat}!TripletUtils@{TripletUtils}}
-\doxysubsubsection{\texorpdfstring{tripletsToMat()}{tripletsToMat()}}
-{\footnotesize\ttfamily void Triplet\+Utils\+::triplets\+To\+Mat (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{channels,  }\item[{const uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]},  }\item[{cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classTripletUtils_aa4b876bb7f2f0c358f31ea0e1f04df79}\label{classTripletUtils_aa4b876bb7f2f0c358f31ea0e1f04df79} 
+\index{TripletUtils@{TripletUtils}!TripletsToMat@{TripletsToMat}}
+\index{TripletsToMat@{TripletsToMat}!TripletUtils@{TripletUtils}}
+\doxysubsubsection{\texorpdfstring{TripletsToMat()}{TripletsToMat()}}
+{\footnotesize\ttfamily void Triplet\+Utils\+::\+Triplets\+To\+Mat (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structTripletNode}{Triplet\+Node}} $>$ \&}]{triplets,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{channels,  }\item[{const uint8\+\_\+t}]{bg\+\_\+color\mbox{[}3\mbox{]},  }\item[{cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -111,17 +108,16 @@ Triplet 相关工具类，包含背景色统计、\+Mat 与三元组的转换等
 {\em img\mbox{[}out\mbox{]}} & 接受转换后图像的 cv\+::\+Mat 对象 \\
 \hline
 \end{DoxyParams}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classTripletUtils_a1d7e2b7f1e589821bfec87d10599cf49_icgraph}
+\includegraphics[width=350pt]{classTripletUtils_aa4b876bb7f2f0c358f31ea0e1f04df79_icgraph}
 \end{center}
 \end{figure}
 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-cpp/src/data\+\_\+structure/\mbox{\hyperlink{Triplet_8h}{Triplet.\+h}}\item 
-cpp/src/data\+\_\+structure/\mbox{\hyperlink{Triplet_8cc}{Triplet.\+cc}}\end{DoxyCompactItemize}
+cpp/src/data\+\_\+structure/\mbox{\hyperlink{triplet_8h}{triplet.\+h}}\item 
+cpp/src/data\+\_\+structure/\mbox{\hyperlink{triplet_8cc}{triplet.\+cc}}\end{DoxyCompactItemize}

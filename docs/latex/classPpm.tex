@@ -2,75 +2,85 @@
 \hypertarget{classPpm}{}\label{classPpm}\index{Ppm@{Ppm}}
 
 
-{\ttfamily \#include $<$Ppm.\+h$>$}
+.ppm 读写类, 提供 .ppm 文件与 cv\+::\+Mat 之间的转换接口  
 
 
 
-Ppm 的协作图\+:
-\nopagebreak
+
+{\ttfamily \#include $<$ppm.\+h$>$}
+
+
+
+Ppm 的协作图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=183pt]{classPpm__coll__graph}
+\includegraphics[width=185pt]{classPpm__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{静态 Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
-static cv\+::\+Mat \mbox{\hyperlink{classPpm_a071ed3ce298c2d6e25b2f4afffff7129}{load\+Ppm\+As\+Mat}} (const std\+::string \&file\+\_\+path)
-\begin{DoxyCompactList}\small\item\em 手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 Open\+CV 默认的 BGR 顺序。 \end{DoxyCompactList}\item 
-static bool \mbox{\hyperlink{classPpm_a92a5a73a161b186cd6b18f42c278e437}{save\+Nat\+As\+Ppm}} (const std\+::string \&file\+\_\+path, const cv\+::\+Mat \&img)
-\begin{DoxyCompactList}\small\item\em 手动保存为 PPM 格式。 输入图像 (CV\+\_\+8\+UC1 或 CV\+\_\+8\+UC3, 分别用 P2 或 P3 格式保存)。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+static cv\+::\+Mat \mbox{\hyperlink{classPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8}{Load\+Ppm\+As\+Mat}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em 读取 .ppm 文件(P2 或 P3 格式) 为 cv\+::\+Mat \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classPpm_ad018fb080daad5dca782603a44e8e59b}{Save\+Nat\+As\+Ppm}} (const std\+::string \&file\+\_\+path, const cv\+::\+Mat \&img)
+\begin{DoxyCompactList}\small\item\em 手动保存为 .ppm 格式 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{详细描述}
+.ppm 读写类, 提供 .ppm 文件与 cv\+::\+Mat 之间的转换接口 
 
 \doxysubsection{成员函数说明}
-\Hypertarget{classPpm_a071ed3ce298c2d6e25b2f4afffff7129}\label{classPpm_a071ed3ce298c2d6e25b2f4afffff7129} 
-\index{Ppm@{Ppm}!loadPpmAsMat@{loadPpmAsMat}}
-\index{loadPpmAsMat@{loadPpmAsMat}!Ppm@{Ppm}}
-\doxysubsubsection{\texorpdfstring{loadPpmAsMat()}{loadPpmAsMat()}}
-{\footnotesize\ttfamily cv\+::\+Mat Ppm\+::load\+Ppm\+As\+Mat (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8}\label{classPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8} 
+\index{Ppm@{Ppm}!LoadPpmAsMat@{LoadPpmAsMat}}
+\index{LoadPpmAsMat@{LoadPpmAsMat}!Ppm@{Ppm}}
+\doxysubsubsection{\texorpdfstring{LoadPpmAsMat()}{LoadPpmAsMat()}}
+{\footnotesize\ttfamily cv\+::\+Mat Ppm\+::\+Load\+Ppm\+As\+Mat (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 Open\+CV 默认的 BGR 顺序。 
+读取 .ppm 文件(P2 或 P3 格式) 为 cv\+::\+Mat 
 
-函数调用图\+:
-\nopagebreak
+
+\begin{DoxyItemize}
+\item 在读取数据时将 RGB 转换为 Open\+CV 默认的 BGR 顺序 
+\end{DoxyItemize}函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=300pt]{classPpm_a071ed3ce298c2d6e25b2f4afffff7129_cgraph}
+\includegraphics[width=302pt]{classPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classPpm_a071ed3ce298c2d6e25b2f4afffff7129_icgraph}
+\includegraphics[width=350pt]{classPpm_a20cd3e30e1b93ec9d9f62ac1b02745b8_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{classPpm_a92a5a73a161b186cd6b18f42c278e437}\label{classPpm_a92a5a73a161b186cd6b18f42c278e437} 
-\index{Ppm@{Ppm}!saveNatAsPpm@{saveNatAsPpm}}
-\index{saveNatAsPpm@{saveNatAsPpm}!Ppm@{Ppm}}
-\doxysubsubsection{\texorpdfstring{saveNatAsPpm()}{saveNatAsPpm()}}
-{\footnotesize\ttfamily bool Ppm\+::save\+Nat\+As\+Ppm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{classPpm_ad018fb080daad5dca782603a44e8e59b}\label{classPpm_ad018fb080daad5dca782603a44e8e59b} 
+\index{Ppm@{Ppm}!SaveNatAsPpm@{SaveNatAsPpm}}
+\index{SaveNatAsPpm@{SaveNatAsPpm}!Ppm@{Ppm}}
+\doxysubsubsection{\texorpdfstring{SaveNatAsPpm()}{SaveNatAsPpm()}}
+{\footnotesize\ttfamily bool Ppm\+::\+Save\+Nat\+As\+Ppm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path,  }\item[{const cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-手动保存为 PPM 格式。 输入图像 (CV\+\_\+8\+UC1 或 CV\+\_\+8\+UC3, 分别用 P2 或 P3 格式保存)。 
+手动保存为 .ppm 格式 
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+
+\begin{DoxyItemize}
+\item 输入 cv\+::\+Mat 格式图像 (CV\+\_\+8\+UC1 或 CV\+\_\+8\+UC3, 分别用 P2 或 P3 格式保存) 
+\end{DoxyItemize}这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classPpm_a92a5a73a161b186cd6b18f42c278e437_icgraph}
+\includegraphics[width=350pt]{classPpm_ad018fb080daad5dca782603a44e8e59b_icgraph}
 \end{center}
 \end{figure}
 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-cpp/src/io/\mbox{\hyperlink{Ppm_8h}{Ppm.\+h}}\item 
-cpp/src/io/\mbox{\hyperlink{Ppm_8cc}{Ppm.\+cc}}\end{DoxyCompactItemize}
+cpp/src/io/\mbox{\hyperlink{ppm_8h}{ppm.\+h}}\item 
+cpp/src/io/\mbox{\hyperlink{ppm_8cc}{ppm.\+cc}}\end{DoxyCompactItemize}

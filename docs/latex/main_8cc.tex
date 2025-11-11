@@ -1,13 +1,17 @@
 \doxysection{native-\/addon/src/main.cc 文件参考}
 \hypertarget{main_8cc}{}\label{main_8cc}\index{native-\/addon/src/main.cc@{native-\/addon/src/main.cc}}
+
+
+Node-\/\+API 绑定主文件  
+
+
 {\ttfamily \#include $<$napi.\+h$>$}\newline
 {\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
 {\ttfamily \#include $<$cstring$>$}\newline
-{\ttfamily \#include "{}../../cpp/src/io/\+Image\+IO.\+h"{}}\newline
-{\ttfamily \#include "{}../../cpp/src/codec/\+Compressor.\+h"{}}\newline
-{\ttfamily \#include "{}../../cpp/src/imgproc/\+Image\+Processor.\+h"{}}\newline
-main.\+cc 的引用(Include)关系图\+:
-\nopagebreak
+{\ttfamily \#include "{}../../cpp/src/io/image\+\_\+io.\+h"{}}\newline
+{\ttfamily \#include "{}../../cpp/src/codec/compressor.\+h"{}}\newline
+{\ttfamily \#include "{}../../cpp/src/imgproc/image\+\_\+processor.\+h"{}}\newline
+main.\+cc 的引用(Include)关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,27 +22,44 @@ main.\+cc 的引用(Include)关系图\+:
 \begin{DoxyCompactItemize}
 \item 
 static Napi\+::\+Error \mbox{\hyperlink{main_8cc_ac9cbbfd7dad326e56048ccb57b26eb8e}{Make\+Error}} (Napi\+::\+Env env, const std\+::string \&msg)
-\item 
+\begin{DoxyCompactList}\small\item\em 创建 Napi\+::\+Error 异常 \end{DoxyCompactList}\item 
 static Napi\+::\+Value \mbox{\hyperlink{main_8cc_a551814596313b7968e083c15f5639a17}{Load\+Png\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
-\item 
+\begin{DoxyCompactList}\small\item\em 把 \doxylink{classImageIO_a4cceda8c66d879194ee633920e335a1f}{Image\+IO\+::\+Load\+Png} 包装为 Node-\/\+API 函数 \end{DoxyCompactList}\item 
 static Napi\+::\+Value \mbox{\hyperlink{main_8cc_ab6d72c366ef977c8c5a3391a60bf5527}{Load\+Ppm\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
-\item 
+\begin{DoxyCompactList}\small\item\em 把 \doxylink{classImageIO_a6a1d8545edd4262a9f67a146275bda2f}{Image\+IO\+::\+Load\+Ppm} 包装为 Node-\/\+API 函数 \end{DoxyCompactList}\item 
 static Napi\+::\+Value \mbox{\hyperlink{main_8cc_a2a1ef82449861b9914b1aa98f161a3f1}{Save\+Png\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
-\item 
+\begin{DoxyCompactList}\small\item\em 把 \doxylink{classImageIO_a6203067e2826b9ccc07c6b87002ede4d}{Image\+IO\+::\+Save\+Png} 包装为 Node-\/\+API 函数 \end{DoxyCompactList}\item 
 static Napi\+::\+Value \mbox{\hyperlink{main_8cc_a97fb226d121951383b419bf7a123da5a}{Save\+Ppm\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
-\item 
+\begin{DoxyCompactList}\small\item\em 把 \doxylink{classImageIO_a47551184bb8da28cfbcf198765dc7f8a}{Image\+IO\+::\+Save\+Ppm} 包装为 Node-\/\+API 函数 \end{DoxyCompactList}\item 
 static Napi\+::\+Value \mbox{\hyperlink{main_8cc_ae63aa61833e4b395ce9277b1f4281a7f}{To\+Gray\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
-\item 
+\begin{DoxyCompactList}\small\item\em 把 \doxylink{classProcessor_a5c48f5a991e81dcf354cebb10df48260}{Processor\+::\+To\+Gray} 包装为 Node-\/\+API 函数 \end{DoxyCompactList}\item 
 static Napi\+::\+Value \mbox{\hyperlink{main_8cc_aa546425105ae7e3f2de3c424082e8345}{Resize\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
-\item 
+\begin{DoxyCompactList}\small\item\em 把 \doxylink{classProcessor_af43377f1cfa191f7521d8eb60e5374a0}{Processor\+::\+Resize} 包装为 Node-\/\+API 函数 \end{DoxyCompactList}\item 
 static Napi\+::\+Value \mbox{\hyperlink{main_8cc_a6bc5c80ee4ae3793367d9830bbe0df68}{Compressor\+Save\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
-\item 
+\begin{DoxyCompactList}\small\item\em 把 \doxylink{classCompressor_aa04164c2ad51f4d0990e73e8f7227da1}{Compressor\+::\+Save} 包装为 Node-\/\+API 函数 \end{DoxyCompactList}\item 
 static Napi\+::\+Value \mbox{\hyperlink{main_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c}{Compressor\+Load\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
-\item 
+\begin{DoxyCompactList}\small\item\em 把 \doxylink{classCompressor_afc47156bc86131009b0b814f2c11015a}{Compressor\+::\+Load} 包装为 Node-\/\+API 函数 \end{DoxyCompactList}\item 
 static Napi\+::\+Value \mbox{\hyperlink{main_8cc_acfa99fd99fcf645857f77aa98ee1e011}{Save\+Trip\+Wrapped}} (const Napi\+::\+Callback\+Info \&info)
-\item 
+\begin{DoxyCompactList}\small\item\em 把 \doxylink{classImageIO_a2a2448cc3160e6f250047517c2ab7c65}{Image\+IO\+::\+Save\+Trip} 包装为 Node-\/\+API 函数 \end{DoxyCompactList}\item 
 static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468902}{Init}} (Napi\+::\+Env env, Napi\+::\+Object exports)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 初始化 Node-\/\+API 模块 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+Node-\/\+API 绑定主文件 
+
+\begin{DoxyAuthor}{作者}
+Runhui Mo (github.\+com/mugaaaaa) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{版本}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{日期}
+2025-\/11-\/11
+\end{DoxyDate}
+\begin{DoxyCopyright}{版权所有}
+Copyright (c) 2025 
+\end{DoxyCopyright}
 
 
 \doxysubsection{函数说明}
@@ -48,16 +69,28 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{CompressorLoadWrapped()}{CompressorLoadWrapped()}}
 {\footnotesize\ttfamily static Napi\+::\+Value Compressor\+Load\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+把 \doxylink{classCompressor_afc47156bc86131009b0b814f2c11015a}{Compressor\+::\+Load} 包装为 Node-\/\+API 函数 
+
+从压缩文件加载图像数据
+
+
+\begin{DoxyParams}{参数}
+{\em info} & Node-\/\+API 回调信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Value 包含图像数据的对象 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{main_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -70,16 +103,28 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{CompressorSaveWrapped()}{CompressorSaveWrapped()}}
 {\footnotesize\ttfamily static Napi\+::\+Value Compressor\+Save\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+把 \doxylink{classCompressor_aa04164c2ad51f4d0990e73e8f7227da1}{Compressor\+::\+Save} 包装为 Node-\/\+API 函数 
+
+把包含图像数据的对象保存为 .trip 格式的压缩文件
+
+
+\begin{DoxyParams}{参数}
+{\em info} & Node-\/\+API 回调信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Value 布尔值，表示保存是否成功 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{main_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -92,8 +137,23 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
 {\footnotesize\ttfamily static Napi\+::\+Object Init (\begin{DoxyParamCaption}\item[{Napi\+::\+Env}]{env,  }\item[{Napi\+::\+Object}]{exports }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+初始化 Node-\/\+API 模块 
+
+注册所有 Node-\/\+API 函数
+
+
+\begin{DoxyParams}{参数}
+{\em env} & Node-\/\+API 环境 \\
+\hline
+{\em exports} & 导出对象 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Object 导出对象 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -106,16 +166,28 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{LoadPngWrapped()}{LoadPngWrapped()}}
 {\footnotesize\ttfamily static Napi\+::\+Value Load\+Png\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+把 \doxylink{classImageIO_a4cceda8c66d879194ee633920e335a1f}{Image\+IO\+::\+Load\+Png} 包装为 Node-\/\+API 函数 
+
+加载 PNG 图像并返回包含图像数据的对象，格式为： \{ width, height, channels, data\+: Buffer \}
+
+
+\begin{DoxyParams}{参数}
+{\em info} & Node-\/\+API 回调信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Value 包含图像数据的对象 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=320pt]{main_8cc_a551814596313b7968e083c15f5639a17_cgraph}
+\includegraphics[width=322pt]{main_8cc_a551814596313b7968e083c15f5639a17_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -128,16 +200,28 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{LoadPpmWrapped()}{LoadPpmWrapped()}}
 {\footnotesize\ttfamily static Napi\+::\+Value Load\+Ppm\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+把 \doxylink{classImageIO_a6a1d8545edd4262a9f67a146275bda2f}{Image\+IO\+::\+Load\+Ppm} 包装为 Node-\/\+API 函数 
+
+加载 PPM 图像并返回包含图像数据的对象，格式为： \{ width, height, channels, data\+: Buffer \}
+
+
+\begin{DoxyParams}{参数}
+{\em info} & Node-\/\+API 回调信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Value 包含图像数据的对象 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{main_8cc_ab6d72c366ef977c8c5a3391a60bf5527_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -150,8 +234,21 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{MakeError()}{MakeError()}}
 {\footnotesize\ttfamily static Napi\+::\+Error Make\+Error (\begin{DoxyParamCaption}\item[{Napi\+::\+Env}]{env,  }\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+
+
+创建 Napi\+::\+Error 异常 
+
+
+\begin{DoxyParams}{参数}
+{\em env} & Node-\/\+API 环境 \\
+\hline
+{\em msg} & 异常消息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Error 异常对象 
+\end{DoxyReturn}
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -164,16 +261,28 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{ResizeWrapped()}{ResizeWrapped()}}
 {\footnotesize\ttfamily static Napi\+::\+Value Resize\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+把 \doxylink{classProcessor_af43377f1cfa191f7521d8eb60e5374a0}{Processor\+::\+Resize} 包装为 Node-\/\+API 函数 
+
+把包含图像数据的对象按指定比例缩放
+
+
+\begin{DoxyParams}{参数}
+{\em info} & Node-\/\+API 回调信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Value 包含缩放后图像数据的对象 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{main_8cc_aa546425105ae7e3f2de3c424082e8345_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -186,16 +295,28 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{SavePngWrapped()}{SavePngWrapped()}}
 {\footnotesize\ttfamily static Napi\+::\+Value Save\+Png\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+把 \doxylink{classImageIO_a6203067e2826b9ccc07c6b87002ede4d}{Image\+IO\+::\+Save\+Png} 包装为 Node-\/\+API 函数 
+
+保存包含图像数据的对象到 PNG 文件
+
+
+\begin{DoxyParams}{参数}
+{\em info} & Node-\/\+API 回调信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Value 布尔值，表示保存是否成功 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=323pt]{main_8cc_a2a1ef82449861b9914b1aa98f161a3f1_cgraph}
+\includegraphics[width=324pt]{main_8cc_a2a1ef82449861b9914b1aa98f161a3f1_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -208,16 +329,28 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{SavePpmWrapped()}{SavePpmWrapped()}}
 {\footnotesize\ttfamily static Napi\+::\+Value Save\+Ppm\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+把 \doxylink{classImageIO_a47551184bb8da28cfbcf198765dc7f8a}{Image\+IO\+::\+Save\+Ppm} 包装为 Node-\/\+API 函数 
+
+保存包含图像数据的对象到 PPM 文件
+
+
+\begin{DoxyParams}{参数}
+{\em info} & Node-\/\+API 回调信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Value 布尔值，表示保存是否成功 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{main_8cc_a97fb226d121951383b419bf7a123da5a_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -230,16 +363,28 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{SaveTripWrapped()}{SaveTripWrapped()}}
 {\footnotesize\ttfamily static Napi\+::\+Value Save\+Trip\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+把 \doxylink{classImageIO_a2a2448cc3160e6f250047517c2ab7c65}{Image\+IO\+::\+Save\+Trip} 包装为 Node-\/\+API 函数 
+
+把包含三元组数据的对象保存到压缩文件
+
+
+\begin{DoxyParams}{参数}
+{\em info} & Node-\/\+API 回调信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Value 布尔值，表示保存是否成功 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=321pt]{main_8cc_acfa99fd99fcf645857f77aa98ee1e011_cgraph}
+\includegraphics[width=322pt]{main_8cc_acfa99fd99fcf645857f77aa98ee1e011_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -252,16 +397,28 @@ static Napi\+::\+Object \mbox{\hyperlink{main_8cc_a41e547364abf29640f7cee8e9a468
 \doxysubsubsection{\texorpdfstring{ToGrayWrapped()}{ToGrayWrapped()}}
 {\footnotesize\ttfamily static Napi\+::\+Value To\+Gray\+Wrapped (\begin{DoxyParamCaption}\item[{const Napi\+::\+Callback\+Info \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-函数调用图\+:
-\nopagebreak
+
+
+把 \doxylink{classProcessor_a5c48f5a991e81dcf354cebb10df48260}{Processor\+::\+To\+Gray} 包装为 Node-\/\+API 函数 
+
+把包含 BGR 图像数据的对象转换为灰度图像
+
+
+\begin{DoxyParams}{参数}
+{\em info} & Node-\/\+API 回调信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+Napi\+::\+Value 包含灰度图像数据的对象 
+\end{DoxyReturn}
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{main_8cc_ae63aa61833e4b395ce9277b1f4281a7f_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -1,11 +1,11 @@
 <map id="LoadPpmWrapped" name="LoadPpmWrapped">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,145,56"/>
-<area shape="rect" id="Node000002" href="$classImageIO.html#ad3457dfc34f78f2314cc5b989584ca86" title="从文件加载三元组压缩图像 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat" alt="" coords="193,5,336,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,31,179,27,180,32,146,37"/>
-<area shape="rect" id="Node000005" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="221,55,309,80"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="146,50,207,57,207,63,145,55"/>
-<area shape="rect" id="Node000003" href="$classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="384,5,541,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="337,15,370,15,370,21,337,21"/>
-<area shape="rect" id="Node000004" href="$Ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="589,5,677,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="542,15,576,15,576,21,542,21"/>
+<area shape="rect" id="Node000001" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="5,31,145,56"/>
+<area shape="rect" id="Node000002" href="$classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f" title="从文件加载三元组压缩图像" alt="" coords="193,5,339,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,31,180,27,180,32,146,37"/>
+<area shape="rect" id="Node000005" href="$main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="222,55,310,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="146,49,209,58,208,63,145,55"/>
+<area shape="rect" id="Node000003" href="$classPpm.html#a20cd3e30e1b93ec9d9f62ac1b02745b8" title="读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat" alt="" coords="387,5,547,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="339,15,373,15,373,21,339,21"/>
+<area shape="rect" id="Node000004" href="$ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="595,5,683,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="547,15,581,15,581,21,547,21"/>
 </map>

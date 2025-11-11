@@ -1,3 +1,17 @@
+/**
+ * @file main.ts
+ * @author Runhui Mo (github.com/mugaaaaa)
+ * @brief Electron 预加载脚本
+ *
+ * @details 暴露部分 IPC 和原生插件相关 API 给渲染进程使用。
+ * 
+ * @version 0.1
+ * @date 2025-11-10
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 import { ipcRenderer, contextBridge } from 'electron'
 
 // --------- Expose some API to the Renderer process ---------
@@ -23,7 +37,7 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
   // ...
 })
 
-// Expose high-level API for Renderer
+// 
 contextBridge.exposeInMainWorld('native', {
   loadPpm: (filePath: string) => ipcRenderer.invoke('native:loadPpm', filePath),
   loadPng: (filePath: string) => ipcRenderer.invoke('native:loadPng', filePath),
@@ -34,7 +48,7 @@ contextBridge.exposeInMainWorld('native', {
   compressorSave: (filePath: string, img: { width: number, height: number, channels: number, data: Uint8Array }) => ipcRenderer.invoke('native:compressorSave', filePath, img),
   compressorLoad: (filePath: string) => ipcRenderer.invoke('native:compressorLoad', filePath),
 
-  // File dialogs
+  // 文件对话框相关函数
   openImageDialog: () => ipcRenderer.invoke('dialog:openImage'),
   savePngDialog: () => ipcRenderer.invoke('dialog:savePng'),
   savePpmDialog: () => ipcRenderer.invoke('dialog:savePpm'),

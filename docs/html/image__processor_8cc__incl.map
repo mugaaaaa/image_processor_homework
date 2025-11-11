@@ -1,0 +1,9 @@
+<map id="cpp/src/imgproc/image_processor.cc" name="cpp/src/imgproc/image_processor.cc">
+<area shape="rect" id="Node000001" title="图像处理器类实现" alt="" coords="61,5,232,45"/>
+<area shape="rect" id="Node000002" href="$image__processor_8h.html" title="图像处理器类头文件，包含灰度化和双线性插值缩放。" alt="" coords="11,93,155,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,47,103,84,99,81,129,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="179,93,242,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,44,194,81,190,84,160,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,160,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,119,85,153,80,153,80,119"/>
+</map>

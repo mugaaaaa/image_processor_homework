@@ -1,0 +1,74 @@
+\doxysection{cpp/src/codec/compressor.cc 文件参考}
+\hypertarget{compressor_8cc}{}\label{compressor_8cc}\index{cpp/src/codec/compressor.cc@{cpp/src/codec/compressor.cc}}
+
+
+\doxylink{classCompressor}{Compressor} 类静态方法实现  
+
+
+{\ttfamily \#include "{}compressor.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+compressor.\+cc 的引用(Include)关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compressor_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{compressor_8cc_ab29ab99e4914dddfeba2690429a09a9e}{Write\+Header}} (std\+::ostream \&os, const \mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} \&hdr)
+\item 
+static bool \mbox{\hyperlink{compressor_8cc_a393bbe21a99a76d202ac90bab190280c}{Read\+Header}} (std\+::istream \&is, \mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} \&hdr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\doxylink{classCompressor}{Compressor} 类静态方法实现 
+
+\begin{DoxyAuthor}{作者}
+Runhui Mo (github.\+com/mugaaaaa) 
+\end{DoxyAuthor}
+三元组存储格式： 文件头（文本）：\+TRIP width height channels count bgB bgG bgR~\newline
+数据段（二进制）：按顺序写入 count 个节点，每个节点包含 int32 row, int32 col, uint8 v0\mbox{[}, uint8 v1, uint8 v2\mbox{]}
+
+\begin{DoxyVersion}{版本}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{日期}
+2025-\/11-\/07
+\end{DoxyDate}
+\begin{DoxyCopyright}{版权所有}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{函数说明}
+\Hypertarget{compressor_8cc_a393bbe21a99a76d202ac90bab190280c}\label{compressor_8cc_a393bbe21a99a76d202ac90bab190280c} 
+\index{compressor.cc@{compressor.cc}!ReadHeader@{ReadHeader}}
+\index{ReadHeader@{ReadHeader}!compressor.cc@{compressor.cc}}
+\doxysubsubsection{\texorpdfstring{ReadHeader()}{ReadHeader()}}
+{\footnotesize\ttfamily static bool Read\+Header (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} \&}]{hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compressor_8cc_a393bbe21a99a76d202ac90bab190280c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{compressor_8cc_ab29ab99e4914dddfeba2690429a09a9e}\label{compressor_8cc_ab29ab99e4914dddfeba2690429a09a9e} 
+\index{compressor.cc@{compressor.cc}!WriteHeader@{WriteHeader}}
+\index{WriteHeader@{WriteHeader}!compressor.cc@{compressor.cc}}
+\doxysubsubsection{\texorpdfstring{WriteHeader()}{WriteHeader()}}
+{\footnotesize\ttfamily static bool Write\+Header (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structCompressedHeader}{Compressed\+Header}} \&}]{hdr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{compressor_8cc_ab29ab99e4914dddfeba2690429a09a9e_icgraph}
+\end{center}
+\end{figure}

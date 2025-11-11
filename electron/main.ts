@@ -1,3 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * @file main.ts
+ * @author Runhui Mo (github.com/mugaaaaa)
+ * @brief Electron 主进程入口文件
+ *
+ * 包含脚手架自动生成的部分代码，以及与原生插件和文件对话框相关的 IPC 处理逻辑。
+ * 
+ * @version 0.1
+ * @date 2025-11-10
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 import { app, BrowserWindow, ipcMain, dialog, Menu } from 'electron'
 import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
@@ -30,12 +45,6 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1024,
     height: 612,
-    // // 去掉窗口原生边框/工具栏（frame: false），并隐藏菜单栏（autoHideMenuBar: true）
-    // // 注意：去掉 frame 后，窗口将没有系统标题栏，需要在渲染层添加可拖拽区域（-webkit-app-region: drag）
-    // frame: false,
-    // autoHideMenuBar: true,
-    // // macOS 专用：隐藏原生标题栏，配合 frameless 使用可以得到更自然的外观
-    // titleBarStyle: 'hidden',
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
@@ -49,12 +58,11 @@ function createWindow() {
     win?.webContents.send('main-process-message', (new Date).toLocaleString())
   })
 
-  // 移除应用菜单（使窗口上方不显示菜单栏）。在某些平台上还可以用 win.setMenuBarVisibility(false)
+  // 移除应用菜单（使窗口上方不显示菜单栏）
   try {
     Menu.setApplicationMenu(null)
     win.setMenuBarVisibility(false)
   } catch (e) {
-    // ignore if Menu API not available for some reason
     console.error('Failed to remove application menu', e)
   }
 
@@ -86,65 +94,72 @@ app.on('activate', () => {
 
 app.whenReady().then(createWindow)
 
-// -------------------------------------------------------
-// Native addon wiring via IPC
-// -------------------------------------------------------
-// Resolve native addon from project root
-// Allow `any` here because native addon exports are dynamic
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// =========================================================
+// 原生插件 IPC 连接
+// =========================================================
 let native: any
 try {
-  native = require(path.join(process.env.APP_ROOT, 'native-addon'))
+  native = require(path.join(process.env.APP_ROOT, 'native-addon'))   // 从根目录加载原生插件
 } catch (e) {
   console.error('Failed to load native addon. Please build it in native-addon.', e)
 }
 
-// Helpers to convert data
+// 辅助函数
 const toBuffer = (u8: Uint8Array) => Buffer.from(u8.buffer, u8.byteOffset, u8.byteLength)
 
+// 加载 PPM 图像  
 ipcMain.handle('native:loadPpm', async (_event, filePath: string) => {
   if (!native) throw new Error('native addon not loaded')
   return native.loadPpm(filePath)
 })
 
+// 加载 PNG 图像  
 ipcMain.handle('native:loadPng', async (_event, filePath: string) => {
   if (!native) throw new Error('native addon not loaded')
   return native.loadPng(filePath)
 })
 
+// 保存 PPM 图像  
 ipcMain.handle('native:savePpm', async (_event, filePath: string, img: { width: number, height: number, channels: number, data: Uint8Array }) => {
   if (!native) throw new Error('native addon not loaded')
   return native.savePpm(filePath, img.width, img.height, img.channels, toBuffer(img.data))
 })
 
+// 保存 PNG 图像  
 ipcMain.handle('native:savePng', async (_event, filePath: string, img: { width: number, height: number, channels: number, data: Uint8Array }) => {
   if (!native) throw new Error('native addon not loaded')
   return native.savePng(filePath, img.width, img.height, img.channels, toBuffer(img.data))
 })
 
+// 转换为灰度图  
 ipcMain.handle('native:toGray', async (_event, img: { width: number, height: number, data: Uint8Array }) => {
   if (!native) throw new Error('native addon not loaded')
   return native.toGray(img.width, img.height, toBuffer(img.data))
 })
 
+// 缩放
 ipcMain.handle('native:resize', async (_event, img: { width: number, height: number, channels: number, data: Uint8Array }, newW: number, newH: number) => {
   if (!native) throw new Error('native addon not loaded')
   return native.resize(img.width, img.height, img.channels, newW, newH, toBuffer(img.data))
 })
 
+// 压缩为 .trip 文件并保存
 ipcMain.handle('native:compressorSave', async (_event, filePath: string, img: { width: number, height: number, channels: number, data: Uint8Array }) => {
   if (!native) throw new Error('native addon not loaded')
   return native.compressorSave(filePath, img.width, img.height, img.channels, toBuffer(img.data))
 })
 
+// 从 .trip 文件加载图像
 ipcMain.handle('native:compressorLoad', async (_event, filePath: string) => {
   if (!native) throw new Error('native addon not loaded')
   return native.compressorLoad(filePath)
 })
 
-// -------------------------------------------------------
-// File dialogs (open/save) for images and .trip
-// -------------------------------------------------------
+// =========================================================
+// 加载图像文件对话框
+// =========================================================
+
+// 打开图像文件对话框
 ipcMain.handle('dialog:openImage', async () => {
   const result = await dialog.showOpenDialog(win!, {
     properties: ['openFile'],
@@ -156,6 +171,7 @@ ipcMain.handle('dialog:openImage', async () => {
   return result.canceled ? null : result.filePaths[0]
 })
 
+// 打开 PNG 图像保存对话框
 ipcMain.handle('dialog:savePng', async () => {
   const result = await dialog.showSaveDialog(win!, {
     filters: [{ name: 'PNG Image', extensions: ['png'] }],
@@ -164,6 +180,7 @@ ipcMain.handle('dialog:savePng', async () => {
   return result.canceled ? null : result.filePath
 })
 
+// 打开 PPM 图像保存对话框
 ipcMain.handle('dialog:savePpm', async () => {
   const result = await dialog.showSaveDialog(win!, {
     filters: [{ name: 'PPM Image', extensions: ['ppm'] }],
@@ -172,6 +189,7 @@ ipcMain.handle('dialog:savePpm', async () => {
   return result.canceled ? null : result.filePath
 })
 
+// 打开 Trip 文件对话框
 ipcMain.handle('dialog:openTrip', async () => {
   const result = await dialog.showOpenDialog(win!, {
     properties: ['openFile'],
@@ -183,6 +201,7 @@ ipcMain.handle('dialog:openTrip', async () => {
   return result.canceled ? null : result.filePaths[0]
 })
 
+// 打开 Trip 文件保存对话框
 ipcMain.handle('dialog:saveTrip', async () => {
   const result = await dialog.showSaveDialog(win!, {
     filters: [{ name: 'Trip Files', extensions: ['trip'] }],
@@ -191,14 +210,14 @@ ipcMain.handle('dialog:saveTrip', async () => {
   return result.canceled ? null : result.filePath
 })
 
-// Unified save dialog for images (PNG or PPM)
-ipcMain.handle('dialog:saveImage', async () => {
-  const result = await dialog.showSaveDialog(win!, {
-    filters: [
-      { name: 'PNG Image', extensions: ['png'] },
-      { name: 'PPM Image', extensions: ['ppm'] },
-    ],
-    defaultPath: 'image.png'
-  })
-  return result.canceled ? null : result.filePath
-})
+// 图像保存对话框
+// ipcMain.handle('dialog:saveImage', async () => {
+//   const result = await dialog.showSaveDialog(win!, {
+//     filters: [
+//       { name: 'PNG Image', extensions: ['png'] },
+//       { name: 'PPM Image', extensions: ['ppm'] },
+//     ],
+//     defaultPath: 'image.png'
+//   })
+//   return result.canceled ? null : result.filePath
+// })

@@ -1,7 +1,0 @@
-<map id="ImageIO::loadPpm" name="ImageIO::loadPpm">
-<area shape="rect" id="Node000001" title="从文件加载三元组压缩图像 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat" alt="" coords="5,5,148,31"/>
-<area shape="rect" id="Node000002" href="$classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="196,5,353,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,15,182,15,182,21,149,21"/>
-<area shape="rect" id="Node000003" href="$Ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="401,5,489,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="354,15,388,15,388,21,354,21"/>
-</map>

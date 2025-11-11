@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vite_2denv_2ed_2ets_0',['vite-env.d.ts',['../vite-env_8d_8ts.html',1,'']]]
+  ['triplet_2ecc_0',['triplet.cc',['../triplet_8cc.html',1,'']]],
+  ['triplet_2eh_1',['triplet.h',['../triplet_8h.html',1,'']]]
 ];

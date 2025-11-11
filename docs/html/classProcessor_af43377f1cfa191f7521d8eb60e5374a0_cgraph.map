@@ -1,5 +1,5 @@
 <map id="Processor::Resize" name="Processor::Resize">
 <area shape="rect" id="Node000001" title="使用双线性插值调整图像尺寸。" alt="" coords="5,5,141,31"/>
-<area shape="rect" id="Node000002" href="$ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a" title=" " alt="" coords="189,5,276,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,15,176,15,176,21,142,21"/>
+<area shape="rect" id="Node000002" href="$image__processor_8cc.html#a34730b2ac8555f0ae72e7e1e802fa675" title=" " alt="" coords="189,5,277,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,15,175,15,175,21,141,21"/>
 </map>

@@ -1,9 +1,11 @@
 <map id="cpp/src/data_structure/Triplet.h" name="cpp/src/data_structure/Triplet.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="45,5,211,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,72,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,48,64,86,60,82,105,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="97,93,159,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,46,131,79,125,79,125,46"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="183,93,350,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,43,235,84,233,89,160,48"/>
+<area shape="rect" id="Node000001" title="三元组数据结构及相关工具类声明" alt="" coords="45,5,211,45"/>
+<area shape="rect" id="Node000002" href="$triplet_8h.html" title=" " alt="" coords="91,93,165,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,46,131,79,125,79,125,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,72,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,121,66,160,62,156,112,117"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="97,167,159,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="131,119,131,153,125,153,125,119"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="183,167,350,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="151,116,233,158,231,163,149,121"/>
 </map>

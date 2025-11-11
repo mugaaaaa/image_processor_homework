@@ -1,7 +1,7 @@
 /**
- * @file ImageProcessor.h
+ * @file image_processor.h
  * @author Runhui Mo (github.com/mugaaaaa)
- * @brief 
+ * @brief 图像处理器类头文件，包含灰度化和双线性插值缩放。
  * @version 0.1
  * @date 2025-11-07
  * 
@@ -14,8 +14,8 @@
 #include <opencv2/opencv.hpp>
 
 /**
- * @brief 图像处理算法集合类。
- * * 包含手动实现的经典图像处理算法。
+ * @brief 图像处理器类
+ * * 包含灰度化和双线性插值缩放算法
  */
 class Processor {
  public:

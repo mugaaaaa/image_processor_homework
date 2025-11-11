@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['findbackgroundcolor_0',['findBackgroundColor',['../classTripletUtils.html#ac8dadcc7087f5926810820c26996aa0d',1,'TripletUtils']]]
+  ['findbackgroundcolor_0',['FindBackgroundColor',['../classTripletUtils.html#aa5ae7f8d7277d320791b1784487ffb99',1,'TripletUtils']]]
 ];

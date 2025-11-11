@@ -1,5 +1,5 @@
 /**
- * @file Ppm.cc
+ * @file ppm.cc
  * @author Runhui Mo (github.com/mugaaaaa)
  * @brief ppm 读写类实现
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "Ppm.h"
+#include "ppm.h"
 #include <fstream>
 #include <sstream>
 #include <string>

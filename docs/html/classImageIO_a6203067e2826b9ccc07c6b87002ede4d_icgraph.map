@@ -1,0 +1,7 @@
+<map id="ImageIO::SavePng" name="ImageIO::SavePng">
+<area shape="rect" id="Node000001" title="将图像保存到文件" alt="" coords="280,5,421,31"/>
+<area shape="rect" id="Node000002" href="$main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title="把 ImageIO::SavePng 包装为 Node&#45;API 函数" alt="" coords="96,5,232,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,21,233,21,233,15,266,15"/>
+<area shape="rect" id="Node000003" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
+</map>

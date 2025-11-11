@@ -1,5 +1,5 @@
 /**
- * @file Compressor.h
+ * @file compressor.h
  * @author Runhui Mo (github.com/mugaaaaa)
  * @brief Compressor 压缩与解压类类声明
  * @version 0.1
@@ -13,7 +13,7 @@
 #include <string>
 #include <vector>
 #include <opencv2/core/mat.hpp>
-#include "../data_structure/Triplet.h"
+#include "../data_structure/triplet.h"
 
 /**
  * @brief 压缩与解压类，调用 Triplet 相关函数实现图像的三元组压缩存储与重建。

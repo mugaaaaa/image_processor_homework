@@ -1,0 +1,14 @@
+<map id="Clamp255" name="Clamp255">
+<area shape="rect" id="Node000001" title=" " alt="" coords="456,31,544,56"/>
+<area shape="rect" id="Node000002" href="$classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0" title="使用双线性插值调整图像尺寸。" alt="" coords="271,5,407,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="442,37,406,31,407,26,443,32"/>
+<area shape="rect" id="Node000005" href="$classProcessor.html#a5c48f5a991e81dcf354cebb10df48260" title="将彩色图像转换为灰度图像。" alt="" coords="269,55,408,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="443,54,408,60,408,54,442,49"/>
+<area shape="rect" id="Node000003" href="$main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title="把 Processor::Resize 包装为 Node&#45;API 函数" alt="" coords="97,5,220,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,21,220,21,220,15,257,15"/>
+<area shape="rect" id="Node000004" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,31,48,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="84,35,49,42,48,37,83,30"/>
+<area shape="rect" id="Node000006" href="$main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title="把 Processor::ToGray 包装为 Node&#45;API 函数" alt="" coords="96,55,221,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="256,70,222,70,222,65,256,65"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="82,56,48,50,49,44,83,51"/>
+</map>

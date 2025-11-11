@@ -1,24 +1,24 @@
 <map id="MakeError" name="MakeError">
-<area shape="rect" id="Node000001" title=" " alt="" coords="335,203,423,228"/>
-<area shape="rect" id="Node000002" href="$main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title=" " alt="" coords="97,5,286,31"/>
+<area shape="rect" id="Node000001" title="创建 Napi::Error 异常" alt="" coords="335,203,423,228"/>
+<area shape="rect" id="Node000002" href="$main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title="把 Compressor::Load 包装为 Node&#45;API 函数" alt="" coords="97,5,286,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="368,190,358,156,340,117,317,77,285,44,266,33,269,29,288,40,321,74,345,114,363,155,373,188"/>
-<area shape="rect" id="Node000004" href="$main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title=" " alt="" coords="96,55,287,80"/>
+<area shape="rect" id="Node000004" href="$main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="96,55,287,80"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="364,192,333,141,311,115,285,94,264,83,266,78,288,89,315,112,337,138,368,189"/>
-<area shape="rect" id="Node000005" href="$main_8cc.html#a551814596313b7968e083c15f5639a17" title=" " alt="" coords="124,104,259,129"/>
+<area shape="rect" id="Node000005" href="$main_8cc.html#a551814596313b7968e083c15f5639a17" title="把 ImageIO::LoadPng 包装为 Node&#45;API 函数" alt="" coords="124,104,259,129"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="354,195,323,167,285,143,257,132,259,127,288,138,326,163,357,191"/>
-<area shape="rect" id="Node000006" href="$main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title=" " alt="" coords="121,153,261,179"/>
+<area shape="rect" id="Node000006" href="$main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="121,153,261,179"/>
 <area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="321,202,286,193,243,181,244,176,287,187,322,197"/>
-<area shape="rect" id="Node000007" href="$main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title=" " alt="" coords="130,203,253,228"/>
+<area shape="rect" id="Node000007" href="$main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title="把 Processor::Resize 包装为 Node&#45;API 函数" alt="" coords="130,203,253,228"/>
 <area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="321,218,253,218,253,213,321,213"/>
-<area shape="rect" id="Node000008" href="$main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title=" " alt="" coords="123,252,259,277"/>
+<area shape="rect" id="Node000008" href="$main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title="把 ImageIO::SavePng 包装为 Node&#45;API 函数" alt="" coords="123,252,259,277"/>
 <area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="322,233,241,254,240,249,321,228"/>
-<area shape="rect" id="Node000009" href="$main_8cc.html#a97fb226d121951383b419bf7a123da5a" title=" " alt="" coords="121,301,262,327"/>
+<area shape="rect" id="Node000009" href="$main_8cc.html#a97fb226d121951383b419bf7a123da5a" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="121,301,262,327"/>
 <area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="357,240,326,266,288,291,256,304,254,299,285,286,323,262,354,235"/>
-<area shape="rect" id="Node000010" href="$main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title=" " alt="" coords="124,351,259,376"/>
+<area shape="rect" id="Node000010" href="$main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title="把 ImageIO::SaveTrip 包装为 Node&#45;API 函数" alt="" coords="124,351,259,376"/>
 <area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="368,242,336,292,314,318,288,340,260,354,258,349,285,336,310,314,332,289,363,239"/>
-<area shape="rect" id="Node000011" href="$main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title=" " alt="" coords="129,400,254,425"/>
+<area shape="rect" id="Node000011" href="$main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title="把 Processor::ToGray 包装为 Node&#45;API 函数" alt="" coords="129,400,254,425"/>
 <area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="373,243,362,276,345,316,320,356,288,389,256,406,253,401,285,385,316,352,340,313,357,274,368,241"/>
-<area shape="rect" id="Node000003" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,203,48,228"/>
+<area shape="rect" id="Node000003" href="$main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,203,48,228"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,40,98,44,81,62,67,82,48,128,37,171,32,203,26,202,31,170,43,126,63,80,77,59,94,40,100,35"/>
 <area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="105,88,98,93,73,119,55,150,34,204,29,202,50,147,69,116,94,89,102,84"/>
 <area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="112,135,97,143,63,173,39,204,34,200,59,169,95,138,110,131"/>

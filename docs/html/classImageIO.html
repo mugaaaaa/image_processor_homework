@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ImageProcessorCore: ImageIO类 参考</title>
+<title>ImageProcessor: ImageIO类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ImageProcessorCore<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">ImageProcessor<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">C++ core of ImageProcessor</div>
+   <div id="projectbrief">a ImageProcessor with C++ core and Electron UI</div>
   </td>
  </tr>
  </tbody>
@@ -80,7 +80,7 @@ $(function() {
 <p>图像 I/O 接口类  
  <a href="classImageIO.html#details">更多...</a></p>
 
-<p><code>#include &lt;<a class="el" href="ImageIO_8h_source.html">ImageIO.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="image__io_8h_source.html">image_io.h</a>&gt;</code></p>
 <div class="dynheader">
 ImageIO 的协作图:</div>
 <div class="dyncontent">
@@ -92,37 +92,39 @@ ImageIO 的协作图:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:a19370c25df64ca9a0969a30d93969fc5" id="r_a19370c25df64ca9a0969a30d93969fc5"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a19370c25df64ca9a0969a30d93969fc5">loadPng</a> (const std::string &amp;file_path)</td></tr>
-<tr class="memdesc:a19370c25df64ca9a0969a30d93969fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件加载图像  <br /></td></tr>
-<tr class="separator:a19370c25df64ca9a0969a30d93969fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3457dfc34f78f2314cc5b989584ca86" id="r_ad3457dfc34f78f2314cc5b989584ca86"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#ad3457dfc34f78f2314cc5b989584ca86">loadPpm</a> (const std::string &amp;file_path)</td></tr>
-<tr class="memdesc:ad3457dfc34f78f2314cc5b989584ca86"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件加载三元组压缩图像 具体实现在 <a class="el" href="classPpm.html">Ppm</a> 部分，这里仅调用 <a class="el" href="classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。">Ppm::loadPpmAsMat</a>  <br /></td></tr>
-<tr class="separator:ad3457dfc34f78f2314cc5b989584ca86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b3fe67ea25f31293364dc9174c418ef" id="r_a6b3fe67ea25f31293364dc9174c418ef"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a6b3fe67ea25f31293364dc9174c418ef">loadTrip</a> (const std::string &amp;file_path)</td></tr>
-<tr class="memdesc:a6b3fe67ea25f31293364dc9174c418ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件加载三元组压缩图像  <br /></td></tr>
-<tr class="separator:a6b3fe67ea25f31293364dc9174c418ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5d7f0832777c47224aa2cfcb04d6a5a" id="r_aa5d7f0832777c47224aa2cfcb04d6a5a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#aa5d7f0832777c47224aa2cfcb04d6a5a">savePng</a> (const std::string &amp;file_path, const cv::Mat &amp;img)</td></tr>
-<tr class="memdesc:aa5d7f0832777c47224aa2cfcb04d6a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">将图像保存到文件  <br /></td></tr>
-<tr class="separator:aa5d7f0832777c47224aa2cfcb04d6a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01f7e14387f94afb475890806dfe167d" id="r_a01f7e14387f94afb475890806dfe167d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a01f7e14387f94afb475890806dfe167d">savePpm</a> (const std::string &amp;file_path, const cv::Mat &amp;img)</td></tr>
-<tr class="memdesc:a01f7e14387f94afb475890806dfe167d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将图像保存到文件 具体实现在 <a class="el" href="classPpm.html">Ppm</a> 部分，这里仅调用 <a class="el" href="classPpm.html#a92a5a73a161b186cd6b18f42c278e437" title="手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。">Ppm::saveNatAsPpm</a>  <br /></td></tr>
-<tr class="separator:a01f7e14387f94afb475890806dfe167d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a599d6b98c20fa03684d3fe89c4de3616" id="r_a599d6b98c20fa03684d3fe89c4de3616"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a599d6b98c20fa03684d3fe89c4de3616">saveTrip</a> (const std::string &amp;file_path, const std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;triplets)</td></tr>
-<tr class="memdesc:a599d6b98c20fa03684d3fe89c4de3616"><td class="mdescLeft">&#160;</td><td class="mdescRight">将图像保存到文件  <br /></td></tr>
-<tr class="separator:a599d6b98c20fa03684d3fe89c4de3616"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf0107fa1471877fd5684f857c95cb49" id="r_adf0107fa1471877fd5684f857c95cb49"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#adf0107fa1471877fd5684f857c95cb49">saveTrip</a> (const std::string &amp;file_path, int width, int height, int channels, const uint8_t bg_color[3], const std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;triplets)</td></tr>
-<tr class="memdesc:adf0107fa1471877fd5684f857c95cb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">写入完整头部信息的.trip 保存接口。  <br /></td></tr>
-<tr class="separator:adf0107fa1471877fd5684f857c95cb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cceda8c66d879194ee633920e335a1f" id="r_a4cceda8c66d879194ee633920e335a1f"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a4cceda8c66d879194ee633920e335a1f">LoadPng</a> (const std::string &amp;file_path)</td></tr>
+<tr class="memdesc:a4cceda8c66d879194ee633920e335a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件加载图像  <br /></td></tr>
+<tr class="separator:a4cceda8c66d879194ee633920e335a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a1d8545edd4262a9f67a146275bda2f" id="r_a6a1d8545edd4262a9f67a146275bda2f"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f">LoadPpm</a> (const std::string &amp;file_path)</td></tr>
+<tr class="memdesc:a6a1d8545edd4262a9f67a146275bda2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件加载三元组压缩图像  <br /></td></tr>
+<tr class="separator:a6a1d8545edd4262a9f67a146275bda2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f694ae7ac22767162b7d2b63e751d99" id="r_a9f694ae7ac22767162b7d2b63e751d99"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a9f694ae7ac22767162b7d2b63e751d99">LoadTrip</a> (const std::string &amp;file_path)</td></tr>
+<tr class="memdesc:a9f694ae7ac22767162b7d2b63e751d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件加载三元组压缩图像  <br /></td></tr>
+<tr class="separator:a9f694ae7ac22767162b7d2b63e751d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6203067e2826b9ccc07c6b87002ede4d" id="r_a6203067e2826b9ccc07c6b87002ede4d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a6203067e2826b9ccc07c6b87002ede4d">SavePng</a> (const std::string &amp;file_path, const cv::Mat &amp;img)</td></tr>
+<tr class="memdesc:a6203067e2826b9ccc07c6b87002ede4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将图像保存到文件  <br /></td></tr>
+<tr class="separator:a6203067e2826b9ccc07c6b87002ede4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47551184bb8da28cfbcf198765dc7f8a" id="r_a47551184bb8da28cfbcf198765dc7f8a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a">SavePpm</a> (const std::string &amp;file_path, const cv::Mat &amp;img)</td></tr>
+<tr class="memdesc:a47551184bb8da28cfbcf198765dc7f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">将图像保存到文件 具体实现在 <a class="el" href="classPpm.html" title=".ppm 读写类, 提供 .ppm 文件与 cv::Mat 之间的转换接口">Ppm</a> 部分，这里仅调用 Ppm::saveNatAsPpm  <br /></td></tr>
+<tr class="separator:a47551184bb8da28cfbcf198765dc7f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a2448cc3160e6f250047517c2ab7c65" id="r_a2a2448cc3160e6f250047517c2ab7c65"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a2a2448cc3160e6f250047517c2ab7c65">SaveTrip</a> (const std::string &amp;file_path, const std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;triplets)</td></tr>
+<tr class="memdesc:a2a2448cc3160e6f250047517c2ab7c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">将图像保存到文件  <br /></td></tr>
+<tr class="separator:a2a2448cc3160e6f250047517c2ab7c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a719f8fbb1712bea334337ef7f140c05a" id="r_a719f8fbb1712bea334337ef7f140c05a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a719f8fbb1712bea334337ef7f140c05a">SaveTrip</a> (const std::string &amp;file_path, int width, int height, int channels, const uint8_t bg_color[3], const std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; &amp;triplets)</td></tr>
+<tr class="memdesc:a719f8fbb1712bea334337ef7f140c05a"><td class="mdescLeft">&#160;</td><td class="mdescRight">写入完整头部信息的.trip 保存接口。  <br /></td></tr>
+<tr class="separator:a719f8fbb1712bea334337ef7f140c05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a526599dead8abdc1845d34e0329c4ac9" id="r_a526599dead8abdc1845d34e0329c4ac9"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a526599dead8abdc1845d34e0329c4ac9">DecodeFromBuffer</a> (const uint8_t *data, size_t size)</td></tr>
-<tr class="memdesc:a526599dead8abdc1845d34e0329c4ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">[预留] 从内存缓冲区解码图像 (供 Node.js 调用)。  <br /></td></tr>
+<tr class="memdesc:a526599dead8abdc1845d34e0329c4ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">从内存缓冲区解码图像 (供 Node.js 调用)。  <br /></td></tr>
 <tr class="separator:a526599dead8abdc1845d34e0329c4ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15415944fc6c74e4ff5ed28ae2fb3aa9" id="r_a15415944fc6c74e4ff5ed28ae2fb3aa9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageIO.html#a15415944fc6c74e4ff5ed28ae2fb3aa9">EncodeToBuffer</a> (const cv::Mat &amp;img, const std::string &amp;format, std::vector&lt; uint8_t &gt; *buffer)</td></tr>
-<tr class="memdesc:a15415944fc6c74e4ff5ed28ae2fb3aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">[预留] 将图像编码到内存缓冲区 (供 Node.js 调用)。  <br /></td></tr>
+<tr class="memdesc:a15415944fc6c74e4ff5ed28ae2fb3aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">将图像编码到内存缓冲区 (供 Node.js 调用)。  <br /></td></tr>
 <tr class="separator:a15415944fc6c74e4ff5ed28ae2fb3aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>图像 I/O 接口类 </p>
-<p>提供了加载和保存 .png、.ppm 和 .trip（自定义的压缩类型）图像的静态方法。 </p>
+<p>提供了加载和保存 .png、.ppm 和 .trip（自定义的压缩类型）图像的静态方法</p><ul>
+<li>和与 Node.js 互操作的接口。 </li>
+</ul>
 </div><h2 class="groupheader">成员函数说明</h2>
 <a id="a526599dead8abdc1845d34e0329c4ac9" name="a526599dead8abdc1845d34e0329c4ac9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a526599dead8abdc1845d34e0329c4ac9">&#9670;&#160;</a></span>DecodeFromBuffer()</h2>
@@ -158,7 +160,7 @@ ImageIO 的协作图:</div>
 </table>
 </div><div class="memdoc">
 
-<p>[预留] 从内存缓冲区解码图像 (供 Node.js 调用)。 </p>
+<p>从内存缓冲区解码图像 (供 Node.js 调用)。 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>指向 buffer 数据的指针。 </td></tr>
@@ -210,7 +212,7 @@ ImageIO 的协作图:</div>
 </table>
 </div><div class="memdoc">
 
-<p>[预留] 将图像编码到内存缓冲区 (供 Node.js 调用)。 </p>
+<p>将图像编码到内存缓冲区 (供 Node.js 调用)。 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">img</td><td>输入图像。 </td></tr>
@@ -223,8 +225,8 @@ ImageIO 的协作图:</div>
 
 </div>
 </div>
-<a id="a19370c25df64ca9a0969a30d93969fc5" name="a19370c25df64ca9a0969a30d93969fc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19370c25df64ca9a0969a30d93969fc5">&#9670;&#160;</a></span>loadPng()</h2>
+<a id="a4cceda8c66d879194ee633920e335a1f" name="a4cceda8c66d879194ee633920e335a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cceda8c66d879194ee633920e335a1f">&#9670;&#160;</a></span>LoadPng()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,7 +235,7 @@ ImageIO 的协作图:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">cv::Mat ImageIO::loadPng </td>
+          <td class="memname">cv::Mat ImageIO::LoadPng </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em></td><td>)</td>
@@ -258,20 +260,20 @@ ImageIO 的协作图:</div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classImageIO_a19370c25df64ca9a0969a30d93969fc5_icgraph.png" border="0" usemap="#aclassImageIO_a19370c25df64ca9a0969a30d93969fc5_icgraph" alt=""/></div>
-<map name="aclassImageIO_a19370c25df64ca9a0969a30d93969fc5_icgraph" id="aclassImageIO_a19370c25df64ca9a0969a30d93969fc5_icgraph">
-<area shape="rect" title="从文件加载图像" alt="" coords="279,5,416,31"/>
-<area shape="rect" href="main_8cc.html#a551814596313b7968e083c15f5639a17" title=" " alt="" coords="96,5,231,31"/>
+<div class="center"><img src="classImageIO_a4cceda8c66d879194ee633920e335a1f_icgraph.png" border="0" usemap="#aclassImageIO_a4cceda8c66d879194ee633920e335a1f_icgraph" alt=""/></div>
+<map name="aclassImageIO_a4cceda8c66d879194ee633920e335a1f_icgraph" id="aclassImageIO_a4cceda8c66d879194ee633920e335a1f_icgraph">
+<area shape="rect" title="从文件加载图像" alt="" coords="279,5,419,31"/>
+<area shape="rect" href="main_8cc.html#a551814596313b7968e083c15f5639a17" title="把 ImageIO::LoadPng 包装为 Node&#45;API 函数" alt="" coords="96,5,231,31"/>
 <area shape="poly" title=" " alt="" coords="265,21,231,21,231,15,265,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ad3457dfc34f78f2314cc5b989584ca86" name="ad3457dfc34f78f2314cc5b989584ca86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3457dfc34f78f2314cc5b989584ca86">&#9670;&#160;</a></span>loadPpm()</h2>
+<a id="a6a1d8545edd4262a9f67a146275bda2f" name="a6a1d8545edd4262a9f67a146275bda2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a1d8545edd4262a9f67a146275bda2f">&#9670;&#160;</a></span>LoadPpm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,7 +282,7 @@ ImageIO 的协作图:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">cv::Mat ImageIO::loadPpm </td>
+          <td class="memname">cv::Mat ImageIO::LoadPpm </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em></td><td>)</td>
@@ -294,7 +296,10 @@ ImageIO 的协作图:</div>
 </table>
 </div><div class="memdoc">
 
-<p>从文件加载三元组压缩图像 具体实现在 <a class="el" href="classPpm.html">Ppm</a> 部分，这里仅调用 <a class="el" href="classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。">Ppm::loadPpmAsMat</a> </p>
+<p>从文件加载三元组压缩图像 </p>
+<ul>
+<li>具体实现在 <a class="el" href="classPpm.html" title=".ppm 读写类, 提供 .ppm 文件与 cv::Mat 之间的转换接口">Ppm</a> 部分，这里仅调用 Ppm::loadPpmAsMat</li>
+</ul>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_path</td><td>.ppm 文件路径 </td></tr>
@@ -305,32 +310,32 @@ ImageIO 的协作图:</div>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classImageIO_ad3457dfc34f78f2314cc5b989584ca86_cgraph.png" border="0" usemap="#aclassImageIO_ad3457dfc34f78f2314cc5b989584ca86_cgraph" alt=""/></div>
-<map name="aclassImageIO_ad3457dfc34f78f2314cc5b989584ca86_cgraph" id="aclassImageIO_ad3457dfc34f78f2314cc5b989584ca86_cgraph">
-<area shape="rect" title="从文件加载三元组压缩图像 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat" alt="" coords="5,5,148,31"/>
-<area shape="rect" href="classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="196,5,353,31"/>
-<area shape="poly" title=" " alt="" coords="149,15,182,15,182,21,149,21"/>
-<area shape="rect" href="Ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="401,5,489,31"/>
-<area shape="poly" title=" " alt="" coords="354,15,388,15,388,21,354,21"/>
+<div class="center"><img src="classImageIO_a6a1d8545edd4262a9f67a146275bda2f_cgraph.png" border="0" usemap="#aclassImageIO_a6a1d8545edd4262a9f67a146275bda2f_cgraph" alt=""/></div>
+<map name="aclassImageIO_a6a1d8545edd4262a9f67a146275bda2f_cgraph" id="aclassImageIO_a6a1d8545edd4262a9f67a146275bda2f_cgraph">
+<area shape="rect" title="从文件加载三元组压缩图像" alt="" coords="5,5,151,31"/>
+<area shape="rect" href="classPpm.html#a20cd3e30e1b93ec9d9f62ac1b02745b8" title="读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat" alt="" coords="199,5,359,31"/>
+<area shape="poly" title=" " alt="" coords="151,15,185,15,185,21,151,21"/>
+<area shape="rect" href="ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="407,5,495,31"/>
+<area shape="poly" title=" " alt="" coords="359,15,393,15,393,21,359,21"/>
 </map>
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classImageIO_ad3457dfc34f78f2314cc5b989584ca86_icgraph.png" border="0" usemap="#aclassImageIO_ad3457dfc34f78f2314cc5b989584ca86_icgraph" alt=""/></div>
-<map name="aclassImageIO_ad3457dfc34f78f2314cc5b989584ca86_icgraph" id="aclassImageIO_ad3457dfc34f78f2314cc5b989584ca86_icgraph">
-<area shape="rect" title="从文件加载三元组压缩图像 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat" alt="" coords="284,5,427,31"/>
-<area shape="rect" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title=" " alt="" coords="96,5,236,31"/>
-<area shape="poly" title=" " alt="" coords="270,21,237,21,237,15,270,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<div class="center"><img src="classImageIO_a6a1d8545edd4262a9f67a146275bda2f_icgraph.png" border="0" usemap="#aclassImageIO_a6a1d8545edd4262a9f67a146275bda2f_icgraph" alt=""/></div>
+<map name="aclassImageIO_a6a1d8545edd4262a9f67a146275bda2f_icgraph" id="aclassImageIO_a6a1d8545edd4262a9f67a146275bda2f_icgraph">
+<area shape="rect" title="从文件加载三元组压缩图像" alt="" coords="284,5,429,31"/>
+<area shape="rect" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="96,5,236,31"/>
+<area shape="poly" title=" " alt="" coords="270,21,236,21,236,15,270,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a6b3fe67ea25f31293364dc9174c418ef" name="a6b3fe67ea25f31293364dc9174c418ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b3fe67ea25f31293364dc9174c418ef">&#9670;&#160;</a></span>loadTrip()</h2>
+<a id="a9f694ae7ac22767162b7d2b63e751d99" name="a9f694ae7ac22767162b7d2b63e751d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f694ae7ac22767162b7d2b63e751d99">&#9670;&#160;</a></span>LoadTrip()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -339,7 +344,7 @@ ImageIO 的协作图:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; ImageIO::loadTrip </td>
+          <td class="memname">std::vector&lt; <a class="el" href="structTripletNode.html">TripletNode</a> &gt; ImageIO::LoadTrip </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em></td><td>)</td>
@@ -364,18 +369,18 @@ ImageIO 的协作图:</div>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classImageIO_a6b3fe67ea25f31293364dc9174c418ef_cgraph.png" border="0" usemap="#aclassImageIO_a6b3fe67ea25f31293364dc9174c418ef_cgraph" alt=""/></div>
-<map name="aclassImageIO_a6b3fe67ea25f31293364dc9174c418ef_cgraph" id="aclassImageIO_a6b3fe67ea25f31293364dc9174c418ef_cgraph">
-<area shape="rect" title="从文件加载三元组压缩图像" alt="" coords="5,5,141,31"/>
-<area shape="rect" href="ImageIO_8cc.html#abf52dea1c5c11dcb0a9747e18f6368ea" title=" " alt="" coords="189,5,295,31"/>
-<area shape="poly" title=" " alt="" coords="142,15,176,15,176,21,142,21"/>
+<div class="center"><img src="classImageIO_a9f694ae7ac22767162b7d2b63e751d99_cgraph.png" border="0" usemap="#aclassImageIO_a9f694ae7ac22767162b7d2b63e751d99_cgraph" alt=""/></div>
+<map name="aclassImageIO_a9f694ae7ac22767162b7d2b63e751d99_cgraph" id="aclassImageIO_a9f694ae7ac22767162b7d2b63e751d99_cgraph">
+<area shape="rect" title="从文件加载三元组压缩图像" alt="" coords="5,5,144,31"/>
+<area shape="rect" href="image__io_8cc.html#a7984d03f48c2a928b33b806350e42daf" title=" " alt="" coords="192,5,296,31"/>
+<area shape="poly" title=" " alt="" coords="144,15,178,15,178,21,144,21"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aa5d7f0832777c47224aa2cfcb04d6a5a" name="aa5d7f0832777c47224aa2cfcb04d6a5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5d7f0832777c47224aa2cfcb04d6a5a">&#9670;&#160;</a></span>savePng()</h2>
+<a id="a6203067e2826b9ccc07c6b87002ede4d" name="a6203067e2826b9ccc07c6b87002ede4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6203067e2826b9ccc07c6b87002ede4d">&#9670;&#160;</a></span>SavePng()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -384,7 +389,7 @@ ImageIO 的协作图:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ImageIO::savePng </td>
+          <td class="memname">bool ImageIO::SavePng </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em>, </td>
@@ -422,20 +427,20 @@ false 保存失败 </dd></dl>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classImageIO_aa5d7f0832777c47224aa2cfcb04d6a5a_icgraph.png" border="0" usemap="#aclassImageIO_aa5d7f0832777c47224aa2cfcb04d6a5a_icgraph" alt=""/></div>
-<map name="aclassImageIO_aa5d7f0832777c47224aa2cfcb04d6a5a_icgraph" id="aclassImageIO_aa5d7f0832777c47224aa2cfcb04d6a5a_icgraph">
-<area shape="rect" title="将图像保存到文件" alt="" coords="280,5,420,31"/>
-<area shape="rect" href="main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title=" " alt="" coords="96,5,232,31"/>
-<area shape="poly" title=" " alt="" coords="266,21,232,21,232,15,266,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<div class="center"><img src="classImageIO_a6203067e2826b9ccc07c6b87002ede4d_icgraph.png" border="0" usemap="#aclassImageIO_a6203067e2826b9ccc07c6b87002ede4d_icgraph" alt=""/></div>
+<map name="aclassImageIO_a6203067e2826b9ccc07c6b87002ede4d_icgraph" id="aclassImageIO_a6203067e2826b9ccc07c6b87002ede4d_icgraph">
+<area shape="rect" title="将图像保存到文件" alt="" coords="280,5,421,31"/>
+<area shape="rect" href="main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title="把 ImageIO::SavePng 包装为 Node&#45;API 函数" alt="" coords="96,5,232,31"/>
+<area shape="poly" title=" " alt="" coords="266,21,233,21,233,15,266,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a01f7e14387f94afb475890806dfe167d" name="a01f7e14387f94afb475890806dfe167d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01f7e14387f94afb475890806dfe167d">&#9670;&#160;</a></span>savePpm()</h2>
+<a id="a47551184bb8da28cfbcf198765dc7f8a" name="a47551184bb8da28cfbcf198765dc7f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47551184bb8da28cfbcf198765dc7f8a">&#9670;&#160;</a></span>SavePpm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -444,7 +449,7 @@ false 保存失败 </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ImageIO::savePpm </td>
+          <td class="memname">bool ImageIO::SavePpm </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em>, </td>
@@ -468,7 +473,7 @@ false 保存失败 </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>将图像保存到文件 具体实现在 <a class="el" href="classPpm.html">Ppm</a> 部分，这里仅调用 <a class="el" href="classPpm.html#a92a5a73a161b186cd6b18f42c278e437" title="手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。">Ppm::saveNatAsPpm</a> </p>
+<p>将图像保存到文件 具体实现在 <a class="el" href="classPpm.html" title=".ppm 读写类, 提供 .ppm 文件与 cv::Mat 之间的转换接口">Ppm</a> 部分，这里仅调用 Ppm::saveNatAsPpm </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_path</td><td>.ppm 文件路径 </td></tr>
@@ -482,30 +487,30 @@ false 保存失败 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classImageIO_a01f7e14387f94afb475890806dfe167d_cgraph.png" border="0" usemap="#aclassImageIO_a01f7e14387f94afb475890806dfe167d_cgraph" alt=""/></div>
-<map name="aclassImageIO_a01f7e14387f94afb475890806dfe167d_cgraph" id="aclassImageIO_a01f7e14387f94afb475890806dfe167d_cgraph">
-<area shape="rect" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="5,5,151,31"/>
-<area shape="rect" href="classPpm.html#a92a5a73a161b186cd6b18f42c278e437" title="手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。" alt="" coords="199,5,357,31"/>
-<area shape="poly" title=" " alt="" coords="151,15,185,15,185,21,151,21"/>
+<div class="center"><img src="classImageIO_a47551184bb8da28cfbcf198765dc7f8a_cgraph.png" border="0" usemap="#aclassImageIO_a47551184bb8da28cfbcf198765dc7f8a_cgraph" alt=""/></div>
+<map name="aclassImageIO_a47551184bb8da28cfbcf198765dc7f8a_cgraph" id="aclassImageIO_a47551184bb8da28cfbcf198765dc7f8a_cgraph">
+<area shape="rect" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="5,5,152,31"/>
+<area shape="rect" href="classPpm.html#ad018fb080daad5dca782603a44e8e59b" title="手动保存为 .ppm 格式" alt="" coords="200,5,359,31"/>
+<area shape="poly" title=" " alt="" coords="152,15,187,15,187,21,152,21"/>
 </map>
 </div>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classImageIO_a01f7e14387f94afb475890806dfe167d_icgraph.png" border="0" usemap="#aclassImageIO_a01f7e14387f94afb475890806dfe167d_icgraph" alt=""/></div>
-<map name="aclassImageIO_a01f7e14387f94afb475890806dfe167d_icgraph" id="aclassImageIO_a01f7e14387f94afb475890806dfe167d_icgraph">
-<area shape="rect" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="285,5,431,31"/>
-<area shape="rect" href="main_8cc.html#a97fb226d121951383b419bf7a123da5a" title=" " alt="" coords="96,5,237,31"/>
-<area shape="poly" title=" " alt="" coords="271,21,238,21,238,15,271,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<div class="center"><img src="classImageIO_a47551184bb8da28cfbcf198765dc7f8a_icgraph.png" border="0" usemap="#aclassImageIO_a47551184bb8da28cfbcf198765dc7f8a_icgraph" alt=""/></div>
+<map name="aclassImageIO_a47551184bb8da28cfbcf198765dc7f8a_icgraph" id="aclassImageIO_a47551184bb8da28cfbcf198765dc7f8a_icgraph">
+<area shape="rect" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="285,5,432,31"/>
+<area shape="rect" href="main_8cc.html#a97fb226d121951383b419bf7a123da5a" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="96,5,237,31"/>
+<area shape="poly" title=" " alt="" coords="272,21,237,21,237,15,272,15"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a599d6b98c20fa03684d3fe89c4de3616" name="a599d6b98c20fa03684d3fe89c4de3616"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a599d6b98c20fa03684d3fe89c4de3616">&#9670;&#160;</a></span>saveTrip() <span class="overload">[1/2]</span></h2>
+<a id="a2a2448cc3160e6f250047517c2ab7c65" name="a2a2448cc3160e6f250047517c2ab7c65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a2448cc3160e6f250047517c2ab7c65">&#9670;&#160;</a></span>SaveTrip() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,7 +519,7 @@ false 保存失败 </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool ImageIO::saveTrip </td>
+          <td class="memname">static bool ImageIO::SaveTrip </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em>, </td>
@@ -552,20 +557,20 @@ false 保存失败 </dd></dl>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="classImageIO_a599d6b98c20fa03684d3fe89c4de3616_icgraph.png" border="0" usemap="#aclassImageIO_a599d6b98c20fa03684d3fe89c4de3616_icgraph" alt=""/></div>
-<map name="aclassImageIO_a599d6b98c20fa03684d3fe89c4de3616_icgraph" id="aclassImageIO_a599d6b98c20fa03684d3fe89c4de3616_icgraph">
-<area shape="rect" title="将图像保存到文件" alt="" coords="279,5,417,31"/>
-<area shape="rect" href="main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title=" " alt="" coords="96,5,231,31"/>
+<div class="center"><img src="classImageIO_a2a2448cc3160e6f250047517c2ab7c65_icgraph.png" border="0" usemap="#aclassImageIO_a2a2448cc3160e6f250047517c2ab7c65_icgraph" alt=""/></div>
+<map name="aclassImageIO_a2a2448cc3160e6f250047517c2ab7c65_icgraph" id="aclassImageIO_a2a2448cc3160e6f250047517c2ab7c65_icgraph">
+<area shape="rect" title="将图像保存到文件" alt="" coords="279,5,419,31"/>
+<area shape="rect" href="main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title="把 ImageIO::SaveTrip 包装为 Node&#45;API 函数" alt="" coords="96,5,231,31"/>
 <area shape="poly" title=" " alt="" coords="265,21,231,21,231,15,265,15"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="adf0107fa1471877fd5684f857c95cb49" name="adf0107fa1471877fd5684f857c95cb49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf0107fa1471877fd5684f857c95cb49">&#9670;&#160;</a></span>saveTrip() <span class="overload">[2/2]</span></h2>
+<a id="a719f8fbb1712bea334337ef7f140c05a" name="a719f8fbb1712bea334337ef7f140c05a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a719f8fbb1712bea334337ef7f140c05a">&#9670;&#160;</a></span>SaveTrip() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -574,7 +579,7 @@ false 保存失败 </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool ImageIO::saveTrip </td>
+          <td class="memname">bool ImageIO::SaveTrip </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em>, </td>
@@ -623,9 +628,11 @@ false 保存失败 </dd></dl>
 </div><div class="memdoc">
 
 <p>写入完整头部信息的.trip 保存接口。 </p>
-<p>头部格式：TRIP width height channels count bgB bgG bgR</p><ul>
+<p>头部（文本）格式：TRIP width height channels count bgB bgG bgR<br  />
+</p><ul>
 <li>channels 仅支持 1（灰度）或 3（彩色）；</li>
-<li>bg_color 为 BGR 顺序（灰度仅用 bg_color[0]）。 随后每行写入一个三元组：row col v0 [v1 v2]</li>
+<li>bg_color 为 BGR 顺序（灰度仅用 bg_color[0]）。</li>
+<li>随后为二进制数据段，按节点顺序写入，共 count 个节点： 每个节点依次写入 int32 row, int32 col, uint8 v0[, uint8 v1, uint8 v2]</li>
 </ul>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
@@ -645,8 +652,8 @@ false 失败（参数非法或文件不可写） </dd></dl>
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>cpp/src/io/<a class="el" href="ImageIO_8h_source.html">ImageIO.h</a></li>
-<li>cpp/src/io/<a class="el" href="ImageIO_8cc.html">ImageIO.cc</a></li>
+<li>cpp/src/io/<a class="el" href="image__io_8h_source.html">image_io.h</a></li>
+<li>cpp/src/io/<a class="el" href="image__io_8cc.html">image_io.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

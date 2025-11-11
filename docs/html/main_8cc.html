@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ImageProcessorCore: native-addon/src/main.cc 文件参考</title>
+<title>ImageProcessor: native-addon/src/main.cc 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ImageProcessorCore<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">ImageProcessor<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">C++ core of ImageProcessor</div>
+   <div id="projectbrief">a ImageProcessor with C++ core and Electron UI</div>
   </td>
  </tr>
  </tbody>
@@ -79,77 +79,97 @@ $(function() {
   <div class="headertitle"><div class="title">main.cc 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Node-API 绑定主文件  
+<a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &lt;napi.h&gt;</code><br />
 <code>#include &lt;opencv2/opencv.hpp&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
-<code>#include &quot;<a class="el" href="ImageIO_8h_source.html">../../cpp/src/io/ImageIO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Compressor_8h_source.html">../../cpp/src/codec/Compressor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ImageProcessor_8h_source.html">../../cpp/src/imgproc/ImageProcessor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="image__io_8h_source.html">../../cpp/src/io/image_io.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="compressor_8h_source.html">../../cpp/src/codec/compressor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="image__processor_8h_source.html">../../cpp/src/imgproc/image_processor.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc__incl.png" border="0" usemap="#anative-addon_2src_2main_8cc" alt=""/></div>
 <map name="anative-addon_2src_2main_8cc" id="anative-addon_2src_2main_8cc">
-<area shape="rect" title=" " alt="" coords="190,5,377,31"/>
+<area shape="rect" title="Node&#45;API 绑定主文件" alt="" coords="190,5,377,31"/>
 <area shape="rect" title=" " alt="" coords="5,86,68,111"/>
 <area shape="poly" title=" " alt="" coords="244,33,88,81,80,84,79,79,87,76,243,28"/>
-<area shape="rect" title=" " alt="" coords="77,167,231,192"/>
-<area shape="poly" title=" " alt="" coords="208,33,166,51,148,64,134,80,127,98,128,117,142,154,137,156,122,118,122,97,129,77,145,60,163,46,206,28"/>
+<area shape="rect" title=" " alt="" coords="78,167,233,192"/>
+<area shape="poly" title=" " alt="" coords="208,33,166,51,148,64,134,80,127,98,128,117,142,154,138,156,123,118,122,97,129,77,145,60,163,46,206,28"/>
 <area shape="rect" title=" " alt="" coords="317,86,383,111"/>
 <area shape="poly" title=" " alt="" coords="295,29,333,74,329,77,291,33"/>
-<area shape="rect" href="ImageIO_8h.html" title=" " alt="" coords="407,86,586,111"/>
-<area shape="poly" title=" " alt="" coords="315,28,454,79,452,84,313,33"/>
-<area shape="rect" href="Compressor_8h.html" title=" " alt="" coords="617,79,752,119"/>
-<area shape="poly" title=" " alt="" coords="347,28,599,76,604,77,603,82,597,81,346,33"/>
-<area shape="rect" href="ImageProcessor_8h.html" title=" " alt="" coords="143,79,293,119"/>
+<area shape="rect" href="image__io_8h.html" title="声明图像 I/O 接口类 ImageIO" alt="" coords="407,86,591,111"/>
+<area shape="poly" title=" " alt="" coords="316,28,456,79,454,84,314,33"/>
+<area shape="rect" href="compressor_8h.html" title="Compressor 压缩与解压类类声明" alt="" coords="621,79,756,119"/>
+<area shape="poly" title=" " alt="" coords="349,28,604,76,608,77,607,82,603,81,348,33"/>
+<area shape="rect" href="image__processor_8h.html" title="图像处理器类头文件，包含灰度化和双线性插值缩放。" alt="" coords="143,79,293,119"/>
 <area shape="poly" title=" " alt="" coords="276,33,245,70,240,66,272,29"/>
-<area shape="rect" title=" " alt="" coords="655,167,714,192"/>
-<area shape="poly" title=" " alt="" coords="525,109,646,159,644,164,523,114"/>
-<area shape="rect" title=" " alt="" coords="591,240,653,265"/>
-<area shape="poly" title=" " alt="" coords="523,109,560,132,595,165,611,195,620,226,615,227,606,197,591,168,556,136,520,114"/>
-<area shape="rect" title=" " alt="" coords="294,240,361,265"/>
-<area shape="poly" title=" " alt="" coords="467,114,422,136,377,169,355,198,339,228,334,226,350,195,373,165,419,131,465,109"/>
-<area shape="rect" title=" " alt="" coords="400,240,567,265"/>
-<area shape="poly" title=" " alt="" coords="460,114,419,135,401,150,387,168,383,178,384,187,394,204,414,220,439,232,436,237,411,224,390,208,379,188,378,177,382,165,397,146,416,130,457,109"/>
-<area shape="rect" href="Triplet_8h.html" title=" " alt="" coords="397,167,581,192"/>
-<area shape="poly" title=" " alt="" coords="498,112,494,153,489,153,493,111"/>
-<area shape="poly" title=" " alt="" coords="511,190,589,231,587,236,509,194"/>
-<area shape="poly" title=" " alt="" coords="464,194,367,237,365,232,462,190"/>
-<area shape="poly" title=" " alt="" coords="490,193,488,227,483,226,485,192"/>
-<area shape="poly" title=" " alt="" coords="687,119,687,153,682,153,682,119"/>
-<area shape="poly" title=" " alt="" coords="725,117,748,132,767,150,778,171,777,182,772,193,751,216,724,232,696,243,668,249,667,244,694,238,722,227,748,212,768,191,772,181,772,172,763,153,745,136,722,121"/>
-<area shape="poly" title=" " alt="" coords="706,117,720,134,731,153,735,174,728,194,706,205,665,217,561,240,559,235,664,212,704,200,724,190,730,174,726,155,715,137,702,120"/>
-<area shape="poly" title=" " alt="" coords="639,121,531,164,529,159,637,116"/>
-<area shape="poly" title=" " alt="" coords="205,121,174,157,170,154,200,117"/>
+<area shape="rect" title=" " alt="" coords="659,167,718,192"/>
+<area shape="poly" title=" " alt="" coords="528,109,649,159,647,164,526,114"/>
+<area shape="rect" title=" " alt="" coords="595,240,657,265"/>
+<area shape="poly" title=" " alt="" coords="526,109,563,132,599,165,615,195,624,226,619,227,610,197,595,168,560,136,523,114"/>
+<area shape="rect" title=" " alt="" coords="298,240,365,265"/>
+<area shape="poly" title=" " alt="" coords="470,114,425,136,381,169,359,198,343,228,338,226,354,195,377,165,422,131,468,109"/>
+<area shape="rect" title=" " alt="" coords="404,240,571,265"/>
+<area shape="poly" title=" " alt="" coords="464,114,423,135,405,150,391,168,387,178,388,187,398,204,418,220,443,232,440,237,415,224,394,208,383,188,382,177,386,165,401,146,420,130,461,109"/>
+<area shape="rect" href="triplet_8h.html" title="三元组数据结构及相关工具类声明" alt="" coords="401,167,584,192"/>
+<area shape="poly" title=" " alt="" coords="501,112,497,153,492,153,496,111"/>
+<area shape="poly" title=" " alt="" coords="515,190,593,231,591,236,513,194"/>
+<area shape="poly" title=" " alt="" coords="468,194,371,237,369,232,466,190"/>
+<area shape="poly" title=" " alt="" coords="494,193,492,227,487,226,489,192"/>
+<area shape="poly" title=" " alt="" coords="691,119,691,153,686,153,686,119"/>
+<area shape="poly" title=" " alt="" coords="729,117,752,132,771,150,782,171,781,182,776,193,755,216,728,232,700,243,672,249,671,244,698,238,726,227,752,212,772,191,776,181,776,172,767,153,749,136,726,121"/>
+<area shape="poly" title=" " alt="" coords="710,117,724,134,735,153,739,174,732,194,710,205,669,217,565,240,563,235,668,212,708,200,728,190,734,174,730,155,719,137,706,120"/>
+<area shape="poly" title=" " alt="" coords="643,121,535,164,533,159,641,116"/>
+<area shape="poly" title=" " alt="" coords="205,121,175,157,171,154,201,117"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
 <tr class="memitem:ac9cbbfd7dad326e56048ccb57b26eb8e" id="r_ac9cbbfd7dad326e56048ccb57b26eb8e"><td class="memItemLeft" align="right" valign="top">static Napi::Error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e">MakeError</a> (Napi::Env env, const std::string &amp;msg)</td></tr>
+<tr class="memdesc:ac9cbbfd7dad326e56048ccb57b26eb8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建 Napi::Error 异常  <br /></td></tr>
 <tr class="separator:ac9cbbfd7dad326e56048ccb57b26eb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a551814596313b7968e083c15f5639a17" id="r_a551814596313b7968e083c15f5639a17"><td class="memItemLeft" align="right" valign="top">static Napi::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a551814596313b7968e083c15f5639a17">LoadPngWrapped</a> (const Napi::CallbackInfo &amp;info)</td></tr>
+<tr class="memdesc:a551814596313b7968e083c15f5639a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">把 <a class="el" href="classImageIO.html#a4cceda8c66d879194ee633920e335a1f" title="从文件加载图像">ImageIO::LoadPng</a> 包装为 Node-API 函数  <br /></td></tr>
 <tr class="separator:a551814596313b7968e083c15f5639a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6d72c366ef977c8c5a3391a60bf5527" id="r_ab6d72c366ef977c8c5a3391a60bf5527"><td class="memItemLeft" align="right" valign="top">static Napi::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527">LoadPpmWrapped</a> (const Napi::CallbackInfo &amp;info)</td></tr>
+<tr class="memdesc:ab6d72c366ef977c8c5a3391a60bf5527"><td class="mdescLeft">&#160;</td><td class="mdescRight">把 <a class="el" href="classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f" title="从文件加载三元组压缩图像">ImageIO::LoadPpm</a> 包装为 Node-API 函数  <br /></td></tr>
 <tr class="separator:ab6d72c366ef977c8c5a3391a60bf5527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a1ef82449861b9914b1aa98f161a3f1" id="r_a2a1ef82449861b9914b1aa98f161a3f1"><td class="memItemLeft" align="right" valign="top">static Napi::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1">SavePngWrapped</a> (const Napi::CallbackInfo &amp;info)</td></tr>
+<tr class="memdesc:a2a1ef82449861b9914b1aa98f161a3f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">把 <a class="el" href="classImageIO.html#a6203067e2826b9ccc07c6b87002ede4d" title="将图像保存到文件">ImageIO::SavePng</a> 包装为 Node-API 函数  <br /></td></tr>
 <tr class="separator:a2a1ef82449861b9914b1aa98f161a3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97fb226d121951383b419bf7a123da5a" id="r_a97fb226d121951383b419bf7a123da5a"><td class="memItemLeft" align="right" valign="top">static Napi::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a97fb226d121951383b419bf7a123da5a">SavePpmWrapped</a> (const Napi::CallbackInfo &amp;info)</td></tr>
+<tr class="memdesc:a97fb226d121951383b419bf7a123da5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">把 <a class="el" href="classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm">ImageIO::SavePpm</a> 包装为 Node-API 函数  <br /></td></tr>
 <tr class="separator:a97fb226d121951383b419bf7a123da5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae63aa61833e4b395ce9277b1f4281a7f" id="r_ae63aa61833e4b395ce9277b1f4281a7f"><td class="memItemLeft" align="right" valign="top">static Napi::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f">ToGrayWrapped</a> (const Napi::CallbackInfo &amp;info)</td></tr>
+<tr class="memdesc:ae63aa61833e4b395ce9277b1f4281a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">把 <a class="el" href="classProcessor.html#a5c48f5a991e81dcf354cebb10df48260" title="将彩色图像转换为灰度图像。">Processor::ToGray</a> 包装为 Node-API 函数  <br /></td></tr>
 <tr class="separator:ae63aa61833e4b395ce9277b1f4281a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa546425105ae7e3f2de3c424082e8345" id="r_aa546425105ae7e3f2de3c424082e8345"><td class="memItemLeft" align="right" valign="top">static Napi::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#aa546425105ae7e3f2de3c424082e8345">ResizeWrapped</a> (const Napi::CallbackInfo &amp;info)</td></tr>
+<tr class="memdesc:aa546425105ae7e3f2de3c424082e8345"><td class="mdescLeft">&#160;</td><td class="mdescRight">把 <a class="el" href="classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0" title="使用双线性插值调整图像尺寸。">Processor::Resize</a> 包装为 Node-API 函数  <br /></td></tr>
 <tr class="separator:aa546425105ae7e3f2de3c424082e8345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bc5c80ee4ae3793367d9830bbe0df68" id="r_a6bc5c80ee4ae3793367d9830bbe0df68"><td class="memItemLeft" align="right" valign="top">static Napi::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68">CompressorSaveWrapped</a> (const Napi::CallbackInfo &amp;info)</td></tr>
+<tr class="memdesc:a6bc5c80ee4ae3793367d9830bbe0df68"><td class="mdescLeft">&#160;</td><td class="mdescRight">把 <a class="el" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 -&gt; 转换为三元组 -&gt; 写入文件头 -&gt; 写入数据。">Compressor::Save</a> 包装为 Node-API 函数  <br /></td></tr>
 <tr class="separator:a6bc5c80ee4ae3793367d9830bbe0df68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc5b0bdf3791c1b10d65f736a29f2f0c" id="r_afc5b0bdf3791c1b10d65f736a29f2f0c"><td class="memItemLeft" align="right" valign="top">static Napi::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c">CompressorLoadWrapped</a> (const Napi::CallbackInfo &amp;info)</td></tr>
+<tr class="memdesc:afc5b0bdf3791c1b10d65f736a29f2f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">把 <a class="el" href="classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 -&gt; 创建背景画布 -&gt; 覆盖三元组像素。">Compressor::Load</a> 包装为 Node-API 函数  <br /></td></tr>
 <tr class="separator:afc5b0bdf3791c1b10d65f736a29f2f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa99fd99fcf645857f77aa98ee1e011" id="r_acfa99fd99fcf645857f77aa98ee1e011"><td class="memItemLeft" align="right" valign="top">static Napi::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011">SaveTripWrapped</a> (const Napi::CallbackInfo &amp;info)</td></tr>
+<tr class="memdesc:acfa99fd99fcf645857f77aa98ee1e011"><td class="mdescLeft">&#160;</td><td class="mdescRight">把 <a class="el" href="classImageIO.html#a2a2448cc3160e6f250047517c2ab7c65" title="将图像保存到文件">ImageIO::SaveTrip</a> 包装为 Node-API 函数  <br /></td></tr>
 <tr class="separator:acfa99fd99fcf645857f77aa98ee1e011"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41e547364abf29640f7cee8e9a468902" id="r_a41e547364abf29640f7cee8e9a468902"><td class="memItemLeft" align="right" valign="top">static Napi::Object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902">Init</a> (Napi::Env env, Napi::Object exports)</td></tr>
+<tr class="memdesc:a41e547364abf29640f7cee8e9a468902"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化 Node-API 模块  <br /></td></tr>
 <tr class="separator:a41e547364abf29640f7cee8e9a468902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">函数说明</h2>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Node-API 绑定主文件 </p>
+<dl class="section author"><dt>作者</dt><dd>Runhui Mo (github.com/mugaaaaa) </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-11-11</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">函数说明</h2>
 <a id="afc5b0bdf3791c1b10d65f736a29f2f0c" name="afc5b0bdf3791c1b10d65f736a29f2f0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc5b0bdf3791c1b10d65f736a29f2f0c">&#9670;&#160;</a></span>CompressorLoadWrapped()</h2>
 
@@ -173,20 +193,30 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>把 <a class="el" href="classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 -&gt; 创建背景画布 -&gt; 覆盖三元组像素。">Compressor::Load</a> 包装为 Node-API 函数 </p>
+<p>从压缩文件加载图像数据</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Node-API 回调信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Value 包含图像数据的对象 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_cgraph.png" border="0" usemap="#amain_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_cgraph" alt=""/></div>
 <map name="amain_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_cgraph" id="amain_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,55,195,80"/>
+<area shape="rect" title="把 Compressor::Load 包装为 Node&#45;API 函数" alt="" coords="5,55,195,80"/>
 <area shape="rect" href="classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="243,29,381,55"/>
 <area shape="poly" title=" " alt="" coords="195,53,229,49,229,55,195,59"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="268,79,356,104"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="268,79,356,104"/>
 <area shape="poly" title=" " alt="" coords="195,75,255,82,254,88,195,81"/>
-<area shape="rect" href="Compressor_8cc.html#a439b9169b21c2927e3e35e6358b24c05" title=" " alt="" coords="473,5,571,31"/>
-<area shape="poly" title=" " alt="" coords="381,31,459,22,459,28,382,37"/>
-<area shape="rect" href="classTripletUtils.html#a1d7e2b7f1e589821bfec87d10599cf49" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="429,55,615,80"/>
-<area shape="poly" title=" " alt="" coords="382,48,416,52,415,57,381,53"/>
+<area shape="rect" href="compressor_8cc.html#a393bbe21a99a76d202ac90bab190280c" title=" " alt="" coords="471,5,574,31"/>
+<area shape="poly" title=" " alt="" coords="381,31,457,23,458,28,382,37"/>
+<area shape="rect" href="classTripletUtils.html#aa4b876bb7f2f0c358f31ea0e1f04df79" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="429,55,616,80"/>
+<area shape="poly" title=" " alt="" coords="382,48,416,52,416,57,381,53"/>
 </map>
 </div>
 <div class="dynheader">
@@ -194,8 +224,8 @@ main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_icgraph.png" border="0" usemap="#amain_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_icgraph" alt=""/></div>
 <map name="amain_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_icgraph" id="amain_8cc_afc5b0bdf3791c1b10d65f736a29f2f0c_icgraph">
-<area shape="rect" title=" " alt="" coords="96,5,285,31"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" title="把 Compressor::Load 包装为 Node&#45;API 函数" alt="" coords="96,5,285,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="83,21,48,21,48,15,83,15"/>
 </map>
 </div>
@@ -225,22 +255,32 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>把 <a class="el" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 -&gt; 转换为三元组 -&gt; 写入文件头 -&gt; 写入数据。">Compressor::Save</a> 包装为 Node-API 函数 </p>
+<p>把包含图像数据的对象保存为 .trip 格式的压缩文件</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Node-API 回调信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Value 布尔值，表示保存是否成功 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_cgraph.png" border="0" usemap="#amain_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_cgraph" alt=""/></div>
 <map name="amain_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_cgraph" id="amain_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_cgraph">
-<area shape="rect" title=" " alt="" coords="5,46,196,71"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="270,21,358,46"/>
+<area shape="rect" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="5,46,196,71"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="270,21,358,46"/>
 <area shape="poly" title=" " alt="" coords="196,45,256,37,256,43,197,50"/>
 <area shape="rect" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="244,70,384,95"/>
 <area shape="poly" title=" " alt="" coords="197,67,231,71,230,76,196,72"/>
-<area shape="rect" href="classTripletUtils.html#ac8dadcc7087f5926810820c26996aa0d" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="432,5,633,45"/>
-<area shape="poly" title=" " alt="" coords="363,67,442,46,443,51,364,73"/>
-<area shape="rect" href="classTripletUtils.html#a474e9114f121013d17dce14568d24485" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="439,70,626,95"/>
-<area shape="poly" title=" " alt="" coords="384,80,426,80,426,85,384,85"/>
-<area shape="rect" href="Compressor_8cc.html#a40a397f9f192a857e7766eaf692d0f58" title=" " alt="" coords="481,119,584,145"/>
-<area shape="poly" title=" " alt="" coords="372,93,468,115,467,120,370,98"/>
+<area shape="rect" href="classTripletUtils.html#aa5ae7f8d7277d320791b1784487ffb99" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="432,5,636,45"/>
+<area shape="poly" title=" " alt="" coords="363,67,443,46,445,51,364,73"/>
+<area shape="rect" href="classTripletUtils.html#a5b02a3d75026807faf99bbadf4c5c8a9" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="441,70,627,95"/>
+<area shape="poly" title=" " alt="" coords="384,80,427,80,427,85,384,85"/>
+<area shape="rect" href="compressor_8cc.html#ab29ab99e4914dddfeba2690429a09a9e" title=" " alt="" coords="482,119,586,145"/>
+<area shape="poly" title=" " alt="" coords="372,93,469,115,468,120,371,98"/>
 </map>
 </div>
 <div class="dynheader">
@@ -248,8 +288,8 @@ main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_icgraph.png" border="0" usemap="#amain_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_icgraph" alt=""/></div>
 <map name="amain_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_icgraph" id="amain_8cc_a6bc5c80ee4ae3793367d9830bbe0df68_icgraph">
-<area shape="rect" title=" " alt="" coords="96,5,287,31"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="96,5,287,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
 </map>
 </div>
@@ -289,77 +329,88 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>初始化 Node-API 模块 </p>
+<p>注册所有 Node-API 函数</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">env</td><td>Node-API 环境 </td></tr>
+    <tr><td class="paramname">exports</td><td>导出对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Object 导出对象 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_a41e547364abf29640f7cee8e9a468902_cgraph.png" border="0" usemap="#amain_8cc_a41e547364abf29640f7cee8e9a468902_cgraph" alt=""/></div>
 <map name="amain_8cc_a41e547364abf29640f7cee8e9a468902_cgraph" id="amain_8cc_a41e547364abf29640f7cee8e9a468902_cgraph">
-<area shape="rect" title=" " alt="" coords="5,343,48,368"/>
-<area shape="rect" href="main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title=" " alt="" coords="97,145,286,171"/>
+<area shape="rect" title="初始化 Node&#45;API 模块" alt="" coords="5,343,48,368"/>
+<area shape="rect" href="main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title="把 Compressor::Load 包装为 Node&#45;API 函数" alt="" coords="97,145,286,171"/>
 <area shape="poly" title=" " alt="" coords="26,342,31,310,43,266,63,220,77,199,94,180,100,175,103,180,98,184,81,202,67,222,48,268,37,311,32,343"/>
-<area shape="rect" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title=" " alt="" coords="96,195,287,220"/>
+<area shape="rect" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="96,195,287,220"/>
 <area shape="poly" title=" " alt="" coords="29,342,50,287,69,256,94,229,102,224,105,228,98,233,73,259,55,290,34,344"/>
-<area shape="rect" href="main_8cc.html#a551814596313b7968e083c15f5639a17" title=" " alt="" coords="124,244,259,269"/>
+<area shape="rect" href="main_8cc.html#a551814596313b7968e083c15f5639a17" title="把 ImageIO::LoadPng 包装为 Node&#45;API 函数" alt="" coords="124,244,259,269"/>
 <area shape="poly" title=" " alt="" coords="34,340,59,309,95,278,110,271,112,275,97,283,63,313,39,344"/>
-<area shape="rect" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title=" " alt="" coords="121,293,261,319"/>
+<area shape="rect" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="121,293,261,319"/>
 <area shape="poly" title=" " alt="" coords="47,345,95,327,122,320,124,325,97,333,49,350"/>
-<area shape="rect" href="main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title=" " alt="" coords="130,343,253,368"/>
+<area shape="rect" href="main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title="把 Processor::Resize 包装为 Node&#45;API 函数" alt="" coords="130,343,253,368"/>
 <area shape="poly" title=" " alt="" coords="49,353,116,353,116,358,49,358"/>
-<area shape="rect" href="main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title=" " alt="" coords="123,441,259,467"/>
+<area shape="rect" href="main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title="把 ImageIO::SavePng 包装为 Node&#45;API 函数" alt="" coords="123,441,259,467"/>
 <area shape="poly" title=" " alt="" coords="39,367,63,397,97,426,112,434,110,439,95,431,59,401,34,370"/>
-<area shape="rect" href="main_8cc.html#a97fb226d121951383b419bf7a123da5a" title=" " alt="" coords="121,491,262,516"/>
+<area shape="rect" href="main_8cc.html#a97fb226d121951383b419bf7a123da5a" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="121,491,262,516"/>
 <area shape="poly" title=" " alt="" coords="34,367,55,420,73,450,98,476,109,484,106,488,94,480,69,454,50,423,29,369"/>
-<area shape="rect" href="main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title=" " alt="" coords="124,540,259,565"/>
+<area shape="rect" href="main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title="把 ImageIO::SaveTrip 包装为 Node&#45;API 函数" alt="" coords="124,540,259,565"/>
 <area shape="poly" title=" " alt="" coords="32,368,37,400,48,443,68,487,81,508,98,525,113,536,110,540,94,529,77,511,63,490,43,444,32,401,27,369"/>
-<area shape="rect" href="main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title=" " alt="" coords="129,392,254,417"/>
+<area shape="rect" href="main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title="把 Processor::ToGray 包装为 Node&#45;API 函数" alt="" coords="129,392,254,417"/>
 <area shape="poly" title=" " alt="" coords="49,360,97,377,128,386,126,391,95,382,47,365"/>
-<area shape="rect" href="classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="338,55,477,80"/>
-<area shape="poly" title=" " alt="" coords="222,143,362,83,364,88,224,148"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="363,317,451,343"/>
-<area shape="poly" title=" " alt="" coords="271,168,288,180,302,195,309,211,314,242,318,273,325,288,336,303,352,314,349,318,333,307,320,291,313,274,309,243,304,213,297,198,285,184,268,173"/>
-<area shape="rect" href="Compressor_8cc.html#a439b9169b21c2927e3e35e6358b24c05" title=" " alt="" coords="579,5,678,31"/>
-<area shape="poly" title=" " alt="" coords="464,52,565,29,566,34,466,57"/>
-<area shape="rect" href="classTripletUtils.html#a1d7e2b7f1e589821bfec87d10599cf49" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="536,55,721,80"/>
-<area shape="poly" title=" " alt="" coords="477,65,522,65,522,70,477,70"/>
-<area shape="poly" title=" " alt="" coords="267,218,288,229,305,248,314,266,321,285,336,303,352,312,349,317,333,307,316,288,309,268,301,250,285,233,265,223"/>
-<area shape="rect" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="337,169,477,195"/>
-<area shape="poly" title=" " alt="" coords="287,193,324,189,324,194,287,199"/>
-<area shape="rect" href="classTripletUtils.html#ac8dadcc7087f5926810820c26996aa0d" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="528,105,729,145"/>
-<area shape="poly" title=" " alt="" coords="457,167,537,145,539,151,458,172"/>
-<area shape="rect" href="classTripletUtils.html#a474e9114f121013d17dce14568d24485" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="535,169,722,195"/>
-<area shape="poly" title=" " alt="" coords="478,179,521,179,521,185,478,185"/>
-<area shape="rect" href="Compressor_8cc.html#a40a397f9f192a857e7766eaf692d0f58" title=" " alt="" coords="577,219,680,244"/>
-<area shape="poly" title=" " alt="" coords="466,192,565,214,564,220,464,197"/>
+<area shape="rect" href="classCompressor.html#afc47156bc86131009b0b814f2c11015a" title="加载 .trip 文件并重建图像。 流程：读取文件头校验魔数 &#45;&gt; 创建背景画布 &#45;&gt; 覆盖三元组像素。" alt="" coords="339,55,477,80"/>
+<area shape="poly" title=" " alt="" coords="222,143,363,83,365,88,224,148"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="364,317,452,343"/>
+<area shape="poly" title=" " alt="" coords="271,168,288,180,302,195,309,211,314,242,318,273,325,288,336,303,353,314,350,318,333,307,320,291,313,275,309,243,304,213,297,198,285,184,268,173"/>
+<area shape="rect" href="compressor_8cc.html#a393bbe21a99a76d202ac90bab190280c" title=" " alt="" coords="580,5,683,31"/>
+<area shape="poly" title=" " alt="" coords="466,52,566,30,567,35,467,57"/>
+<area shape="rect" href="classTripletUtils.html#aa4b876bb7f2f0c358f31ea0e1f04df79" title="将三元组表示转换回 cv::Mat 图像" alt="" coords="538,55,725,80"/>
+<area shape="poly" title=" " alt="" coords="477,65,524,65,524,70,477,70"/>
+<area shape="poly" title=" " alt="" coords="267,218,288,229,305,248,314,266,321,285,336,303,353,313,350,317,333,307,316,288,309,269,301,250,285,233,265,223"/>
+<area shape="rect" href="classCompressor.html#aa04164c2ad51f4d0990e73e8f7227da1" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="338,169,478,195"/>
+<area shape="poly" title=" " alt="" coords="287,193,324,189,325,194,287,199"/>
+<area shape="rect" href="classTripletUtils.html#aa5ae7f8d7277d320791b1784487ffb99" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="529,105,733,145"/>
+<area shape="poly" title=" " alt="" coords="458,167,539,145,541,151,459,172"/>
+<area shape="rect" href="classTripletUtils.html#a5b02a3d75026807faf99bbadf4c5c8a9" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="538,169,725,195"/>
+<area shape="poly" title=" " alt="" coords="479,179,524,179,524,185,479,185"/>
+<area shape="rect" href="compressor_8cc.html#ab29ab99e4914dddfeba2690429a09a9e" title=" " alt="" coords="579,219,683,244"/>
+<area shape="poly" title=" " alt="" coords="467,192,566,214,565,220,466,197"/>
 <area shape="poly" title=" " alt="" coords="251,267,288,278,336,302,356,310,354,315,334,307,286,283,250,272"/>
-<area shape="rect" href="classImageIO.html#a19370c25df64ca9a0969a30d93969fc5" title="从文件加载图像" alt="" coords="339,219,476,244"/>
-<area shape="poly" title=" " alt="" coords="259,246,325,238,326,244,259,251"/>
-<area shape="poly" title=" " alt="" coords="262,311,350,321,349,326,261,316"/>
-<area shape="rect" href="classImageIO.html#ad3457dfc34f78f2314cc5b989584ca86" title="从文件加载三元组压缩图像 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat" alt="" coords="336,268,479,293"/>
-<area shape="poly" title=" " alt="" coords="261,295,322,288,323,293,262,300"/>
-<area shape="rect" href="classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="550,268,707,293"/>
-<area shape="poly" title=" " alt="" coords="479,278,536,278,536,283,479,283"/>
-<area shape="rect" href="Ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="777,268,865,293"/>
-<area shape="poly" title=" " alt="" coords="708,278,763,278,763,283,708,283"/>
-<area shape="poly" title=" " alt="" coords="253,345,349,334,350,339,254,351"/>
-<area shape="rect" href="classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0" title="使用双线性插值调整图像尺寸。" alt="" coords="339,367,475,392"/>
-<area shape="poly" title=" " alt="" coords="254,359,326,368,325,373,253,365"/>
-<area shape="rect" href="ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a" title=" " alt="" coords="585,392,672,417"/>
-<area shape="poly" title=" " alt="" coords="476,384,572,396,571,401,475,390"/>
-<area shape="poly" title=" " alt="" coords="258,440,285,427,301,409,308,391,316,371,333,352,349,342,352,347,336,356,321,374,313,393,305,412,288,431,261,445"/>
-<area shape="rect" href="classImageIO.html#aa5d7f0832777c47224aa2cfcb04d6a5a" title="将图像保存到文件" alt="" coords="337,465,477,491"/>
+<area shape="rect" href="classImageIO.html#a4cceda8c66d879194ee633920e335a1f" title="从文件加载图像" alt="" coords="338,219,478,244"/>
+<area shape="poly" title=" " alt="" coords="259,246,324,238,325,244,260,251"/>
+<area shape="poly" title=" " alt="" coords="262,311,350,321,350,326,261,316"/>
+<area shape="rect" href="classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f" title="从文件加载三元组压缩图像" alt="" coords="335,268,481,293"/>
+<area shape="poly" title=" " alt="" coords="261,295,321,288,322,293,262,300"/>
+<area shape="rect" href="classPpm.html#a20cd3e30e1b93ec9d9f62ac1b02745b8" title="读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat" alt="" coords="551,268,711,293"/>
+<area shape="poly" title=" " alt="" coords="481,278,537,278,537,283,481,283"/>
+<area shape="rect" href="ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="781,268,869,293"/>
+<area shape="poly" title=" " alt="" coords="712,278,767,278,767,283,712,283"/>
+<area shape="poly" title=" " alt="" coords="253,346,350,334,351,339,253,351"/>
+<area shape="rect" href="classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0" title="使用双线性插值调整图像尺寸。" alt="" coords="340,367,476,392"/>
+<area shape="poly" title=" " alt="" coords="253,359,327,368,326,373,253,365"/>
+<area shape="rect" href="image__processor_8cc.html#a34730b2ac8555f0ae72e7e1e802fa675" title=" " alt="" coords="587,392,675,417"/>
+<area shape="poly" title=" " alt="" coords="476,384,574,396,573,401,476,390"/>
+<area shape="poly" title=" " alt="" coords="258,440,285,427,301,409,308,391,316,371,333,352,350,342,353,346,336,356,321,374,313,393,305,412,288,431,261,445"/>
+<area shape="rect" href="classImageIO.html#a6203067e2826b9ccc07c6b87002ede4d" title="将图像保存到文件" alt="" coords="337,465,479,491"/>
 <area shape="poly" title=" " alt="" coords="260,459,324,466,323,471,259,464"/>
-<area shape="poly" title=" " alt="" coords="261,490,285,476,297,462,304,447,308,416,313,384,320,368,333,352,349,341,352,345,336,356,324,371,318,386,314,417,309,448,302,464,288,480,264,495"/>
-<area shape="rect" href="classImageIO.html#a01f7e14387f94afb475890806dfe167d" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="335,515,480,540"/>
-<area shape="poly" title=" " alt="" coords="263,509,322,515,321,520,262,514"/>
-<area shape="rect" href="classPpm.html#a92a5a73a161b186cd6b18f42c278e437" title="手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。" alt="" coords="549,515,708,540"/>
-<area shape="poly" title=" " alt="" coords="480,525,536,525,536,530,480,530"/>
-<area shape="poly" title=" " alt="" coords="258,542,285,525,300,505,308,484,309,441,309,397,317,375,333,352,349,340,352,344,337,356,322,377,315,398,314,441,313,485,305,507,288,529,260,546"/>
-<area shape="rect" href="classImageIO.html#a599d6b98c20fa03684d3fe89c4de3616" title="将图像保存到文件" alt="" coords="338,564,477,589"/>
-<area shape="poly" title=" " alt="" coords="259,557,325,565,324,570,259,563"/>
+<area shape="poly" title=" " alt="" coords="261,490,285,476,297,462,304,447,308,416,313,384,320,368,333,352,350,341,353,345,336,356,324,371,318,386,314,417,309,448,302,464,288,480,264,495"/>
+<area shape="rect" href="classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="335,515,481,540"/>
+<area shape="poly" title=" " alt="" coords="262,508,322,515,321,520,262,514"/>
+<area shape="rect" href="classPpm.html#ad018fb080daad5dca782603a44e8e59b" title="手动保存为 .ppm 格式" alt="" coords="552,515,711,540"/>
+<area shape="poly" title=" " alt="" coords="482,525,538,525,538,530,482,530"/>
+<area shape="poly" title=" " alt="" coords="258,542,285,525,300,505,308,484,309,441,309,397,317,375,333,352,350,340,353,344,337,356,322,377,315,398,314,441,313,485,305,507,288,529,260,546"/>
+<area shape="rect" href="classImageIO.html#a2a2448cc3160e6f250047517c2ab7c65" title="将图像保存到文件" alt="" coords="338,564,478,589"/>
+<area shape="poly" title=" " alt="" coords="260,557,325,565,324,570,259,563"/>
 <area shape="poly" title=" " alt="" coords="247,389,286,377,310,365,334,352,351,345,353,350,336,356,312,369,288,382,249,394"/>
-<area shape="rect" href="classProcessor.html#a5c48f5a991e81dcf354cebb10df48260" title="将彩色图像转换为灰度图像。" alt="" coords="338,416,477,441"/>
-<area shape="poly" title=" " alt="" coords="255,409,325,417,324,422,254,414"/>
-<area shape="poly" title=" " alt="" coords="477,418,571,408,572,413,478,424"/>
+<area shape="rect" href="classProcessor.html#a5c48f5a991e81dcf354cebb10df48260" title="将彩色图像转换为灰度图像。" alt="" coords="339,416,477,441"/>
+<area shape="poly" title=" " alt="" coords="255,409,325,417,325,422,254,414"/>
+<area shape="poly" title=" " alt="" coords="477,419,573,408,574,413,478,424"/>
 </map>
 </div>
 
@@ -388,16 +439,26 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>把 <a class="el" href="classImageIO.html#a4cceda8c66d879194ee633920e335a1f" title="从文件加载图像">ImageIO::LoadPng</a> 包装为 Node-API 函数 </p>
+<p>加载 PNG 图像并返回包含图像数据的对象，格式为： { width, height, channels, data: Buffer }</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Node-API 回调信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Value 包含图像数据的对象 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_a551814596313b7968e083c15f5639a17_cgraph.png" border="0" usemap="#amain_8cc_a551814596313b7968e083c15f5639a17_cgraph" alt=""/></div>
 <map name="amain_8cc_a551814596313b7968e083c15f5639a17_cgraph" id="amain_8cc_a551814596313b7968e083c15f5639a17_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,140,56"/>
-<area shape="rect" href="classImageIO.html#a19370c25df64ca9a0969a30d93969fc5" title="从文件加载图像" alt="" coords="188,5,325,31"/>
+<area shape="rect" title="把 ImageIO::LoadPng 包装为 Node&#45;API 函数" alt="" coords="5,31,140,56"/>
+<area shape="rect" href="classImageIO.html#a4cceda8c66d879194ee633920e335a1f" title="从文件加载图像" alt="" coords="188,5,328,31"/>
 <area shape="poly" title=" " alt="" coords="140,31,174,27,174,32,141,37"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="213,55,301,80"/>
-<area shape="poly" title=" " alt="" coords="141,49,199,57,199,63,140,55"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="214,55,302,80"/>
+<area shape="poly" title=" " alt="" coords="141,49,201,57,200,63,140,55"/>
 </map>
 </div>
 <div class="dynheader">
@@ -405,8 +466,8 @@ main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_a551814596313b7968e083c15f5639a17_icgraph.png" border="0" usemap="#amain_8cc_a551814596313b7968e083c15f5639a17_icgraph" alt=""/></div>
 <map name="amain_8cc_a551814596313b7968e083c15f5639a17_icgraph" id="amain_8cc_a551814596313b7968e083c15f5639a17_icgraph">
-<area shape="rect" title=" " alt="" coords="96,5,231,31"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" title="把 ImageIO::LoadPng 包装为 Node&#45;API 函数" alt="" coords="96,5,231,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
@@ -436,20 +497,30 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>把 <a class="el" href="classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f" title="从文件加载三元组压缩图像">ImageIO::LoadPpm</a> 包装为 Node-API 函数 </p>
+<p>加载 PPM 图像并返回包含图像数据的对象，格式为： { width, height, channels, data: Buffer }</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Node-API 回调信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Value 包含图像数据的对象 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_ab6d72c366ef977c8c5a3391a60bf5527_cgraph.png" border="0" usemap="#amain_8cc_ab6d72c366ef977c8c5a3391a60bf5527_cgraph" alt=""/></div>
 <map name="amain_8cc_ab6d72c366ef977c8c5a3391a60bf5527_cgraph" id="amain_8cc_ab6d72c366ef977c8c5a3391a60bf5527_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,145,56"/>
-<area shape="rect" href="classImageIO.html#ad3457dfc34f78f2314cc5b989584ca86" title="从文件加载三元组压缩图像 具体实现在 Ppm 部分，这里仅调用 Ppm::loadPpmAsMat" alt="" coords="193,5,336,31"/>
-<area shape="poly" title=" " alt="" coords="145,31,179,27,180,32,146,37"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="221,55,309,80"/>
-<area shape="poly" title=" " alt="" coords="146,50,207,57,207,63,145,55"/>
-<area shape="rect" href="classPpm.html#a071ed3ce298c2d6e25b2f4afffff7129" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="384,5,541,31"/>
-<area shape="poly" title=" " alt="" coords="337,15,370,15,370,21,337,21"/>
-<area shape="rect" href="Ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="589,5,677,31"/>
-<area shape="poly" title=" " alt="" coords="542,15,576,15,576,21,542,21"/>
+<area shape="rect" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="5,31,145,56"/>
+<area shape="rect" href="classImageIO.html#a6a1d8545edd4262a9f67a146275bda2f" title="从文件加载三元组压缩图像" alt="" coords="193,5,339,31"/>
+<area shape="poly" title=" " alt="" coords="145,31,180,27,180,32,146,37"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="222,55,310,80"/>
+<area shape="poly" title=" " alt="" coords="146,49,209,58,208,63,145,55"/>
+<area shape="rect" href="classPpm.html#a20cd3e30e1b93ec9d9f62ac1b02745b8" title="读取 .ppm 文件(P2 或 P3 格式) 为 cv::Mat" alt="" coords="387,5,547,31"/>
+<area shape="poly" title=" " alt="" coords="339,15,373,15,373,21,339,21"/>
+<area shape="rect" href="ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="595,5,683,31"/>
+<area shape="poly" title=" " alt="" coords="547,15,581,15,581,21,547,21"/>
 </map>
 </div>
 <div class="dynheader">
@@ -457,8 +528,8 @@ main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_ab6d72c366ef977c8c5a3391a60bf5527_icgraph.png" border="0" usemap="#amain_8cc_ab6d72c366ef977c8c5a3391a60bf5527_icgraph" alt=""/></div>
 <map name="amain_8cc_ab6d72c366ef977c8c5a3391a60bf5527_icgraph" id="amain_8cc_ab6d72c366ef977c8c5a3391a60bf5527_icgraph">
-<area shape="rect" title=" " alt="" coords="96,5,236,31"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="96,5,236,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
@@ -498,31 +569,41 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>创建 Napi::Error 异常 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">env</td><td>Node-API 环境 </td></tr>
+    <tr><td class="paramname">msg</td><td>异常消息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Error 异常对象 </dd></dl>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_ac9cbbfd7dad326e56048ccb57b26eb8e_icgraph.png" border="0" usemap="#amain_8cc_ac9cbbfd7dad326e56048ccb57b26eb8e_icgraph" alt=""/></div>
 <map name="amain_8cc_ac9cbbfd7dad326e56048ccb57b26eb8e_icgraph" id="amain_8cc_ac9cbbfd7dad326e56048ccb57b26eb8e_icgraph">
-<area shape="rect" title=" " alt="" coords="335,203,423,228"/>
-<area shape="rect" href="main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title=" " alt="" coords="97,5,286,31"/>
+<area shape="rect" title="创建 Napi::Error 异常" alt="" coords="335,203,423,228"/>
+<area shape="rect" href="main_8cc.html#afc5b0bdf3791c1b10d65f736a29f2f0c" title="把 Compressor::Load 包装为 Node&#45;API 函数" alt="" coords="97,5,286,31"/>
 <area shape="poly" title=" " alt="" coords="368,190,358,156,340,117,317,77,285,44,266,33,269,29,288,40,321,74,345,114,363,155,373,188"/>
-<area shape="rect" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title=" " alt="" coords="96,55,287,80"/>
+<area shape="rect" href="main_8cc.html#a6bc5c80ee4ae3793367d9830bbe0df68" title="把 Compressor::Save 包装为 Node&#45;API 函数" alt="" coords="96,55,287,80"/>
 <area shape="poly" title=" " alt="" coords="364,192,333,141,311,115,285,94,264,83,266,78,288,89,315,112,337,138,368,189"/>
-<area shape="rect" href="main_8cc.html#a551814596313b7968e083c15f5639a17" title=" " alt="" coords="124,104,259,129"/>
+<area shape="rect" href="main_8cc.html#a551814596313b7968e083c15f5639a17" title="把 ImageIO::LoadPng 包装为 Node&#45;API 函数" alt="" coords="124,104,259,129"/>
 <area shape="poly" title=" " alt="" coords="354,195,323,167,285,143,257,132,259,127,288,138,326,163,357,191"/>
-<area shape="rect" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title=" " alt="" coords="121,153,261,179"/>
+<area shape="rect" href="main_8cc.html#ab6d72c366ef977c8c5a3391a60bf5527" title="把 ImageIO::LoadPpm 包装为 Node&#45;API 函数" alt="" coords="121,153,261,179"/>
 <area shape="poly" title=" " alt="" coords="321,202,286,193,243,181,244,176,287,187,322,197"/>
-<area shape="rect" href="main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title=" " alt="" coords="130,203,253,228"/>
+<area shape="rect" href="main_8cc.html#aa546425105ae7e3f2de3c424082e8345" title="把 Processor::Resize 包装为 Node&#45;API 函数" alt="" coords="130,203,253,228"/>
 <area shape="poly" title=" " alt="" coords="321,218,253,218,253,213,321,213"/>
-<area shape="rect" href="main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title=" " alt="" coords="123,252,259,277"/>
+<area shape="rect" href="main_8cc.html#a2a1ef82449861b9914b1aa98f161a3f1" title="把 ImageIO::SavePng 包装为 Node&#45;API 函数" alt="" coords="123,252,259,277"/>
 <area shape="poly" title=" " alt="" coords="322,233,241,254,240,249,321,228"/>
-<area shape="rect" href="main_8cc.html#a97fb226d121951383b419bf7a123da5a" title=" " alt="" coords="121,301,262,327"/>
+<area shape="rect" href="main_8cc.html#a97fb226d121951383b419bf7a123da5a" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="121,301,262,327"/>
 <area shape="poly" title=" " alt="" coords="357,240,326,266,288,291,256,304,254,299,285,286,323,262,354,235"/>
-<area shape="rect" href="main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title=" " alt="" coords="124,351,259,376"/>
+<area shape="rect" href="main_8cc.html#acfa99fd99fcf645857f77aa98ee1e011" title="把 ImageIO::SaveTrip 包装为 Node&#45;API 函数" alt="" coords="124,351,259,376"/>
 <area shape="poly" title=" " alt="" coords="368,242,336,292,314,318,288,340,260,354,258,349,285,336,310,314,332,289,363,239"/>
-<area shape="rect" href="main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title=" " alt="" coords="129,400,254,425"/>
+<area shape="rect" href="main_8cc.html#ae63aa61833e4b395ce9277b1f4281a7f" title="把 Processor::ToGray 包装为 Node&#45;API 函数" alt="" coords="129,400,254,425"/>
 <area shape="poly" title=" " alt="" coords="373,243,362,276,345,316,320,356,288,389,256,406,253,401,285,385,316,352,340,313,357,274,368,241"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,203,48,228"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,203,48,228"/>
 <area shape="poly" title=" " alt="" coords="103,40,98,44,81,62,67,82,48,128,37,171,32,203,26,202,31,170,43,126,63,80,77,59,94,40,100,35"/>
 <area shape="poly" title=" " alt="" coords="105,88,98,93,73,119,55,150,34,204,29,202,50,147,69,116,94,89,102,84"/>
 <area shape="poly" title=" " alt="" coords="112,135,97,143,63,173,39,204,34,200,59,169,95,138,110,131"/>
@@ -560,17 +641,27 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>把 <a class="el" href="classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0" title="使用双线性插值调整图像尺寸。">Processor::Resize</a> 包装为 Node-API 函数 </p>
+<p>把包含图像数据的对象按指定比例缩放</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Node-API 回调信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Value 包含缩放后图像数据的对象 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_aa546425105ae7e3f2de3c424082e8345_cgraph.png" border="0" usemap="#amain_8cc_aa546425105ae7e3f2de3c424082e8345_cgraph" alt=""/></div>
 <map name="amain_8cc_aa546425105ae7e3f2de3c424082e8345_cgraph" id="amain_8cc_aa546425105ae7e3f2de3c424082e8345_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,128,56"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="200,5,288,31"/>
+<area shape="rect" title="把 Processor::Resize 包装为 Node&#45;API 函数" alt="" coords="5,31,128,56"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="200,5,288,31"/>
 <area shape="poly" title=" " alt="" coords="128,32,185,24,186,29,128,37"/>
 <area shape="rect" href="classProcessor.html#af43377f1cfa191f7521d8eb60e5374a0" title="使用双线性插值调整图像尺寸。" alt="" coords="176,55,312,80"/>
 <area shape="poly" title=" " alt="" coords="128,49,163,54,162,59,128,54"/>
-<area shape="rect" href="ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a" title=" " alt="" coords="360,55,447,80"/>
+<area shape="rect" href="image__processor_8cc.html#a34730b2ac8555f0ae72e7e1e802fa675" title=" " alt="" coords="360,55,448,80"/>
 <area shape="poly" title=" " alt="" coords="312,65,346,65,346,70,312,70"/>
 </map>
 </div>
@@ -579,8 +670,8 @@ main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_aa546425105ae7e3f2de3c424082e8345_icgraph.png" border="0" usemap="#amain_8cc_aa546425105ae7e3f2de3c424082e8345_icgraph" alt=""/></div>
 <map name="amain_8cc_aa546425105ae7e3f2de3c424082e8345_icgraph" id="amain_8cc_aa546425105ae7e3f2de3c424082e8345_icgraph">
-<area shape="rect" title=" " alt="" coords="96,5,219,31"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" title="把 Processor::Resize 包装为 Node&#45;API 函数" alt="" coords="96,5,219,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
@@ -610,15 +701,25 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>把 <a class="el" href="classImageIO.html#a6203067e2826b9ccc07c6b87002ede4d" title="将图像保存到文件">ImageIO::SavePng</a> 包装为 Node-API 函数 </p>
+<p>保存包含图像数据的对象到 PNG 文件</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Node-API 回调信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Value 布尔值，表示保存是否成功 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_a2a1ef82449861b9914b1aa98f161a3f1_cgraph.png" border="0" usemap="#amain_8cc_a2a1ef82449861b9914b1aa98f161a3f1_cgraph" alt=""/></div>
 <map name="amain_8cc_a2a1ef82449861b9914b1aa98f161a3f1_cgraph" id="amain_8cc_a2a1ef82449861b9914b1aa98f161a3f1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,141,56"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="215,5,303,31"/>
-<area shape="poly" title=" " alt="" coords="141,31,201,23,202,28,142,37"/>
-<area shape="rect" href="classImageIO.html#aa5d7f0832777c47224aa2cfcb04d6a5a" title="将图像保存到文件" alt="" coords="189,55,329,80"/>
+<area shape="rect" title="把 ImageIO::SavePng 包装为 Node&#45;API 函数" alt="" coords="5,31,141,56"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="216,5,304,31"/>
+<area shape="poly" title=" " alt="" coords="141,31,202,23,202,28,142,37"/>
+<area shape="rect" href="classImageIO.html#a6203067e2826b9ccc07c6b87002ede4d" title="将图像保存到文件" alt="" coords="189,55,331,80"/>
 <area shape="poly" title=" " alt="" coords="142,49,176,54,175,59,141,55"/>
 </map>
 </div>
@@ -627,8 +728,8 @@ main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_a2a1ef82449861b9914b1aa98f161a3f1_icgraph.png" border="0" usemap="#amain_8cc_a2a1ef82449861b9914b1aa98f161a3f1_icgraph" alt=""/></div>
 <map name="amain_8cc_a2a1ef82449861b9914b1aa98f161a3f1_icgraph" id="amain_8cc_a2a1ef82449861b9914b1aa98f161a3f1_icgraph">
-<area shape="rect" title=" " alt="" coords="96,5,232,31"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" title="把 ImageIO::SavePng 包装为 Node&#45;API 函数" alt="" coords="96,5,232,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
@@ -658,18 +759,28 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>把 <a class="el" href="classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm">ImageIO::SavePpm</a> 包装为 Node-API 函数 </p>
+<p>保存包含图像数据的对象到 PPM 文件</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Node-API 回调信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Value 布尔值，表示保存是否成功 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_a97fb226d121951383b419bf7a123da5a_cgraph.png" border="0" usemap="#amain_8cc_a97fb226d121951383b419bf7a123da5a_cgraph" alt=""/></div>
 <map name="amain_8cc_a97fb226d121951383b419bf7a123da5a_cgraph" id="amain_8cc_a97fb226d121951383b419bf7a123da5a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,147,56"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="223,5,311,31"/>
-<area shape="poly" title=" " alt="" coords="147,31,209,23,209,28,147,37"/>
-<area shape="rect" href="classImageIO.html#a01f7e14387f94afb475890806dfe167d" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="195,55,340,80"/>
-<area shape="poly" title=" " alt="" coords="147,50,181,54,180,59,147,55"/>
-<area shape="rect" href="classPpm.html#a92a5a73a161b186cd6b18f42c278e437" title="手动保存为 PPM 格式。 输入图像 (CV_8UC1 或 CV_8UC3, 分别用 P2 或 P3 格式保存)。" alt="" coords="388,55,547,80"/>
-<area shape="poly" title=" " alt="" coords="340,65,375,65,375,70,340,70"/>
+<area shape="rect" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="5,31,147,56"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="224,5,312,31"/>
+<area shape="poly" title=" " alt="" coords="146,31,210,23,211,28,147,37"/>
+<area shape="rect" href="classImageIO.html#a47551184bb8da28cfbcf198765dc7f8a" title="将图像保存到文件 具体实现在 Ppm 部分，这里仅调用 Ppm::saveNatAsPpm" alt="" coords="195,55,341,80"/>
+<area shape="poly" title=" " alt="" coords="147,49,181,54,180,59,146,55"/>
+<area shape="rect" href="classPpm.html#ad018fb080daad5dca782603a44e8e59b" title="手动保存为 .ppm 格式" alt="" coords="389,55,548,80"/>
+<area shape="poly" title=" " alt="" coords="341,65,376,65,376,70,341,70"/>
 </map>
 </div>
 <div class="dynheader">
@@ -677,8 +788,8 @@ main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_a97fb226d121951383b419bf7a123da5a_icgraph.png" border="0" usemap="#amain_8cc_a97fb226d121951383b419bf7a123da5a_icgraph" alt=""/></div>
 <map name="amain_8cc_a97fb226d121951383b419bf7a123da5a_icgraph" id="amain_8cc_a97fb226d121951383b419bf7a123da5a_icgraph">
-<area shape="rect" title=" " alt="" coords="96,5,237,31"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" title="把 ImageIO::SavePpm 包装为 Node&#45;API 函数" alt="" coords="96,5,237,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,49,21,49,15,82,15"/>
 </map>
 </div>
@@ -708,16 +819,26 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>把 <a class="el" href="classImageIO.html#a2a2448cc3160e6f250047517c2ab7c65" title="将图像保存到文件">ImageIO::SaveTrip</a> 包装为 Node-API 函数 </p>
+<p>把包含三元组数据的对象保存到压缩文件</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Node-API 回调信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Value 布尔值，表示保存是否成功 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_acfa99fd99fcf645857f77aa98ee1e011_cgraph.png" border="0" usemap="#amain_8cc_acfa99fd99fcf645857f77aa98ee1e011_cgraph" alt=""/></div>
 <map name="amain_8cc_acfa99fd99fcf645857f77aa98ee1e011_cgraph" id="amain_8cc_acfa99fd99fcf645857f77aa98ee1e011_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,140,56"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="213,5,301,31"/>
-<area shape="poly" title=" " alt="" coords="140,31,199,23,200,28,141,37"/>
-<area shape="rect" href="classImageIO.html#a599d6b98c20fa03684d3fe89c4de3616" title="将图像保存到文件" alt="" coords="188,55,327,80"/>
-<area shape="poly" title=" " alt="" coords="141,49,175,54,174,59,140,55"/>
+<area shape="rect" title="把 ImageIO::SaveTrip 包装为 Node&#45;API 函数" alt="" coords="5,31,140,56"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="214,5,302,31"/>
+<area shape="poly" title=" " alt="" coords="140,31,200,23,201,28,141,37"/>
+<area shape="rect" href="classImageIO.html#a2a2448cc3160e6f250047517c2ab7c65" title="将图像保存到文件" alt="" coords="188,55,328,80"/>
+<area shape="poly" title=" " alt="" coords="141,49,174,54,174,59,140,55"/>
 </map>
 </div>
 <div class="dynheader">
@@ -725,8 +846,8 @@ main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_acfa99fd99fcf645857f77aa98ee1e011_icgraph.png" border="0" usemap="#amain_8cc_acfa99fd99fcf645857f77aa98ee1e011_icgraph" alt=""/></div>
 <map name="amain_8cc_acfa99fd99fcf645857f77aa98ee1e011_icgraph" id="amain_8cc_acfa99fd99fcf645857f77aa98ee1e011_icgraph">
-<area shape="rect" title=" " alt="" coords="96,5,231,31"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" title="把 ImageIO::SaveTrip 包装为 Node&#45;API 函数" alt="" coords="96,5,231,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>
@@ -756,17 +877,27 @@ main.cc 的引用(Include)关系图:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>把 <a class="el" href="classProcessor.html#a5c48f5a991e81dcf354cebb10df48260" title="将彩色图像转换为灰度图像。">Processor::ToGray</a> 包装为 Node-API 函数 </p>
+<p>把包含 BGR 图像数据的对象转换为灰度图像</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Node-API 回调信息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Napi::Value 包含灰度图像数据的对象 </dd></dl>
 <div class="dynheader">
 函数调用图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_ae63aa61833e4b395ce9277b1f4281a7f_cgraph.png" border="0" usemap="#amain_8cc_ae63aa61833e4b395ce9277b1f4281a7f_cgraph" alt=""/></div>
 <map name="amain_8cc_ae63aa61833e4b395ce9277b1f4281a7f_cgraph" id="amain_8cc_ae63aa61833e4b395ce9277b1f4281a7f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,131,56"/>
-<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title=" " alt="" coords="204,5,292,31"/>
+<area shape="rect" title="把 Processor::ToGray 包装为 Node&#45;API 函数" alt="" coords="5,31,131,56"/>
+<area shape="rect" href="main_8cc.html#ac9cbbfd7dad326e56048ccb57b26eb8e" title="创建 Napi::Error 异常" alt="" coords="204,5,292,31"/>
 <area shape="poly" title=" " alt="" coords="130,32,190,23,191,29,131,37"/>
 <area shape="rect" href="classProcessor.html#a5c48f5a991e81dcf354cebb10df48260" title="将彩色图像转换为灰度图像。" alt="" coords="179,55,317,80"/>
 <area shape="poly" title=" " alt="" coords="131,49,166,54,165,59,131,54"/>
-<area shape="rect" href="ImageProcessor_8cc.html#a9110affa25a196d5eca48dc9006b8c3a" title=" " alt="" coords="365,55,452,80"/>
+<area shape="rect" href="image__processor_8cc.html#a34730b2ac8555f0ae72e7e1e802fa675" title=" " alt="" coords="365,55,453,80"/>
 <area shape="poly" title=" " alt="" coords="318,65,352,65,352,70,318,70"/>
 </map>
 </div>
@@ -775,8 +906,8 @@ main.cc 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc_ae63aa61833e4b395ce9277b1f4281a7f_icgraph.png" border="0" usemap="#amain_8cc_ae63aa61833e4b395ce9277b1f4281a7f_icgraph" alt=""/></div>
 <map name="amain_8cc_ae63aa61833e4b395ce9277b1f4281a7f_icgraph" id="amain_8cc_ae63aa61833e4b395ce9277b1f4281a7f_icgraph">
-<area shape="rect" title=" " alt="" coords="96,5,221,31"/>
-<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title=" " alt="" coords="5,5,48,31"/>
+<area shape="rect" title="把 Processor::ToGray 包装为 Node&#45;API 函数" alt="" coords="96,5,221,31"/>
+<area shape="rect" href="main_8cc.html#a41e547364abf29640f7cee8e9a468902" title="初始化 Node&#45;API 模块" alt="" coords="5,5,48,31"/>
 <area shape="poly" title=" " alt="" coords="82,21,48,21,48,15,82,15"/>
 </map>
 </div>

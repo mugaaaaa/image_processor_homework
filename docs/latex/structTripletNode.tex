@@ -7,12 +7,11 @@
 
 
 
-{\ttfamily \#include $<$Triplet.\+h$>$}
+{\ttfamily \#include $<$triplet.\+h$>$}
 
 
 
-Triplet\+Node 的协作图\+:
-\nopagebreak
+Triplet\+Node 的协作图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,9 +22,9 @@ Triplet\+Node 的协作图\+:
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{structTripletNode_ac9a4de9eb60afbc4dba2ed1619ea4839}{row\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em 像素行索引 \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{structTripletNode_a7248218fd56b58b2e55ebbd3b94e19c6}{col\+\_\+}}
-\item 
+\begin{DoxyCompactList}\small\item\em 像素列索引 \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{structTripletNode_a544721c4e0321517ffbbdc3732146a73}{val\+\_\+}} \mbox{[}3\mbox{]}
 \begin{DoxyCompactList}\small\item\em 彩色图时 val\+\_\+\mbox{[}0\mbox{]}\+: B, val\+\_\+\mbox{[}1\mbox{]}\+: G, val\+\_\+\mbox{[}2\mbox{]}\+: R（与 Open\+CV 的 BGR 顺序对齐），灰度图时仅用 val\+\_\+\mbox{[}0\mbox{]} 表示灰度 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -40,11 +39,19 @@ uint8\+\_\+t \mbox{\hyperlink{structTripletNode_a544721c4e0321517ffbbdc3732146a7
 \doxysubsubsection{\texorpdfstring{col\_}{col\_}}
 {\footnotesize\ttfamily int Triplet\+Node\+::col\+\_\+}
 
+
+
+像素列索引 
+
 \Hypertarget{structTripletNode_ac9a4de9eb60afbc4dba2ed1619ea4839}\label{structTripletNode_ac9a4de9eb60afbc4dba2ed1619ea4839} 
 \index{TripletNode@{TripletNode}!row\_@{row\_}}
 \index{row\_@{row\_}!TripletNode@{TripletNode}}
 \doxysubsubsection{\texorpdfstring{row\_}{row\_}}
 {\footnotesize\ttfamily int Triplet\+Node\+::row\+\_\+}
+
+
+
+像素行索引 
 
 \Hypertarget{structTripletNode_a544721c4e0321517ffbbdc3732146a73}\label{structTripletNode_a544721c4e0321517ffbbdc3732146a73} 
 \index{TripletNode@{TripletNode}!val\_@{val\_}}
@@ -60,4 +67,4 @@ uint8\+\_\+t \mbox{\hyperlink{structTripletNode_a544721c4e0321517ffbbdc3732146a7
 
 该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-cpp/src/data\+\_\+structure/\mbox{\hyperlink{Triplet_8h}{Triplet.\+h}}\end{DoxyCompactItemize}
+cpp/src/data\+\_\+structure/\mbox{\hyperlink{triplet_8h}{triplet.\+h}}\end{DoxyCompactItemize}

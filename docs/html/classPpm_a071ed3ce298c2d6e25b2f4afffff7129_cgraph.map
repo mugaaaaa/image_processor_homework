@@ -1,5 +1,0 @@
-<map id="Ppm::loadPpmAsMat" name="Ppm::loadPpmAsMat">
-<area shape="rect" id="Node000001" title="手动读取 PPM 文件(P2 或 P3 格式)。 并在读取数据时将 RGB 转换为 OpenCV 默认的 BGR 顺序。" alt="" coords="5,5,163,31"/>
-<area shape="rect" id="Node000002" href="$Ppm_8cc.html#ac7b87a81313fd97a2fac93e28df9b8ef" title=" " alt="" coords="211,5,299,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,15,197,15,197,21,163,21"/>
-</map>

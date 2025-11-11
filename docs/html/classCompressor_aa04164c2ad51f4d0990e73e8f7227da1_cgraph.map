@@ -1,9 +1,9 @@
 <map id="Compressor::Save" name="Compressor::Save">
 <area shape="rect" id="Node000001" title="将图像压缩并保存为 .trip 文件。 流程：统计背景色 &#45;&gt; 转换为三元组 &#45;&gt; 写入文件头 &#45;&gt; 写入数据。" alt="" coords="5,70,145,95"/>
-<area shape="rect" id="Node000002" href="$classTripletUtils.html#ac8dadcc7087f5926810820c26996aa0d" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="193,5,395,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,67,203,46,205,51,125,73"/>
-<area shape="rect" id="Node000003" href="$classTripletUtils.html#a474e9114f121013d17dce14568d24485" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="201,70,387,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,80,187,80,187,85,146,85"/>
-<area shape="rect" id="Node000004" href="$Compressor_8cc.html#a40a397f9f192a857e7766eaf692d0f58" title=" " alt="" coords="243,119,345,145"/>
+<area shape="rect" id="Node000002" href="$classTripletUtils.html#aa5ae7f8d7277d320791b1784487ffb99" title="统计图像中出现频率最高的颜色作为背景色" alt="" coords="193,5,397,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,67,205,46,206,51,126,73"/>
+<area shape="rect" id="Node000003" href="$classTripletUtils.html#a5b02a3d75026807faf99bbadf4c5c8a9" title="将 cv::Mat 图像转换为三元组表示" alt="" coords="202,70,389,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,80,188,80,188,85,145,85"/>
+<area shape="rect" id="Node000004" href="$compressor_8cc.html#ab29ab99e4914dddfeba2690429a09a9e" title=" " alt="" coords="243,119,347,145"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,93,230,115,229,120,132,98"/>
 </map>

@@ -24,6 +24,8 @@
 */
 var menudata={children:[
 {text:"首页",url:"index.html"},
+{text:"命名空间",url:"namespaces.html",children:[
+{text:"命名空间列表",url:"namespaces.html"}]},
 {text:"类",url:"annotated.html",children:[
 {text:"类列表",url:"annotated.html"},
 {text:"类索引",url:"classes.html"},
