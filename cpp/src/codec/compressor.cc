@@ -23,7 +23,7 @@
 
 // 写入 .trip 文件头
 static bool WriteHeader(std::ostream& os, const CompressedHeader& hdr) {
-    // 写入魔法数字，宽，高，通道数，三元组数量，背景色等信息
+    // 写入魔术数字，宽，高，通道数，三元组数量，背景色等信息
     os << "TRIP " << hdr.width_ << ' ' << hdr.height_ << ' ' << hdr.channels_ << ' '
        << static_cast<unsigned long long>(hdr.count_) << ' ' << static_cast<int>(hdr.bg_color_[0]) << ' '
        << static_cast<int>(hdr.bg_color_[1]) << ' ' << static_cast<int>(hdr.bg_color_[2]) << '\n';
@@ -53,11 +53,11 @@ static bool ReadHeader(std::istream& is, CompressedHeader& hdr) {
 bool Compressor::Save(const std::string& file_path, const cv::Mat& img) {
     if (img.empty()) return false;
 
-    // 创建 bg 并接受 findBackgroundColor 的结果作为背景色
+    // 创建 bg 并接受 FindBackgroundColor 的结果作为背景色
     uint8_t bg[3] = {0,0,0};
     TripletUtils::FindBackgroundColor(img, bg);
 
-    // 接收 matToTriplets 的结果作为三元组表示
+    // 接收 MatToTriplets 的结果作为三元组表示
     std::vector<TripletNode> triplets;
     TripletUtils::MatToTriplets(img, bg, triplets);
 
@@ -127,7 +127,7 @@ cv::Mat Compressor::Load(const std::string& file_path) {
         triplets.push_back(node);
     }
 
-    // 调用三元组工具类的 tripletsToMat 方法吧上一步的 std::vector<TripletNode> 转为 cv::Mat
+    // 调用三元组工具类的 TripletsToMat 方法吧上一步的 std::vector<TripletNode> 转为 cv::Mat
     cv::Mat img;
     TripletUtils::TripletsToMat(triplets, hdr.width_, hdr.height_, hdr.channels_, hdr.bg_color_, img);
     

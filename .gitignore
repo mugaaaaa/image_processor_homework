@@ -1,10 +1,26 @@
-# Node.js
+# ==================== Node.js & npm ====================
 node_modules/
-dist/
-release/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+npm-debug.log
+*.log
 
-# C++ 构建目录
+# ==================== Vite & Build ====================
+dist/
+dist-electron/
+.vite/
+.env.local
+.env.*.local
+
+# ==================== Electron ====================
+release/
+out/
+*.asar
+
+# ==================== C++ 构建 ====================
 cpp/build/
+cpp/cmake-build-*/
 *.o
 *.obj
 *.exe
@@ -12,9 +28,54 @@ cpp/build/
 *.a
 *.dylib
 *.so
+*.dll
+*.pdb
+
+# ==================== IDE & Editor ====================
 .vscode/
 .idea/
-
-# 操作系统生成的垃圾文件
+*.swp
+*.swo
+*.swn
+*~
 .DS_Store
+.project
+.classpath
+*.sublime-project
+*.sublime-workspace
+.vim/
+
+# ==================== 操作系统 ====================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
+
+# ==================== 依赖缓存 ====================
+.npm/
+.yarn/cache/
+.pnpm-store/
+
+# ==================== 开发工具 ====================
+.eslintcache
+.prettier-ignore
+
+# ==================== 本地数据与输出 ====================
+data/
+data_out/
+*.trip
+test_data/
+
+# ==================== 本地环境变量 ====================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+data/*.trip
+data_out/*.trip
+*.trip

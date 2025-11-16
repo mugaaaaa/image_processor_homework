@@ -17,8 +17,19 @@ import { Box, Card, CardContent, CardHeader, Button, Typography, Divider, TextFi
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 
+// 图像数据类型定义
 type ImageDataObj = { width: number; height: number; channels: number; data: Uint8Array }
 
+/**
+ * Canvas 图像渲染组件
+ * 
+ * 将图像数据（灰度或 BGR）转换并绘制到 Canvas，支持指定显示尺寸。
+ * 
+ * @param param0.image - 图像数据
+ * @param param0.fixedWidth - 显示宽度
+ * @param param0.fixedHeight - 显示高度
+ * @returns Canvas 元素
+ */
 function CanvasImage({ image, fixedWidth, fixedHeight }: { image?: ImageDataObj, fixedWidth: number, fixedHeight: number }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   useEffect(() => {
@@ -33,13 +44,13 @@ function CanvasImage({ image, fixedWidth, fixedHeight }: { image?: ImageDataObj,
     if (image.channels === 1) {
       for (let i = 0, j = 0; i < src.length; i++, j += 4) {
         const g = src[i]
-        dst[j] = g; dst[j+1] = g; dst[j+2] = g; dst[j+3] = 255
+        dst[j] = g; dst[j + 1] = g; dst[j + 2] = g; dst[j + 3] = 255
       }
     } else {
       // 将 BGR 转为 RGBA
       for (let i = 0, j = 0; i < src.length; i += 3, j += 4) {
-        const b = src[i], g = src[i+1], r = src[i+2]
-        dst[j] = r; dst[j+1] = g; dst[j+2] = b; dst[j+3] = 255
+        const b = src[i], g = src[i + 1], r = src[i + 2]
+        dst[j] = r; dst[j + 1] = g; dst[j + 2] = b; dst[j + 3] = 255
       }
     }
     ctx.putImageData(imgData, 0, 0)
@@ -47,7 +58,12 @@ function CanvasImage({ image, fixedWidth, fixedHeight }: { image?: ImageDataObj,
   return <canvas ref={canvasRef} style={{ width: fixedWidth, height: fixedHeight, background: '#222' }} />
 }
 
+/**
+ * 
+ * @returns 主页面 jsx
+ */
 function App() {
+
   const theme = useMemo(() => createTheme({ palette: { mode: 'light' } }), [])
 
   const [current, setCurrent] = useState<ImageDataObj | undefined>(undefined)
@@ -144,9 +160,9 @@ function App() {
           </Box>
         </Box>
 
-        {/* 右侧操作区域（三卡布局） */}
+        {/* 右侧操作区域 */}
         <Box sx={{ flex: 1, p: 2, borderLeft: '1px solid #eee', overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: 2, height: LEFT_HEIGHT }}>
-          {/* Card 1: 图片读写 */}
+          {/*  图片读写 */}
           <Card sx={{ flex: 1 }}>
             <CardHeader title="图片读写" titleTypographyProps={{ sx: { fontSize: '1rem' } }} />
             <CardContent sx={{
@@ -163,7 +179,7 @@ function App() {
             </CardContent>
           </Card>
 
-          {/* Card 2: 图片压缩 */}
+          {/* 图片压缩 */}
           <Card sx={{ flex: '0 0 160px' }}>
             <CardHeader title="图片压缩" titleTypographyProps={{ sx: { fontSize: '1rem' } }} />
             <CardContent sx={{ '& .MuiButton-root': { fontSize: '0.85rem', textTransform: 'none' } }}>
@@ -174,7 +190,7 @@ function App() {
             </CardContent>
           </Card>
 
-          {/* Card 3: 图片处理 */}
+          {/* 图片处理 */}
           <Card sx={{ height: 200 }}>
             <CardHeader title="图片处理" titleTypographyProps={{ sx: { fontSize: '1rem' } }} />
             <CardContent sx={{

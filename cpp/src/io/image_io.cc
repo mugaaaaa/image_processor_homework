@@ -39,12 +39,19 @@ static bool ParseHeader(std::istream& is, CompressedHeader& hdr) {
 }
 
 std::vector<TripletNode> ImageIO::LoadTrip(const std::string& file_path) {
+    // 打开文件流，二进制模式
     std::ifstream ifs(file_path, std::ios::binary);
     if (!ifs) return {};
+
+    // 初始化文件头结构体
     CompressedHeader hdr{};
     if (!ParseHeader(ifs, hdr)) return {};
+
+    // 初始化三元组，预留空间
     std::vector<TripletNode> triplets;
     triplets.reserve(static_cast<size_t>(hdr.count_));
+
+
     for (uint64_t i = 0; i < hdr.count_; ++i) {
         int32_t row = 0, col = 0; uint8_t v0 = 0, v1 = 0, v2 = 0;
         ifs.read(reinterpret_cast<char*>(&row), sizeof(row));
@@ -73,21 +80,22 @@ bool ImageIO::SavePpm(const std::string& file_path, const cv::Mat& img) {
     return Ppm::SaveNatAsPpm(file_path, img);
 }
 
-bool ImageIO::SaveTrip(const std::string& file_path,
-                       int width,
-                       int height,
-                       int channels,
-                       const uint8_t bg_color[3],
-                       const std::vector<TripletNode>& triplets) {
+bool ImageIO::SaveTrip(const std::string& file_path, int width, int height, int channels, const uint8_t bg_color[3], const std::vector<TripletNode>& triplets) {
+    // 校验参数
     if (channels != 1 && channels != 3) return false;
     if (width <= 0 || height <= 0) return false;
+
+    // 打开文件流，二进制模式
     std::ofstream ofs(file_path, std::ios::binary);
     if (!ofs) return false;
+    
+    // 写入文件头
     ofs << "TRIP " << width << ' ' << height << ' ' << channels << ' '
         << static_cast<unsigned long long>(triplets.size()) << ' '
         << static_cast<int>(bg_color[0]) << ' '
         << static_cast<int>(bg_color[1]) << ' '
         << static_cast<int>(bg_color[2]) << '\n';
+
     // 二进制写入 triplets
     for (const auto& t : triplets) {
         int32_t row = static_cast<int32_t>(t.row_);
@@ -104,6 +112,7 @@ bool ImageIO::SaveTrip(const std::string& file_path,
         }
         if (!ofs) return false;
     }
+
     return true;
 }
 

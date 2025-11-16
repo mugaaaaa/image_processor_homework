@@ -24,5 +24,3 @@ target_compile_definitions(run_tests PRIVATE
     OUTPUT_DIR="${CMAKE_BINARY_DIR}/test_outputs"
 )
 
-# (可选) 如果你使用了 Google Test 等测试框架，需要在这里查找并链接它们。
-# 目前假设你是手动写简单的 main 函数进行测试，所以不需要额外的测试框架链接。
