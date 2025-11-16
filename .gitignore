@@ -79,3 +79,9 @@ test_data/
 data/*.trip
 data_out/*.trip
 *.trip
+docs/
+cpp/docs/
+build/
+dist/
+dist-electron/
+build/test_outputs/
